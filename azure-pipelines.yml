@@ -49,10 +49,3 @@ steps:
     artifactName: 'drop' 
     publishLocation: 'Container'
 
-- task: AzureFileCopy@3
-  inputs:
-    sourcePath: /home/vsts/work/1/s/public
-    azureSubscription: Aptimise1
-    destination: azureBlob
-    storage: aptimise
-    containerName: $web
