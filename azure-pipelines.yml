@@ -24,6 +24,11 @@ steps:
     npm install
     npx gatsby build
   displayName: 'gatsby build'
+
+- script: |
+    ls /home/vsts/work/1/s/
+  displayName: 'list directory'
+
  
 
 - task: CopyFiles@2
