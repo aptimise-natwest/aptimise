@@ -49,9 +49,6 @@ steps:
     artifactName: 'drop' 
     publishLocation: 'Container'
 
-
-# Azure File Copy
-# Copy files to Azure blob or VM(s)
 - task: AzureFileCopy@3
   inputs:
     sourcePath: 'Container'
@@ -59,5 +56,3 @@ steps:
     destination: azureBlob
     storage: aptimise
     containerName: $web
-    #blobPrefix: # Optional
-    #additionalArgumentsForBlobCopy: # Optional
