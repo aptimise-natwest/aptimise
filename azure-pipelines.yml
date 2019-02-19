@@ -17,7 +17,6 @@ steps:
 
 - script: |
     rm -R /home/vsts/work/1/s/public
-    ls /home/vsts/work/1/s/public
   displayName: 'Remove public'
 
 - script: |
