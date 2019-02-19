@@ -16,6 +16,10 @@ steps:
   displayName: 'Install Node.js'
 
 - script: |
+    rm -R /home/vsts/work/1/s/public
+  displayName: 'Remove public'
+
+- script: |
     npm install -g gatsby-cli
   displayName: 'install gatsby'
 
