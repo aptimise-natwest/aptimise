@@ -48,3 +48,16 @@ steps:
     pathtoPublish: '$(Build.ArtifactStagingDirectory)' 
     artifactName: 'drop' 
     publishLocation: 'Container'
+
+
+# Azure File Copy
+# Copy files to Azure blob or VM(s)
+- task: AzureFileCopy@3
+  inputs:
+    sourcePath: 'Container'
+    azureSubscription: Aptimise
+    destination: azureBlob
+    storage: aptimise
+    containerName: $web
+    #blobPrefix: # Optional
+    #additionalArgumentsForBlobCopy: # Optional
