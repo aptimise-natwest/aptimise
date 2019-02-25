@@ -15,9 +15,9 @@ steps:
     versionSpec: '8.x'
   displayName: 'Install Node.js'
 
-- script: |
-    rm -R /home/vsts/work/1/s/public
-  displayName: 'Remove public'
+# - script: |
+#    rm -R /home/vsts/work/1/s/public
+#  displayName: 'Remove public'
 
 - script: |
     npm install -g gatsby-cli
@@ -28,11 +28,6 @@ steps:
     npm install
     npx gatsby build
   displayName: 'gatsby build'
-
-- script: |
-    ls /home/vsts/work/1/s/public
-  displayName: 'list directory'
-
  
 
 - task: CopyFiles@2
