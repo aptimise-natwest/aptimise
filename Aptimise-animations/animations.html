@@ -64,7 +64,7 @@
             <path fill="#4b0c61" d="M0 21.82L38 44l38.19-22.34L38 0z" class="top-path" />
             <path fill="#ffb700" d="M0 41.74V28.16l35.51 20.36v13.54z" class="left-path" />
             <path fill="#00b4bd" d="M0 61.68V48.09l35.51 20.34V82z" class="left-path2" />
-            <path fill="#ff4062" d="M76.18 41.74V28L40.46 48.52v13.54z" class="right-path" height="100" />
+            <path fill="#ff4062" d="M76.18 41.74V28L40.46 48.52v13.54z" class="right-path" />
             <path fill="#406cc2" d="M76.18 61.68V48.09L40.46 68.43V82z" class="right-path2" />
         </svg>
     </div>
@@ -145,7 +145,6 @@
         .add(whitePath)
         .add([topPath, leftPath, leftPath2, rightPath, rightPath2])
 
-
         // Simple
         var topPath = new TimelineMax();
         var rightPath = new TimelineMax();
@@ -155,7 +154,7 @@
 
         topPath.to($topPath, .5, { opacity: 0, y: -40 });
         // rightPath.to($rightPath, .5, { opacity: 0, y: -40 })
-        rightPath.to($rightPath, 1, { attr: { height: 0 } });
+        rightPath.to($rightPath, 1, { drawSVG: "20% 80%" });
 
         masterTimeline
         .add(topPath)
