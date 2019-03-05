@@ -1,4 +1,3 @@
-// match bootstrap size, plus add xs and xxl
 const sizes = {
     xs: "0px",
     sm: "576px",
@@ -8,21 +7,17 @@ const sizes = {
     xxl: "1600px"
 };
 
-const mediaBreakpointUp = {
-    xs: `(min-width: ${sizes.xs})`,
-    sm: `(min-width: ${sizes.sm})`,
-    md: `(min-width: ${sizes.md})`,
-    lg: `(min-width: ${sizes.lg})`,
-    xl: `(min-width: ${sizes.xl})`,
-    xxl: `(min-width: ${sizes.xxl})`
-};
+const fontSizeBase = 1;
 
-// @media ${ props => props.theme.mediaBreakpointUp.md } {
-//     display: none;
-// }
+const fontSizes = {
+    sm: `${fontSizeBase * .875}rem`,
+    lg: `${fontSizeBase * 1.25}rem`,
+}
 
 export default {
-    mediaBreakpointUp,
+    sizes,
+    fontSizeBase,
+    fontSizes,
     transitionBase: "all .4s ease-in-out",
     colors: {
         white: "#ffffff",

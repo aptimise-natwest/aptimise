@@ -25,6 +25,5 @@ const Button = styled.a`
             background-color: ${props => props.theme.colors.purpleDark};
         }
     `}
-
 `
 export default Button

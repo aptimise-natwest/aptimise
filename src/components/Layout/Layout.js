@@ -7,6 +7,7 @@ import 'scss/bootstrap.scss'
 import theme from "utils/Theme"
 import GlobalStyles from "utils/GlobalStyles"
 import Header from "components/Header/Header"
+import Footer from "components/Footer/Footer"
 
 const SiteWrap = styled.div`
     padding-top: 95px;
@@ -32,6 +33,7 @@ const Layout = ({children}) => {
 				<Header siteTitle={data.site.siteMetadata.title} />
 				<main>{children}</main>
                 <div style={{ minHeight: '100vh' }}></div>
+                <Footer />
             </SiteWrap>
 		</ThemeProvider>
 	)
