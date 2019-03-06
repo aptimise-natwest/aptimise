@@ -6,6 +6,6 @@ const Text = styled.div`
 
 Text.defaultProps = {
     size: 'md'
-};
+}
 
 export default Text

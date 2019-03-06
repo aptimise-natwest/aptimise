@@ -1,0 +1,3 @@
+---
+    blockType: "InfoBlocks"
+---

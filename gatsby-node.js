@@ -5,6 +5,20 @@
  */
 const path = require(`path`);
 
+// Add parent directory name to node to create a relationship between the page and the block
+exports.onCreateNode = ({ node, actions }) => {
+    const { createNodeField } = actions;
+    if (node.internal.type === `MarkdownRemark`) {
+        const parentDirectory = node.fileAbsolutePath.split("src/data/")[1].split("/")[1]
+        createNodeField({
+            node,
+            name: `page`,
+            value: parentDirectory
+        })
+    }
+}
+
+// Dynamically create pages based from /src/data/pages/
 exports.createPages = ({ graphql, actions }) => {
     const { createPage } = actions
     return new Promise((resolve, reject) => {
@@ -15,6 +29,9 @@ exports.createPages = ({ graphql, actions }) => {
                         node {
                             id
                             fileAbsolutePath
+                            frontmatter {
+                                path
+                            }
                         }
                     }
                 }
@@ -25,40 +42,26 @@ exports.createPages = ({ graphql, actions }) => {
             // Nodes
             const nodes = result.data.allMarkdownRemark.edges
 
-            // Filter nodes that that are contained in __blocks directories as these are not pages but content blocks
+            // Filter out nodes that are contained in __blocks directories as these are not pages but content blocks
             const pages = nodes.filter(
                 ({ node }) => node.fileAbsolutePath.indexOf('/__blocks/') <= 0
             )
 
-            // Loop pages, retrieve path and create the page
-            pages.forEach(({ node }) => {
-                graphql(`
-                {
-                    markdownRemark(id: { eq: "${node.id}" }) {
-                        id
-                        frontmatter {
-                            path
-                        }
+            // Loop pages to create the page
+            pages.forEach( ({ node }) => {    
+                // Create the page
+                createPage({
+                    path: node.frontmatter.path,
+                    component: path.resolve(`./src/templates/TemplateSelector.js`),
+                    context: {
+                        // Data passed to context is available in page queries as GraphQL variables.
+                        id: node.id
                     }
-                }
-                `).then(result => {
-
-                    const pagePath = result.data.markdownRemark.frontmatter.path
-
-                    // Create the page
-                    createPage({
-                        path: pagePath,
-                        component: path.resolve(`./src/templates/TemplateSelector.js`),
-                        context: {
-                            // Data passed to context is available in page queries as GraphQL variables.
-                            id: node.id,
-                        },
-                    })
-
                 })
+
             })
 
             resolve()
         })
     })
-};
+}

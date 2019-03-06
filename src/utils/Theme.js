@@ -19,7 +19,7 @@ const font = {
         italic: "RN House Sans W01 Italic",
         bold: "RN House Sans W01 Bold",
         boldItalic: "RN House Sans W01 Bold Italic",
-        body: `"RN House Sans W01 Regular", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"`
+        body: `"RN House Sans W01 Light", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"`
     },
     size: {
         base: `${fontSizeBase}rem`,

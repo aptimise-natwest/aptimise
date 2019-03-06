@@ -22,6 +22,10 @@ class Header extends Component {
         window.addEventListener('scroll', this.brandBarPosition)
     }
 
+    componentWillUnmount() {
+        window.removeEventListener('scroll', this.brandBarPosition)
+    }
+
     brandBarPosition() {
         const scrollPosition = window.pageYOffset
         const brandBarHeight = 43

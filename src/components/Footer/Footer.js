@@ -188,7 +188,7 @@ class Footer extends Component {
                                             <Link to="/privacy-policy/">Privacy Policy</Link>
                                         </li>
                                         <li>
-                                            <Link to="/faqs/">FAQs</Link>
+                                            <Link to="/help/">Help?</Link>
                                         </li>
                                     </UsefulLinks>                            
                                 </Col>
