@@ -1,0 +1,13 @@
+[
+    {
+        "id": "textBlockHome",
+        "type": "TextBlock",
+        "size": "lg",
+        "content": "<p>This is some text</p>"
+    },
+    {
+        "id": "infoBlocksHome",
+        "type": "TextBlock",
+        "content": "<p>This is some text</p>"
+    }
+]

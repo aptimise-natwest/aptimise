@@ -6,16 +6,14 @@ import Text from "components/shared/Text"
 
 const TextBlock = (props) => {
 
-    const markdown = useStaticQuery(graphql`
+    const data = useStaticQuery(graphql`
         query {
-            allMarkdownRemark {
+            allContentBlocksJson {
                 edges {
                     node {
                         id
-                        html
-                        frontmatter {
-                            size
-                        }
+                        content
+                        size
                     }
                 }
             }
@@ -23,16 +21,15 @@ const TextBlock = (props) => {
     `)
 
     // Retrieve block
-    const block = markdown.allMarkdownRemark.edges.filter(
+    const block = data.allContentBlocksJson.edges.filter(
         ({ node }) => props.id === node.id
     )[0]
 
-    const { html } = block.node
-    const { size } = block.node.frontmatter
+    const { content, size } = block.node
 
     return(
         <ContainerMaxWidth className="py-3">
-            <Text dangerouslySetInnerHTML={{ __html: html }} size={size} />
+            <Text dangerouslySetInnerHTML={{ __html: content }} size={size} />
         </ContainerMaxWidth>
     )
 }

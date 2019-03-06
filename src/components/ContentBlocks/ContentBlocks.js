@@ -5,30 +5,24 @@ import InfoBlocks from "./blocks/InfoBlocks"
 
 const ContentBlocks = (props) => {
 
-    const page = props.data.markdownRemark.fields.page
+    const pageBlocks = props.data.pagesJson.contentBlocks
 
-    const markdown = useStaticQuery(graphql`
+    const data = useStaticQuery(graphql`
         query {
-            allMarkdownRemark {
+            allContentBlocksJson {
                 edges {
                     node {
                         id
-                        fileAbsolutePath
-                        frontmatter {
-                            blockType
-                        }
-                        fields {
-                            page
-                        }
+                        type
                     }
                 }
             }
         }
     `)
 
-    // Filter nodes that are blocks and belong to the current page
-    const contentBlocks = markdown.allMarkdownRemark.edges.filter(
-        ({ node }) => (node.fields.page === page && node.fileAbsolutePath.indexOf('/__blocks/'))
+    // Filter content blocks that belong to the current page
+    const contentBlocks = data.allContentBlocksJson.edges.filter(
+        ({ node }) => pageBlocks.indexOf(node.id)
     )
 
     let blocks = "";
@@ -37,7 +31,7 @@ const ContentBlocks = (props) => {
 
         blocks = contentBlocks.map((block, i) => {
 
-            switch (block.node.frontmatter.blockType) {
+            switch (block.node.type) {
 
                 case "TextBlock":
                     return <TextBlock id={block.node.id} key={i} />

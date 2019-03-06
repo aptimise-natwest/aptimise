@@ -22,16 +22,12 @@ export default TemplateSelector
 
 export const query = graphql`
 query($id: String!) {
-    markdownRemark(id: { eq: $id }) {
+    pagesJson(id: { eq: $id }) {
         id
-        frontmatter {
-            title
-            metaDescription
-            path
-        }
-        fields {
-            page
-        }
+        path
+        title
+        metaDescription
+        contentBlocks
     }
 }
 `
