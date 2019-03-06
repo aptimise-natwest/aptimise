@@ -7,7 +7,7 @@ class TemplateSelector extends Component {
 
         const data = this.props.data
 
-        console.log(this.props)
+        console.log(data)
 
         // const template = data.template
 
@@ -25,8 +25,15 @@ class TemplateSelector extends Component {
 
 export default TemplateSelector
 
-// export const query = graphql`
-// query($id: String!) {
-
-// }
-// `
+export const query = graphql`
+query($id: String!) {
+    markdownRemark(id: { eq: $id }) {
+        id
+        frontmatter {
+            title
+            metaDescription
+            path
+        }
+    }
+}
+`
