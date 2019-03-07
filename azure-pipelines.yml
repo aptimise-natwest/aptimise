@@ -20,7 +20,7 @@ steps:
     versionSpec: '8.x'
   displayName: 'Install Node.js'
 
- - script: |
+- script: |
     ls /home/vsts/work/1/s/components/Header
   displayName: 'List Header'
 
