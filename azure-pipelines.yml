@@ -21,9 +21,7 @@ steps:
   displayName: 'Install Node.js'
 
 - script: |
-    ls /home/vsts/work/1/s/src
-    cat /home/vsts/work/1/s/package.json
-    cat /home/vsts/work/1/s/package-lock.json
+    ls ./
   displayName: 'List Header'
 
 - script: |
