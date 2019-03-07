@@ -1,35 +1,59 @@
-// // import React from "react"
-// import PropTypes from "prop-types"
-// import { useStaticQuery, graphql } from "gatsby"
-// // import ContainerMaxWidth from "components/shared/ContainerMaxWidth"
-// // import Text from "components/shared/Text"
+import React from "react"
+import PropTypes from "prop-types"
+import { useStaticQuery, graphql } from "gatsby"
+import { Row, Col } from "reactstrap"
+import ContainerMaxWidth from "components/shared/ContainerMaxWidth"
+import Text from "components/shared/Text"
 
-// const InfoBlocks = (props) => {
+const InfoBlocks = (props) => {
 
-//     const markdown = useStaticQuery(graphql`
-//         query {
-//             allContentBlocksJson {
-//                 edges {
-//                     node {
-//                         id
-//                     }
-//                 }
-//             }
-//         }
-//     `)
+    const data = useStaticQuery(graphql`
+        query {
+            allContentBlocksJson {
+                edges {
+                    node {
+                        id
+                        infoBlocks {
+                            animation
+                            title
+                            textHTML
+                        }
+                    }
+                }
+            }
+        }
+    `)
 
-//     // Retrieve block
-//     const block = markdown.allContentBlocksJson.edges.filter(
-//         ({ node }) => props.id === node.id
-//     )[0]
+    // Retrieve block
+    const block = data.allContentBlocksJson.edges.filter(
+        ({ node }) => props.id === node.id
+    )[0]
 
-//     console.log(block)
+    const infoBlocks = block.node.infoBlocks.map( (block, i) => {
+        return(
+            <Col md={6} key={i}>
+                <Row>
+                    <Col></Col>
+                    <Col>
+                        <h3>{block.title}</h3>
+                        <Text dangerouslySetInnerHTML={{ __html: block.textHTML }} />
+                    </Col>
+                </Row>
+            </Col>
+        )
+    })
 
-//     return "infoblock"
-// }
+    return(
+        <ContainerMaxWidth className="py-3">
+            <Row>
+                { infoBlocks }
+            </Row>
+        </ContainerMaxWidth>
+    )
+}
 
-// InfoBlocks.propTypes = {
-//     id: PropTypes.node.isRequired,
-// }
+InfoBlocks.propTypes = {
+    id: PropTypes.node.isRequired,
+}
 
-// export default InfoBlocks
+export default InfoBlocks

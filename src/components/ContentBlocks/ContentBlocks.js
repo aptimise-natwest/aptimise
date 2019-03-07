@@ -22,7 +22,7 @@ const ContentBlocks = (props) => {
 
     // Filter content blocks that belong to the current page
     const contentBlocks = data.allContentBlocksJson.edges.filter(
-        ({ node }) => pageBlocks.indexOf(node.id)
+        ({ node }) =>  pageBlocks.indexOf(node.id) >= 0
     )
 
     let blocks = "";
@@ -30,6 +30,8 @@ const ContentBlocks = (props) => {
     if (contentBlocks !== null) {
 
         blocks = contentBlocks.map((block, i) => {
+        
+            // console.log(block.node.type)
 
             switch (block.node.type) {
 
