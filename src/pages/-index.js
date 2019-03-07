@@ -1,9 +1,6 @@
 import React from "react"
 import { Link } from "gatsby"
-
 import Layout from "components/Layout/Layout"
-import SEO from "utils/Seo"
-
 import Fast from "components/shared/Fast"
 import Accurate from "components/shared/Accurate"
 import Secure from "components/shared/Secure"
@@ -11,8 +8,6 @@ import Simple from "components/shared/Simple"
 
 const IndexPage = () => (
 	<Layout>
-		<SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
-
         <div style={{
             maxWidth: "200px"
         }}>

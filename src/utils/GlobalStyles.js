@@ -47,7 +47,7 @@ const GlobalStyles = createGlobalStyle`
     body {
         font-family: ${props => props.theme.font.family.body};
         font-size: ${props => props.theme.font.size.base};
-        font-weight: ${props => props.theme.font.weight.base};
+        font-weight: ${props => props.theme.font.weight.light};
         line-height: ${props => props.theme.font.lineHeight.base};
         -webkit-font-smoothing: antialiased;
     }

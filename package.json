@@ -1,9 +1,9 @@
 {
-    "name": "gatsby-starter-default",
+    "name": "aptimise-website",
     "private": true,
-    "description": "A simple starter to get up and developing quickly with Gatsby",
+    "description": "Aptimise website built in Gatsby",
     "version": "0.1.0",
-    "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+    "author": "Dewynters",
     "dependencies": {
         "@fortawesome/fontawesome-svg-core": "^1.2.15",
         "@fortawesome/free-brands-svg-icons": "^5.7.2",
@@ -23,7 +23,7 @@
         "gatsby-plugin-sitemap": "^2.0.6",
         "gatsby-plugin-styled-components": "^3.0.6",
         "gatsby-source-filesystem": "^2.0.20",
-        "gatsby-transformer-remark": "^2.3.1",
+        "gatsby-transformer-json": "^2.1.8",
         "gatsby-transformer-sharp": "^2.1.13",
         "gsap": "^2.1.1",
         "node-sass": "^4.11.0",

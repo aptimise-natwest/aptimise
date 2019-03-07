@@ -12,8 +12,13 @@ class Accurate extends Component {
     componentDidMount() {
         // create animation
         this.animation()
-        // play animation
-        this.play()
+    }
+
+    componentDidUpdate() {
+        if (this.props.play) {
+            // play animation
+            this.play()
+        }
     }
 
     play() {
@@ -45,7 +50,8 @@ class Accurate extends Component {
         return (
             <svg viewBox="0 0 75 90.7" 
                 style={{
-                    overflow: "visible"
+                    overflow: "visible",
+                    maxWidth: "100%"
                 }}
             >
                 <path fill={theme.colors.turquoise} d="M0 68.82L37.45 90.7 75 68.65 37.45 47.33 0 68.82z" ref={(bottomPath) => this.bottomPath = bottomPath} />
@@ -53,6 +59,10 @@ class Accurate extends Component {
             </svg>
         )
     }
+}
+
+Accurate.defaultProps = {
+    play: true
 }
 
 export default withTheme(Accurate)

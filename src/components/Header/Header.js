@@ -5,6 +5,7 @@ import styled from "styled-components"
 
 const HeaderWrap = styled.header`
     position: fixed;
+    z-index: 100;
     top: 0;
     left: 0;
     width: 100%;
@@ -20,6 +21,10 @@ class Header extends Component {
 
     componentDidMount() {
         window.addEventListener('scroll', this.brandBarPosition)
+    }
+
+    componentWillUnmount() {
+        window.removeEventListener('scroll', this.brandBarPosition)
     }
 
     brandBarPosition() {

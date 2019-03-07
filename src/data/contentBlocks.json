@@ -1,0 +1,35 @@
+[
+    {
+        "id": "textBlockHome",
+        "type": "TextBlock",
+        "size": "xl",
+        "weight": "thin",
+        "textHTML": "<p>Designed for SMEs, APtimise is the UK’s only end-to-end invoices and payments solution, removing the frustration of the traditional Accounts Payable process and making it faster, more accurate, simpler and secure.</p>"
+    },
+    {
+        "id": "infoBlocksHome",
+        "type": "InfoBlocks",
+        "infoBlocks": [
+            {
+                "animation": "fast",
+                "title": "Fast",
+                "textHTML": "<p>APtimise automatically reads and validates your invoices, removing the need for manual keying.</p><p>It’s proven to reduce the Accounts Payable time by 50%, freeing up staff to focus on growing the business. And it’s compatible with most leading accounting software.</p>"
+            },
+            {
+                "animation": "simple",
+                "title": "Simple",
+                "textHTML": "<p>Using APtimise is easy – you simply log on to our web-based solution from anywhere and get going.</p><p>Digitised approvals, intelligent payments and instant notifications will take the hassle out of your Accounts Payable process.</p>"
+            },
+            {
+                "animation": "accurate",
+                "title": "Accurate",
+                "textHTML": "<p>With a 99.5% accuracy read rate at line item level, APtimise is a unique Accounts Payable solution.</p><p>It radically reduces the chance of human error with further smart automations such as invoice-to-PO matching, automated coding and exception flagging.</p>"
+            },
+            {
+                "animation": "secure",
+                "title": "Secure",
+                "textHTML": "<p>APtimise actively monitors for signs of fraud – 47% of SMEs received a suspicious or fraudulent invoice in 2017 – so it might come in handy. You’ll have full visibility of audit trails too.</p><p>And because it’s backed by NatWest, it comes with bank-grade security for complete peace of mind.</p>"
+            }
+        ]
+    }
+]
