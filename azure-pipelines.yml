@@ -21,7 +21,7 @@ steps:
   displayName: 'Install Node.js'
 
 - script: |
-    ls /home/vsts/work/1/s/components/Header
+    ls /home/vsts/work/1/s/src
   displayName: 'List Header'
 
 - script: |
