@@ -7,7 +7,7 @@ import theme from "utils/Theme"
 import GlobalStyles from "utils/GlobalStyles"
 import SEO from "utils/Seo"
 import Header from "components/Header/Header"
-import Footer from "components/Footer/Footer"
+// import Footer from "components/Footer/Footer"
 
 const SiteWrap = styled.div`
     padding-top: 95px;
@@ -34,7 +34,7 @@ const Layout = ({children}) => {
 				<Header siteTitle={data.site.siteMetadata.title} />
                 <div style={{ minHeight: '100vh' }}></div>
 				<main>{children}</main>
-                <Footer />
+                {/* <Footer /> */}
             </SiteWrap>
 		</ThemeProvider>
 	)
