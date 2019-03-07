@@ -15,7 +15,32 @@ steps:
     versionSpec: '8.x'
   displayName: 'Install Node.js'
 
+# - script: |
+#    rm -R /home/vsts/work/1/s/public
+#  displayName: 'Remove public'
+
 - script: |
+    npm install -g gatsby-cli
+  displayName: 'install gatsby'
+
+- script: |
+    cd gatsby-site
     npm install
-    npm run build
-  displayName: 'npm install and build'
+    npx gatsby build
+  displayName: 'gatsby build'
+ 
+
+- task: CopyFiles@2
+  inputs:
+    sourceFolder: 'public'
+    contents: '**' 
+    targetFolder: $(Build.ArtifactStagingDirectory)
+    cleanTargetFolder: true 
+  displayName: 'copy built site'
+
+- task: PublishBuildArtifacts@1
+  inputs:
+    pathtoPublish: '$(Build.ArtifactStagingDirectory)' 
+    artifactName: 'drop' 
+    publishLocation: 'Container'
+
