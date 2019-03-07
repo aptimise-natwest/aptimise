@@ -71,3 +71,4 @@ yarn-error.log
 # PhpStorm
 .idea/
 
+package-lock.json
