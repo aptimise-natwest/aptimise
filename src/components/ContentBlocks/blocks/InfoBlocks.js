@@ -74,8 +74,6 @@ class Blocks extends Component {
     }
 
     playAnimation(isVisible, i) {
-        console.log('play animation ' + i)
-        console.log(isVisible)
         if (isVisible) {
             let animation = [...this.state.animation]
             animation[i] = true
@@ -88,7 +86,10 @@ class Blocks extends Component {
 
         const infoBlocks = block.node.infoBlocks.map((block, i) => {
             return (
-                <VisibilitySensor key={i} onChange={(isVisible, i) => console.log(i)}>
+                <VisibilitySensor 
+                    key={i}
+                    onChange={(isVisible) => this.playAnimation(isVisible, i)}
+                >
                     <Col lg={6} className="pb-5 pb-lg-4">
                         <Row>
                             <Col xs={3} md={2} lg={3} xl={2}>
