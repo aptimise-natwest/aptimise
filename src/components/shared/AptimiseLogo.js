@@ -1,6 +1,6 @@
 import React from "react"
-import aptimiseLogoImg from "images/logos/aptimise-logo.svg"
-import aptimiseLogoImgWhite from "images/logos/aptimise-logo-white.svg"
+import aptimiseLogoImg from "../../images/logos/aptimise-logo.svg"
+import aptimiseLogoImgWhite from "../../images/logos/aptimise-logo-white.svg"
 
 const AptimiseLogo = (props) => (
     <img 

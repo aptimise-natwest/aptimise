@@ -1,8 +1,8 @@
 import React from "react"
-import Fast from "components/shared/Fast"
-import Accurate from "components/shared/Accurate"
-import Secure from "components/shared/Secure"
-import Simple from "components/shared/Simple"
+import Fast from "./Fast"
+import Accurate from "./Accurate"
+import Secure from "./Secure"
+import Simple from "./Simple"
 
 const Animation = (props) => {
 

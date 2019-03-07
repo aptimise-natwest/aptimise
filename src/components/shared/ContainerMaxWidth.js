@@ -1,6 +1,6 @@
 import { Container } from "reactstrap"
 import styled from "styled-components"
-import { media } from 'utils/media';
+import { media } from '../../utils/media';
 
 const ContainerMaxWidth = styled(Container)`
     max-width: ${props => props.theme.sizes.xxl};

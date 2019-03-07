@@ -1,5 +1,5 @@
 import React from "react"
-import natwestLogoImg from "images/logos/natwest-logo.svg"
+import natwestLogoImg from "../../images/logos/natwest-logo.svg"
 
 const NatwestLogo = () => (
     <img src={natwestLogoImg} alt="APtimise" width="130" />

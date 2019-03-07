@@ -1,8 +1,8 @@
 import React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
-import ContainerMaxWidth from "components/shared/ContainerMaxWidth"
-import Text from "components/shared/Text"
+import ContainerMaxWidth from "../../shared/ContainerMaxWidth"
+import Text from "../../shared/Text"
 
 const TextBlock = (props) => {
 

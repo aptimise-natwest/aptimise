@@ -1,10 +1,10 @@
 import React from "react"
 import { Link } from "gatsby"
-import Layout from "components/Layout/Layout"
-import Fast from "components/shared/Fast"
-import Accurate from "components/shared/Accurate"
-import Secure from "components/shared/Secure"
-import Simple from "components/shared/Simple"
+import Layout from "../components/Layout/Layout"
+import Fast from "../components/shared/Fast"
+import Accurate from "../components/shared/Accurate"
+import Secure from "../components/shared/Secure"
+import Simple from "../components/shared/Simple"
 
 const IndexPage = () => (
 	<Layout>
