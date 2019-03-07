@@ -3,19 +3,19 @@ import { Link } from "gatsby"
 import { TimelineMax } from "gsap/all"
 import VisibilitySensor from "react-visibility-sensor"
 import styled from "styled-components"
-import { media } from '../../utils/Media';
+import { media } from "utils/Media";
 import { Container, Row, Col } from "reactstrap"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import AptimiseLogo from "../shared/AptimiseLogo"
-import Text from "../shared/Text"
-import footerBg from "../../images/backgrounds/footer-bg.svg"
-import footerTopBg from "../../images/backgrounds/footer-top-bg.svg"
-import xeroLogo from "../../images/logos/xero-logo.svg"
-import sageLogo from "../../images/logos/sage-logo.svg"
-import quickbooksLogo from "../../images/logos/quickbooks-logo.svg"
-import aqillaLogo from "../../images/logos/aqilla-logo.svg"
-import netsuiteLogo from "../../images/logos/netsuite-logo.svg"
-import natwestLogo from "../../images/logos/natwest-logo-white.svg"
+import AptimiseLogo from "components/shared/AptimiseLogo"
+import Text from "components/shared/Text"
+import footerBg from "images/backgrounds/footer-bg.svg"
+import footerTopBg from "images/backgrounds/footer-top-bg.svg"
+import xeroLogo from "images/logos/xero-logo.svg"
+import sageLogo from "images/logos/sage-logo.svg"
+import quickbooksLogo from "images/logos/quickbooks-logo.svg"
+import aqillaLogo from "images/logos/aqilla-logo.svg"
+import netsuiteLogo from "images/logos/netsuite-logo.svg"
+import natwestLogo from "images/logos/natwest-logo-white.svg"
 
 import { 
     faTwitter,

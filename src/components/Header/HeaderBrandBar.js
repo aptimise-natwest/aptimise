@@ -1,6 +1,6 @@
 import React, { Component } from "react"
 import styled from "styled-components"
-import NatwestLogo from "../shared/NatwestLogo";
+import NatwestLogo from "components/shared/NatwestLogo";
 
 const BrandBar = styled.div`
     width: 100%;

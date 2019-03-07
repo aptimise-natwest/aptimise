@@ -2,9 +2,9 @@ import React, { Component } from "react"
 import PropTypes from "prop-types"
 import { StaticQuery, graphql } from "gatsby"
 import { Row, Col } from "reactstrap"
-import ContainerMaxWidth from "../../shared/ContainerMaxWidth"
-import Animation from "../../shared/Animation"
-import Text from "../../shared/Text"
+import ContainerMaxWidth from "components/shared/ContainerMaxWidth"
+import Animation from "components/shared/Animation"
+import Text from "components/shared/Text"
 import VisibilitySensor from "react-visibility-sensor"
 
 const InfoBlocks = (props) => (

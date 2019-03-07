@@ -2,12 +2,12 @@ import React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 import styled, { ThemeProvider } from "styled-components";
-import '../../scss/bootstrap.scss'
-import theme from "../../utils/Theme"
-import GlobalStyles from "../../utils/GlobalStyles"
-import SEO from "../../utils/Seo"
-import Header from "../Header/Header"
-import Footer from "../Footer/Footer"
+import "scss/bootstrap.scss"
+import theme from "utils/Theme"
+import GlobalStyles from "utils/GlobalStyles"
+import SEO from "utils/Seo"
+import Header from "components/Header/Header"
+import Footer from "components/Footer/Footer"
 
 const SiteWrap = styled.div`
     padding-top: 95px;

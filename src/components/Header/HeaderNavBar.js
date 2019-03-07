@@ -2,10 +2,10 @@ import React from "react"
 import { Link } from "gatsby";
 import { Row, Col } from "reactstrap"
 import styled from "styled-components"
-import { media } from '../../utils/Media';
-import AptimiseLogo from "../shared/AptimiseLogo"
-import Button from "../shared/Button"
-import ContainerMaxWidth from "../shared/ContainerMaxWidth"
+import { media } from "utils/Media";
+import AptimiseLogo from "components/shared/AptimiseLogo"
+import Button from "components/shared/Button"
+import ContainerMaxWidth from "components/shared/ContainerMaxWidth"
 
 const NavBar = styled.div`
     width: 100%;
