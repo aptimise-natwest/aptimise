@@ -29,7 +29,7 @@ module.exports = {
 				path: `${__dirname}/src/data`,
 			},
 		},
-		`gatsby-transformer-remark`,
+		`gatsby-transformer-json`,
 		`gatsby-transformer-sharp`,
 		`gatsby-plugin-sharp`,
 		{

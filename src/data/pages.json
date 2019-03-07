@@ -1,0 +1,9 @@
+[
+    {
+        "id": "home",
+        "path": "/",
+        "title": "Home",
+        "metaDescription": "lorem ipsum",
+        "contentBlocks": [ "textBlockHome", "infoBlocksHome" ]
+    }
+]
