@@ -22,10 +22,11 @@ const font = {
         body: `"RN House Sans W01 Light", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"`
     },
     size: {
-        base: `${fontSizeBase * .875}rem`,
-        sm: `${fontSizeBase * .75}rem`,
-        lg: `${fontSizeBase * 1.25}rem`,
-        xl: `${fontSizeBase * 1.5}rem`
+        base: `${fontSizeBase * .875}rem`, // 14px
+        sm: `${fontSizeBase * .75}rem`, // 12px
+        md: `${fontSizeBase}rem`, // 16px
+        lg: `${fontSizeBase * 1.25}rem`, // 20px
+        xl: `${fontSizeBase * 1.5}rem` // 24px
     },
     weight: {
         base: 400,

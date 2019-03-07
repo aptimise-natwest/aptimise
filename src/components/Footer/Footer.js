@@ -1,6 +1,6 @@
 import React, { Component } from "react"
 import { Link } from "gatsby"
-import { TimelineMax } from "gsap/all"
+import { TimelineMax } from "gsap"
 import VisibilitySensor from "react-visibility-sensor"
 import styled from "styled-components"
 import { media } from "utils/Media";
@@ -180,15 +180,22 @@ class Footer extends Component {
                                             <FontAwesomeIcon icon={faFacebookF} />
                                         </LinkItem>
                                     </LinkWrap>
+                                    <Text className="pb-3" size="md">WeWork building 8, Devonshire Square, London, EC2M 4PL</Text>
                                     <UsefulLinks>
                                         <li>
-                                            <a href="mailto:">Contact us</a>
+                                            <a href="mailto:">
+                                                <Text size="md">Contact us</Text>
+                                            </a>
                                         </li>
                                         <li>
-                                            <Link to="/privacy-policy/">Privacy Policy</Link>
+                                            <Link to="/privacy-policy/">
+                                                <Text size="md">Privacy Policy</Text>
+                                            </Link>
                                         </li>
                                         <li>
-                                            <Link to="/faqs/">FAQs</Link>
+                                            <Link to="/faqs/">
+                                                <Text size="md">FAQs</Text>
+                                            </Link>
                                         </li>
                                     </UsefulLinks>                            
                                 </Col>
@@ -213,7 +220,9 @@ class Footer extends Component {
                                     <a href="#">
                                         <img src={natwestLogo} alt="Natwest" style={{ maxWidth: "133px" }} />
                                     </a>
-                                    <Text size="sm" className="py-3">Our <Link to="/privacy-policy/">Privacy Policy</Link></Text>
+                                    <Text size="md" className="pt-2">
+                                        Our <Link to="/privacy-policy/">Privacy Policy</Link>
+                                    </Text>
                                 </Col>
                             </Row>
                         </Container>
