@@ -12,8 +12,13 @@ class Secure extends Component {
     componentDidMount() {
         // create animation
         this.animation()
-        // play animation
-        this.play()
+    }
+
+    componentDidUpdate() {
+        if (this.props.play) {
+            // play animation
+            this.play()
+        }
     }
 
     play() {
@@ -57,7 +62,8 @@ class Secure extends Component {
         return (
             <svg viewBox="0 0 288 309.9"
                 style={{
-                    overflow: "visible"
+                    overflow: "visible",
+                    maxWidth: "100%"
                 }}
             >
                 <path fill={theme.colors.purpleDark} d="M144 0L0 81l144 81 144-81L144 0z" ref={(topPath) => this.topPath = topPath} />
@@ -69,6 +75,10 @@ class Secure extends Component {
             </svg>
         )
     }
+}
+
+Secure.defaultProps = {
+    play: true
 }
 
 export default withTheme(Secure)

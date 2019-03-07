@@ -12,8 +12,13 @@ class Simple extends Component {
     componentDidMount() {
         // create animation
         this.animation()
-        // play animation
-        this.play()
+    }
+
+    componentDidUpdate() {
+        if (this.props.play) {
+            // play animation
+            this.play()
+        }
     }
 
     play() {
@@ -54,7 +59,8 @@ class Simple extends Component {
         return (
             <svg viewBox="0 0 76.19 82" 
                 style={{
-                    overflow: "visible"
+                    overflow: "visible",
+                    maxWidth: "100%"
                 }}
             >
                 <defs>
@@ -65,7 +71,7 @@ class Simple extends Component {
                         <path fill="#fff" d="M76.18 41.74V28L40.46 48.52v13.54z" ref={(rightClip) => this.rightClip = rightClip} />
                     </clipPath>
                 </defs>
-                <path fill={theme.colors.darkPurple} d="M0 21.82L38 44l38.19-22.34L38 0z" ref={(topPath) => this.topPath = topPath} />
+                <path fill={theme.colors.purpleDark} d="M0 21.82L38 44l38.19-22.34L38 0z" ref={(topPath) => this.topPath = topPath} />
                 <g id="clipLeftReveal" clipPath="url(#clipLeftPath)">
                     <path fill={theme.colors.yellow} d="M0 41.74V28.16l35.51 20.36v13.54z"  />
                 </g>
@@ -78,6 +84,10 @@ class Simple extends Component {
             </svg>
         )
     }
+}
+
+Simple.defaultProps = {
+    play: true
 }
 
 export default withTheme(Simple)

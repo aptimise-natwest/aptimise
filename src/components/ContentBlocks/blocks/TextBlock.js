@@ -12,8 +12,9 @@ const TextBlock = (props) => {
                 edges {
                     node {
                         id
-                        textHTML
                         size
+                        weight
+                        textHTML
                     }
                 }
             }
@@ -25,13 +26,15 @@ const TextBlock = (props) => {
         ({ node }) => props.id === node.id
     )[0]
 
-    const { textHTML, size } = block.node
-
-    // console.log(props.id)
+    const { size, weight, textHTML } = block.node
 
     return(
         <ContainerMaxWidth className="py-3">
-            <Text dangerouslySetInnerHTML={{ __html: textHTML }} size={size} />
+            <Text 
+                dangerouslySetInnerHTML={{ __html: textHTML }} 
+                size={size} 
+                weight={weight} 
+            />
         </ContainerMaxWidth>
     )
 }

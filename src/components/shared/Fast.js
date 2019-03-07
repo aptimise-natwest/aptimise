@@ -12,8 +12,13 @@ class Fast extends Component {
     componentDidMount() {
         // create animation
         this.animation()
-        // play animation
-        this.play()
+    }
+
+    componentDidUpdate() {
+        if (this.props.play) {
+            // play animation
+            this.play()
+        }
     }
 
     play() {
@@ -45,7 +50,8 @@ class Fast extends Component {
 
         return(
             <svg viewBox="0 0 76.19 82" id="fast" style={{
-                overflow: "visible"
+                overflow: "visible",
+                maxWidth: "100%"
             }}>
                 <path fill={theme.colors.purpleDark} d="M0 21.82L38 44l38.19-22.34L38 0z" ref={(topPath) => this.topPath = topPath} />
                 <path fill={theme.colors.yellow} d="M0 41.74V28.16l35.51 20.36v13.54z" />
@@ -61,6 +67,10 @@ class Fast extends Component {
             </svg>
         )
     }
+}
+
+Fast.defaultProps = {
+    play: true
 }
 
 export default withTheme(Fast)
