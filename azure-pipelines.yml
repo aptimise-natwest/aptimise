@@ -20,9 +20,9 @@ steps:
     versionSpec: '8.x'
   displayName: 'Install Node.js'
 
-# - script: |
-#    rm -R /home/vsts/work/1/s/public
-#  displayName: 'Remove public'
+- script: |
+    ls ./
+  displayName: 'List Header'
 
 - script: |
     npm install -g gatsby-cli
