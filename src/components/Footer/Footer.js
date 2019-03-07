@@ -3,7 +3,7 @@ import { Link } from "gatsby"
 import { TimelineMax } from "gsap/all"
 import VisibilitySensor from "react-visibility-sensor"
 import styled from "styled-components"
-import { media } from '../../utils/media';
+import { media } from '../../utils/Media';
 import { Container, Row, Col } from "reactstrap"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import AptimiseLogo from "../shared/AptimiseLogo"

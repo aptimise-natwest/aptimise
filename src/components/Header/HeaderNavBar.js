@@ -2,7 +2,7 @@ import React from "react"
 import { Link } from "gatsby";
 import { Row, Col } from "reactstrap"
 import styled from "styled-components"
-import { media } from '../../utils/media';
+import { media } from '../../utils/Media';
 import AptimiseLogo from "../shared/AptimiseLogo"
 import Button from "../shared/Button"
 import ContainerMaxWidth from "../shared/ContainerMaxWidth"
