@@ -22,6 +22,8 @@ steps:
 
 - script: |
     ls /home/vsts/work/1/s/src
+    cat /home/vsts/work/1/s/package.json
+    cat /home/vsts/work/1/s/package-lock.json
   displayName: 'List Header'
 
 - script: |
