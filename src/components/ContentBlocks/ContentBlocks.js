@@ -2,6 +2,7 @@ import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import TextBlock from "./blocks/TextBlock"
 import InfoBlocks from "./blocks/InfoBlocks"
+import CarouselBlocks from "./blocks/CarouselBlocks"
 
 const ContentBlocks = (props) => {
 
@@ -40,6 +41,9 @@ const ContentBlocks = (props) => {
 
                 case "InfoBlocks":
                     return <InfoBlocks id={block.node.id} key={i} />
+
+                case "CarouselBlocks":
+                    return <CarouselBlocks id={block.node.id} key={i} />
 
                 default:
                     return ""

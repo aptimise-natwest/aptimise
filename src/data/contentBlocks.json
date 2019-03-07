@@ -30,5 +30,47 @@
                 "textHTML": "<p>APtimise actively monitors for signs of fraud – 47% of SMEs received a suspicious or fraudulent invoice in 2017 – so it might come in handy. You’ll have full visibility of audit trails too.</p><p>And because it’s backed by NatWest, it comes with bank-grade security for complete peace of mind.</p>"
             }
         ]
+    },
+    {
+        "id": "carouselBlocksHome",
+        "type": "CarouselBlocks",
+        "carouselBlocks": [
+            {
+                "title": "Don’t just take our word for it",
+                "topText": "Find out how APtimise has helped innovative software company LEAP Legal to improve their processes and reduce time spent on Accounts Payable by an amazing 50%.",
+                "image": "",
+                "name": "Raj Ahluwalia",
+                "position": "UK Finance Director, LEAP Legal",
+                "textHTML": "<p>“Often finance departments are the last to innovate – they’re typically very traditional”, Raj says. “It’s been my mission to update our processes and APtimise was the perfect product for us.”</p><p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Nullam quis risus eget urna mollis ornare vel eu leo.\n\nMaecenas faucibus mollis interdum. Vestibulum id ligula porta felis euismod semper. Aenean lacinia bibendum nulla sed consectetur. Cras mattis consectetur purus sit amet fermentum.</p>",
+                "videoId": ""
+            },
+            {
+                "title": "Don’t just take our word for it",
+                "topText": "Find out how APtimise has helped innovative software company LEAP Legal to improve their processes and reduce time spent on Accounts Payable by an amazing 50%.",
+                "image": "",
+                "name": "Raj Ahluwalia",
+                "position": "UK Finance Director, LEAP Legal",
+                "textHTML": "<p>“Often finance departments are the last to innovate – they’re typically very traditional”, Raj says. “It’s been my mission to update our processes and APtimise was the perfect product for us.”</p><p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Nullam quis risus eget urna mollis ornare vel eu leo.\n\nMaecenas faucibus mollis interdum. Vestibulum id ligula porta felis euismod semper. Aenean lacinia bibendum nulla sed consectetur. Cras mattis consectetur purus sit amet fermentum.</p>",
+                "videoId": ""
+            },
+            {
+                "title": "Don’t just take our word for it",
+                "topText": "Find out how APtimise has helped innovative software company LEAP Legal to improve their processes and reduce time spent on Accounts Payable by an amazing 50%.",
+                "image": "",
+                "name": "Raj Ahluwalia",
+                "position": "UK Finance Director, LEAP Legal",
+                "textHTML": "<p>“Often finance departments are the last to innovate – they’re typically very traditional”, Raj says. “It’s been my mission to update our processes and APtimise was the perfect product for us.”</p><p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Nullam quis risus eget urna mollis ornare vel eu leo.\n\nMaecenas faucibus mollis interdum. Vestibulum id ligula porta felis euismod semper. Aenean lacinia bibendum nulla sed consectetur. Cras mattis consectetur purus sit amet fermentum.</p>",
+                "videoId": ""
+            },
+            {
+                "title": "Don’t just take our word for it",
+                "topText": "Find out how APtimise has helped innovative software company LEAP Legal to improve their processes and reduce time spent on Accounts Payable by an amazing 50%.",
+                "image": "",
+                "name": "Raj Ahluwalia",
+                "position": "UK Finance Director, LEAP Legal",
+                "textHTML": "<p>“Often finance departments are the last to innovate – they’re typically very traditional”, Raj says. “It’s been my mission to update our processes and APtimise was the perfect product for us.”</p><p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Nullam quis risus eget urna mollis ornare vel eu leo.\n\nMaecenas faucibus mollis interdum. Vestibulum id ligula porta felis euismod semper. Aenean lacinia bibendum nulla sed consectetur. Cras mattis consectetur purus sit amet fermentum.</p>",
+                "videoId": ""
+            }
+        ]
     }
 ]
