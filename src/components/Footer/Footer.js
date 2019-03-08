@@ -1,6 +1,6 @@
 import React, { Component } from "react"
 import { Link } from "gatsby"
-import { TimelineMax } from "gsap/all"
+import { TimelineMax } from "gsap"
 import VisibilitySensor from "react-visibility-sensor"
 import styled from "styled-components"
 import { media } from "utils/Media";
@@ -26,6 +26,7 @@ import {
 
 const FooterWrap = styled.footer`
     position: relative;
+    margin-top: 100px;
     color: ${props => props.theme.colors.white};
 
     a {
@@ -35,7 +36,7 @@ const FooterWrap = styled.footer`
 
 const FooterContent = styled.div`
     position: relative;
-    padding: 4rem 0 2rem 0;
+    padding: 4rem 2rem 2rem 2rem;
     background-image: url(${footerBg});
     background-repeat: no-repeat;
     background-size: cover;
@@ -118,10 +119,16 @@ class Footer extends Component {
             animated: false
         }
         this.masterTimeline = new TimelineMax({ paused: true })
+        this.footerTopBgInitialTimeLine = new TimelineMax()
+        this.footerTopBgTimeLine = new TimelineMax()
+        this.footerContentTimeLine = new TimelineMax()
+        this.footerContentInitialTimeLine = new TimelineMax()
         this.onChange = this.onChange.bind(this)
     }
 
     componentDidMount() {
+        // set initial position as mastertimeline is paused
+        this.setInitial()
         // create animation
         this.fadeInFooter()
     }
@@ -136,19 +143,24 @@ class Footer extends Component {
         } 
     }
 
-    fadeInFooter() {
-        const footerTopBgTimeLine = new TimelineMax()
-        const footerContentTimeLine = new TimelineMax()
-        
-        footerTopBgTimeLine
-            .from(this.footerTopBg, .5, { transform: "translate3d(0, 100%, 0)", opacity: 0 })
-            .to(this.footerTopBg, .5, { transform: "translate3d(0, -70px, 0)", opacity: 1 })
+    setInitial() {
+        this.footerTopBgInitialTimeLine
+            .set(this.footerTopBg, { transform: "translate3d(0, 100px, 0)", opacity: 0 })
 
-        footerContentTimeLine
-            .from(this.footerWrap, .5, { transform: "translate3d(0, 100%, 0)", opacity: 0, delay: .4 })
+        this.footerContentInitialTimeLine
+            .set(this.footerWrap, { transform: "translate3d(0, 100px, 0)", opacity: 0, delay: .4 })
+    }
+
+    fadeInFooter() {
+        this.footerTopBgTimeLine
+            .from(this.footerTopBg, .5, { transform: "translate3d(0, 100px, 0)", opacity: 0 })
+            .to(this.footerTopBg, .5, { transform: "translate3d(0, -100px, 0)", opacity: 1 })
+
+        this.footerContentTimeLine
+            .from(this.footerWrap, .5, { transform: "translate3d(0, 100px, 0)", opacity: 0, delay: .4 })
             .to(this.footerWrap, 1, { transform: "translate3d(0, 0, 0)", opacity: 1 })
 
-        this.masterTimeline.add([footerTopBgTimeLine, footerContentTimeLine])
+        this.masterTimeline.add([this.footerTopBgTimeLine, this.footerContentTimeLine])
     }
 
     render() {
@@ -180,15 +192,22 @@ class Footer extends Component {
                                             <FontAwesomeIcon icon={faFacebookF} />
                                         </LinkItem>
                                     </LinkWrap>
+                                    <Text className="pb-3" size="md">WeWork building 8, Devonshire Square, London, EC2M 4PL</Text>
                                     <UsefulLinks>
                                         <li>
-                                            <a href="mailto:">Contact us</a>
+                                            <a href="mailto:">
+                                                <Text size="md">Contact us</Text>
+                                            </a>
                                         </li>
                                         <li>
-                                            <Link to="/privacy-policy/">Privacy Policy</Link>
+                                            <Link to="/privacy-policy/">
+                                                <Text size="md">Privacy Policy</Text>
+                                            </Link>
                                         </li>
                                         <li>
-                                            <Link to="/faqs/">FAQs</Link>
+                                            <Link to="/faqs/">
+                                                <Text size="md">FAQs</Text>
+                                            </Link>
                                         </li>
                                     </UsefulLinks>                            
                                 </Col>
@@ -213,7 +232,9 @@ class Footer extends Component {
                                     <a href="#">
                                         <img src={natwestLogo} alt="Natwest" style={{ maxWidth: "133px" }} />
                                     </a>
-                                    <Text size="sm" className="py-3">Our <Link to="/privacy-policy/">Privacy Policy</Link></Text>
+                                    <Text size="md" className="pt-2">
+                                        Our <Link to="/privacy-policy/">Privacy Policy</Link>
+                                    </Text>
                                 </Col>
                             </Row>
                         </Container>

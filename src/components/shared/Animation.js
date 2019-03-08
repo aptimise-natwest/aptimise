@@ -3,6 +3,7 @@ import Fast from "./Fast"
 import Accurate from "./Accurate"
 import Secure from "./Secure"
 import Simple from "./Simple"
+import More from "./More"
 
 const Animation = (props) => {
 
@@ -17,6 +18,8 @@ const Animation = (props) => {
             return <Secure play={play} />
         case "simple":
             return <Simple play={play} />
+        case "more":
+            return <More play={play} />
         default:
             return ""
     }
