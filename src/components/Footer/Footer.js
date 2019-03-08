@@ -26,6 +26,7 @@ import {
 
 const FooterWrap = styled.footer`
     position: relative;
+    margin-top: 100px;
     color: ${props => props.theme.colors.white};
 
     a {
@@ -118,10 +119,16 @@ class Footer extends Component {
             animated: false
         }
         this.masterTimeline = new TimelineMax({ paused: true })
+        this.footerTopBgInitialTimeLine = new TimelineMax()
+        this.footerTopBgTimeLine = new TimelineMax()
+        this.footerContentTimeLine = new TimelineMax()
+        this.footerContentInitialTimeLine = new TimelineMax()
         this.onChange = this.onChange.bind(this)
     }
 
     componentDidMount() {
+        // set initial position as mastertimeline is paused
+        this.setInitial()
         // create animation
         this.fadeInFooter()
     }
@@ -136,19 +143,24 @@ class Footer extends Component {
         } 
     }
 
-    fadeInFooter() {
-        const footerTopBgTimeLine = new TimelineMax()
-        const footerContentTimeLine = new TimelineMax()
-        
-        footerTopBgTimeLine
-            .from(this.footerTopBg, .5, { transform: "translate3d(0, 100%, 0)", opacity: 0 })
-            .to(this.footerTopBg, .5, { transform: "translate3d(0, -70px, 0)", opacity: 1 })
+    setInitial() {
+        this.footerTopBgInitialTimeLine
+            .set(this.footerTopBg, { transform: "translate3d(0, 100px, 0)", opacity: 0 })
 
-        footerContentTimeLine
-            .from(this.footerWrap, .5, { transform: "translate3d(0, 100%, 0)", opacity: 0, delay: .4 })
+        this.footerContentInitialTimeLine
+            .set(this.footerWrap, { transform: "translate3d(0, 100px, 0)", opacity: 0, delay: .4 })
+    }
+
+    fadeInFooter() {
+        this.footerTopBgTimeLine
+            .from(this.footerTopBg, .5, { transform: "translate3d(0, 100px, 0)", opacity: 0 })
+            .to(this.footerTopBg, .5, { transform: "translate3d(0, -100px, 0)", opacity: 1 })
+
+        this.footerContentTimeLine
+            .from(this.footerWrap, .5, { transform: "translate3d(0, 100px, 0)", opacity: 0, delay: .4 })
             .to(this.footerWrap, 1, { transform: "translate3d(0, 0, 0)", opacity: 1 })
 
-        this.masterTimeline.add([footerTopBgTimeLine, footerContentTimeLine])
+        this.masterTimeline.add([this.footerTopBgTimeLine, this.footerContentTimeLine])
     }
 
     render() {

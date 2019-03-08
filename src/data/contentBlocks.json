@@ -31,5 +31,13 @@
                 "textHTML": "<p>APtimise actively monitors for signs of fraud – 47% of SMEs received a suspicious or fraudulent invoice in 2017 – so it might come in handy. You’ll have full visibility of audit trails too.</p><p>And because it’s backed by NatWest, it comes with bank-grade security for complete peace of mind.</p>"
             }
         ]
+    },
+    {
+        "id": "infoBlockFullWidthHome",
+        "type": "InfoBlockFullWidth",
+        "animation": "more",
+        "title": "Still with us? There’s more!",
+        "textIntroHTML": "<p>It sounds too good to be true, right? See how it could work for your business with an online demo.</p>",
+        "textHTML": "<p>Get up-and-running quickly with the ‘APtimise hour’: set-up and training in 60 minutes </p><p> Our dedicated success managers will help you every step of the way </p><p> Out-of-the-box integration with Xero, Sage50 & 200, Quickbooks, Aqilla and NetSuite </p><p> Not a NatWest customer? No problem. You don’t need to switch your primary banking and our team will help you get going </p>"
     }
 ]
