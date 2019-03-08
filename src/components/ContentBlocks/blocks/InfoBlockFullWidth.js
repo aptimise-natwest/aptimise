@@ -2,10 +2,11 @@ import React, { Component } from "react"
 import PropTypes from "prop-types"
 import { StaticQuery, graphql } from "gatsby"
 import { Row, Col } from "reactstrap"
+import VisibilitySensor from "react-visibility-sensor"
+import { withTheme } from "styled-components"
 import ContainerMaxWidth from "components/shared/ContainerMaxWidth"
 import Animation from "components/shared/Animation"
 import Text from "components/shared/Text"
-import VisibilitySensor from "react-visibility-sensor"
 
 const InfoBlocksFullWidth = (props) => (
     <StaticQuery
@@ -25,7 +26,7 @@ const InfoBlocksFullWidth = (props) => (
             }
         `}
         render={data => (
-            <Blocks data={data} id={props.id} />
+            <Blocks data={data} id={props.id} theme={props.theme} />
         )}
     />
 )
@@ -62,16 +63,24 @@ class Blocks extends Component {
     render() {
         const block = this.getBlock()
         const { animation, title, textIntroHTML, textHTML} = block.node
+
+        // Change to show if partially visible on smaller devices
+        const breakpoint = this.props.theme.sizes.lg.replace('px', '')
+        const partial = window.innerWidth < breakpoint ? true : false 
+
         return (
             <ContainerMaxWidth className="py-3 py-lg-4">
                 <Row>
-                    <VisibilitySensor onChange={this.playAnimation}>
-                        <Col className="pb-5 pb-lg-4">
+                    <VisibilitySensor 
+                        onChange={this.playAnimation}
+                        partialVisibility={partial}
+                    >
+                        <Col className="py-lg-4">
                             <Row>
                                 <Col xs={3} md={2} lg={3} xl={2}>
                                     <Animation type={animation} play={this.state.animation} />
                                 </Col>
-                                <Col xs={{ offset: 1, size: 8 }} md={8} lg={7} xl={8}>
+                                <Col xs={9} sm={{ offset: 1, size: 8 }} lg={7} xl={8}>
                                     <h4 className="pb-3">{title}</h4>
                                     <Text dangerouslySetInnerHTML={{ __html: textIntroHTML }} size="lg" />
                                     <Text dangerouslySetInnerHTML={{ __html: textHTML }} />
@@ -93,4 +102,4 @@ Blocks.propTypes = {
     data: PropTypes.any.isRequired,
 }
 
-export default InfoBlocksFullWidth
+export default withTheme(InfoBlocksFullWidth)

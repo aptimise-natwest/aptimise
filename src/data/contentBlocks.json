@@ -33,6 +33,20 @@
         ]
     },
     {
+        "id": "linkBlockHome",
+        "type": "LinkBlock",
+        "links": [
+            {
+                "link": "https://google.com",
+                "linkText": "download our “how it works” guide"
+            },
+            {
+                "link": "/help/",
+                "linkText": "need help?"
+            }
+        ] 
+    },
+    {
         "id": "infoBlockFullWidthHome",
         "type": "InfoBlockFullWidth",
         "animation": "more",

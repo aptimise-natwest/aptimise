@@ -2,6 +2,7 @@ import React, { Component } from "react"
 import PropTypes from "prop-types"
 import { TimelineMax } from "gsap"
 import VisibilitySensor from "react-visibility-sensor"
+import { withTheme } from 'styled-components'
 
 class FadeInUp extends Component {
 
@@ -45,8 +46,16 @@ class FadeInUp extends Component {
     }
 
     render() {
+
+        // Change to show if partially visible on smaller devices
+        const breakpoint = this.props.theme.sizes.lg.replace('px','')
+        const partial = window.innerWidth < breakpoint ? true : false 
+        
         return (
-            <VisibilitySensor onChange={this.play}>
+            <VisibilitySensor 
+                onChange={this.play}
+                partialVisibility={partial}
+            >
                 {this.props.children}
             </VisibilitySensor>
         )
@@ -63,4 +72,4 @@ FadeInUp.defaultProps = {
     delay: 0
 }
 
-export default FadeInUp
+export default withTheme(FadeInUp)

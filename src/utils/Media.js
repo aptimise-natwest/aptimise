@@ -1,4 +1,3 @@
-// match bootstrap sizes, also add xxl
 import theme from "./Theme.js";
 
 export const media = Object.keys(theme.sizes).reduce((acc, cur) => {

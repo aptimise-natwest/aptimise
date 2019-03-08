@@ -16,10 +16,14 @@ const NavBar = styled.div`
         padding: .5rem;
     }
 `
+const NavBarContainer = styled(ContainerMaxWidth)`
+    padding-left: 1rem;
+    padding-right: 1rem;
+`
 
 const HeaderNavBar = () => (
     <NavBar>
-        <ContainerMaxWidth>
+        <NavBarContainer>
             <Row className="justify-content-between align-items-center">
                 <Col xs="auto">
                     <Link to="/">
@@ -30,7 +34,7 @@ const HeaderNavBar = () => (
                     <Button href="#">book a demo</Button>
                 </Col>
             </Row>
-        </ContainerMaxWidth>
+        </NavBarContainer>
     </NavBar>
 )
 
