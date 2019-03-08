@@ -4,6 +4,7 @@ import TextBlock from "./blocks/TextBlock"
 import InfoBlocks from "./blocks/InfoBlocks"
 import InfoBlockFullWidth from "./blocks/InfoBlockFullWidth"
 import WhitePaperBlock from "./blocks/WhitePaperBlock"
+// import CarouselBlocks from "./blocks/CarouselBlocks"s
 
 const ContentBlocks = (props) => {
 
