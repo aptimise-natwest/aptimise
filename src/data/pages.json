@@ -4,6 +4,11 @@
         "path": "/",
         "title": "Home",
         "metaDescription": "lorem ipsum",
-        "contentBlocks": [ "textBlockHome", "infoBlocksHome" ]
+        "contentBlocks": [ 
+            "textBlockHome", 
+            "infoBlocksHome", 
+            "infoBlockFullWidthHome", 
+            "whitePaperBlockHome" 
+        ]
     }
 ]

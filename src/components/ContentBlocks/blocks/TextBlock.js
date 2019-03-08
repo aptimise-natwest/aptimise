@@ -29,7 +29,7 @@ const TextBlock = (props) => {
     const { size, weight, textHTML } = block.node
 
     return(
-        <ContainerMaxWidth className="py-3">
+        <ContainerMaxWidth className="py-3 py-lg-4">
             <Text 
                 dangerouslySetInnerHTML={{ __html: textHTML }} 
                 size={size} 

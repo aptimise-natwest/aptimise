@@ -14,8 +14,15 @@ const Button = styled.a`
 
     &:hover {
         background-color: ${props => props.theme.colors.grey};
-        color: ${props => props.theme.colors.white};
         text-decoration: none;
+        color: ${props => props.theme.colors.blackOff};
+    }
+
+    &:not([href]):not([tabindex]) {
+        color: ${props => props.theme.colors.white};
+        &:hover {
+            color: ${props => props.theme.colors.blackOff};
+        }
     }
 
     ${props => props.grey && css`

@@ -5,7 +5,7 @@ import { Row, Col } from "reactstrap"
 import ContainerMaxWidth from "components/shared/ContainerMaxWidth"
 import Animation from "components/shared/Animation"
 import Text from "components/shared/Text"
-import VisibilitySensor from "react-visibility-sensor"
+import FadeInUp from "components/shared/FadeInUp"
 
 const InfoBlocks = (props) => (
     <StaticQuery
@@ -43,6 +43,7 @@ class Blocks extends Component {
         this.getBlock = this.getBlock.bind(this)
         this.setAnimationState = this.setAnimationState.bind(this)
         this.playAnimation = this.playAnimation.bind(this)
+        this.fadeInUpAnimated = this.fadeInUpAnimated.bind(this)
     }
 
     componentDidMount() {
@@ -73,11 +74,20 @@ class Blocks extends Component {
         return block
     }
 
-    playAnimation(isVisible, i) {
-        if (isVisible) {
-            let animation = [...this.state.animation]
-            animation[i] = true
-            this.setState({ animation });
+    playAnimation(i) {
+        let animation = [...this.state.animation]
+        animation[i] = true
+        this.setState({ animation });
+    }
+
+    fadeInUpAnimated(animated, id) {
+        // when fadeinup has finished, start the infoblock animation
+        // animated and id are passed up from FadeInUp once animated
+        // get number of animation from id
+        const i = id.split('#infoBlock')[1]
+
+        if (animated) {
+            this.playAnimation(i)
         }
     }
 
@@ -86,27 +96,29 @@ class Blocks extends Component {
 
         const infoBlocks = block.node.infoBlocks.map((block, i) => {
             return (
-                <VisibilitySensor 
-                    key={i}
-                    onChange={(isVisible) => this.playAnimation(isVisible, i)}
-                >
-                    <Col lg={6} className="pb-5 pb-lg-4">
+                <FadeInUp 
+                    key={i} 
+                    elementId={`#infoBlock${i}`} 
+                    animated={this.fadeInUpAnimated}
+                    delay={i}
+                    >
+                    <Col lg={6} className="pb-5 pb-lg-4" id={`infoBlock${i}`}>
                         <Row>
                             <Col xs={3} md={2} lg={3} xl={2}>
                                 <Animation type={block.animation} play={this.state.animation[i]} />
                             </Col>
                             <Col xs={{ offset: 1, size: 8 }} md={8} lg={7} xl={8}>
-                                <Text size="lg" className="pb-3">{block.title}</Text>
+                                <h5 className="pb-2">{block.title}</h5>
                                 <Text dangerouslySetInnerHTML={{ __html: block.textHTML }} />
                             </Col>
                         </Row>
                     </Col>
-                </VisibilitySensor>
+                </FadeInUp> 
             )
         })
 
         return (
-            <ContainerMaxWidth className="py-3">
+            <ContainerMaxWidth className="py-3 py-lg-5">
                 <Row>
                     {infoBlocks}
                 </Row>

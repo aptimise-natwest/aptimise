@@ -47,8 +47,9 @@ const GlobalStyles = createGlobalStyle`
     body {
         font-family: ${props => props.theme.font.family.body};
         font-size: ${props => props.theme.font.size.base};
-        font-weight: ${props => props.theme.font.weight.light};
+        font-weight: normal;
         line-height: ${props => props.theme.font.lineHeight.base};
+        color: ${props => props.theme.colors.blackOff};
         -webkit-font-smoothing: antialiased;
     }
 
@@ -58,8 +59,8 @@ const GlobalStyles = createGlobalStyle`
     h4, 
     h5, 
     h6 {
-        font-family: ${props => props.theme.font.family.bold};
-        font-weight: ${props => props.theme.font.weight.bold};
+        font-family: ${props => props.theme.font.family.light};
+        font-weight: normal;
         line-height: ${props => props.theme.font.lineHeight.headings};
     }
 

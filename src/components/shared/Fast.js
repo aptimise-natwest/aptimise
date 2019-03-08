@@ -1,5 +1,5 @@
 import React, { Component } from "react"
-import { TimelineMax } from "gsap/all"
+import { TimelineMax } from "gsap"
 import { withTheme } from 'styled-components'
 
 class Fast extends Component {
