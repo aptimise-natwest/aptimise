@@ -4,7 +4,7 @@ const sizes = {
     md: "768px",
     lg: "992px",
     xl: "1200px",
-    xxl: "1600px"
+    xxl: "1400px"
 };
 
 const fontSizeBase = 1;
@@ -27,11 +27,6 @@ const font = {
         md: `${fontSizeBase}rem`, // 16px
         lg: `${fontSizeBase * 1.25}rem`, // 20px
         xl: `${fontSizeBase * 1.5}rem` // 24px
-    },
-    weight: {
-        base: 400,
-        light: 300,
-        bold: 600
     },
     lineHeight: {
         base: 1.5,
@@ -64,6 +59,7 @@ export default {
     colors: {
         white: "#ffffff",
         black: "#000000",
+        blackOff: "#222222",
         blue: "#516CBE",
         grey: "#E5E5E5",
         pink: "#E84261",

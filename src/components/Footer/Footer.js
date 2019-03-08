@@ -36,7 +36,7 @@ const FooterWrap = styled.footer`
 
 const FooterContent = styled.div`
     position: relative;
-    padding: 4rem 0 2rem 0;
+    padding: 4rem 2rem 2rem 2rem;
     background-image: url(${footerBg});
     background-repeat: no-repeat;
     background-size: cover;

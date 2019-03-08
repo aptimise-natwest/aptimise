@@ -108,7 +108,7 @@ class Blocks extends Component {
                                 <Animation type={block.animation} play={this.state.animation[i]} />
                             </Col>
                             <Col xs={{ offset: 1, size: 8 }} md={8} lg={7} xl={8}>
-                                <Text size="lg" className="pb-3">{block.title}</Text>
+                                <h5 className="pb-2">{block.title}</h5>
                                 <Text dangerouslySetInnerHTML={{ __html: block.textHTML }} />
                             </Col>
                         </Row>

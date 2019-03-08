@@ -3,6 +3,7 @@ import { useStaticQuery, graphql } from "gatsby"
 import TextBlock from "./blocks/TextBlock"
 import InfoBlocks from "./blocks/InfoBlocks"
 import InfoBlockFullWidth from "./blocks/InfoBlockFullWidth"
+import WhitePaperBlock from "./blocks/WhitePaperBlock"
 
 const ContentBlocks = (props) => {
 
@@ -44,6 +45,9 @@ const ContentBlocks = (props) => {
 
                 case "InfoBlockFullWidth":
                     return <InfoBlockFullWidth id={block.node.id} key={i} />
+
+                case "WhitePaperBlock":
+                    return <WhitePaperBlock id={block.node.id} key={i} />
 
                 default:
                     return ""

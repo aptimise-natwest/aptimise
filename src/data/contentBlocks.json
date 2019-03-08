@@ -39,5 +39,12 @@
         "title": "Still with us? There’s more!",
         "textIntroHTML": "<p>It sounds too good to be true, right? See how it could work for your business with an online demo.</p>",
         "textHTML": "<p>Get up-and-running quickly with the ‘APtimise hour’: set-up and training in 60 minutes </p><p> Our dedicated success managers will help you every step of the way </p><p> Out-of-the-box integration with Xero, Sage50 & 200, Quickbooks, Aqilla and NetSuite </p><p> Not a NatWest customer? No problem. You don’t need to switch your primary banking and our team will help you get going </p>"
+    },
+    {
+        "id": "whitePaperBlockHome",
+        "type": "WhitePaperBlock",
+        "title": "Our whitepaper",
+        "textHTML": "<p>Maecenas sed diam eget risus varius blandit sit amet non magna. Donec ullamcorper nulla non metus auctor fringilla. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Etiam porta sem malesuada magna mollis euismod.</p>",
+        "buttonText": "download whitepaper" 
     }
 ]
