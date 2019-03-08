@@ -4,7 +4,7 @@ const sizes = {
     md: "768px",
     lg: "992px",
     xl: "1200px",
-    xxl: "1600px"
+    xxl: "1400px"
 };
 
 const fontSizeBase = 1;
@@ -22,15 +22,11 @@ const font = {
         body: `"RN House Sans W01 Light", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"`
     },
     size: {
-        base: `${fontSizeBase * .875}rem`,
-        sm: `${fontSizeBase * .75}rem`,
-        lg: `${fontSizeBase * 1.25}rem`,
-        xl: `${fontSizeBase * 1.5}rem`
-    },
-    weight: {
-        base: 400,
-        light: 300,
-        bold: 600
+        base: `${fontSizeBase * .875}rem`, // 14px
+        sm: `${fontSizeBase * .75}rem`, // 12px
+        md: `${fontSizeBase}rem`, // 16px
+        lg: `${fontSizeBase * 1.25}rem`, // 20px
+        xl: `${fontSizeBase * 1.5}rem` // 24px
     },
     lineHeight: {
         base: 1.5,
@@ -63,6 +59,7 @@ export default {
     colors: {
         white: "#ffffff",
         black: "#000000",
+        blackOff: "#222222",
         blue: "#516CBE",
         grey: "#E5E5E5",
         pink: "#E84261",
