@@ -6,6 +6,16 @@ import ContainerMaxWidth from "components/shared/ContainerMaxWidth"
 import Text from "components/shared/Text"
 import Button from "components/shared/Button"
 import ModalAngled from "components/shared/ModalAngled"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faTimes } from '@fortawesome/free-brands-svg-icons'
+import styled from "styled-components"
+
+const ModalClose = styled.a`
+    position: absolute;
+    top: -4rem;
+    color: ${props => props.theme.colors.purpleDark};
+    font-size: 1.5rem;
+`
 
 const WhitePaperBlock = (props) => (
     <StaticQuery
@@ -71,6 +81,10 @@ class WhitePaper extends Component {
                     </Row>
                 </ContainerMaxWidth>
                 <ModalAngled isOpen={this.state.modal} toggle={this.toggle} background={true}>
+                    <ModalClose>
+                        test
+                        <FontAwesomeIcon icon={faTimes} />
+                    </ModalClose>
                     <ModalBody>
                         <Container>
                             <Row className="justify-content-center">

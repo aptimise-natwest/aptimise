@@ -3,6 +3,7 @@ import { Modal } from "reactstrap"
 import { media } from "utils/Media"
 import panelLeft from "images/backgrounds/panel-left.png"
 import panelRight from "images/backgrounds/panel-right.png"
+import angledPanel from "images/backgrounds/angled-panel.svg"
 
 const ModalAngled = styled(Modal)`
     width: 100%;
@@ -14,39 +15,30 @@ const ModalAngled = styled(Modal)`
     margin: 0;
 
     .fade & {
-        transform: translate3d(0, 100vh, 0);
+        transform: translate3d(0, 100vh, 0) !important;
     }
 
-    .in & {
-        transform: translate3d(0, 0, 0);
+    .show & {
+        transform: translate3d(0, 0, 0) !important;
     }
 
-    /* &:before,
-    &:after {
+    &:before {
         content: "";
         position: absolute;
         top: 0;
-        background-color: ${props => props.theme.colors.white};
-        width: 50%;
-        height: 50%;
-        left: -20%;
-        top: -10%;
-        background-color: #ffffff;
+        background-image: url(${angledPanel});
+        background-repeat: no-repeat;
+        background-size: 120%;
+        background-position: bottom center;
         width: 100%;
-        height: 400px;
-        border: 4px solid black;
-        transform: rotate(-25deg);
-        z-index: 5;
+        height: 21vh;
+        left: 0;
+        top: 0;
     }
-
-    &:after {
-        left: auto;
-        right: -20%;
-        transform: rotate(25deg);
-    } */
 
     .modal-content {
         border-radius: 0;
+        border: 0;
         min-height: 80vh;
 
         ${props => props.background && css`

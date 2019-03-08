@@ -82,6 +82,11 @@ const GlobalStyles = createGlobalStyle`
     h6 {
         font-size: ${props => props.theme.font.h6.size};
     }
+
+    .modal-backdrop {
+        background-color: ${props => props.theme.colors.grey};
+        opacity: .3 !important;
+    }
 `;
 
 export default withTheme(GlobalStyles)
