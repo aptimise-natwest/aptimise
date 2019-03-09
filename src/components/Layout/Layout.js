@@ -32,7 +32,6 @@ const Layout = ({children}) => {
 				<SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
 				<GlobalStyles />
 				<Header siteTitle={data.site.siteMetadata.title} />
-                <div style={{ minHeight: '100vh' }}></div>
 				<main>{children}</main>
                 <Footer />
             </SiteWrap>

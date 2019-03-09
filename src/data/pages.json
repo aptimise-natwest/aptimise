@@ -5,6 +5,7 @@
         "title": "Home",
         "metaDescription": "lorem ipsum",
         "contentBlocks": [ 
+            "landingBlockHome",
             "textBlockHome", 
             "infoBlocksHome", 
             "linkBlockHome",

@@ -27,7 +27,6 @@ const LinkBlock = (props) => {
                         links {
                             link
                             linkText
-                            color
                         }
                     }
                 }
