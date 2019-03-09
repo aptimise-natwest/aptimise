@@ -37,11 +37,27 @@ class Blocks extends Component {
         super(props)
 
         this.state = {
-            animation: false
+            animation: false,
+            partialVisible: true
         }
 
         this.getBlock = this.getBlock.bind(this)
         this.playAnimation = this.playAnimation.bind(this)
+    }
+
+    componentDidMount() {
+        // Change to show if partially visible on smaller devices
+        this.partialVisible()
+    }
+
+    partialVisible() {
+        if (typeof window !== undefined) {
+            const breakpoint = this.props.theme.sizes.lg.replace('px', '')
+            const partialVisible = window.innerWidth < breakpoint ? true : false
+            this.setState({
+                partialVisible
+            })
+        }
     }
 
     getBlock() {
@@ -64,16 +80,12 @@ class Blocks extends Component {
         const block = this.getBlock()
         const { animation, title, textIntroHTML, textHTML} = block.node
 
-        // Change to show if partially visible on smaller devices
-        const breakpoint = this.props.theme.sizes.lg.replace('px', '')
-        const partial = window.innerWidth < breakpoint ? true : false 
-
         return (
             <ContainerMaxWidth className="py-3 py-lg-4">
                 <Row>
                     <VisibilitySensor 
                         onChange={this.playAnimation}
-                        partialVisibility={partial}
+                        partialVisibility={this.state.partialVisible}
                     >
                         <Col className="py-lg-4">
                             <Row>

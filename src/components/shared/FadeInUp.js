@@ -10,7 +10,8 @@ class FadeInUp extends Component {
         super(props)
 
         this.state = {
-            animated: false
+            animated: false,
+            partialVisible: true
         }
         
         this.initialTimeline = new TimelineMax()
@@ -25,6 +26,18 @@ class FadeInUp extends Component {
         this.setInitial()
         // create animation
         this.fadeInUp()
+        // Change to show if partially visible on smaller devices
+        this.partialVisible()
+    }
+
+    partialVisible() {
+        if (typeof window !== undefined) {
+            const breakpoint = this.props.theme.sizes.lg.replace('px', '')
+            const partialVisible = window.innerWidth < breakpoint ? true : false
+            this.setState({
+                partialVisible
+            })
+        }
     }
 
     setInitial() {
@@ -47,14 +60,10 @@ class FadeInUp extends Component {
 
     render() {
 
-        // Change to show if partially visible on smaller devices
-        const breakpoint = this.props.theme.sizes.lg.replace('px','')
-        const partial = window.innerWidth < breakpoint ? true : false 
-        
         return (
             <VisibilitySensor 
                 onChange={this.play}
-                partialVisibility={partial}
+                partialVisibility={this.state.partialVisible}
             >
                 {this.props.children}
             </VisibilitySensor>

@@ -38,7 +38,8 @@ class Blocks extends Component {
         super(props)
 
         this.state = {
-            animation: []
+            animation: [],
+            animationDelay: []
         }
 
         this.getBlock = this.getBlock.bind(this)
@@ -49,6 +50,33 @@ class Blocks extends Component {
 
     componentDidMount() {
         this.setAnimationState()
+    }
+
+    setDelay() {
+        // Change to show if partially visible on smaller devices
+        if (typeof window !== undefined) {
+
+            const breakpoint = this.props.theme.sizes.lg.replace('px', '')
+            const block = this.getBlock()
+            let animationDelayState = []
+
+            if (window.innerWidth < breakpoint) {
+                // No delay on mobile
+                for (let i = 0; block.node.infoBlocks.length > i; i++) {
+                    animationDelayState[i] = 0
+                }
+            } else {
+                // stagger delay on dekstop
+                for (let i = 0; block.node.infoBlocks.length > i; i++) {
+                    animationDelayState[i] = i
+                }
+            }
+
+            this.setState({
+                animationDelay: animationDelayState
+            })
+        }
+
     }
 
     setAnimationState() {
@@ -96,17 +124,12 @@ class Blocks extends Component {
         const block = this.getBlock()
 
         const infoBlocks = block.node.infoBlocks.map((block, i) => {
-
-            // Change to show if partially visible on smaller devices
-            const breakpoint = this.props.theme.sizes.lg.replace('px', '')
-            const delay = window.innerWidth < breakpoint ? 0 : i 
-
             return (
                 <FadeInUp 
                     key={i} 
                     elementId={`#infoBlock${i}`} 
                     animated={this.fadeInUpAnimated}
-                    delay={delay}
+                    delay={this.state.animationDelay[i]}
                     >
                     <Col lg={6} className="pb-5 pb-lg-4" id={`infoBlock${i}`}>
                         <Row>
