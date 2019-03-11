@@ -1,5 +1,14 @@
 [
     {
+        "id": "landingBlockHome",
+        "type": "LandingBlock",
+        "image": "../images/backgrounds/landing-home-bg.jpg",
+        "title": "Revolutionise your<br/> accounts payable<br/> with APtimise",
+        "videoText": "Watch now",
+        "youtubeVideo": "",
+        "text": "Reduce your invoice processing time by up to 50% with the UK’s only end-end accounts payable solution"
+    },
+    {
         "id": "textBlockHome",
         "type": "TextBlock",
         "size": "xl",
@@ -31,6 +40,20 @@
                 "textHTML": "<p>APtimise actively monitors for signs of fraud – 47% of SMEs received a suspicious or fraudulent invoice in 2017 – so it might come in handy. You’ll have full visibility of audit trails too.</p><p>And because it’s backed by NatWest, it comes with bank-grade security for complete peace of mind.</p>"
             }
         ]
+    },
+    {
+        "id": "linkBlockHome",
+        "type": "LinkBlock",
+        "links": [
+            {
+                "link": "https://google.com",
+                "linkText": "download our “how it works” guide"
+            },
+            {
+                "link": "/help/",
+                "linkText": "need help?"
+            }
+        ] 
     },
     {
         "id": "infoBlockFullWidthHome",

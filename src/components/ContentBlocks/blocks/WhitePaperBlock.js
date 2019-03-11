@@ -1,11 +1,35 @@
 import React, { Component } from "react"
 import PropTypes from "prop-types"
 import { StaticQuery, graphql } from "gatsby"
-import { Row, Col, ModalBody } from "reactstrap"
+import { Container, Row, Col, ModalBody } from "reactstrap"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faTimes } from '@fortawesome/free-solid-svg-icons'
+import styled from "styled-components"
+import { media } from "utils/Media"
 import ContainerMaxWidth from "components/shared/ContainerMaxWidth"
 import Text from "components/shared/Text"
 import Button from "components/shared/Button"
 import ModalAngled from "components/shared/ModalAngled"
+
+const ModalClose = styled.button`
+    position: absolute;
+    top: -4rem;
+    left: 50%;
+    transform: translateX(-50%);
+    color: ${props => props.theme.colors.purpleDark};
+    font-size: 2rem;
+    cursor: pointer;
+    border: 0;
+    background-color: transparent;
+`
+
+const WhitePaperButton = styled(Button)`
+    width: 100%;
+
+    @media ${media.md} {
+        width: auto;
+    }
+`
 
 const WhitePaperBlock = (props) => (
     <StaticQuery
@@ -63,16 +87,25 @@ class WhitePaper extends Component {
                         <Col lg={6}>
                             <h4>{title}</h4>
                             <Text dangerouslySetInnerHTML={{ __html: textHTML }} />
-                            <Button onClick={this.toggle}>{buttonText}</Button>
+                            <WhitePaperButton onClick={this.toggle} as="button" purple>{buttonText}</WhitePaperButton>
                         </Col>
                         <Col lg={6}>
 
                         </Col>
                     </Row>
                 </ContainerMaxWidth>
-                <ModalAngled isOpen={this.state.modal} toggle={this.toggle}>
+                <ModalAngled isOpen={this.state.modal} toggle={this.toggle} background={true}>
+                    <ModalClose onClick={this.toggle}>
+                        <FontAwesomeIcon icon={faTimes} />
+                    </ModalClose>
                     <ModalBody>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                        <Container>
+                            <Row className="justify-content-center">
+                                <Col md={6}>
+                                    <p>Lorem ipsum dolor</p>
+                                </Col>
+                            </Row>
+                        </Container>
                     </ModalBody>
                 </ModalAngled>
             </>

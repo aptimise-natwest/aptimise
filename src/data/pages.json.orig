@@ -4,15 +4,20 @@
         "path": "/",
         "title": "Home",
         "metaDescription": "lorem ipsum",
-<<<<<<< HEAD
-        "contentBlocks": [ "textBlockHome", "infoBlocksHome", "carouselBlocksHome" ]
-=======
         "contentBlocks": [ 
+            "landingBlockHome",
             "textBlockHome", 
             "infoBlocksHome", 
+<<<<<<< HEAD
+            "infoBlockFullWidthHome",
+            "whitePaperBlockHome",
+            "diagramBlockHome",
+			"carouselBlocksHome"
+=======
+            "linkBlockHome",
             "infoBlockFullWidthHome", 
             "whitePaperBlockHome" 
-        ]
 >>>>>>> master
+        ]
     }
 ]

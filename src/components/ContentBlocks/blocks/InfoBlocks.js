@@ -6,6 +6,7 @@ import ContainerMaxWidth from "components/shared/ContainerMaxWidth"
 import Animation from "components/shared/Animation"
 import Text from "components/shared/Text"
 import FadeInUp from "components/shared/FadeInUp"
+import { withTheme } from 'styled-components'
 
 const InfoBlocks = (props) => (
     <StaticQuery
@@ -26,7 +27,7 @@ const InfoBlocks = (props) => (
             }
         `}
         render={data => (
-            <Blocks data={data} id={props.id} />
+            <Blocks data={data} id={props.id} theme={props.theme} />
         )}
     />
 )
@@ -37,7 +38,8 @@ class Blocks extends Component {
         super(props)
 
         this.state = {
-            animation: []
+            animation: [],
+            animationDelay: []
         }
 
         this.getBlock = this.getBlock.bind(this)
@@ -48,6 +50,33 @@ class Blocks extends Component {
 
     componentDidMount() {
         this.setAnimationState()
+    }
+
+    setDelay() {
+        // Change to show if partially visible on smaller devices
+        if (typeof window !== undefined) {
+
+            const breakpoint = this.props.theme.sizes.lg.replace('px', '')
+            const block = this.getBlock()
+            let animationDelayState = []
+
+            if (window.innerWidth < breakpoint) {
+                // No delay on mobile
+                for (let i = 0; block.node.infoBlocks.length > i; i++) {
+                    animationDelayState[i] = 0
+                }
+            } else {
+                // stagger delay on dekstop
+                for (let i = 0; block.node.infoBlocks.length > i; i++) {
+                    animationDelayState[i] = i
+                }
+            }
+
+            this.setState({
+                animationDelay: animationDelayState
+            })
+        }
+
     }
 
     setAnimationState() {
@@ -100,14 +129,14 @@ class Blocks extends Component {
                     key={i} 
                     elementId={`#infoBlock${i}`} 
                     animated={this.fadeInUpAnimated}
-                    delay={i}
+                    delay={this.state.animationDelay[i]}
                     >
                     <Col lg={6} className="pb-5 pb-lg-4" id={`infoBlock${i}`}>
                         <Row>
                             <Col xs={3} md={2} lg={3} xl={2}>
                                 <Animation type={block.animation} play={this.state.animation[i]} />
                             </Col>
-                            <Col xs={{ offset: 1, size: 8 }} md={8} lg={7} xl={8}>
+                            <Col xs={9} sm={{ offset: 1, size: 8 }} lg={7} xl={8}>
                                 <h5 className="pb-2">{block.title}</h5>
                                 <Text dangerouslySetInnerHTML={{ __html: block.textHTML }} />
                             </Col>
@@ -118,7 +147,7 @@ class Blocks extends Component {
         })
 
         return (
-            <ContainerMaxWidth className="py-3 py-lg-5">
+            <ContainerMaxWidth className="pt-3 pt-lg-4">
                 <Row>
                     {infoBlocks}
                 </Row>
@@ -135,4 +164,4 @@ Blocks.propTypes = {
     data: PropTypes.any.isRequired,
 }
 
-export default InfoBlocks
+export default withTheme(InfoBlocks)

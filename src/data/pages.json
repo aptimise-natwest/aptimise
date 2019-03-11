@@ -5,11 +5,13 @@
         "title": "Home",
         "metaDescription": "lorem ipsum",
         "contentBlocks": [ 
+            "landingBlockHome",
             "textBlockHome", 
             "infoBlocksHome", 
-            "infoBlockFullWidthHome",
+            "linkBlockHome",
+            "infoBlockFullWidthHome", 
             "whitePaperBlockHome",
-            "diagramBlockHome",
+			"diagramBlockHome",
 			"carouselBlocksHome"
         ]
     }
