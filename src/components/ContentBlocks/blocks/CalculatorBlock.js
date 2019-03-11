@@ -4,13 +4,16 @@ import { StaticQuery, graphql } from "gatsby"
 import { Row, Col } from "reactstrap"
 import { Draggable } from "gsap/all"
 import styled from "styled-components"
+import { media } from "utils/Media"
 import ContainerMaxWidth from "components/shared/ContainerMaxWidth"
 import Text from "components/shared/Text"
+import Button from "components/shared/Button"
 import dial from "images/dial.png"
 
 const CalculatorContainer = styled(ContainerMaxWidth)`
     position: relative;
-    padding-bottom: 4rem;
+    padding-top: 1.5rem;
+    padding-bottom: 12rem;
 `
 
 const CalculatorBgSvg = styled.svg`
@@ -18,6 +21,14 @@ const CalculatorBgSvg = styled.svg`
     bottom: 0;
     left: 0;
     width: 100%;
+`
+
+const TextSummary = styled(Text)`
+    font-size: ${props => props.theme.font.size.xl};
+
+    @media ${media.md} {
+        font-size: 2.25rem;
+    }
 `
 
 const CalculatorBlock = (props) => (
@@ -31,7 +42,7 @@ const CalculatorBlock = (props) => (
                             title
                             textHTML
                             textInvoices
-                            textParymentRuns
+                            textPaymentRuns
                             textEmployees
                             textSummary
                             textButton
@@ -54,7 +65,7 @@ class Calculator extends  Component {
         this.state = {
             invoices: 0,
             payments: 0,
-            empolyees: 1,
+            employees: 1,
             hours: 0
         }
 
@@ -80,9 +91,9 @@ class Calculator extends  Component {
                 $this.setState({
                     invoices
                 }) 
-                $this.calculateHours()
-            }
-            
+                // $this.calculateHours()
+            },
+            onDragEnd: () => this.calculateHours()
         })
 
         Draggable.create(this.paymentsDial, {
@@ -90,13 +101,13 @@ class Calculator extends  Component {
             throwProps: true,
             dragClickables: true,
             onDrag: function () {
-                const rotation = parseInt(this.rotation % 1000, 10)
-                const payments = (rotation < 0) ? rotation + 1000 : rotation
+                const rotation = parseInt(this.rotation % 1000, 10) * 100
+                const payments = (rotation < 0) ? rotation + 1000000 : rotation
                 $this.setState({
                     payments
                 }) 
-                $this.calculateHours()
-            }
+            },
+            onDragEnd: () => this.calculateHours()
         })
 
     }
@@ -120,33 +131,14 @@ class Calculator extends  Component {
             title,
             textHTML,
             textInvoices,
-            textParymentRuns,
+            textPaymentRuns,
             textEmployees,
             textSummary,
             textButton 
         } = block.node
 
-        const sliderSettings = {
-            // dots: true,
-            infinite: false,
-            slidesToShow: 3,
-            slidesToScroll: 1,
-            draggable: false,
-            swipe: false,
-            touchMove: false,
-            responsive: [
-                {
-                    breakpoint: 768,
-                    settings: {
-                        slidesToShow: 1,
-                        slidesToScroll: 1,
-                    }
-                }
-            ]
-        }
-
         return (
-            <CalculatorContainer className="py-3 py-lg-4">
+            <CalculatorContainer>
                 <CalculatorBgSvg viewBox="0 0 1152 237">
                     <defs>
                         <linearGradient id="a" x1="576" y1="-740.87" x2="576" y2="1608" gradientTransform="matrix(1 0 0 -1 0 106)" gradientUnits="userSpaceOnUse">
@@ -168,7 +160,7 @@ class Calculator extends  Component {
                 </Row>
 
 
-                <Row className="py-3">
+                <Row className="text-center text-md-left py-3">
                     <Col>
                         <img 
                             src={dial} 
@@ -176,8 +168,8 @@ class Calculator extends  Component {
                             alt="Invoice dial" 
                             width="215" 
                         />
-                        <Text>{textInvoices}</Text>
-                        <Text>{this.state.invoices} invoices</Text>
+                        <Text className="pt-4">{textInvoices}</Text>
+                        <TextSummary size="xl" color="purple">{this.state.invoices} invoices</TextSummary>
                     </Col>
                     <Col>
                         <img 
@@ -186,11 +178,18 @@ class Calculator extends  Component {
                             alt="Payments dial" 
                             width="215" 
                         />
-                        <Text>{textParymentRuns}</Text>
-                        <Text>£{this.state.payments}</Text>
+                        <Text className="pt-4">{textPaymentRuns}</Text>
+                        <TextSummary size="xl" color="purple">£{this.state.payments}</TextSummary>
                     </Col>
                     <Col>
-                    
+                        <Text>{textEmployees}</Text>
+                        <TextSummary size="xl" color="purple">{this.state.employees} employee{this.state.employees > 1 ? 's' : ''}</TextSummary>
+                    </Col>
+                    <Col xs={12}>
+                        <TextSummary color="turquoise" className="pt-4">
+                            {this.state.hours} {textSummary}
+                        </TextSummary>
+                        <Button turquoise>{textButton}</Button>
                     </Col>
                 </Row>
             

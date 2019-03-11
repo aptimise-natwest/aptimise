@@ -264,6 +264,7 @@ class Landing extends Component {
                                 <LandingTextWrap>
                                     <LandingText
                                         dangerouslySetInnerHTML={{ __html: text }}
+                                        color="white"
                                     />
                                     <LandingTextSvg viewBox="0 0 320 280" fill="none">
                                         <path opacity="0.25" d="M320 223L160 280L0 224.5V0H320V223Z" fill="url(#paint0_linear)" />
