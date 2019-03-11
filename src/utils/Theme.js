@@ -30,6 +30,7 @@ const font = {
         xl: `${fontSizeBase * 1.5}rem` // 24px
     },
     lineHeight: {
+        sm: 1.5,
         base: 1.7,
         headings: 1.2
     },
