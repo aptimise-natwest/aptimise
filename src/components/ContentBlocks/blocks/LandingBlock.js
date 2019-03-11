@@ -270,7 +270,7 @@ class Landing extends Component {
                                         <defs>
                                             <linearGradient id="paint0_linear" x1="157.222" y1="505.123" x2="157.222" y2="-146.244" gradientUnits="userSpaceOnUse">
                                                 <stop offset="0.10612" />
-                                                <stop offset="0.460759" stop-opacity="0" />
+                                                <stop offset="0.460759" stopOpacity="0" />
                                             </linearGradient>
                                         </defs>
                                     </LandingTextSvg>
