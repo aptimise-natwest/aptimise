@@ -91,6 +91,14 @@ const LandingText = styled(Text)`
     }
 `
 
+const MobileImgWrap = styled.div`
+    position: relative;
+`
+
+const WatchNow = styled.div`
+
+`
+
 const LandingBlock = (props) => {
 
     const data = useStaticQuery(graphql`
@@ -128,7 +136,7 @@ const LandingBlock = (props) => {
         ({ node }) => props.id === node.id
     )[0]
 
-    const { title, text, imageDesktop, imageMobile } = block.node
+    const { title, text, imageDesktop, imageMobile, videoText, youtubeVideo } = block.node
 
     return (
         <LandingWrapper>
@@ -154,7 +162,13 @@ const LandingBlock = (props) => {
                     <Col md={8} xl={5}>
                         <LandingH1 dangerouslySetInnerHTML={{ __html: title}} />
 
-                        <MobileImg fluid={imageMobile.childImageSharp.fluid} alt="" />
+                        <MobileImgWrap>
+                            <MobileImg fluid={imageMobile.childImageSharp.fluid} alt="" />
+                            <WatchNow>
+                                { videoText }
+                            </WatchNow>
+                        </MobileImgWrap>
+                        
 
                         <LandingText
                             dangerouslySetInnerHTML={{ __html: text }}
