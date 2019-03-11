@@ -5,8 +5,9 @@ import {Row, Col, Collapse} from "reactstrap"
 import ContainerMaxWidth from "components/shared/ContainerMaxWidth"
 import Text from "components/shared/Text"
 import FadeInUp from "components/shared/FadeInUp"
-import {withTheme} from 'styled-components'
-import Img from 'gatsby-image'
+import {withTheme} from "styled-components"
+import gradientSeparator from "images/backgrounds/gradient-separator.svg"
+import styled from "styled-components";
 
 const FaqBlocks = (props) => (
     <StaticQuery
@@ -22,13 +23,6 @@ const FaqBlocks = (props) => (
                                 id
                                 title
                                 color
-                                gradientImage {
-                                    childImageSharp  {
-                                        fluid(maxWidth: 1400) {
-                                            ...GatsbyImageSharpFluid_tracedSVG
-                                        }
-                                    }
-                                }
                                 faqBlockElements {
                                     title
                                     textHTML
@@ -44,6 +38,10 @@ const FaqBlocks = (props) => (
         )}
     />
 )
+
+const GradientSeparator = styled.div`
+    margin: 100px 0;
+`
 
 class Blocks extends Component {
 
@@ -109,7 +107,7 @@ class Blocks extends Component {
 
     setDelay() {
         // Change to show if partially visible on smaller devices
-        if (typeof window !== undefined) {
+        if (typeof window !== 'undefined') {
 
             const breakpoint = this.props.theme.sizes.lg.replace('px', '')
             const block = this.getBlock()
@@ -214,9 +212,11 @@ class Blocks extends Component {
                                 </Collapse>
                             </Col>
                         </Row>
-                        <div className="gradientSeparator">
-                            <Img fluid={block.gradientImage.childImageSharp.fluid} alt="" />
-                        </div>
+                        <GradientSeparator>
+                            {block.id !== "security" &&
+                            <img src={gradientSeparator} alt="" />
+                            }
+                        </GradientSeparator>
                     </div>
                 </FadeInUp>
             )
