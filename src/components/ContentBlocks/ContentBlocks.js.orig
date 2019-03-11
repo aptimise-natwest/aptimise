@@ -5,9 +5,13 @@ import TextBlock from "./blocks/TextBlock"
 import InfoBlocks from "./blocks/InfoBlocks"
 import InfoBlockFullWidth from "./blocks/InfoBlockFullWidth"
 import WhitePaperBlock from "./blocks/WhitePaperBlock"
-import LinkBlock from "./blocks/LinkBlock"
+<<<<<<< HEAD
 import DiagramBlock from "./blocks/DiagramBlock"
 import CarouselBlocks from "./blocks/CarouselBlocks"
+=======
+import LinkBlock from "./blocks/LinkBlock"
+// import CarouselBlocks from "./blocks/CarouselBlocks"s
+>>>>>>> master
 
 const ContentBlocks = (props) => {
 

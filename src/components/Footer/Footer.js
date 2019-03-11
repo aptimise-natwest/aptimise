@@ -3,9 +3,9 @@ import { Link } from "gatsby"
 import { TimelineMax } from "gsap"
 import VisibilitySensor from "react-visibility-sensor"
 import styled from "styled-components"
-import { media } from "utils/Media";
+import { media } from "utils/Media"
 import { Container, Row, Col } from "reactstrap"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import AptimiseLogo from "components/shared/AptimiseLogo"
 import Text from "components/shared/Text"
 import footerBg from "images/backgrounds/footer-bg.svg"
