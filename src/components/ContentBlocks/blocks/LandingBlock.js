@@ -23,7 +23,7 @@ const LandingContent = styled(ContainerMaxWidth)`
         position: absolute;
         left: 50%;
         transform: translateX(-50%);
-        top: 20%;
+        top: 4rem;
         color: ${props => props.theme.colors.white};
     }
 `
@@ -68,9 +68,12 @@ const LandingH1 = styled.h1`
     padding-bottom: 1rem;
     padding-top: 1rem;
     @media ${media.md} {
-        font-size: 3rem;
+        font-size: 2rem;
         padding-bottom: 2rem;
         padding-top: 0;
+    }
+    @media ${media.lg} {
+        font-size: 3rem;
     }
 `
 
@@ -80,6 +83,10 @@ const LandingText = styled(Text)`
     padding: 1rem 0;
 
     @media ${media.md} {
+        font-size: 1.15rem;
+    }
+
+    @media ${media.lg} {
         font-size: ${props => props.theme.font.size.lg};
     }
 `
@@ -144,7 +151,7 @@ const LandingBlock = (props) => {
             
             <LandingContent>
                 <Row>
-                    <Col md={8} lg={5}>
+                    <Col md={8} xl={5}>
                         <LandingH1 dangerouslySetInnerHTML={{ __html: title}} />
 
                         <MobileImg fluid={imageMobile.childImageSharp.fluid} alt="" />
