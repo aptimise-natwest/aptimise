@@ -147,7 +147,7 @@ const LandingBlock = (props) => {
                         <path d="M1258 328V0L1103.52 1.99892H-16V594L575 728L1258 328Z" />
                     </clipPath>  
                 </defs>
-                <image clip-path="url(#desktopClip)" href={image} width="100%" height="100%" />
+                <image clipPath="url(#desktopClip)" href={image} width="100%" height="100%" />
                 <path d="M1258 328V0L1103.52 1.99892H-16V594L575 728L1258 328Z" fill="black" opacity=".3"/>
             </DesktopSvg> */}
 
@@ -162,6 +162,17 @@ const LandingBlock = (props) => {
                     <Col md={8} xl={5}>
                         <LandingH1 dangerouslySetInnerHTML={{ __html: title}} />
 
+<<<<<<< HEAD
+                        <MobileSvg viewBox="0 0 320 277.7">
+                            <defs>
+                                <clipPath id="mobileClip">
+                                    <path className="st0" d="M0,0l160,34.7L320,0v191.7l-160,86l-160-21L0,0z" />
+                                </clipPath>
+                            </defs>
+                            <image clipPath="url(#mobileClip)" href={imageMobile} width="100%" height="100%" />
+                            <path className="st0" d="M0,0l160,34.7L320,0v191.7l-160,86l-160-21L0,0z" fill="black" opacity=".3" />
+                        </MobileSvg>
+=======
                         <MobileImgWrap>
                             <MobileImg fluid={imageMobile.childImageSharp.fluid} alt="" />
                             <WatchNow>
@@ -169,6 +180,7 @@ const LandingBlock = (props) => {
                             </WatchNow>
                         </MobileImgWrap>
                         
+>>>>>>> master
 
                         <LandingText
                             dangerouslySetInnerHTML={{ __html: text }}

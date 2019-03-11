@@ -2,7 +2,8 @@
     {
         "id": "landingBlockHome",
         "type": "LandingBlock",
-        "image": "../images/backgrounds/landing-home-bg.jpg",
+        "imageDesktop": "../images/backgrounds/landing-home-bg.jpg",
+        "imageMobile": "../images/backgrounds/landing-home-bg-mobile.jpg",
         "title": "Revolutionise your<br/> accounts payable<br/> with APtimise",
         "videoText": "Watch now",
         "youtubeVideo": "",
