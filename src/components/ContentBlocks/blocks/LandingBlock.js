@@ -15,6 +15,7 @@ import ModalAngledClose from "components/shared/ModalAngledClose"
 const LandingWrapper = styled(Container)`
     max-width: 1500px;
     padding: 0;
+    margin-bottom: 4rem;
     position: relative;
     overflow: hidden;
 `
@@ -87,8 +88,10 @@ const LandingH1 = styled.h1`
 const LandingText = styled(Text)`
     font-size: 1rem;
     padding: 1rem 2rem;
+    color: ${props => props.theme.colors.backOff};
 
     @media ${media.md} {
+        color: ${props => props.theme.colors.white};
         padding: 1rem 0;
         font-size: 1.15rem;
     }
@@ -264,7 +267,6 @@ class Landing extends Component {
                                 <LandingTextWrap>
                                     <LandingText
                                         dangerouslySetInnerHTML={{ __html: text }}
-                                        color="white"
                                     />
                                     <LandingTextSvg viewBox="0 0 320 280" fill="none">
                                         <path opacity="0.25" d="M320 223L160 280L0 224.5V0H320V223Z" fill="url(#paint0_linear)" />
