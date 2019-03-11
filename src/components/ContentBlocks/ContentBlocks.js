@@ -8,6 +8,7 @@ import WhitePaperBlock from "./blocks/WhitePaperBlock"
 import LinkBlock from "./blocks/LinkBlock"
 import DiagramBlock from "./blocks/DiagramBlock"
 import CarouselBlocks from "./blocks/CarouselBlocks"
+import FaqBlocks from "./blocks/FaqBlocks"
 
 const ContentBlocks = (props) => {
 
@@ -64,6 +65,9 @@ const ContentBlocks = (props) => {
 
 				case "CarouselBlocks":
                     return <CarouselBlocks id={block.node.id} key={i} />
+
+                case "FaqBlocks":
+                    return <FaqBlocks id={block.node.id} key={i} />
 
                 default:
                     return ""

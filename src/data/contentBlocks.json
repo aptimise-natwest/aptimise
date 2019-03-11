@@ -118,5 +118,157 @@
                 "videoId": ""
             }
         ]
+    },
+    {
+        "id": "FaqBlockFullWidth",
+        "type": "FaqBlocks",
+        "title": "Help?",
+        "shortIntroduction": "Short Introduction - Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        "faqBlocks": [
+            {
+                "id": "purchaseOrders",
+                "title": "Purchase Orders",
+                "color": "purpleDark",
+                "image": "../images/backgrounds/gradient-separator.svg",
+                "faqBlockElements": [
+                    {
+                        "title": "How do purchase orders (POs) appear in APtimise?",
+                        "textHTML": "<p>Once you have submitted / approved a PO it automatically appears in your accounting package and in APtimise, where it will be linked to matched invoices. APtimise regularly syncs with your accounting package, so the PO may take a few moments to sync and appear. POs marked as “draft” will not appear in APtimise.</p>"
+                    },
+                    {
+                        "title": "How can I see the matched and unmatched POs?",
+                        "textHTML": "<p>POs will automatically link to invoices using the invoice number. This can be viewed at the bottom of the invoice it has been matched to. To view a PO that has not been matched to an invoice, click on the Vender tab and scroll down to “Open POs”. To view the image of a matched PO, click on the matched invoice number. When the image of the invoice appears, you can toggle to the PO image by using the tab on the top left.</p>"
+                    },
+                    {
+                        "title": "How do I deal with PO exceptions?",
+                        "textHTML": "<p>Mismatches between invoices and POs will be identified on APtimise with a red PO icon on the invoice tab. If the amount in the invoice is lower than your PO, amend the PO manually in your Enterprise Resource Planning (ERP) system – the PO would be closed when the invoice is paid.</p>"
+                    },
+                    {
+                        "title": "How are POs matched to invoices?",
+                        "textHTML": "<p>Every time a new invoice is created in MT [NB - what is 'MT' in this context? it should be written in full on first use of the acronym], whether manually or via the invoice capture process, the engine will attempt to link each line-item and expense to a corresponding line-item and expense on an open PO for the same vendor – reading to match the following items: Quantity, cost per, description and amounts.</p>"
+                    }
+                ]
+            },
+            {
+                "id": "invoices",
+                "title": "Invoices",
+                "color": "yellow",
+                "image": "../images/backgrounds/gradient-separator.svg",
+                "faqBlockElements": [
+                    {
+                        "title": "How long will it take for invoices to appear on APtimise?",
+                        "textHTML": "<p>Once you have forwarded your invoice it can take up to 24 hours for the technology to have received the information, scanned and interpreted the input, and for it to be checked by our team for the highest levels of accuracy.</p>"
+                    },
+                    {
+                        "title": "How do I create an urgent invoice / make an urgent payment?",
+                        "textHTML": "<p>In the invoice tab – click on create an invoice without a doc. Add vendor details and amount.</p><p>Click create – a new invoice is generated, added to the inbox and scheduled for authorisation and payment in the normal way. If you make payment via a different method, mark the invoice as paid by “Bill Portal”. If the supplier then emails their invoice in, the invoice is identified as a duplicate by invoice no and highlighted with a red icon for manual deletion.</p>"
+                    },
+                    {
+                      "title": "How do I manage multiple invoices to the same supplier?",
+                      "textHTML": "<p>The invoice tab can be sorted by vendor, (or filtered) by vendor which totals the invoices outstanding by vendor.</p>"
+                    },
+                    {
+                      "title": "Can I get a single view of invoices due for payment?",
+                      "textHTML": "<p>Filter the invoice by unpaid or run a report of open invoices or the bill detail report.</p>"
+                    },
+                    {
+                      "title": "How do I add Invoice Approvers?",
+                      "textHTML": "<p>You can authorise a named individual as an invoice approver with an automated rule. Alternatively, you can send invoices to individuals for approval ad hoc.</p><p>For ad hoc approvals, Accounting Managers should enter the email of the invoice approver under “Invoice Approval Routing” on the Invoice Details screen. If this is a new invoice approver, you will be shown a link to “Add New Approver”, which will request their email address and name. Once the approver is added, you can save the invoice in APtimise and a request will be sent to the person you approved. To set up an automated rule for a vendor, as an Accounting Manager click on the vendor name in the search tab. Scroll down the vendor details to “default invoice preferences”. Enter the email address under “Manage Invoice Approvers” and save, with any invoice value tiers for secondary invoice approvers. Any future invoices entered into APtimise will be automatically routed to those invoice approvers values and will show in your invoice tab as awaiting approval.</p><p>To set up automated rules for other dimensions such as Class, Department, etc., go to Settings -> Company Profile -> Invoice Approval Rules. Click “Add New Approval Rule”, select the dimension type, then enter the specific dimension. A box will appear to enter the invoice approvers.</p>"
+                    },
+                    {
+                      "title": "How do I deal with duplicates or delete invoices?",
+                      "textHTML": "<p>Duplicate invoices will be highlighted with a red duplicate icon in the invoices tab.</p><p>To delete an invoice in APtimise, go to the invoices tab and click on the invoice number link (if there is no invoice number, the link will say “details”). You can delete the selected invoice by clicking on the trash can icon. If the invoice has payments linked to it, the trash can icon will not display. You’ll need to void these payments before you can delete the invoice.</p><p>Please note: If you delete an invoice in your accounting system, the deletion will NOT sync back to APtimise. You will need to manually delete the invoice in APtimise separately.</p>"
+                    }
+                ]
+            },
+            {
+                "id": "payments",
+                "title": "Payments",
+                "color": "turquoise",
+                "image": "../images/backgrounds/gradient-separator.svg",
+                "faqBlockElements": [
+                    {
+                      "title": "How do I apply Credit Notes in APtimise?",
+                      "textHTML": "<p>You need to add credit notes to your Accounting Package for credits to display in APtimise.</p><p>To see available credit notes per vendor, log on as an AM, go to the search screen, click on the vendor overall credit balance, shown on the Vendor Details and Invoice Details screens. To apply credits to a vendor invoice or payment, you will need to apply these against and invoice directly in your ERP/accounting system. This will then sync to APtimise automatically and update the balance outstanding.</p><p>(***Sage 200 note*** Credit available will always show as zero in APtimise, as you will need to apply the credit to an invoice as it comes in.)</p><p>The remittance from APtimise will include details on the credit(s) applied to the bill.</p>"
+                    },
+                    {
+                      "title": "Is it possible to stop a customer payment?",
+                      "textHTML": "<p>As an AM – it’s possible to reject a payment even after the payment has been authorised, as long as you do it at least one working day before the date of the scheduled transmission.</p><p>If you want to reject a payment, go to the Payments tab, search for the payment you’d like to recall, click on the payment amount link, and select “Add to Queue”. This will bring the payment back to the Selected Payments queue Invoices tab, then you can click “Remove All” to move it to the Unpaid Invoices list.</p><p>As a PA – you can reject a payment before it is authorised. However, if you need to reject a payment after authorisation, ask the Accounting Manager to reject the payment (up to the day before scheduled transmission). A PA is unable to reject a payment after it has been authorised.</p>"
+                    },
+                    {
+                      "title": "Can partial payments be made against an invoice?",
+                      "textHTML": "<p>Yes – manually amend the amount to be paid in the payment column, which you can find on the right-hand side of the Accounting Manager log in. APtimise will keep the invoice open with the remaining balance open until the invoice has been paid in full.</p>"
+                    },
+                    {
+                      "title": "What are the cut off times for making payments?",
+                      "textHTML": "<p>Payments are issued same day as scheduled and paid to suppliers as a Faster Payment, however, payments posted after 11.45pm will be paid the next day.</p>"
+                    },
+                    {
+                      "title": "How does the supplier know that we have paid?",
+                      "textHTML": "<p>The payment to the supplier shows the invoice number in the remittance note and in the beneficiary bank narrative as follows:</p><p>If one invoice # is being paid that is <= 13 characters long: \"Inv(inv#)\"</p><p>If one invoice # is being paid that is > 12 characters long: \"Inv*(last 12 digits of invoice #)\"</p><p>If multiples invoices are being paid and the first invoice # is < 13 characters long: \"Inv(inv#)+\"</p><p>If multiples invoices are being paid and the first invoice # >= 13 characters long: \"Inv*(last 11 digits of invoice)+\"</p>"
+                    },
+                    {
+                      "title": "Can I post payments to previous dates?",
+                      "textHTML": "<p>No – posting payments to a previous date will result in an error message</p>"
+                    }
+                ]
+            },
+            {
+                "id": "keyResources",
+                "title": "Key Resources Accounting System",
+                "color": "pink",
+                "image": "../images/backgrounds/gradient-separator.svg",
+                "faqBlockElements": [
+                    {
+                      "title": "How do I know APtimise is syncing with my Accounting Package?",
+                      "textHTML": "<p>The automatic sync is constantly running, which means that there’s no need for a manual sync function on the platform. Regular syncing happens automatically.</p><p>Run the Open Invoices report to check whether the volumes total the open invoices in your accounting package.</p><p>If you can’t find specific records from your accounting system in APtimise or believe you may have an issue with your connection, contact aptimiseonboarding@natwest.com for help.</p>"
+                    },
+                    {
+                      "title": "How do I resolve syncing issues?",
+                      "textHTML": "<p>Sync error reports will be available in later APtimise functionality developments.</p><p>However, APtimise will highlight where it will be unable to post back to your Accounting Package where an action is required against individual invoices. Error messages will be displayed related to the sync and provide instructions on how to resolve.</p>"
+                    }
+                ]
+            },
+            {
+                "id": "security",
+                "title": "Security",
+                "color": "blue",
+                "image": "",
+                "faqBlockElements": [
+                    {
+                      "title": "I don’t remember my username and/or password.",
+                      "textHTML": "<p>What should I do? Your username is always your email address. To reset your password, use the password reset link on the login page and an email with a new temporary password will be sent to your email inbox. Your APtimise Admin user can also resend an APtimise invitation or a password reset – through the Company Settings, User Settings tab.</p>"
+                    },
+                    {
+                      "title": "How do I add or change user information?",
+                      "textHTML": "<p>Your company’s APtimise Admin users can add new users and amend information for non-admin users. To change user verification phone numbers or email addresses, you’ll need to contact us <a href='mailto:aptimiseonboard@natwest.com'>aptimiseonboard@natwest.com</a></p>"
+                    },
+                    {
+                      "title": "What do I do if my supplier Bank Account details quoted on the invoice do not match those held on my accounting package?",
+                      "textHTML": "<p>Speak to a known contact at the Supplier, using contact details held in your own records, not those on the invoice. If the Supplier states that the account details are not correct and does not recognise them, it may be that the email or invoice document have been fraudulently amended. Do not process the Invoice or sanction payment. Ask the Supplier to resubmit the invoice with the correct account details. Report this to the Bank Fraud team so they can ensure the fraudulent account details can be passed to the beneficiary bank to take appropriate action.</p><p>If the Supplier states the account details on the invoice are correct, confirm if the Supplier has recently changed their Bank details, asking them to confirm in writing, before updating your accounting software system to reflect the change.</p><p>If the Supplier has not confirmed they have changed their details recently, refer to your Accounting Software system to ascertain when the bank account details had been changed and by whom. Ascertain if there was a request to change the bank account details (email or letter). Refer this to the Bank Fraud team. Had the details been changed by a member of staff without any request from the Supplier? Undertake an internal investigation for insider fraud.</p><p>Investigate to see if an external party has gained access to the accounting software and made the alteration fraudulently. If any payments have been made to the amended account details on the system refer to the Bank Fraud team.</p>"
+                    },
+                    {
+                      "title": "How do I keep my APtimise account safe?",
+                      "textHTML": "<p>APtimise logging on and payment authorisations will be set up as dual authentication (using passwords plus SMS or voice messaging) as standard, we recommend that you keep these security measures in place. We will also set up different roles for Accounting Managers and Payment Authorisers to help you preserve segregation of duties in your AP team.</p><p>We recommend that you regularly review your APtimise invoice and payment approval rules and limits and add dual or tiered approval limits where appropriate. We will add Administration rights to the users that you request at account setup. APtimise Users and their roles can be viewed in the account settings tab – include reviewing this information as part of your on-going checks and controls.</p><p>Never share your APtimise password or provide the validation number to someone else to access the system or make a payment.</p><p>We will never contact you to ask for your APtimise or Bankline Direct password or ask you to make payments to unknown suppliers.</p><p>If you suspect that you are being contacted by a fraudster asking for details to your account, terminate the call and contact the Fraud Team at your bank using the telephone number you are familiar with.</p>"
+                    },
+                    {
+                      "title": "How do I add or change Admin users?",
+                      "textHTML": "<p>Payment Approvers and Accounting Managers can be made APtimise Admin users. Ask your current company APtimise Admin to contact us at APtimiseonboard@natwest.com to make this amendment to your company profile, or to amend the details of any existing admin users.</p>"
+                    },
+                    {
+                      "title": "What should I do if I receive requests from Suppliers to change Bank Account details?",
+                      "textHTML": "<p>Always ensure any requests from Suppliers to change bank account details for the receipt of payments are confirmed as genuine using known contact details held in your records and by an alternative communication method to that used to make the request.</p>"
+                    },
+                    {
+                      "title": "How can I protect against “Bogus Boss” or CEO fraud?",
+                      "textHTML": "<p>This occurs when a criminal has intercepted email traffic or conducts a takeover of an email account of the CEO. Fraudsters replicate internal emails purporting to come from the CEO or their equivalent asking for urgent payments to be undertaken immediately. Ensure you have a policy in place so that all internally requested payments follow an agreed process without exception, including confirming that the request is genuine using an alternative communication method than one used by the initiator.</p>"
+                    },
+                    {
+                      "title": "How can I protect internal systems?",
+                      "textHTML": "<p>Ensure that all internal computer systems and software have the appropriate levels of security operating and staff have the required level of access. Do not share passwords.</p>"
+                    }
+                ]
+            }
+        ]
     }
 ]

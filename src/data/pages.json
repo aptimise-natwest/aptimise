@@ -14,5 +14,14 @@
 			"diagramBlockHome",
 			"carouselBlocksHome"
         ]
+    },
+    {
+        "id": "help",
+        "path": "/help/",
+        "title": "Help",
+        "metaDescription": "lorem ipsum",
+        "contentBlocks": [
+            "FaqBlockFullWidth"
+        ]
     }
 ]

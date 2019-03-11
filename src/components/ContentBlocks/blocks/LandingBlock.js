@@ -103,7 +103,7 @@ const LandingBlock = (props) => {
                         <path d="M1258 328V0L1103.52 1.99892H-16V594L575 728L1258 328Z" />
                     </clipPath>  
                 </defs>
-                <image clip-path="url(#desktopClip)" href={image} width="100%" height="100%" />
+                <image clipPath="url(#desktopClip)" href={image} width="100%" height="100%" />
                 <path d="M1258 328V0L1103.52 1.99892H-16V594L575 728L1258 328Z" fill="black" opacity=".3"/>
             </DesktopSvg>
             
@@ -115,11 +115,11 @@ const LandingBlock = (props) => {
                         <MobileSvg viewBox="0 0 320 277.7">
                             <defs>
                                 <clipPath id="mobileClip">
-                                    <path class="st0" d="M0,0l160,34.7L320,0v191.7l-160,86l-160-21L0,0z" />
+                                    <path className="st0" d="M0,0l160,34.7L320,0v191.7l-160,86l-160-21L0,0z" />
                                 </clipPath>
                             </defs>
-                            <image clip-path="url(#mobileClip)" href={imageMobile} width="100%" height="100%" />
-                            <path class="st0" d="M0,0l160,34.7L320,0v191.7l-160,86l-160-21L0,0z" fill="black" opacity=".3" />
+                            <image clipPath="url(#mobileClip)" href={imageMobile} width="100%" height="100%" />
+                            <path className="st0" d="M0,0l160,34.7L320,0v191.7l-160,86l-160-21L0,0z" fill="black" opacity=".3" />
                         </MobileSvg>
 
                         <LandingText
