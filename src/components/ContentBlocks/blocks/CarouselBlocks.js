@@ -8,6 +8,13 @@ import Slider from 'react-slick'
 import "slick-carousel/slick/slick.scss"
 import "slick-carousel/slick/slick-theme.css"
 import HexagonShape from "images/hexagon.svg"
+import styled from "styled-components";
+
+const SliderElement = styled.div`
+    img {
+        max-width: 150px
+    }
+`
 
 const CarouselBlocks = (props) => (
     <StaticQuery
@@ -39,7 +46,7 @@ const CarouselBlocks = (props) => (
 
 const sliderCommonSettings = {
     fade: true,
-    infinite: true,
+    infinite: false,
     draggable: true,
     focusOnSelect: true,
     arrows: false
@@ -51,56 +58,49 @@ class Blocks extends Component {
         super(props)
 
         this.state = {
-            carouselTop: null,
-            carouselUnderImages: null,
+            // carouselTop: null,
+            // carouselUnderImages: null,
+            carouselImages: null,
             carouselBottom: null,
             slideIndex: 0
         }
 
         this.getBlock = this.getBlock.bind(this)
-        this.syncSliders = this.syncSliders.bind(this)
+        // this.syncSliders = this.syncSliders.bind(this)
         this.changeSliders = this.changeSliders.bind(this)
-        this.changeImages = this.changeImages.bind(this)
+        // this.changeImages = this.changeImages.bind(this)
     }
 
     componentDidMount() {
-        this.setState({
-            carouselTop: this.carouselTop,
-            carouselUnderImages: this.carouselUnderImages,
-            carouselBottom: this.carouselBottom
-        })
+        // this.setState({
+        //     carouselTop: this.carouselTop,
+        //     carouselUnderImages: this.carouselUnderImages,
+        //     carouselBottom: this.carouselBottom
+        // })
     }
 
     syncSliders(current, next, name) {
-        if (name === 'carouselTop') {
-            this.carouselUnderImages.slickGoTo(next)
-            this.carouselBottom.slickGoTo(next)
-        }
-        if (name === 'carouselUnderImages') {
-            this.carouselTop.slickGoTo(next)
-            this.carouselBottom.slickGoTo(next)
-        }
-        if (name === 'carouselBottom') {
-            this.carouselTop.slickGoTo(next)
-            this.carouselUnderImages.slickGoTo(next)
-        }
+        this.carouselBottom.slickGoTo(next)
 
-        // TODO: Simon - This causing error. As soon as the setState is removed, everything works fine.
-        this.changeImages(next)
+        // this.changeImages(next)
     }
 
     changeSliders(next) {
         console.log(next)
-        this.carouselTop.slickGoTo(next)
-        this.carouselUnderImages.slickGoTo(next)
+        // this.carouselTop.slickGoTo(next)
+        // this.carouselUnderImages.slickGoTo(next)
         this.carouselBottom.slickGoTo(next)
-    }
 
-    changeImages(next) {
         this.setState({
             slideIndex: next
         })
     }
+    //
+    // changeImages(next) {
+    //     this.setState({
+    //         slideIndex: next
+    //     })
+    // }
 
     getBlock() {
         // Retrieve the content block
@@ -124,7 +124,9 @@ class Blocks extends Component {
 
         const carouselImages = block.node.carouselBlocks.map((block, i) => {
             return (
-                <img src={HexagonShape} className={`hexagon ${this.state.slideIndex === i ? 'active' : ''}`} key={i} onClick={() => this.changeSliders(i)} alt="" width="194" />
+                <SliderElement key={i}>
+                    <img src={HexagonShape} className={`hexagon ${this.state.slideIndex === i ? 'active' : ''}`} onClick={() => this.changeSliders(i)} alt=""/>
+                </SliderElement>
             )
         })
 
@@ -155,46 +157,57 @@ class Blocks extends Component {
 
         return (
             <ContainerMaxWidth className="py-3">
+                {/*<Row>*/}
+                    {/*<Col xs={12} md={6}>*/}
+                        {/*<Slider*/}
+                            {/*ref={slider => (this.carouselTop = slider)}*/}
+                            {/*asNavFor={this.state.carouselImages}*/}
+                            {/*className="carouselTop"*/}
+                            {/*// beforeChange={(current, next) => this.syncSliders(current, next, 'carouselTop')}*/}
+                            {/*// beforeChange={(current, next) => this.setState({slideIndex: next})}*/}
+                            {/*{...sliderCommonSettings}*/}
+                        {/*>*/}
+                            {/*{carouselTop}*/}
+                        {/*</Slider>*/}
+                    {/*</Col>*/}
+                {/*</Row>*/}
                 <Row>
                     <Col xs={12} md={6}>
                         <Slider
-                            ref={slider => (this.carouselTop = slider)}
-                            // asNavFor={this.state.carouselUnderImages}
-                            className="carouselTop"
-                            beforeChange={(current, next) => this.syncSliders(current, next, 'carouselTop')}
-                            // beforeChange={(current, next) => this.setState({slideIndex: next})}
-                            {...sliderCommonSettings}
-                        >
-                            {carouselTop}
-                        </Slider>
-                    </Col>
-                </Row>
-                <Row>
-                    <Col xs={12} md={6}>
-                        {carouselImages}
-                    </Col>
-                </Row>
-                <Row>
-                    <Col xs={12} md={6}>
-                        <Slider
-                            ref={slider => (this.carouselUnderImages = slider)}
+                            ref={slider => (this.carouselImages = slider)}
                             // asNavFor={this.state.carouselBottom}
                             className="carouselUnderImages"
-                            beforeChange={(current, next) => this.syncSliders(current, next, 'carouselUnderImages')}
+                            beforeChange={(current, next) => this.syncSliders(current, next, 'carouselImages')}
                             // beforeChange={(current, next) => this.setState({slideIndex: next})}
-                            {...sliderCommonSettings}
+                            infinite={false}
+                            centerMode={true}
+                            centerPadding='20%'
                         >
-                            {carouselUnderImages}
+                            {carouselImages}
                         </Slider>
                     </Col>
                 </Row>
+                {/*<Row>*/}
+                    {/*<Col xs={12} md={6}>*/}
+                        {/*<Slider*/}
+                            {/*ref={slider => (this.carouselUnderImages = slider)}*/}
+                            {/*asNavFor={this.state.carouselImages}*/}
+                            {/*className="carouselUnderImages"*/}
+                            {/*// beforeChange={(current, next) => this.syncSliders(current, next, 'carouselUnderImages')}*/}
+                            {/*// beforeChange={(current, next) => this.setState({slideIndex: next})}*/}
+                            {/*{...sliderCommonSettings}*/}
+                        {/*>*/}
+                            {/*{carouselUnderImages}*/}
+                        {/*</Slider>*/}
+                    {/*</Col>*/}
+                {/*</Row>*/}
                 <Row>
                     <Col xs={12}>
                         <Slider
                             ref={slider => (this.carouselBottom = slider)}
-                            // asNavFor={this.state.carouselTop}
+                            asNavFor={this.state.carouselImages}
                             className="carouselBottom"
-                            beforeChange={(current, next) => this.syncSliders(current, next, 'carouselBottom')}
+                            // beforeChange={(current, next) => this.syncSliders(current, next, 'carouselBottom')}
                             // beforeChange={(current, next) => this.setState({slideIndex: next})}
                             {...sliderCommonSettings}
                         >

@@ -45,9 +45,16 @@
         "type": "WhitePaperBlock",
         "title": "Our whitepaper",
         "textHTML": "<p>Maecenas sed diam eget risus varius blandit sit amet non magna. Donec ullamcorper nulla non metus auctor fringilla. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Etiam porta sem malesuada magna mollis euismod.</p>",
-        "buttonText": "download whitepaper" 
+        "buttonText": "download whitepaper"
     },
-{
+    {
+      "id": "diagramBlockHome",
+      "type": "DiagramBlock",
+      "title": "Book a 20 minute online demo now",
+      "textHTML": "<p>It sounds too good to be true, right? See how it could work for your business with an online demo.</p>",
+      "buttonText": "pick your demo slot"
+    },
+    {
         "id": "carouselBlocksHome",
         "type": "CarouselBlocks",
         "carouselBlocks": [

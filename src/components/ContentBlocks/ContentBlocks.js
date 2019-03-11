@@ -4,6 +4,8 @@ import TextBlock from "./blocks/TextBlock"
 import InfoBlocks from "./blocks/InfoBlocks"
 import InfoBlockFullWidth from "./blocks/InfoBlockFullWidth"
 import WhitePaperBlock from "./blocks/WhitePaperBlock"
+import DiagramBlock from "./blocks/DiagramBlock"
+import CarouselBlocks from "./blocks/CarouselBlocks"
 
 const ContentBlocks = (props) => {
 
@@ -48,6 +50,9 @@ const ContentBlocks = (props) => {
 
                 case "WhitePaperBlock":
                     return <WhitePaperBlock id={block.node.id} key={i} />
+
+                case "DiagramBlock":
+                    return <DiagramBlock id={block.node.id} key={i} />
 
 				case "CarouselBlocks":
                     return <CarouselBlocks id={block.node.id} key={i} />

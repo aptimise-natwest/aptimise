@@ -32,5 +32,15 @@ const Button = styled.a`
             background-color: ${props => props.theme.colors.purpleDark};
         }
     `}
+    
+    ${props => props.yellow && css`
+        background-color: ${props => props.theme.colors.yellow};
+        color: ${props => props.theme.colors.white};
+        &:hover {
+            background-color: ${props => props.theme.colors.purpleDark};
+        }
+    `}
+    
+    
 `
 export default Button

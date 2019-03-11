@@ -1,4 +1,18 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<svg xmlns="http://www.w3.org/2000/svg" width="800" height="696">
-<path d="M 595,10 L 205,10 10,348 L 205,686 L 595,686 L 790,348 Z" fill="cyan" stroke="black" stroke-width="5" stroke-linejoin="round"/>
+<svg width="195" height="219" viewBox="0 0 195 219" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M97.1275 0L0 54.6792L0 164.038L97.1275 218.717L194.255 164.038L194.255 54.6792L97.1275 0Z" fill="url(#paint0_linear)"/>
+<g clip-path="url(#clip0)">
+<path d="M63.771 127H39V92H46.4965V119.333H61.1635L63.771 127Z" fill="white"/>
+<path d="M91.4755 127H64.7488V92H91.4755V99.6667H72.2453V105.667H84.6308V113.333H72.2453V119.333H91.4755V127Z" fill="white"/>
+<path d="M113.639 92H106.142L92.4532 127H99.9497L102.883 119.333H116.572L119.832 127H127.328L113.639 92ZM105.165 113.333L110.054 101.667L114.617 113.333H105.165Z" fill="white"/>
+<path d="M144.57 92H128.306V127H135.802V119.333V113.333H144.57C150.307 113.333 155 108.567 155 102.7C155.033 96.8 150.339 92 144.57 92ZM144.603 105.667H135.802V99.6667H144.603C146.232 99.6667 147.536 101 147.536 102.667C147.536 104.333 146.232 105.667 144.603 105.667Z" fill="white"/>
+</g>
+<defs>
+<linearGradient id="paint0_linear" x1="110" y1="70" x2="443" y2="616" gradientUnits="userSpaceOnUse">
+<stop stop-color="#00ADB9"/>
+<stop offset="0.848714" stop-color="#42145F" stop-opacity="0"/>
+</linearGradient>
+<clipPath id="clip0">
+<rect width="116" height="35" fill="white" transform="translate(39 92)"/>
+</clipPath>
+</defs>
 </svg>
