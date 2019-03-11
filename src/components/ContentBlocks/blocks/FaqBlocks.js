@@ -3,10 +3,10 @@ import PropTypes from "prop-types"
 import {StaticQuery, graphql} from "gatsby"
 import {Row, Col, Collapse} from "reactstrap"
 import ContainerMaxWidth from "components/shared/ContainerMaxWidth"
-import Animation from "components/shared/Animation"
 import Text from "components/shared/Text"
 import FadeInUp from "components/shared/FadeInUp"
 import {withTheme} from 'styled-components'
+import Img from 'gatsby-image'
 
 const FaqBlocks = (props) => (
     <StaticQuery
@@ -22,10 +22,10 @@ const FaqBlocks = (props) => (
                                 id
                                 title
                                 color
-                                image {
+                                gradientImage {
                                     childImageSharp  {
                                         fluid(maxWidth: 1400) {
-                                            ...GatsbyImageSharpFluid
+                                            ...GatsbyImageSharpFluid_tracedSVG
                                         }
                                     }
                                 }
@@ -168,7 +168,7 @@ class Blocks extends Component {
         // when fadeinup has finished, start the infoblock animation
         // animated and id are passed up from FadeInUp once animated
         // get number of animation from id
-        const i = id.split('#infoBlock')[1]
+        const i = id.split('#faqBlock')[1]
 
         if (animated) {
             this.playAnimation(i)
@@ -215,9 +215,7 @@ class Blocks extends Component {
                             </Col>
                         </Row>
                         <div className="gradientSeparator">
-                            {block.image !== "" &&
-                            <img src={block.image} alt=""/>
-                            }
+                            <Img fluid={block.gradientImage.childImageSharp.fluid} alt="" />
                         </div>
                     </div>
                 </FadeInUp>

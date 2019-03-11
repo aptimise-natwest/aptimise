@@ -130,7 +130,7 @@
                 "id": "purchaseOrders",
                 "title": "Purchase Orders",
                 "color": "purpleDark",
-                "image": "../images/backgrounds/gradient-separator.svg",
+                "gradientImage": "../images/backgrounds/gradient-separator.svg",
                 "faqBlockElements": [
                     {
                         "title": "How do purchase orders (POs) appear in APtimise?",
@@ -154,7 +154,7 @@
                 "id": "invoices",
                 "title": "Invoices",
                 "color": "yellow",
-                "image": "../images/backgrounds/gradient-separator.svg",
+                "gradientImage": "../images/backgrounds/gradient-separator.svg",
                 "faqBlockElements": [
                     {
                         "title": "How long will it take for invoices to appear on APtimise?",
@@ -186,7 +186,7 @@
                 "id": "payments",
                 "title": "Payments",
                 "color": "turquoise",
-                "image": "../images/backgrounds/gradient-separator.svg",
+                "gradientImage": "../images/backgrounds/gradient-separator.svg",
                 "faqBlockElements": [
                     {
                       "title": "How do I apply Credit Notes in APtimise?",
@@ -218,7 +218,7 @@
                 "id": "keyResources",
                 "title": "Key Resources Accounting System",
                 "color": "pink",
-                "image": "../images/backgrounds/gradient-separator.svg",
+                "gradientImage": "../images/backgrounds/gradient-separator.svg",
                 "faqBlockElements": [
                     {
                       "title": "How do I know APtimise is syncing with my Accounting Package?",
@@ -234,7 +234,7 @@
                 "id": "security",
                 "title": "Security",
                 "color": "blue",
-                "image": "",
+                "gradientImage": "../images/backgrounds/gradient-separator.svg",
                 "faqBlockElements": [
                     {
                       "title": "I don’t remember my username and/or password.",
