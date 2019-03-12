@@ -39,7 +39,8 @@ class Blocks extends Component {
 
         this.state = {
             animation: [],
-            animationDelay: []
+            animationDelay: [],
+            block: ""
         }
 
         this.getBlock = this.getBlock.bind(this)
@@ -48,35 +49,14 @@ class Blocks extends Component {
         this.fadeInUpAnimated = this.fadeInUpAnimated.bind(this)
     }
 
-    componentDidMount() {
-        this.setAnimationState()
-    }
+    getBlock() {
+        // Retrieve the content block
+        // Loop all blocks and search for matching id
+        const block = this.props.data.allContentBlocksJson.edges.filter(
+            ({ node }) => this.props.id === node.id
+        )[0]
 
-    setDelay() {
-        // Change to show if partially visible on smaller devices
-        if (typeof window !== undefined) {
-
-            const breakpoint = this.props.theme.sizes.lg.replace('px', '')
-            const block = this.getBlock()
-            let animationDelayState = []
-
-            if (window.innerWidth < breakpoint) {
-                // No delay on mobile
-                for (let i = 0; block.node.infoBlocks.length > i; i++) {
-                    animationDelayState[i] = 0
-                }
-            } else {
-                // stagger delay on dekstop
-                for (let i = 0; block.node.infoBlocks.length > i; i++) {
-                    animationDelayState[i] = i
-                }
-            }
-
-            this.setState({
-                animationDelay: animationDelayState
-            })
-        }
-
+        return block
     }
 
     setAnimationState() {
@@ -93,16 +73,6 @@ class Blocks extends Component {
         })
     }
 
-    getBlock() {
-        // Retrieve the content block
-        // Loop all blocks and search for matching id
-        const block = this.props.data.allContentBlocksJson.edges.filter(
-            ({ node }) => this.props.id === node.id
-        )[0]
-
-        return block
-    }
-
     playAnimation(i) {
         let animation = [...this.state.animation]
         animation[i] = true
@@ -114,7 +84,6 @@ class Blocks extends Component {
         // animated and id are passed up from FadeInUp once animated
         // get number of animation from id
         const i = id.split('#infoBlock')[1]
-
         if (animated) {
             this.playAnimation(i)
         }
@@ -122,15 +91,34 @@ class Blocks extends Component {
 
     render() {
         const block = this.getBlock()
+        let animationDelay = []
+
+        // Set delay of animation for each block, 0 delay on mobile
+        if (typeof window !== 'undefined') {
+
+            const breakpoint = this.props.theme.sizes.lg.replace('px', '')
+
+            if (window.innerWidth < breakpoint) {
+                // No delay on mobile
+                for (let i = 0; block.node.infoBlocks.length > i; i++) {
+                    animationDelay[i] = 0
+                }
+            } else {
+                // stagger delay on dekstop
+                for (let i = 0; block.node.infoBlocks.length > i; i++) {
+                    animationDelay[i] = i
+                }
+            }
+        }
 
         const infoBlocks = block.node.infoBlocks.map((block, i) => {
             return (
-                <FadeInUp 
-                    key={i} 
-                    elementId={`#infoBlock${i}`} 
+                <FadeInUp
+                    key={i}
+                    elementId={`#infoBlock${i}`}
                     animated={this.fadeInUpAnimated}
-                    delay={this.state.animationDelay[i]}
-                    >
+                    delay={animationDelay[i]}
+                >
                     <Col lg={6} className="pb-5 pb-lg-4" id={`infoBlock${i}`}>
                         <Row>
                             <Col xs={3} md={2} lg={3} xl={2}>
@@ -142,7 +130,7 @@ class Blocks extends Component {
                             </Col>
                         </Row>
                     </Col>
-                </FadeInUp> 
+                </FadeInUp>
             )
         })
 

@@ -15,7 +15,11 @@ class FadeInUp extends Component {
         }
         
         this.initialTimeline = new TimelineMax()
-        this.masterTimeline = new TimelineMax({ paused: true, onComplete: () => this.props.animated(true, this.props.elementId)})
+        // Pass animated function back up once completed so parent component knows
+        this.masterTimeline = new TimelineMax({ 
+            paused: true, 
+            onComplete: () => this.props.animated(true, this.props.elementId)
+        })
         this.setInitial = this.setInitial.bind(this)
         this.fadeInUp = this.fadeInUp.bind(this)
         this.play = this.play.bind(this)
