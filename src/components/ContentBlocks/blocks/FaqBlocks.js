@@ -4,10 +4,11 @@ import {StaticQuery, graphql} from "gatsby"
 import {Row, Col, Collapse} from "reactstrap"
 import ContainerMaxWidth from "components/shared/ContainerMaxWidth"
 import Text from "components/shared/Text"
-import FadeInUp from "components/shared/FadeInUp"
+import Animation from "components/shared/Animation"
 import {withTheme} from "styled-components"
 import gradientSeparator from "images/backgrounds/gradient-separator.svg"
 import styled from "styled-components";
+import VisibilitySensor from "react-visibility-sensor";
 
 const FaqBlocks = (props) => (
     <StaticQuery
@@ -23,6 +24,7 @@ const FaqBlocks = (props) => (
                                 id
                                 title
                                 color
+                                animation
                                 faqBlockElements {
                                     title
                                     textHTML
@@ -49,21 +51,19 @@ class Blocks extends Component {
         super(props)
 
         this.state = {
-            animation: [],
+            animation: false,
             animationDelay: [],
             collapseState: {}
         }
 
         this.getBlock = this.getBlock.bind(this)
-        this.setAnimationState = this.setAnimationState.bind(this)
         this.playAnimation = this.playAnimation.bind(this)
-        this.fadeInUpAnimated = this.fadeInUpAnimated.bind(this)
         this.toggleCollapse = this.toggleCollapse.bind(this);
         this.collapseToggleWindowWidth = this.collapseToggleWindowWidth.bind(this);
     }
 
     componentDidMount() {
-        this.setAnimationState()
+        this.partialVisible()
         this.collapseToggleWindowWidth();
         window.addEventListener('resize', this.collapseToggleWindowWidth, true);
     }
@@ -105,45 +105,14 @@ class Blocks extends Component {
 
     }
 
-    setDelay() {
-        // Change to show if partially visible on smaller devices
-        if (typeof window !== 'undefined') {
-
+    partialVisible() {
+        if (typeof window !== "undefined") {
             const breakpoint = this.props.theme.sizes.lg.replace('px', '')
-            const block = this.getBlock()
-            let animationDelayState = []
-
-            if (window.innerWidth < breakpoint) {
-                // No delay on mobile
-                for (let i = 0; block.node.faqBlocks.length > i; i++) {
-                    animationDelayState[i] = 0
-                }
-            } else {
-                // stagger delay on dekstop
-                for (let i = 0; block.node.faqBlocks.length > i; i++) {
-                    animationDelayState[i] = i
-                }
-            }
-
+            const partialVisible = window.innerWidth < breakpoint ? true : false
             this.setState({
-                animationDelay: animationDelayState
+                partialVisible
             })
         }
-
-    }
-
-    setAnimationState() {
-        // Set animation state for each infoblock
-        let animationState = []
-        const block = this.getBlock()
-
-        for (let i = 0; block.node.faqBlocks.length > i; i++) {
-            animationState[i] = false
-        }
-
-        this.setState({
-            animation: animationState
-        })
     }
 
     getBlock() {
@@ -156,20 +125,9 @@ class Blocks extends Component {
         return block
     }
 
-    playAnimation(i) {
-        let animation = [...this.state.animation]
-        animation[i] = true
-        this.setState({animation});
-    }
-
-    fadeInUpAnimated(animated, id) {
-        // when fadeinup has finished, start the infoblock animation
-        // animated and id are passed up from FadeInUp once animated
-        // get number of animation from id
-        const i = id.split('#faqBlock')[1]
-
-        if (animated) {
-            this.playAnimation(i)
+    playAnimation(isVisible) {
+        if (isVisible) {
+            this.setState({ animation: true });
         }
     }
 
@@ -179,21 +137,15 @@ class Blocks extends Component {
 
         const faqBlocks = block.node.faqBlocks.map((block, i) => {
             return (
-                <FadeInUp
+                <VisibilitySensor
+                    onChange={this.playAnimation}
+                    partialVisibility={this.state.partialVisible}
                     key={i}
-                    elementId={`#faqBlock${i}`}
-                    animated={this.fadeInUpAnimated}
-                    delay={this.state.animationDelay[i]}
                 >
                     <div>
                         <Row>
                             <Col xs={3} md={2}>
-                                <svg viewBox="0 0 76.19 82" id="fast" style={{
-                                    overflow: "visible",
-                                    maxWidth: "100%"
-                                }}>
-                                    <path fill={theme.colors[`${block.color}`]} d="M0 21.82L38 44l38.19-22.34L38 0z" />
-                                </svg>
+                                <Animation block={block} type={block.animation} play={this.state.animation} />
                             </Col>
                             <Col xs={9} md={10}>
                                 <h3 id={`#faqBlock${i}`} className="pb-3" onClick={this.toggleCollapse}>{block.title}</h3>
@@ -218,7 +170,7 @@ class Blocks extends Component {
                             }
                         </GradientSeparator>
                     </div>
-                </FadeInUp>
+                </VisibilitySensor>
             )
         })
 

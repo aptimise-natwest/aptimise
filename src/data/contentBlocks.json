@@ -130,6 +130,7 @@
                 "id": "purchaseOrders",
                 "title": "Purchase Orders",
                 "color": "purpleDark",
+                "animation": "oneElement",
                 "faqBlockElements": [
                     {
                         "title": "How do purchase orders (POs) appear in APtimise?",
@@ -153,6 +154,7 @@
                 "id": "invoices",
                 "title": "Invoices",
                 "color": "yellow",
+                "animation": "oneElement",
                 "faqBlockElements": [
                     {
                         "title": "How long will it take for invoices to appear on APtimise?",
@@ -184,6 +186,7 @@
                 "id": "payments",
                 "title": "Payments",
                 "color": "turquoise",
+                "animation": "oneElement",
                 "faqBlockElements": [
                     {
                       "title": "How do I apply Credit Notes in APtimise?",
@@ -215,6 +218,7 @@
                 "id": "keyResources",
                 "title": "Key Resources Accounting System",
                 "color": "pink",
+                "animation": "oneElement",
                 "faqBlockElements": [
                     {
                       "title": "How do I know APtimise is syncing with my Accounting Package?",
@@ -230,6 +234,7 @@
                 "id": "security",
                 "title": "Security",
                 "color": "blue",
+                "animation": "oneElement",
                 "faqBlockElements": [
                     {
                       "title": "I don’t remember my username and/or password.",

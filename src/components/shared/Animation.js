@@ -4,6 +4,7 @@ import Accurate from "./Accurate"
 import Secure from "./Secure"
 import Simple from "./Simple"
 import More from "./More"
+import OneElement from "./OneElement"
 
 const Animation = (props) => {
 
@@ -20,6 +21,8 @@ const Animation = (props) => {
             return <Simple play={play} />
         case "more":
             return <More play={play} />
+        case "oneElement":
+            return <OneElement block={props.block} play={play} />
         default:
             return ""
     }
