@@ -22,24 +22,23 @@ const ModalAngled = styled(Modal)`
         transform: translate3d(0, 0, 0) !important;
     }
 
-    &:before {
-        content: "";
-        position: absolute;
-        top: 0;
-        background-image: url(${angledPanel});
-        background-repeat: no-repeat;
-        background-size: 120%;
-        background-position: bottom center;
-        width: 100%;
-        height: 21vh;
-        left: 0;
-        top: 0;
-    }
-
     .modal-content {
         border-radius: 0;
         border: 0;
         min-height: 80vh;
+
+        &:before {
+            content: "";
+            position: absolute;
+            background-image: url(${angledPanel});
+            background-repeat: no-repeat;
+            background-size: 120%;
+            background-position: bottom center;
+            width: 100%;
+            height: 21vh;
+            left: 0;
+            bottom: 99%;
+        }
 
         ${props => props.background && css`
             @media ${media.md} {

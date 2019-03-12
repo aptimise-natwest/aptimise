@@ -69,7 +69,7 @@ const Dial = styled.div`
 const RangesliderWrap = styled.div`
     position: relative;
     height: 40px;
-    margin-top: 1rem;
+    margin-top: 1.6rem;
     text-align: left !important;
 `
 
