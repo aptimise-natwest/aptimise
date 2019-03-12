@@ -1,14 +1,18 @@
 import React, {Component} from "react"
 import PropTypes from "prop-types"
 import {StaticQuery, graphql} from "gatsby"
-import {Row, Col, Collapse} from "reactstrap"
+import { Row, Col, UncontrolledCollapse} from "reactstrap"
+import styled from "styled-components";
+import VisibilitySensor from "react-visibility-sensor";
+import { media } from "utils/Media"
 import ContainerMaxWidth from "components/shared/ContainerMaxWidth"
 import Text from "components/shared/Text"
 import Animation from "components/shared/Animation"
 import {withTheme} from "styled-components"
 import gradientSeparator from "images/backgrounds/gradient-separator.svg"
-import styled from "styled-components";
-import VisibilitySensor from "react-visibility-sensor";
+import gradientSeparatorMobile from "images/backgrounds/gradient-separator-mobile.svg"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faAngleDown } from '@fortawesome/free-solid-svg-icons'
 
 const FaqBlocks = (props) => (
     <StaticQuery
@@ -42,7 +46,37 @@ const FaqBlocks = (props) => (
 )
 
 const GradientSeparator = styled.div`
-    margin: 100px 0;
+    width: 100%;
+    padding-bottom: 3rem;
+    img {
+        width: 100%;
+    }
+`
+
+const CollapseToggle = styled.h3`
+    cursor: pointer;
+    padding-bottom: 1rem;
+    position: relative;
+    font-size: ${props => props.theme.font.h4.size};
+
+    @media ${media.md} {
+        cursor: default;
+        font-size: ${props => props.theme.font.h3.size};
+    }
+`
+
+const CollapseToggleIcon = styled(FontAwesomeIcon)`
+    position: absolute;
+    right: -1rem;
+    top: .5rem;
+    color: ${props => props.theme.colors.grey};
+`
+
+const FaqWrap = styled(Row)`
+    ${media.md} {
+        padding-top: 5rem;
+        padding-bottom: 5rem;
+    }
 `
 
 class Blocks extends Component {
@@ -52,18 +86,17 @@ class Blocks extends Component {
 
         this.state = {
             animation: false,
-            animationDelay: [],
-            collapseState: {}
+            collapseState: false
         }
 
+        this.setAnimationState = this.setAnimationState.bind(this)
         this.getBlock = this.getBlock.bind(this)
         this.playAnimation = this.playAnimation.bind(this)
-        this.toggleCollapse = this.toggleCollapse.bind(this);
         this.collapseToggleWindowWidth = this.collapseToggleWindowWidth.bind(this);
     }
 
     componentDidMount() {
-        this.partialVisible()
+        this.setAnimationState();
         this.collapseToggleWindowWidth();
         window.addEventListener('resize', this.collapseToggleWindowWidth, true);
     }
@@ -72,10 +105,23 @@ class Blocks extends Component {
         window.removeEventListener('resize', this.collapseToggleWindowWidth, true);
     }
 
+    setAnimationState() {
+        // Set animation state for each infoblock
+        let animationState = []
+        const block = this.getBlock()
+
+        for (let i = 0; block.node.faqBlocks.length > i; i++) {
+            animationState[i] = false
+        }
+
+        this.setState({
+            animation: animationState
+        })
+    }
+
     // Method to determine whether collapses should be open or closed, depending on window width
     collapseToggleWindowWidth() {
         const width = window.innerWidth;
-        const newState = {};
         let collapsed;
 
         if (width < 992) {
@@ -84,35 +130,9 @@ class Blocks extends Component {
             collapsed = true;
         }
 
-        for (let key in this.state) {
-            newState[key] = collapsed;
-        }
-
-        this.setState(newState);
-    }
-
-    toggleCollapse(e) {
-        e.preventDefault();
-
-        const width = window.innerWidth;
-
-        if (width < 992) {
-            const collapse = e.currentTarget.id;
-            this.setState({
-                [collapse]: !this.state[collapse]
-            })
-        }
-
-    }
-
-    partialVisible() {
-        if (typeof window !== "undefined") {
-            const breakpoint = this.props.theme.sizes.lg.replace('px', '')
-            const partialVisible = window.innerWidth < breakpoint ? true : false
-            this.setState({
-                partialVisible
-            })
-        }
+        this.setState({
+            collapseState: collapsed
+        })
     }
 
     getBlock() {
@@ -125,32 +145,36 @@ class Blocks extends Component {
         return block
     }
 
-    playAnimation(isVisible) {
+    playAnimation(isVisible, i) {
+        console.log(i)
         if (isVisible) {
-            this.setState({ animation: true });
+            let animation = [...this.state.animation]
+            animation[i] = true
+            this.setState({ animation });
         }
     }
 
     render() {
-        const { theme } = this.props
-        const block = this.getBlock()
+        const contentBlock = this.getBlock()
 
-        const faqBlocks = block.node.faqBlocks.map((block, i) => {
+        const faqBlocks = contentBlock.node.faqBlocks.map((block, i) => {
             return (
                 <VisibilitySensor
-                    onChange={this.playAnimation}
-                    partialVisibility={this.state.partialVisible}
+                    onChange={(isVisible) => this.playAnimation(isVisible, i)}
+                    partialVisibility={true}
                     key={i}
                 >
-                    <div>
-                        <Row>
+                    <>
+                        <FaqWrap>
                             <Col xs={3} md={2}>
-                                <Animation block={block} type={block.animation} play={this.state.animation} />
+                                <Animation block={block} type={block.animation} play={this.state.animation[i]} />
                             </Col>
                             <Col xs={9} md={10}>
-                                <h3 id={`#faqBlock${i}`} className="pb-3" onClick={this.toggleCollapse}>{block.title}</h3>
-                                {/*<Collapse isOpen={this.state[`faqBlock${i}`]}>*/}
-                                <Collapse isOpen={true}>
+                                <CollapseToggle id={`faqBlock${i}`}>
+                                    {block.title}
+                                    <CollapseToggleIcon icon={faAngleDown} className="d-md-none" />
+                                </CollapseToggle>
+                                <UncontrolledCollapse toggler={`#faqBlock${i}`} className={`${this.state.collapseState ? 'show' : ''}`}>
                                     <Row>
                                         {block.faqBlockElements.map((element, j) => {
                                             return (
@@ -161,15 +185,16 @@ class Blocks extends Component {
                                             )
                                         })}
                                     </Row>
-                                </Collapse>
+                                </UncontrolledCollapse>
                             </Col>
-                        </Row>
-                        <GradientSeparator>
-                            {block.id !== "security" &&
-                            <img src={gradientSeparator} alt="" />
+                            {i + 1 < contentBlock.node.faqBlocks.length &&
+                                <GradientSeparator>
+                                    <img src={gradientSeparator} alt="" className="d-none d-md-block" />
+                                    <img src={gradientSeparatorMobile} alt="" className="d-block d-md-none" />
+                                </GradientSeparator>
                             }
-                        </GradientSeparator>
-                    </div>
+                        </FaqWrap>
+                    </>
                 </VisibilitySensor>
             )
         })

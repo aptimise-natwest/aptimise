@@ -205,8 +205,8 @@ class Footer extends Component {
                                             </Link>
                                         </li>
                                         <li>
-                                            <Link to="/faqs/">
-                                                <Text size="md" color="white">FAQs</Text>
+                                            <Link to="/help/">
+                                                <Text size="md" color="white">Help?</Text>
                                             </Link>
                                         </li>
                                     </UsefulLinks>                            
