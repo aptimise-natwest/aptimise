@@ -1,3 +1,4 @@
+// match bootstrap sizes, also add xxl
 const sizes = {
     xs: "0px",
     sm: "576px",
@@ -29,7 +30,8 @@ const font = {
         xl: `${fontSizeBase * 1.5}rem` // 24px
     },
     lineHeight: {
-        base: 1.5,
+        sm: 1.5,
+        base: 1.7,
         headings: 1.2
     },
     h1: {

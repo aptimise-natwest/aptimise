@@ -1,4 +1,5 @@
 import { createGlobalStyle, withTheme } from "styled-components";
+import { media } from "utils/Media"
 import fontFiles from "./Fonts";
 
 const GlobalStyles = createGlobalStyle`
@@ -48,9 +49,13 @@ const GlobalStyles = createGlobalStyle`
         font-family: ${props => props.theme.font.family.body};
         font-size: ${props => props.theme.font.size.base};
         font-weight: normal;
-        line-height: ${props => props.theme.font.lineHeight.base};
+        line-height: ${props => props.theme.font.lineHeight.sm};
         color: ${props => props.theme.colors.blackOff};
         -webkit-font-smoothing: antialiased;
+
+        @media ${media.lg} {
+            line-height: ${props => props.theme.font.lineHeight.base};
+        }
     }
 
     h1,
@@ -81,6 +86,11 @@ const GlobalStyles = createGlobalStyle`
     }
     h6 {
         font-size: ${props => props.theme.font.h6.size};
+    }
+
+    .modal-backdrop {
+        background-color: ${props => props.theme.colors.grey};
+        opacity: .3 !important;
     }
 `;
 

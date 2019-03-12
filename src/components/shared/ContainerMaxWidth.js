@@ -11,7 +11,6 @@ const ContainerMaxWidth = styled(Container)`
         padding-left: 4rem;
         padding-right: 4rem;
     }
-
 `
 
 export default ContainerMaxWidth

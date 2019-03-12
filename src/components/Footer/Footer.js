@@ -3,9 +3,9 @@ import { Link } from "gatsby"
 import { TimelineMax } from "gsap"
 import VisibilitySensor from "react-visibility-sensor"
 import styled from "styled-components"
-import { media } from "utils/Media";
+import { media } from "utils/Media"
 import { Container, Row, Col } from "reactstrap"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import AptimiseLogo from "components/shared/AptimiseLogo"
 import Text from "components/shared/Text"
 import footerBg from "images/backgrounds/footer-bg.svg"
@@ -192,21 +192,21 @@ class Footer extends Component {
                                             <FontAwesomeIcon icon={faFacebookF} />
                                         </LinkItem>
                                     </LinkWrap>
-                                    <Text className="pb-3" size="md">WeWork building 8, Devonshire Square, London, EC2M 4PL</Text>
+                                    <Text className="pb-3" size="md" color="white">WeWork building 8, Devonshire Square, London, EC2M 4PL</Text>
                                     <UsefulLinks>
                                         <li>
                                             <a href="mailto:">
-                                                <Text size="md">Contact us</Text>
+                                                <Text size="md" color="white">Contact us</Text>
                                             </a>
                                         </li>
                                         <li>
                                             <Link to="/privacy-policy/">
-                                                <Text size="md">Privacy Policy</Text>
+                                                <Text size="md" color="white">Privacy Policy</Text>
                                             </Link>
                                         </li>
                                         <li>
                                             <Link to="/faqs/">
-                                                <Text size="md">FAQs</Text>
+                                                <Text size="md" color="white">FAQs</Text>
                                             </Link>
                                         </li>
                                     </UsefulLinks>                            
@@ -232,7 +232,7 @@ class Footer extends Component {
                                     <a href="#">
                                         <img src={natwestLogo} alt="Natwest" style={{ maxWidth: "133px" }} />
                                     </a>
-                                    <Text size="md" className="pt-2">
+                                    <Text size="md" className="pt-2" color="white">
                                         Our <Link to="/privacy-policy/">Privacy Policy</Link>
                                     </Text>
                                 </Col>

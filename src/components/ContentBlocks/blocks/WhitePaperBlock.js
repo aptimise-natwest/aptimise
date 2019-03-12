@@ -2,10 +2,21 @@ import React, { Component } from "react"
 import PropTypes from "prop-types"
 import { StaticQuery, graphql } from "gatsby"
 import { Container, Row, Col, ModalBody } from "reactstrap"
+import styled from "styled-components"
+import { media } from "utils/Media"
 import ContainerMaxWidth from "components/shared/ContainerMaxWidth"
 import Text from "components/shared/Text"
 import Button from "components/shared/Button"
 import ModalAngled from "components/shared/ModalAngled"
+import ModalAngledClose from "components/shared/ModalAngledClose"
+
+const WhitePaperButton = styled(Button)`
+    width: 100%;
+
+    @media ${media.md} {
+        width: auto;
+    }
+`
 
 const WhitePaperBlock = (props) => (
     <StaticQuery
@@ -63,7 +74,7 @@ class WhitePaper extends Component {
                         <Col lg={6}>
                             <h4>{title}</h4>
                             <Text dangerouslySetInnerHTML={{ __html: textHTML }} />
-                            <Button onClick={this.toggle}>{buttonText}</Button>
+                            <WhitePaperButton onClick={this.toggle} as="button" purple>{buttonText}</WhitePaperButton>
                         </Col>
                         <Col lg={6}>
 
@@ -71,6 +82,7 @@ class WhitePaper extends Component {
                     </Row>
                 </ContainerMaxWidth>
                 <ModalAngled isOpen={this.state.modal} toggle={this.toggle} background={true}>
+                    <ModalAngledClose onClick={this.toggle} />
                     <ModalBody>
                         <Container>
                             <Row className="justify-content-center">

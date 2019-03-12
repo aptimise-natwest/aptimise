@@ -1,15 +1,5 @@
 [
     {
-        "id": "landingBlockHome",
-        "type": "LandingBlock",
-        "imageDesktop": "../images/backgrounds/landing-home-bg.jpg",
-        "imageMobile": "../images/backgrounds/landing-home-bg-mobile.jpg",
-        "title": "Revolutionise your<br/> accounts payable<br/> with APtimise",
-        "videoText": "Watch now",
-        "youtubeVideo": "temp",
-        "text": "Reduce your invoice processing time by up to 50% with the UK’s only end-end accounts payable solution"
-    },
-    {
         "id": "textBlockHome",
         "type": "TextBlock",
         "size": "xl",
@@ -43,53 +33,7 @@
         ]
     },
     {
-        "id": "linkBlockHome",
-        "type": "LinkBlock",
-        "links": [
-            {
-                "link": "https://google.com",
-                "linkText": "download our “how it works” guide"
-            },
-            {
-                "link": "/help/",
-                "linkText": "need help?"
-            }
-        ] 
-    },
-    {
-        "id": "infoBlockFullWidthHome",
-        "type": "InfoBlockFullWidth",
-        "animation": "more",
-        "title": "Still with us? There’s more!",
-        "textIntroHTML": "<p>It sounds too good to be true, right? See how it could work for your business with an online demo.</p>",
-        "textHTML": "<p>Get up-and-running quickly with the ‘APtimise hour’: set-up and training in 60 minutes </p><p> Our dedicated success managers will help you every step of the way </p><p> Out-of-the-box integration with Xero, Sage50 & 200, Quickbooks, Aqilla and NetSuite </p><p> Not a NatWest customer? No problem. You don’t need to switch your primary banking and our team will help you get going </p>"
-    },
-    {
-        "id": "calculatorBlockHome",
-        "type": "CalculatorBlock",
-        "title": "What’s APtimise worth to your business?",
-        "textHTML": "Work out the potential savings you could make with the easy switch to APtimise.",
-        "textInvoices": "Invoices processed per month",
-        "textPaymentRuns": "Payment runs per month",
-        "textEmployees": "Number of accounting employees",
-        "textSummary": "hours of time saved a year",
-        "textButton": "pick your demo slot"
-    },
-    {
-        "id": "whitePaperBlockHome",
-        "type": "WhitePaperBlock",
-        "title": "Our whitepaper",
-        "textHTML": "<p>Maecenas sed diam eget risus varius blandit sit amet non magna. Donec ullamcorper nulla non metus auctor fringilla. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Etiam porta sem malesuada magna mollis euismod.</p>",
-        "buttonText": "download whitepaper"
-    },
-    {
-      "id": "diagramBlockHome",
-      "type": "DiagramBlock",
-      "title": "Book a 20 minute online demo now",
-      "textHTML": "<p>It sounds too good to be true, right? See how it could work for your business with an online demo.</p>",
-      "buttonText": "pick your demo slot"
-    },
-    {
+<<<<<<< HEAD
         "id": "carouselBlocksHome",
         "type": "CarouselBlocks",
         "carouselBlocks": [
@@ -130,5 +74,20 @@
                 "videoId": ""
             }
         ]
+=======
+        "id": "infoBlockFullWidthHome",
+        "type": "InfoBlockFullWidth",
+        "animation": "more",
+        "title": "Still with us? There’s more!",
+        "textIntroHTML": "<p>It sounds too good to be true, right? See how it could work for your business with an online demo.</p>",
+        "textHTML": "<p>Get up-and-running quickly with the ‘APtimise hour’: set-up and training in 60 minutes </p><p> Our dedicated success managers will help you every step of the way </p><p> Out-of-the-box integration with Xero, Sage50 & 200, Quickbooks, Aqilla and NetSuite </p><p> Not a NatWest customer? No problem. You don’t need to switch your primary banking and our team will help you get going </p>"
+    },
+    {
+        "id": "whitePaperBlockHome",
+        "type": "WhitePaperBlock",
+        "title": "Our whitepaper",
+        "textHTML": "<p>Maecenas sed diam eget risus varius blandit sit amet non magna. Donec ullamcorper nulla non metus auctor fringilla. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Etiam porta sem malesuada magna mollis euismod.</p>",
+        "buttonText": "download whitepaper" 
+>>>>>>> master
     }
 ]

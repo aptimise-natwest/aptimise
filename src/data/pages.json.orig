@@ -8,12 +8,16 @@
             "landingBlockHome",
             "textBlockHome", 
             "infoBlocksHome", 
-            "linkBlockHome",
-            "calculatorBlockHome",
-            "infoBlockFullWidthHome", 
+<<<<<<< HEAD
+            "infoBlockFullWidthHome",
             "whitePaperBlockHome",
-			"diagramBlockHome",
+            "diagramBlockHome",
 			"carouselBlocksHome"
+=======
+            "linkBlockHome",
+            "infoBlockFullWidthHome", 
+            "whitePaperBlockHome" 
+>>>>>>> master
         ]
     }
 ]
