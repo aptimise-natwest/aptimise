@@ -58,6 +58,7 @@ const TextSummary = styled(Text)`
 `
 
 const Dial = styled.div`
+    display: inline-block;
     img {
         width: 215px;
         @media ${media.md} {
@@ -270,7 +271,6 @@ class Calculator extends  Component {
         Draggable.create(this.invoiceDial, {
             type: "rotation",
             dragClickables: true,
-            allowEventDefault: true,
             throwProps: true,
             cursor: "pointer",
             onDrag: function () {
@@ -286,7 +286,7 @@ class Calculator extends  Component {
             type: "rotation", 
             throwProps: true,
             dragClickables: true,
-            allowEventDefault: true,
+            lockAxis: true,
             cursor: "pointer",
             onDrag: function () {
                 const rotation = parseInt(this.rotation % 1000, 10) * 100
