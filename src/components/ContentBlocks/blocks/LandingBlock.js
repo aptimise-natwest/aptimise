@@ -11,13 +11,15 @@ import ButtonPlaySvg from "components/shared/ButtonPlaySvg"
 import ModalAngled from "components/shared/ModalAngled"
 import ModalAngledClose from "components/shared/ModalAngledClose"
 
-
 const LandingWrapper = styled(Container)`
     max-width: 1500px;
     padding: 0;
-    margin-bottom: 4rem;
+    margin-bottom: 2rem;
     position: relative;
     overflow: hidden;
+    @media ${media.md} {
+        margin-bottom: 4rem;
+    }
 `
 
 const LandingContent = styled(ContainerMaxWidth)`
@@ -49,7 +51,7 @@ const DesktopImg = styled(Img)`
         width: 100%;
         height: 100%;
         background-color:  ${props => props.theme.colors.black};
-        opacity: .3;
+        opacity: .2;
     }
 
     @media ${media.md} {
@@ -58,11 +60,16 @@ const DesktopImg = styled(Img)`
 `
 
 const DesktopSvg = styled.svg`
-    position: absolute;
-    bottom: -2px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: calc(100% + 4px);
+    display: none;
+
+    @media ${media.md} {
+        display: block;
+        position: absolute;
+        bottom: -2px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: calc(100% + 4px);
+    }
 `
 
 const MobileImg = styled(Img)`
@@ -104,6 +111,10 @@ const LandingText = styled(Text)`
 const LandingTextWrap = styled.div`
     position: relative;
     padding: 1rem 0 4rem;
+
+    @media ${media.sm} {
+        padding: 1rem 0 8rem;
+    }
 
     @media ${media.md} {
         padding: 0;
@@ -174,7 +185,7 @@ const LandingBlock = (props) => (
                             id
                             imageDesktop {
                                 childImageSharp  {
-                                    fluid(maxWidth: 1400) {
+                                    fluid(maxWidth: 1500) {
                                         ...GatsbyImageSharpFluid
                                     }
                                 }
@@ -269,9 +280,9 @@ class Landing extends Component {
                                         dangerouslySetInnerHTML={{ __html: text }}
                                     />
                                     <LandingTextSvg viewBox="0 0 320 280" fill="none">
-                                        <path opacity="0.25" d="M320 223L160 280L0 224.5V0H320V223Z" fill="url(#paint0_linear)" />
+                                        <path opacity="0.25" d="M320 223L160 280L0 224.5V0H320V223Z" fill="url(#paint1_linear)" />
                                         <defs>
-                                            <linearGradient id="paint0_linear" x1="157.222" y1="505.123" x2="157.222" y2="-146.244" gradientUnits="userSpaceOnUse">
+                                            <linearGradient id="paint1_linear" x1="157.222" y1="505.123" x2="157.222" y2="-146.244" gradientUnits="userSpaceOnUse">
                                                 <stop offset="0.10612" />
                                                 <stop offset="0.460759" stopOpacity="0" />
                                             </linearGradient>
