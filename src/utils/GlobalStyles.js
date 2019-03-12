@@ -88,6 +88,13 @@ const GlobalStyles = createGlobalStyle`
         font-size: ${props => props.theme.font.h6.size};
     }
 
+    a {
+        color: ${props => props.theme.colors.purpleDark};
+        &:hover {
+            color: ${props => props.theme.colors.purpleDark};  
+        }
+    }
+
     .modal-backdrop {
         background-color: ${props => props.theme.colors.grey};
         opacity: .3 !important;
