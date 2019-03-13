@@ -456,15 +456,15 @@ class Calculator extends  Component {
                                 </Dial>
                                 <Text className="pt-4">{textInvoices}</Text>
                                 <TextSummary size="xl" color="purple" textWrap>
-                                        <Input
-                                            type="text"
-                                            value={this.state.invoices}
-                                            name="invoices"
-                                            ref={invoices => this.invoices = invoices}
-                                            onChange={e => {
-                                                this.handleChange(e)
-                                            }}
-                                        /> invoices
+                                    <Input
+                                        type="text"
+                                        value={this.state.invoices}
+                                        name="invoices"
+                                        ref={invoices => this.invoices = invoices}
+                                        onChange={e => {
+                                            this.handleChange(e)
+                                        }}
+                                    /> invoices
                                 </TextSummary>
                             </Slide>
                             <Slide md={4}>
@@ -473,8 +473,7 @@ class Calculator extends  Component {
                                 </Dial>
                                 <Text className="pt-4">{textPaymentRuns}</Text>
                                 <TextSummary size="xl" color="purple" textWrap>
-                                    £ 
-                                    <Input
+                                    £ <Input
                                         type="text"
                                         value={this.state.payments}
                                         name="payments"
@@ -557,7 +556,6 @@ class Calculator extends  Component {
             </>
         )
     }
-
 }
 
 CalculatorBlock.propTypes = {
