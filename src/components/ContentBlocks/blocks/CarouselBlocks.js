@@ -4,80 +4,24 @@ import {StaticQuery, graphql} from "gatsby"
 import {Row, Col} from "reactstrap"
 import ContainerMaxWidth from "components/shared/ContainerMaxWidth"
 import Text from "components/shared/Text"
+import { media } from "utils/Media"
+import Hexagon from "components/shared/Hexagon"
+import HexagonCopy from "components/shared/HexagonCopy"
 import Slider from 'react-slick'
 import "slick-carousel/slick/slick.scss"
 import "slick-carousel/slick/slick-theme.css"
 import HexagonShape from "images/hexagon.svg"
-import GroupShape from "images/group.svg"
-import Shape1Shape from "images/shape1.svg"
 import ArrowLeft from "images/arrowLeft.svg"
 import ArrowRight from "images/arrowRight.svg"
 
-import styled from "styled-components";
-
-const SliderElement = styled.div`
-    img {
-        // max-width: 150px;
-        background-color: red;
-
-        // position: absolute;
-        // margin: 0 50px;
-
-    }
-`
-const arrowStyle = {
-  opacity: 0.99,
-  height: '50px',
-  width: '50px',
-  position: 'absolute',
-  top: '50%',
-  transform: 'translate(0, -50%)',
-  zIndex: '11'
-};
-
-const activeMobImgStyle = {
-  cursor: 'pointer',
-  position: 'absolute',
-  zIndex: '10',
-  transition: 'opacity 500ms 0ms',
-  opacity: 0.99
-  // transition: 'opacity 500ms 0ms, transform 500ms 0ms',
-  // transform: 'translate(50%)',
-
-};
-
-const inactiveMobImgStyle = {
-  transition: 'opacity 500ms 0ms',
-  opacity: 0.6
-};
-
-const inactiveMobImgStyle2 = {
-  transition: 'opacity 500ms 0ms',
-  opacity: 0.2
-};
-
-
-const activeImgStyle = {
-  cursor: 'pointer',
-  position: 'absolute',
-  zIndex: '10',
-  transition: 'opacity 500ms 0ms',
-  opacity: 0.99
-  // transition: 'opacity 500ms 0ms, transform 500ms 0ms',
-  // transform: 'translate(50%)',
-
-};
-
-const inactiveImgStyle = {
-  transition: 'opacity 500ms 0ms',
-  opacity: 0.6
-};
-
-const inactiveImgStyle2 = {
-  transition: 'opacity 500ms 0ms',
-  opacity: 0.2
-};
-
+import styled from "styled-components"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import {
+    faTwitter,
+    faFacebookF,
+    faLinkedin,
+    faGoogle
+} from '@fortawesome/free-brands-svg-icons'
 
 const CarouselBlocks = (props) => (
     <StaticQuery
@@ -90,7 +34,7 @@ const CarouselBlocks = (props) => (
                             carouselBlocks {
                                 title
                                 topText
-                                image
+                                imageCopy
                                 name
                                 position
                                 textHTML
@@ -107,6 +51,35 @@ const CarouselBlocks = (props) => (
     />
 )
 
+const LinkWrap = styled.div`
+    padding: 1rem 0;
+    display: flex;
+    align-items: center;
+
+    img {
+        width: 100%;
+    }
+`
+
+const LinkItem = styled.a`
+    padding: 1rem 1.25rem;
+    color: ${props => props.theme.colors.purpleDark};
+    font-size: 1.5rem;
+    transition:  ${props => props.theme.transitionBase};
+
+    @media ${media.sm} {
+        padding: 1rem;
+    }
+
+    &:first-child {
+        padding-left: 0;
+    }
+
+    &:hover {
+        color: ${props => props.theme.colors.white};
+    }
+`
+
 const sliderCommonSettings = {
     fade: true,
     infinite: false,
@@ -115,6 +88,72 @@ const sliderCommonSettings = {
     arrows: false
 }
 
+const HexagonCarousel = styled.div`
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    padding: 1.5rem 0;
+    
+    @media ${media.md} {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-left: -70px;
+    }
+    
+    .absoluteHelper {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-left: -70px;
+    }
+    
+    .arrow {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 100;
+        width: 32px;
+        
+        &-left {
+            left: 0;
+        }
+        
+        &-right {
+            right: 0;
+        }
+    }
+`
+
+const HexagonCarouselItem = styled.div`
+    margin-right: -90px;
+    width: 176px;
+    overflow: hidden;
+    
+    &:hover {
+        >div:not(.active)  {
+            opacity: 1 !important;
+            z-index: 100 !important;
+            >div  {
+                opacity: 0.8 !important;
+            }
+        }
+    }
+`
+
+const HexagonCarouselMobileItem = styled.div`
+    width: 270px;
+    margin-right: -150px;
+    
+    &.hidden {
+        display: none;
+    }
+`
+
 class Blocks extends Component {
 
     constructor(props) {
@@ -122,10 +161,11 @@ class Blocks extends Component {
 
         this.state = {
             // carouselTop: null,
-            // carouselUnderImages: null,
+            carouselUnderImages: null,
             carouselImages: null,
             carouselBottom: null,
-            slideIndex: 0
+            slideIndex: 0,
+            maxIndex: 1
         }
 
         this.getBlock = this.getBlock.bind(this)
@@ -135,149 +175,148 @@ class Blocks extends Component {
     }
 
     componentDidMount() {
-        // this.setState({
-        //     carouselTop: this.carouselTop,
-        //     carouselUnderImages: this.carouselUnderImages,
-        //     carouselBottom: this.carouselBottom
-        // })
-    }
+        const block = this.getBlock()
 
-    syncSliders(current, next, name) {
-        this.carouselBottom.slickGoTo(next)
-
-        // this.changeImages(next)
+        this.setState({
+            maxIndex: block.node.carouselBlocks.length - 1
+        })
     }
 
     changeSliders(next) {
         console.log('Index ', next)
-        // this.carouselTop.slickGoTo(next)
-        // this.carouselUnderImages.slickGoTo(next)
-        this.carouselBottom.slickGoTo(next)
+
+        setTimeout(() => {
+            this.carouselBottom.slickGoTo(next)
+            this.carouselUnderImages.slickGoTo(next)
+        }, 200)
 
         this.setState({
             slideIndex: next
         })
     }
-    //
-    // changeImages(next) {
-    //     this.setState({
-    //         slideIndex: next
-    //     })
-    // }
 
     imgClick(id) {
-      this.setState({
-          slideIndex: id
-      })
-      this.changeSliders(id)
-      // console.log('slideIndex :', this.state.slideIndex);
+        this.setState({
+            slideIndex: id
+        })
+        this.changeSliders(id)
     }
 
     leftClick() {
-      console.log('left');
-      this.imgClick((this.state.slideIndex === 0) ? 2:(this.state.slideIndex - 1))
+        this.imgClick(this.state.slideIndex === 0 ? this.state.maxIndex : (this.state.slideIndex - 1))
     }
 
     rightClick() {
-      console.log('right');
-      this.imgClick((this.state.slideIndex + 1) % 3)
+        console.log(this.state.maxIndex)
+        this.imgClick(this.state.slideIndex === this.state.maxIndex ? 0 : (this.state.slideIndex + 1))
     }
 
-    // renderImage(id) {
-    //   return <img src={HexagonShape} style={this.state.slideIndex === id ? activeImgStyle: inactiveImgStyle} onClick={()=> this.imgClick(id)}/>
-    // }
-    renderImage(id) {
-      const opacity = 1 - (Math.abs(this.state.slideIndex-id) * 0.3);
-      const zIndex = 10 - Math.abs(this.state.slideIndex-id);
-      const transform = 'translate(50%)';
-      // console.log(1-Math.abs(this.state.slideIndex-id)*0.2);
-      let styleAux = {...activeImgStyle, opacity, zIndex}
-      if (this.state.slideIndex === id){
-        return <img src={HexagonShape} style={activeImgStyle} onClick={()=> this.imgClick(id)}/>            // WORKS PLAIN
-        // return <img src={HexagonShape} style={{...activeImgStyle, left: '50%', transform}} onClick={()=> this.imgClick(id)}/>
-        // return <img src={HexagonShape} style={{...activeImgStyle, transform: 'translate(50%)'}} onClick={()=> this.imgClick(id)}/>
-      }else{
-        return <img src={Shape1Shape} style={styleAux} onClick={()=> this.imgClick(id)}/>
-      }
-    }
+    renderImage(id, block) {
+        let opacity = 0.05
+        let className = ''
+        const zIndex = 99 - Math.abs(this.state.slideIndex - id)
 
-    renderMobileImage(id) {
-      const opacity = 1 - (Math.abs(this.state.slideIndex-id) * 0.3);
-      const zIndex = 10 - Math.abs(this.state.slideIndex-id);
-      const transform = 'translate(100%)';
-      // console.log(1-Math.abs(this.state.slideIndex-id)*0.2);
-      let styleAux = {...activeImgStyle, opacity, zIndex, transform}
-      if (this.state.slideIndex === id){
-        return <img src={HexagonShape} style={{...activeImgStyle, transform}} onClick={()=> this.imgClick(id)}/>            // WORKS PLAIN
-        // return <img src={HexagonShape} style={{...activeImgStyle, left: '50%', transform}} onClick={()=> this.imgClick(id)}/>
-        // return <img src={HexagonShape} style={{...activeImgStyle, transform: 'translate(50%)'}} onClick={()=> this.imgClick(id)}/>
-      }else{
-        return <img src={Shape1Shape} style={styleAux} onClick={()=> this.imgClick(id)}/>
-      }
-    }
+        if (this.state.slideIndex === id) {
+            opacity = 1
+            className = 'active'
+        }
 
-    renderDesktopButtons() {
-      return (
-        <Col className="d-none d-md-block" xs={12} md={6} style={{minHeight: '219px'}}>
-          <Row>
-              <Col xs={3}>
-                {this.renderImage(0)}
-              </Col>
-              <Col xs={3}>
-                {this.renderImage(1)}
-              </Col>
-              <Col xs={3}>
-                {this.renderImage(2)}
-              </Col>
-              <Col xs={3}>
-                {this.renderImage(3)}
-              </Col>
-          </Row>
-        </Col>
-      )
-    }
+        if (this.state.slideIndex - 1 === id || this.state.slideIndex + 1 === id) {
+            opacity = 0.8
+        }
 
-    renderMobileButtons() {
-      return (
-        <Col className="d-block d-md-none" xs={12} md={6} style={{minHeight: '219px', overflowX:'hidden'}}>
-          <img src={ArrowLeft} style={arrowStyle} onClick={()=> this.leftClick()}/>
-          {/*<img src={ArrowLeft} style={arrowStyle} onClick={()=> this.setState({slideIndex: this.state.slideIndex === 0 ? 3:(this.state.slideIndex - 1)})}/>8?}
-          {/* <img src={ArrowLeft} style={arrowStyle} onClick={()=> this.imgClick((this.state.slideIndex - 1) % 4)}/>*/}
-          <Row>
-              <Col xs={3}>
-                {this.renderMobileImage(0)}
-              </Col>
-              <Col xs={3}>
-                {this.renderMobileImage(1)}
-              </Col>
-              <Col xs={3}>
-                {this.renderMobileImage(2)}
-              </Col>
+        if (this.state.slideIndex - 2 === id || this.state.slideIndex + 2 === id) {
+            opacity = 0.2
+        }
 
-          </Row>
-          <img src={ArrowRight} style={{...arrowStyle, left: '100%', transform: 'translate(-100%, -50%)'}} onClick={()=> this.rightClick()}/>
-          {/*
-          <div style={diamond} ><img src={HexagonShape} /></div>
-          <div style={spade} ><img src={HexagonShape} /></div>
-          <div style={club} ><img src={HexagonShape} /></div>
+        let styleAux = {opacity, zIndex}
+        let copyOpacity = 0
 
-
-            <Slider
-                ref={slider => (this.carouselImages = slider)}
-                // asNavFor={this.state.carouselBottom}
-                className="carouselUnderImages"
-                beforeChange={(current, next) => this.syncSliders(current, next, 'carouselImages')}
-                // beforeChange={(current, next) => this.setState({slideIndex: next})}
-                infinite={false}
-                centerMode={true}
-                centerPadding='20%'
+        if (className === 'active') {
+            copyOpacity = 1
+        }
+        return (
+            <Hexagon
+                src={HexagonShape}
+                copy={block.imageCopy}
+                className={className}
+                style={styleAux}
             >
-                {carouselImages}
-            </Slider>
-          */}
-        </Col>
-      )
+                <HexagonCopy copyOpacity={copyOpacity}>
+                    <div>{block.imageCopy}</div>
+                </HexagonCopy>
+            </Hexagon>
+        )
+    }
 
+    renderMobileImage(id, block) {
+        let opacity = 0.05
+        let className = ''
+        const zIndex = 99 - Math.abs(this.state.slideIndex - id)
+        const transform = 'translateX(50%)'
+
+        if (this.state.slideIndex === id) {
+            opacity = 1
+            className = 'active'
+        }
+
+        if (this.state.slideIndex - 1 === id || this.state.slideIndex + 1 === id) {
+            opacity = 0.8
+        }
+
+        if (this.state.slideIndex - 2 === id || this.state.slideIndex + 2 === id) {
+            opacity = 0.2
+            className = 'active'
+        }
+
+        let styleAux = {opacity, zIndex}
+
+        return (
+            <Hexagon
+                src={HexagonShape}
+                copy={block.imageCopy}
+                className={className}
+                style={styleAux}
+            >
+                {className !== '' &&
+                <HexagonCopy>
+                    <div>{block.imageCopy}</div>
+                </HexagonCopy>
+                }
+            </Hexagon>
+        )
+    }
+
+    renderDesktopButtons(id, block) {
+        return (
+            <HexagonCarouselItem key={id} onClick={() => this.imgClick(id)}>
+                {this.renderImage(id, block)}
+            </HexagonCarouselItem>
+        )
+    }
+
+    renderMobileButtons(id, block) {
+        let className = 'hidden'
+
+        if (this.state.slideIndex === id) {
+            className = ''
+        }
+
+        if (this.state.slideIndex === 0) {
+            if (id === 2) {
+                // className = ''
+            }
+        }
+
+        if (this.state.slideIndex - 1 === id || this.state.slideIndex + 1 === id) {
+            className = ''
+        }
+
+        return (
+            <HexagonCarouselMobileItem key={id} className={className} onClick={() => this.imgClick(id)}>
+                {this.renderMobileImage(id, block)}
+            </HexagonCarouselMobileItem>
+        )
     }
 
     getBlock() {
@@ -290,24 +329,6 @@ class Blocks extends Component {
 
     render() {
         const block = this.getBlock()
-
-        const carouselTop = block.node.carouselBlocks.map((block, i) => {
-            return (
-                <div key={i}>
-                    <Text size="lg" className="pb-3">{block.title}</Text>
-                    <Text dangerouslySetInnerHTML={{__html: block.topText}}/>
-                </div>
-            )
-        })
-
-        const carouselImages = block.node.carouselBlocks.map((block, i) => {
-            return (
-                <SliderElement key={i}>
-                    <img src={HexagonShape} className={`hexagon ${this.state.slideIndex === i ? 'active' : ''}`} onClick={() => this.changeSliders(i)} alt=""/>
-                </SliderElement>
-            )
-        })
-
 
         const carouselUnderImages = block.node.carouselBlocks.map((block, i) => {
             return (
@@ -324,6 +345,20 @@ class Blocks extends Component {
                     <Row>
                         <Col xs={12} md={6}>
                             <Text dangerouslySetInnerHTML={{__html: block.textHTML}}/>
+                            <LinkWrap>
+                                <LinkItem href={block.twitter}>
+                                    <FontAwesomeIcon icon={faTwitter} />
+                                </LinkItem>
+                                <LinkItem href={block.linkedin}>
+                                    <FontAwesomeIcon icon={faLinkedin} />
+                                </LinkItem>
+                                <LinkItem href={block.google}>
+                                    <FontAwesomeIcon icon={faGoogle} />
+                                </LinkItem>
+                                <LinkItem href={block.facebook}>
+                                    <FontAwesomeIcon icon={faFacebookF} />
+                                </LinkItem>
+                            </LinkWrap>
                         </Col>
                         <Col xs={12} md={6}>
                             Video
@@ -333,45 +368,71 @@ class Blocks extends Component {
             )
         })
 
+        const returnRenderDesktopButtons = block.node.carouselBlocks.map((block, i) => {
+            return (
+                this.renderDesktopButtons(i, block)
+            )
+        })
+
+        const returnRenderMobileButtons = block.node.carouselBlocks.map((block, i) => {
+            return (
+                this.renderMobileButtons(i, block)
+            )
+        })
+
+        let style = {}
+
+        if (this.state.slideIndex === 0) {
+            style = {
+                marginLeft: '-10px'
+            }
+        }
+
+        if (this.state.slideIndex === this.state.maxIndex) {
+            style = {
+                marginLeft: '-130px'
+            }
+        }
+
         return (
             <ContainerMaxWidth className="py-3">
-                {/*<Row>*/}
-                    {/*<Col xs={12} md={6}>*/}
-                        {/*<Slider*/}
-                            {/*ref={slider => (this.carouselTop = slider)}*/}
-                            {/*asNavFor={this.state.carouselImages}*/}
-                            {/*className="carouselTop"*/}
-                            {/*// beforeChange={(current, next) => this.syncSliders(current, next, 'carouselTop')}*/}
-                            {/*// beforeChange={(current, next) => this.setState({slideIndex: next})}*/}
-                            {/*{...sliderCommonSettings}*/}
-                        {/*>*/}
-                            {/*{carouselTop}*/}
-                        {/*</Slider>*/}
-                    {/*</Col>*/}
-                {/*</Row>*/}
-                <Row >
-                  {this.renderMobileButtons()}
-                  {this.renderDesktopButtons()}
+                <Row>
+                    <Col xs={12} md={8} lg={6}>
+                        <Text size="lg" className="pb-3">Don’t just take our word for it</Text>
+                        <Text>Find out how APtimise has helped innovative software company LEAP Legal to improve their processes and reduce time spent on Accounts Payable by an amazing 50%.</Text>
+                    </Col>
                 </Row>
-                {/*<Row>*/}
-                    {/*<Col xs={12} md={6}>*/}
-                        {/*<Slider*/}
-                            {/*ref={slider => (this.carouselUnderImages = slider)}*/}
-                            {/*asNavFor={this.state.carouselImages}*/}
-                            {/*className="carouselUnderImages"*/}
-                            {/*// beforeChange={(current, next) => this.syncSliders(current, next, 'carouselUnderImages')}*/}
-                            {/*// beforeChange={(current, next) => this.setState({slideIndex: next})}*/}
-                            {/*{...sliderCommonSettings}*/}
-                        {/*>*/}
-                            {/*{carouselUnderImages}*/}
-                        {/*</Slider>*/}
-                    {/*</Col>*/}
-                {/*</Row>*/}
+                <Row>
+                    <Col className="d-none d-md-block" xs={12}>
+                        <HexagonCarousel>
+                            {returnRenderDesktopButtons}
+                        </HexagonCarousel>
+                    </Col>
+                    <Col className="d-block d-md-none" xs={12}>
+                        <HexagonCarousel>
+                            <img src={ArrowLeft} className="arrow arrow-left" onClick={() => this.leftClick()}/>
+                            <div className="absoluteHelper" style={style}>
+                                {returnRenderMobileButtons}
+                            </div>
+                            <img src={ArrowRight} className="arrow arrow-right" onClick={() => this.rightClick()}/>
+                        </HexagonCarousel>
+                    </Col>
+                </Row>
+                <Row className="py-3">
+                    <Col xs={12} md={6}>
+                        <Slider
+                            ref={slider => (this.carouselUnderImages = slider)}
+                            className="carouselUnderImages"
+                            {...sliderCommonSettings}
+                        >
+                            {carouselUnderImages}
+                        </Slider>
+                    </Col>
+                </Row>
                 <Row>
                     <Col xs={12}>
                         <Slider
                             ref={slider => (this.carouselBottom = slider)}
-                            asNavFor={this.state.carouselImages}
                             className="carouselBottom"
                             {...sliderCommonSettings}
                         >
