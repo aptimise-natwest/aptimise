@@ -1,6 +1,7 @@
 import React, { Component } from "react"
 import PropTypes from "prop-types"
 import { StaticQuery, graphql } from "gatsby"
+import Img from "gatsby-image"
 import { Container, Row, Col, ModalBody } from "reactstrap"
 import ContainerMaxWidth from "components/shared/ContainerMaxWidth"
 import Text from "components/shared/Text"
@@ -19,6 +20,13 @@ const WhitePaperBlock = (props) => (
                             title
                             textHTML
                             buttonText
+                            image {
+                                childImageSharp  {
+                                    fluid(maxWidth: 865) {
+                                        ...GatsbyImageSharpFluid
+                                    }
+                                }
+                            }
                         }
                     }
                 }
@@ -55,7 +63,7 @@ class WhitePaper extends Component {
             ({ node }) => this.props.id === node.id
         )[0]
 
-        const { title, textHTML, buttonText } = block.node
+        const { title, textHTML, buttonText, image } = block.node
 
         return (
             <>
@@ -63,11 +71,15 @@ class WhitePaper extends Component {
                     <Row>
                         <Col lg={6}>
                             <h4>{title}</h4>
-                            <Text dangerouslySetInnerHTML={{ __html: textHTML }} />
-                            <Button onClick={this.toggle} as="button" purple blockMobile>{buttonText}</Button>
                         </Col>
-                        <Col lg={6}>
-
+                    </Row>
+                    <Row>
+                        <Col lg={{ size: 6, order: 2 }}>
+                            <Img fluid={image.childImageSharp.fluid} className="py-3" alt={title} />
+                        </Col>
+                        <Col lg={{ size: 6, order: 1 }}>
+                            <Text dangerouslySetInnerHTML={{ __html: textHTML }} className="py-2" />
+                            <Button onClick={this.toggle} as="button" purple blockMobile>{buttonText}</Button>
                         </Col>
                     </Row>
                 </ContainerMaxWidth>

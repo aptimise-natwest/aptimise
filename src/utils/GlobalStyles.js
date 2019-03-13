@@ -96,6 +96,10 @@ const GlobalStyles = createGlobalStyle`
         }
     }
 
+    img {
+        max-width: 100%;
+    }
+
     .modal-backdrop {
         background-color: ${props => props.theme.colors.grey};
         opacity: .3 !important;

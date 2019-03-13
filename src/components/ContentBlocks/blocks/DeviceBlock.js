@@ -203,7 +203,7 @@ class Device extends Component {
 }
 
 Device.propTypes = {
-    data: PropTypes.node.isRequired,
+    data: PropTypes.object.isRequired,
 }
 
 DeviceBlock.propTypes = {

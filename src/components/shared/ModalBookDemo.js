@@ -1,5 +1,5 @@
-import React from 'react';
-import { ModalBody } from "reactstrap"
+import React from "react"
+import { Modal, ModalBody } from "reactstrap"
 import ModalAngled from "components/shared/ModalAngled"
 import ModalAngledClose from "components/shared/ModalAngledClose"
 
@@ -8,9 +8,10 @@ class ModalBookDemo extends React.Component {
         super(props);
         this.state = {
             modal: false
-        };
+        }
 
         this.toggle = this.toggle.bind(this);
+        this.createCalendly = this.createCalendly.bind(this);
     }
 
     componentDidMount() {
@@ -30,13 +31,29 @@ class ModalBookDemo extends React.Component {
         }));
     }
 
+    createCalendly() {
+        const src = "https://assets.calendly.com/assets/external/widget.js"
+        const s = document.createElement('script')
+        s.setAttribute('src', src)
+        s.setAttribute('id', 'calendlyScript')
+        document.body.appendChild(s)
+    }
+
+    destroyCalendly() {
+        document.getElementById('calendlyScript').remove()
+    }
+
     render() {
         return (
-            <ModalAngled isOpen={this.state.modal} toggle={this.toggle}>
+            <ModalAngled 
+                isOpen={this.state.modal} 
+                toggle={this.toggle} 
+                onOpened={this.createCalendly} 
+                onClosed={this.destroyCalendly}
+            >
                 <ModalAngledClose onClick={this.toggle} />
-                <ModalBody>
-                    <div class="calendly-inline-widget" data-url="https://calendly.com/aptimise" style={{minWidth: "320px", height: "580px"}}></div>
-                    {/* <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js"></script> */}
+                <ModalBody id="calendlyModal">
+                    <div class="calendly-inline-widget" data-url="https://calendly.com/aptimise/aptimisedemo" style={{minWidth: "320px", height: "630px"}}></div>
                 </ModalBody>
             </ModalAngled>
         );
