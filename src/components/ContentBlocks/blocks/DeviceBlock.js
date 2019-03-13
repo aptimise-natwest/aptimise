@@ -9,9 +9,11 @@ import ContainerMaxWidth from "components/shared/ContainerMaxWidth"
 import Text from "components/shared/Text"
 import Button from "components/shared/Button"
 import device from "images/device.png"
+import deviceShadow from "images/device-shadow.svg"
 
 const DeviceContainer = styled(ContainerMaxWidth)`
     position: relative;
+    margin-bottom: 4rem;
 `
 
 const DeviceContent = styled(Row)`
@@ -21,15 +23,16 @@ const DeviceContent = styled(Row)`
     padding-bottom: 15rem;
 
     @media ${media.sm} {
+        padding-bottom: 15rem;
+    }
+
+    @media ${media.md} {
         padding-top: 1rem;
+        padding-bottom: 10rem;
     }
 
     @media ${media.lg} {
-        padding-bottom: 20rem;
-    }
-
-    @media ${media.xl} {
-        padding-bottom: 25rem;
+        padding-bottom: 15rem;
     }
 `
 
@@ -62,21 +65,48 @@ const DeviceBgSvg = styled.svg`
     @media ${media.sm} {
         display: block;
         position: absolute;
-        bottom: 0;
-        left: 0;
-        width: 100%;
+        bottom: 0rem;
+        width: 120%;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    @media ${media.lg} {
+        bottom: -4rem;
     }
 `
 
-const DeviceImg = styled.img`
+const DeviceImgWrap = styled.div`
     position: absolute;
-    bottom: 0;
+    bottom: 3rem;
     right: 0;
-    max-height: 15rem;
 
     @media ${media.md} {
-        max-height: none;
         width: 60%;
+        bottom: 0;
+    }
+
+    img {
+        max-width: 100%;
+        max-height: 13rem;
+        &:first-child {
+            position: relative;
+            z-index: 1;
+        }
+
+        @media ${media.md} {
+            max-height: none;
+        }
+    }
+`
+
+const DeviceImgShadow = styled.img`
+    position: absolute;
+    bottom: -2rem;
+    left: 0;
+
+    @media ${media.md} {
+        bottom: -4rem;
     }
 `
 
@@ -114,9 +144,14 @@ class Device extends Component {
     }
 
     animation() {
-        const masterTimeline = new TimelineMax({ repeat: -1, yoyo: true })
-        masterTimeline
-            .to(this.device, 1.5, { y: 20, ease: Power1.easeInOut })
+        const deviceTimeline = new TimelineMax()
+        const shadowTimeline = new TimelineMax()
+
+        deviceTimeline
+            .to(this.device, 1.5, { y: 20, ease: Power1.easeInOut, repeat: -1, yoyo: true })
+
+        shadowTimeline
+            .to(this.deviceShadow, 1.5, { scale: .95, ease: Power1.easeInOut, repeat: -1, yoyo: true })
     }
 
     render() {
@@ -148,16 +183,19 @@ class Device extends Component {
                 </DeviceBgMobileSvg>
 
                 <DeviceWrap>
-                    <DeviceBgSvg viewBox="0 0 1152 493" fill="none">
-                        <path d="M1152 260L576 493L0 260V0H1152V260Z" fill="url(#deviceBg)" />
+                    <DeviceBgSvg viewBox="0 0 1152 231" fill="none">
+                        <path d="M1152 0.000427246L575 231L0 0.000427246H1152Z" fill="url(#deviceBg)" />
                         <defs>
-                            <linearGradient id="deviceBg" x1="566" y1="1102.87" x2="566" y2="-1246" gradientUnits="userSpaceOnUse">
+                            <linearGradient id="deviceBg" x1="566" y1="842.868" x2="566" y2="-1506" gradientUnits="userSpaceOnUse">
                                 <stop offset="0.19337" stopColor="#FFB624" />
-                                <stop offset="0.414365" stopColor="#FFB624" stopOpacity="0" />
+                                <stop offset="0.359283" stopColor="#FFB624" stopOpacity="0" />
                             </linearGradient>
                         </defs>
                     </DeviceBgSvg>
-                    <DeviceImg src={device} alt="" ref={device => this.device = device} />
+                    <DeviceImgWrap>
+                        <img src={device} ref={device => this.device = device} alt="APtimise dashboard" />
+                        <DeviceImgShadow src={deviceShadow} ref={deviceShadow => this.deviceShadow = deviceShadow} alt="" />
+                    </DeviceImgWrap>
                 </DeviceWrap>
             </DeviceContainer>
         )

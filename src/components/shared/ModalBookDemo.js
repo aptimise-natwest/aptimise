@@ -35,7 +35,8 @@ class ModalBookDemo extends React.Component {
             <ModalAngled isOpen={this.state.modal} toggle={this.toggle}>
                 <ModalAngledClose onClick={this.toggle} />
                 <ModalBody>
-                    <p>Book Demo</p>
+                    <div class="calendly-inline-widget" data-url="https://calendly.com/aptimise" style={{minWidth: "320px", height: "580px"}}></div>
+                    {/* <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js"></script> */}
                 </ModalBody>
             </ModalAngled>
         );

@@ -52,6 +52,7 @@ const GlobalStyles = createGlobalStyle`
         line-height: ${props => props.theme.font.lineHeight.sm};
         color: ${props => props.theme.colors.blackOff};
         -webkit-font-smoothing: antialiased;
+        overflow-x: hidden;
 
         @media ${media.lg} {
             line-height: ${props => props.theme.font.lineHeight.base};

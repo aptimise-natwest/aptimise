@@ -242,7 +242,7 @@ class Landing extends Component {
         return (
             <>
                 <LandingWrapper>
-                    <DesktopImg fluid={imageDesktop.childImageSharp.fluid} alt="" />
+                    <DesktopImg fluid={imageDesktop.childImageSharp.fluid} alt={title} />
                     <DesktopSvg viewBox="0 0 1152 427">                 
                         <path d="M1152 0L576 338L0 206.5V427H1152V0Z" fill="white" />
                         <path d="M1152 190L576 423L0 289V190H1152Z" fill="url(#paint0_linear)" />

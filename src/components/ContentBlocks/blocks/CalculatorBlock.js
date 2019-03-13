@@ -34,8 +34,9 @@ const CalculatorBgSvg = styled.svg`
         display: block;
         position: absolute;
         bottom: 0;
-        left: 0;
-        width: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 120%;
     }
 `
 
@@ -399,14 +400,14 @@ class Calculator extends  Component {
         return (
             <>
                 <CalculatorContainer>
-                    <CalculatorBgSvg viewBox="0 0 1152 237">
+                    <CalculatorBgSvg viewBox="0 0 1152 148">
+                        <path opacity="0.25" d="M1154 0L576 148L0 0H1154Z" fill="url(#calcBg)" />
                         <defs>
-                            <linearGradient id="a" x1="576" y1="-740.87" x2="576" y2="1608" gradientTransform="matrix(1 0 0 -1 0 106)" gradientUnits="userSpaceOnUse">
-                                <stop offset=".19" />
-                                <stop offset=".33" stopOpacity="0" />
+                            <linearGradient id="calcBg" x1="565.999" y1="757.866" x2="565.999" y2="-1591" gradientUnits="userSpaceOnUse">
+                                <stop offset="0.186842" />
+                                <stop offset="0.316012" stopOpacity="0" />
                             </linearGradient>
                         </defs>
-                        <path d="M1152 111L576 237 0 111v-243l1152 12z" style={{ isolation: "isolate" }} opacity=".25" fill="url(#a)" />
                     </CalculatorBgSvg>
 
                     <Row>
@@ -479,7 +480,7 @@ class Calculator extends  Component {
                             <Slide md={4}>
                                 <RangesliderWrap ref={rangesliderWrap => this.rangesliderWrap = rangesliderWrap}>
                                     <RangesliderControl ref={rangeslider => this.rangeslider = rangeslider}>
-                                        <img src={rangeslider} alt="Control" />
+                                        <img src={rangeslider} alt="Control" width="40" />
                                     </RangesliderControl>
                                     <Rangeslider />
                                 </RangesliderWrap>
