@@ -198,14 +198,6 @@ const MobileSummaryLink = styled.button`
     text-decoration: underline;
 `
 
-const DemoButton = styled(Button)`
-    width: 100%;
-    margin-top: 1rem;
-    @media ${media.md} {
-        width: auto;
-    }
-`
-
 const SliderCounter = styled.div`
     padding: 1rem;
     text-align: center;
@@ -543,7 +535,7 @@ class Calculator extends  Component {
                                 <TextSummary color="turquoise" className="pt-4 pb-2" large>
                                     {this.calculateHours()} {textSummary}
                                 </TextSummary>
-                                <DemoButton turquoise as="button" className="trigger-bookdemo-modal">{textButton}</DemoButton>
+                                <Button turquoise blockMobile as="button" className="trigger-bookdemo-modal mt-2">{textButton}</Button>
                             </SlideFullWidth>
                         </Row>
                         <SliderCounter>

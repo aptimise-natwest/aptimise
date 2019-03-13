@@ -9,10 +9,10 @@
             "textBlockHome", 
             "infoBlocksHome", 
             "linkBlockHome",
+            "deviceBlockHome",
             "calculatorBlockHome",
             "infoBlockFullWidthHome", 
             "whitePaperBlockHome",
-			"diagramBlockHome",
 			"carouselBlocksHome"
         ]
     },

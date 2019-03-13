@@ -1,4 +1,5 @@
 import styled, { css } from "styled-components"
+import { media } from "utils/Media"
 
 const Button = styled.a`
     cursor: pointer;
@@ -50,7 +51,8 @@ const Button = styled.a`
         background-color: ${props => props.theme.colors.yellow};
         color: ${props => props.theme.colors.white};
         &:hover {
-            background-color: ${props => props.theme.colors.purpleDark};
+            color: ${props => props.theme.colors.white};
+            background-color: ${props => props.theme.colors.grey};
         }
     `}
 
@@ -60,6 +62,13 @@ const Button = styled.a`
         &:hover {
             color: ${props => props.theme.colors.white};
             background-color: ${props => props.theme.colors.grey};
+        }
+    `}
+
+    ${props => props.blockMobile && css`
+        width: 100%;
+        @media ${ media.md } {
+            width: auto;
         }
     `}
 `

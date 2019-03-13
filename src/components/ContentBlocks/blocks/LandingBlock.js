@@ -1,6 +1,6 @@
 import React, { Component } from "react"
 import PropTypes from "prop-types"
-import { Container, Row, Col, Modal, ModalBody } from "reactstrap"
+import { Container, Row, Col, ModalBody } from "reactstrap"
 import { StaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
 import styled from "styled-components"
@@ -306,7 +306,8 @@ class Landing extends Component {
                                         src="https://www.youtube.com/embed/aJoo79OwZEI?autoplay=1&amp;rel=0"
                                         frameBorder="0"
                                         allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                                        allowfullscreen></iframe>
+                                        allowfullscreen
+                                        title="APtimise video"></iframe>
                                 }
                                 </Row>
                             </Container>

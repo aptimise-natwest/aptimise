@@ -7,11 +7,9 @@ import ContainerMaxWidth from "components/shared/ContainerMaxWidth"
 import Button from "components/shared/Button"
 
 const LinkButton = styled(Button)`
-    width: 100%;
     margin-bottom: .5rem;
 
     @media ${media.md} {
-        width: auto;
         margin-right: .5rem;
     }
 `
@@ -47,8 +45,9 @@ const LinkBlock = (props) => {
                 <LinkButton
                     key={i}
                     to={link.link}
-                    grey
                     as={Link}
+                    blockMobile
+                    grey
                 >
                     {link.linkText}
                 </LinkButton>
@@ -58,6 +57,7 @@ const LinkBlock = (props) => {
                 <LinkButton
                     key={i}
                     href={link.link}
+                    blockMobile
                     grey
                 >
                     {link.linkText}

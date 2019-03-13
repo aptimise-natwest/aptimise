@@ -83,8 +83,8 @@
         "buttonText": "download whitepaper"
     },
     {
-      "id": "diagramBlockHome",
-      "type": "DiagramBlock",
+      "id": "deviceBlockHome",
+      "type": "DeviceBlock",
       "title": "Book a 20 minute online demo now",
       "textHTML": "<p>It sounds too good to be true, right? See how it could work for your business with an online demo.</p>",
       "buttonText": "pick your demo slot"
