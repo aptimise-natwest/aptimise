@@ -10,6 +10,8 @@ import Text from "components/shared/Text"
 import Button from "components/shared/Button"
 import device from "images/device.png"
 import deviceShadow from "images/device-shadow.svg"
+import yellowAngleBg from "images/backgrounds/yellow-angle-bg.svg"
+import yellowAngleMobileBg from "images/backgrounds/yellow-angle-bg-mobile.svg"
 
 const DeviceContainer = styled(ContainerMaxWidth)`
     position: relative;
@@ -47,7 +49,7 @@ const DeviceWrap = styled.div`
     }
 `
 
-const DeviceBgMobileSvg = styled.svg`
+const DeviceBgMobileSvg = styled.img`
     display: block;
     position: absolute;
     bottom: 0;
@@ -59,7 +61,7 @@ const DeviceBgMobileSvg = styled.svg`
     }
 `
 
-const DeviceBgSvg = styled.svg`
+const DeviceBgSvg = styled.img`
     display: none;
 
     @media ${media.sm} {
@@ -172,26 +174,10 @@ class Device extends Component {
                     </Col>
                 </DeviceContent> 
 
-                <DeviceBgMobileSvg viewBox="0 0 320 340">
-                    <defs>
-                        <linearGradient id="deviceBgMobile" x1="159" y1="-522.6" x2="159" y2="1097.31" gradientTransform="matrix(1, 0, 0, -1, 0, 238)" gradientUnits="userSpaceOnUse">
-                            <stop offset="0.19" stopColor="#ffb624" />
-                            <stop offset="0.41" stopColor="#ffb624" stopOpacity="0" />
-                        </linearGradient>
-                    </defs>
-                    <path d="M556.56,179.31,159,340-238.56,179.31V0H556.56Z" fill="url(#deviceBgMobile)" />
-                </DeviceBgMobileSvg>
+                <DeviceBgMobileSvg src={yellowAngleMobileBg} alt="" />
 
                 <DeviceWrap>
-                    <DeviceBgSvg viewBox="0 0 1152 231" fill="none">
-                        <path d="M1152 0.000427246L575 231L0 0.000427246H1152Z" fill="url(#deviceBg)" />
-                        <defs>
-                            <linearGradient id="deviceBg" x1="566" y1="842.868" x2="566" y2="-1506" gradientUnits="userSpaceOnUse">
-                                <stop offset="0.19337" stopColor="#FFB624" />
-                                <stop offset="0.359283" stopColor="#FFB624" stopOpacity="0" />
-                            </linearGradient>
-                        </defs>
-                    </DeviceBgSvg>
+                    <DeviceBgSvg src={yellowAngleBg} alt="" />
                     <DeviceImgWrap>
                         <img src={device} ref={device => this.device = device} alt="APtimise dashboard" />
                         <DeviceImgShadow src={deviceShadow} ref={deviceShadow => this.deviceShadow = deviceShadow} alt="" />

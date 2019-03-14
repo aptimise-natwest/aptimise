@@ -6,7 +6,8 @@ import { media } from "utils/Media"
 
 const ModalAngledCloseStyled = styled.button`
     position: absolute;
-    top: -2rem;
+    z-index: 10;
+    top: 13vh;
     left: 50%;
     transform: translateX(-50%);
     color: ${props => props.theme.colors.purpleDark};
@@ -15,12 +16,8 @@ const ModalAngledCloseStyled = styled.button`
     border: 0;
     background-color: transparent;
 
-    @media ${media.md} {
-        top: -4rem;
-    }
-
     @media ${media.lg} {
-        top: -6rem;
+        top: 10vh;
     }
 `
 

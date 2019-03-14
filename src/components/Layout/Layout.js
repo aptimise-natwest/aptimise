@@ -11,7 +11,6 @@ import ModalBookDemo from "components/shared/ModalBookDemo"
 
 const SiteWrap = styled.div`
     padding-top: 95px;
-    /* max-width: ${props => props.theme.transitionBase}; */
 `
 
 class Layout extends Component {

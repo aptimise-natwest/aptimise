@@ -19,6 +19,7 @@ class ModalBookDemo extends React.Component {
     }
 
     detectBookDemo() {
+        // Globally detect book demo button click
         const classes = document.getElementsByClassName('trigger-bookdemo-modal')
         for (let i = 0; i < classes.length; i++) {
             classes[i].addEventListener('click', () => this.toggle())
@@ -40,7 +41,7 @@ class ModalBookDemo extends React.Component {
     }
 
     destroyCalendly() {
-        document.getElementById('calendlyScript').remove()
+        document.getElementById('calendlyScript').outerHTML = ""
     }
 
     render() {
@@ -52,7 +53,7 @@ class ModalBookDemo extends React.Component {
                 onClosed={this.destroyCalendly}
             >
                 <ModalAngledClose onClick={this.toggle} />
-                <ModalBody id="calendlyModal">
+                <ModalBody>
                     <div class="calendly-inline-widget" data-url="https://calendly.com/aptimise/aptimisedemo" style={{minWidth: "320px", height: "630px"}}></div>
                 </ModalBody>
             </ModalAngled>

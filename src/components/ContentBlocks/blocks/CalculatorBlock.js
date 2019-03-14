@@ -12,6 +12,8 @@ import { debounce } from 'throttle-debounce';
 import ContainerMaxWidth from "components/shared/ContainerMaxWidth"
 import Text from "components/shared/Text"
 import Button from "components/shared/Button"
+
+import greyAngleBg from "images/backgrounds/grey-angle-bg.svg"
 import dial from "images/dial.png"
 import rangeslider from "images/rangeslider.png"
 import people from "images/people.png"
@@ -28,7 +30,7 @@ const CalculatorContainer = styled(ContainerMaxWidth)`
     }
 `
 
-const CalculatorBgSvg = styled.svg`
+const CalculatorBgSvg = styled.img`
     display: none;
     @media  ${media.md} {
         display: block;
@@ -400,15 +402,7 @@ class Calculator extends  Component {
         return (
             <>
                 <CalculatorContainer>
-                    <CalculatorBgSvg viewBox="0 0 1152 148">
-                        <path opacity="0.25" d="M1154 0L576 148L0 0H1154Z" fill="url(#calcBg)" />
-                        <defs>
-                            <linearGradient id="calcBg" x1="565.999" y1="757.866" x2="565.999" y2="-1591" gradientUnits="userSpaceOnUse">
-                                <stop offset="0.186842" />
-                                <stop offset="0.316012" stopOpacity="0" />
-                            </linearGradient>
-                        </defs>
-                    </CalculatorBgSvg>
+                    <CalculatorBgSvg src={greyAngleBg} alt="" />
 
                     <Row>
                         <Col md={8} lg={6}>

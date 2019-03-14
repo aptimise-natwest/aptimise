@@ -1,6 +1,7 @@
 import React, { Component } from "react"
 import { TimelineMax } from "gsap"
-import { withTheme } from 'styled-components'
+import { withTheme } from "styled-components"
+import SvgWrap from "components/shared/SvgWrap"
 
 class Secure extends Component {
     constructor(props) {
@@ -59,20 +60,23 @@ class Secure extends Component {
 
     render() {
         const { theme } = this.props
+        const ratio = 100 * 309.9 / 288
         return (
-            <svg viewBox="0 0 288 309.9"
-                style={{
-                    overflow: "visible",
-                    maxWidth: "100%"
-                }}
-            >
-                <path fill={theme.colors.purpleDark} d="M144 0L0 81l144 81 144-81L144 0z" ref={(topPath) => this.topPath = topPath} />
-                <path fill={theme.colors.yellow} d="M135 182.4L0 106.5v51l135 75.9v-51z" ref={(leftPath) => this.leftPath = leftPath} />
-                <path fill={theme.colors.turquoise} d="M135 258.9L0 183v51l135 75.9v-51z" ref={(leftPath2) => this.leftPath2 = leftPath2} />
-                <path fill={theme.colors.pink} d="M153 182.4v51l135-75.9v-51l-135 75.9z" ref={(rightPath) => this.rightPath = rightPath} />
-                <path fill={theme.colors.blue} d="M153 258.9v51L288 234v-51l-135 75.9z" ref={(rightPath2) => this.rightPath2 = rightPath2} />
-                <path fill={theme.colors.white} d="M144 108.42l-48 27 48 27 48-27-48-27z" ref={(whitePath) => this.whitePath = whitePath} />
-            </svg>
+            <SvgWrap style={{ paddingBottom: `${ratio}%` }}>
+                <svg viewBox="0 0 288 309.9"
+                    style={{
+                        overflow: "visible",
+                        maxWidth: "100%"
+                    }}
+                >
+                    <path fill={theme.colors.purpleDark} d="M144 0L0 81l144 81 144-81L144 0z" ref={(topPath) => this.topPath = topPath} />
+                    <path fill={theme.colors.yellow} d="M135 182.4L0 106.5v51l135 75.9v-51z" ref={(leftPath) => this.leftPath = leftPath} />
+                    <path fill={theme.colors.turquoise} d="M135 258.9L0 183v51l135 75.9v-51z" ref={(leftPath2) => this.leftPath2 = leftPath2} />
+                    <path fill={theme.colors.pink} d="M153 182.4v51l135-75.9v-51l-135 75.9z" ref={(rightPath) => this.rightPath = rightPath} />
+                    <path fill={theme.colors.blue} d="M153 258.9v51L288 234v-51l-135 75.9z" ref={(rightPath2) => this.rightPath2 = rightPath2} />
+                    <path fill={theme.colors.white} d="M144 108.42l-48 27 48 27 48-27-48-27z" ref={(whitePath) => this.whitePath = whitePath} />
+                </svg>
+            </SvgWrap>
         )
     }
 }

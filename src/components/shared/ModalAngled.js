@@ -25,20 +25,8 @@ const ModalAngled = styled(Modal)`
     .modal-content {
         border-radius: 0;
         border: 0;
-        min-height: 80vh;
+        background-color: transparent;
 
-        &:before {
-            content: "";
-            position: absolute;
-            background-image: url(${angledPanel});
-            background-repeat: no-repeat;
-            background-size: 120%;
-            background-position: bottom center;
-            width: 100%;
-            height: 21vh;
-            left: 0;
-            bottom: 99%;
-        }
 
         ${props => props.background && css`
             @media ${media.md} {
@@ -53,6 +41,26 @@ const ModalAngled = styled(Modal)`
                 background-position: left center, right center;
             }
         `}
+    }
+
+
+    .modal-body {
+        min-height: 80vh;
+        margin-top: 20vh;
+        background-color: ${props => props.theme.colors.white};
+
+        &:before {
+            content: "";
+            position: absolute;
+            background-image: url(${angledPanel});
+            background-repeat: no-repeat;
+            background-size: 120%;
+            background-position: bottom center;
+            width: 100%;
+            height: 21vh;
+            left: 0;
+            bottom: 99%;
+        }
     }
 `
 

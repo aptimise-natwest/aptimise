@@ -1,0 +1,9 @@
+<svg viewBox="0 0 320 340" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+        <linearGradient id="deviceBgMobile" x1="159" y1="-522.6" x2="159" y2="1097.31" gradientTransform="matrix(1, 0, 0, -1, 0, 238)" gradientUnits="userSpaceOnUse">
+            <stop offset="0.19" stop-color="#ffb624" />
+            <stop offset="0.41" stop-color="#ffb624" stop-opacity="0" />
+        </linearGradient>
+    </defs>
+    <path d="M556.56,179.31,159,340-238.56,179.31V0H556.56Z" fill="url(#deviceBgMobile)" />
+</svg>
