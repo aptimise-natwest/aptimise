@@ -64,6 +64,7 @@ export default {
         blackOff: "#222222",
         blue: "#516CBE",
         grey: "#E5E5E5",
+        greyMedium: "#C9C6C6",
         pink: "#E84261",
         purple: "#702283",
         purpleDark: "#42145F",

@@ -1,6 +1,6 @@
 import React, { Component } from "react"
 import PropTypes from "prop-types"
-import { Container, Row, Col, Modal, ModalBody } from "reactstrap"
+import { Container, Row, Col, ModalBody } from "reactstrap"
 import { StaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
 import styled from "styled-components"
@@ -11,13 +11,19 @@ import ButtonPlaySvg from "components/shared/ButtonPlaySvg"
 import ModalAngled from "components/shared/ModalAngled"
 import ModalAngledClose from "components/shared/ModalAngledClose"
 
+import landingBlockSVG from "images/backgrounds/landing-block.svg"
+import landingMobileTopSVG from "images/backgrounds/landing-mobile-top.svg"
+import landingMobileBottomSVG from "images/backgrounds/landing-mobile-bottom.svg"
 
 const LandingWrapper = styled(Container)`
     max-width: 1500px;
     padding: 0;
-    margin-bottom: 4rem;
+    margin-bottom: 2rem;
     position: relative;
-    overflow: hidden;
+    /* overflow: hidden; */
+    @media ${media.md} {
+        margin-bottom: 4rem;
+    }
 `
 
 const LandingContent = styled(ContainerMaxWidth)`
@@ -49,7 +55,7 @@ const DesktopImg = styled(Img)`
         width: 100%;
         height: 100%;
         background-color:  ${props => props.theme.colors.black};
-        opacity: .3;
+        opacity: .2;
     }
 
     @media ${media.md} {
@@ -57,12 +63,13 @@ const DesktopImg = styled(Img)`
     }
 `
 
-const DesktopSvg = styled.svg`
-    position: absolute;
+const DesktopSvg = styled.img`
     bottom: -2px;
+    position: absolute; 
+    width: calc(100% + 6px); 
     left: 50%;
-    transform: translateX(-50%);
-    width: calc(100% + 4px);
+    transform: translateX(-50%); 
+    max-width: none;
 `
 
 const MobileImg = styled(Img)`
@@ -105,12 +112,16 @@ const LandingTextWrap = styled.div`
     position: relative;
     padding: 1rem 0 4rem;
 
+    @media ${media.sm} {
+        padding: 1rem 0 8rem;
+    }
+
     @media ${media.md} {
         padding: 0;
     }
 `
 
-const LandingTextSvg = styled.svg`
+const LandingTextBgSvg = styled.img`
     position: absolute;
     bottom: 0;
     width: 100%;
@@ -124,7 +135,7 @@ const MobileImgWrap = styled.div`
     position: relative;
 `
 
-const MobileImgSvgTop = styled.svg`
+const MobileImgSvgTop = styled.img`
     position: absolute;
     z-index: 1;
     top: -1px;
@@ -135,7 +146,7 @@ const MobileImgSvgTop = styled.svg`
     }
 `
 
-const MobileImgSvgBottom = styled.svg`
+const MobileImgSvgBottom = styled.img`
     position: absolute;
     z-index: 1;
     bottom: -1px;
@@ -174,7 +185,7 @@ const LandingBlock = (props) => (
                             id
                             imageDesktop {
                                 childImageSharp  {
-                                    fluid(maxWidth: 1400) {
+                                    fluid(maxWidth: 1500) {
                                         ...GatsbyImageSharpFluid
                                     }
                                 }
@@ -188,7 +199,7 @@ const LandingBlock = (props) => (
                             }
                             title
                             videoText
-                            youtubeVideo
+                            youtubeVideoID
                             text
                         }
                     }
@@ -226,31 +237,22 @@ class Landing extends Component {
             ({ node }) => this.props.id === node.id
         )[0]
 
-        const { title, text, imageDesktop, imageMobile, videoText, youtubeVideo } = block.node
+        const { title, text, imageDesktop, imageMobile, videoText, youtubeVideoID } = block.node
+        const youtubeSrc = `https://www.youtube.com/embed/${youtubeVideoID}?autoplay=1&amp;rel=0`
 
         return (
             <>
                 <LandingWrapper>
-                    <DesktopImg fluid={imageDesktop.childImageSharp.fluid} alt="" />
-                    <DesktopSvg viewBox="0 0 1152 427">                 
-                        <path d="M1152 0L576 338L0 206.5V427H1152V0Z" fill="white" />
-                        <path d="M1152 190L576 423L0 289V190H1152Z" fill="url(#paint0_linear)" />
-                        <defs>
-                            <linearGradient id="paint0_linear" x1="566" y1="1032.87" x2="566" y2="-1316" gradientUnits="userSpaceOnUse">
-                                <stop offset="0.231544" stopColor="#89969F" />
-                                <stop offset="0.322652" stopColor="#89969F" stopOpacity="0" />
-                            </linearGradient>
-                        </defs>
-                    </DesktopSvg>
+                    <DesktopImg fluid={imageDesktop.childImageSharp.fluid} alt={title} />
+                    <DesktopSvg src={landingBlockSVG} alt="" />
+
                     <LandingContent>
                         <Row>
                             <Col md={8} xl={5}>
                                 <LandingH1 dangerouslySetInnerHTML={{ __html: title }} />
-                                <MobileImgWrap>
-                                    <MobileImgSvgTop viewBox="0 0 320 34.7">
-                                        <polygon points="160,34.7 320,0 0,0" fill="white" />
-                                    </MobileImgSvgTop>
 
+                                <MobileImgWrap>
+                                    <MobileImgSvgTop src={landingMobileTopSVG} alt="" />
                                     <MobileImg fluid={imageMobile.childImageSharp.fluid} alt="" />
                                     <WatchNowButton onClick={this.toggle}>
                                         <ButtonPlaySvg />
@@ -258,31 +260,19 @@ class Landing extends Component {
                                             {videoText}
                                         </span>
                                     </WatchNowButton>
-
-                                    <MobileImgSvgBottom viewBox="0 0 320 86">
-                                        <polygon points="0,65 160,86 320,0 320,86 0,86" fill="white"/>
-                                    </MobileImgSvgBottom>
+                                    <MobileImgSvgBottom src={landingMobileBottomSVG} alt="" />
                                 </MobileImgWrap>
 
                                 <LandingTextWrap>
                                     <LandingText
                                         dangerouslySetInnerHTML={{ __html: text }}
                                     />
-                                    <LandingTextSvg viewBox="0 0 320 280" fill="none">
-                                        <path opacity="0.25" d="M320 223L160 280L0 224.5V0H320V223Z" fill="url(#paint0_linear)" />
-                                        <defs>
-                                            <linearGradient id="paint0_linear" x1="157.222" y1="505.123" x2="157.222" y2="-146.244" gradientUnits="userSpaceOnUse">
-                                                <stop offset="0.10612" />
-                                                <stop offset="0.460759" stopOpacity="0" />
-                                            </linearGradient>
-                                        </defs>
-                                    </LandingTextSvg>
                                 </LandingTextWrap>
                             </Col>
                         </Row>
                     </LandingContent>
                 </LandingWrapper>
-                {youtubeVideo !== "" && youtubeVideo !== null &&
+                {youtubeVideoID !== "" && youtubeVideoID !== null &&
                     <ModalAngled isOpen={this.state.modal} toggle={this.toggle}>
                         <ModalAngledClose onClick={this.toggle} />
                         <ModalBody>
@@ -292,10 +282,11 @@ class Landing extends Component {
                                     <iframe
                                         width="560"
                                         height="315"
-                                        src="https://www.youtube.com/embed/aJoo79OwZEI?autoplay=1&amp;rel=0"
+                                        src={youtubeSrc}
                                         frameBorder="0"
                                         allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                                        allowfullscreen></iframe>
+                                        allowfullscreen
+                                        title="APtimise video"></iframe>
                                 }
                                 </Row>
                             </Container>

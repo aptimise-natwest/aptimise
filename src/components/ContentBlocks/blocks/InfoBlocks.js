@@ -49,6 +49,10 @@ class Blocks extends Component {
         this.fadeInUpAnimated = this.fadeInUpAnimated.bind(this)
     }
 
+    componentDidMount() {
+        this.setAnimationState()
+    }
+
     getBlock() {
         // Retrieve the content block
         // Loop all blocks and search for matching id

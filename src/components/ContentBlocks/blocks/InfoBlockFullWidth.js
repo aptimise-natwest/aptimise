@@ -51,7 +51,7 @@ class Blocks extends Component {
     }
 
     partialVisible() {
-        if (typeof window !== undefined) {
+        if (typeof window !== "undefined") {
             const breakpoint = this.props.theme.sizes.lg.replace('px', '')
             const partialVisible = window.innerWidth < breakpoint ? true : false
             this.setState({

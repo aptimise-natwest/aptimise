@@ -31,7 +31,7 @@ const HeaderNavBar = () => (
                     </Link>
                 </Col>
                 <Col xs="auto">
-                    <Button href="#">book a demo</Button>
+                    <Button as="button" className="trigger-bookdemo-modal">book a demo</Button>
                 </Col>
             </Row>
         </NavBarContainer>

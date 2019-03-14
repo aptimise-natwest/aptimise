@@ -8,7 +8,6 @@ class DefaultTemplate extends Component {
 
         return (
             <Layout data={data}>
-                DEV
                 <ContentBlocks data={data} />
             </Layout>
         )

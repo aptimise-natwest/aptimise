@@ -1,1 +1,9 @@
-<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1152 481"><defs><style>.cls-1{fill:url(#linear-gradient);}</style><linearGradient id="linear-gradient" x1="579.53" y1="1131.89" x2="569.53" y2="-1508.98" gradientTransform="matrix(1, 0, 0, -1, 0, 482)" gradientUnits="userSpaceOnUse"><stop offset="0.31" stop-color="#89969f"/><stop offset="0.61" stop-color="#89969f" stop-opacity="0"/></linearGradient></defs><title>footer-bg</title><path class="cls-1" d="M0,86,576,0l576,246V481H0Z" transform="translate(0 0)"/></svg>
+<svg viewBox="0 0 1152 481" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M6.90643e-05 86.0002L576 0.000100711L1152 246L1152 481L6.9064e-05 481.002L6.90643e-05 86.0002Z" fill="url(#paint0_linear)"/>
+<defs>
+<linearGradient id="paint0_linear" x1="586.001" y1="-649.866" x2="576" y2="1991" gradientUnits="userSpaceOnUse">
+<stop offset="0.308176" stop-color="#89969F"/>
+<stop offset="0.607045" stop-color="#89969F" stop-opacity="0"/>
+</linearGradient>
+</defs>
+</svg>
