@@ -76,7 +76,7 @@ class WhitePaper extends Component {
                     </Row>
                     <Row>
                         <Col lg={{ size: 6, order: 2 }}>
-                            <Img fluid={image.childImageSharp.fluid} className="py-3" alt={title} />
+                            <Img fluid={image.childImageSharp.fluid} className="my-3" alt={title} />
                         </Col>
                         <Col lg={{ size: 6, order: 1 }}>
                             <Text dangerouslySetInnerHTML={{ __html: textHTML }} className="py-2" />

@@ -12,6 +12,7 @@ import ModalAngled from "components/shared/ModalAngled"
 import ModalAngledClose from "components/shared/ModalAngledClose"
 
 import landingBlockSVG from "images/backgrounds/landing-block.svg"
+import landingTextMobileSVG from "images/backgrounds/landing-text-mobile.svg"
 import landingMobileTopSVG from "images/backgrounds/landing-mobile-top.svg"
 import landingMobileBottomSVG from "images/backgrounds/landing-mobile-bottom.svg"
 
@@ -273,6 +274,7 @@ class Landing extends Component {
                                     <LandingText
                                         dangerouslySetInnerHTML={{ __html: text }}
                                     />
+                                    <LandingTextBgSvg src={landingTextMobileSVG} alt="" />
                                 </LandingTextWrap>
                             </Col>
                         </Row>
@@ -285,14 +287,17 @@ class Landing extends Component {
                             <Container>
                                 <Row className="justify-content-center">
                                 {this.state.modal &&
-                                    <iframe
-                                        width="560"
-                                        height="315"
-                                        src={youtubeSrc}
-                                        frameBorder="0"
-                                        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                                        allowfullscreen
-                                        title="APtimise video"></iframe>
+                                    <div className="embed-responsive embed-responsive-16by9">
+                                        <iframe
+                                            width="560"
+                                            height="315"
+                                            className="embed-responsive-item"
+                                            src={youtubeSrc}
+                                            frameBorder="0"
+                                            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                                            allowFullScreen
+                                            title="APtimise video"></iframe>
+                                    </div>
                                 }
                                 </Row>
                             </Container>
