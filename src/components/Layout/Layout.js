@@ -20,7 +20,7 @@ class Layout extends Component {
                 <SiteWrap>
                     <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
                     <GlobalStyles />
-                    <Header />
+                    <Header data={this.props.data} />
                     <main>{this.props.children}</main>
                     <Footer />
                     <ModalBookDemo />

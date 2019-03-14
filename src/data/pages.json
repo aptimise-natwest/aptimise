@@ -17,6 +17,24 @@
         ]
     },
     {
+        "id": "xero",
+        "path": "/xero/",
+        "title": "Xero",
+        "metaDescription": "lorem ipsum",
+        "contentBlocks": [ 
+            "landingBlockHome",
+            "textBlockHome", 
+            "infoBlocksHome", 
+            "linkBlockHome",
+            "deviceBlockHome",
+            "calculatorBlockHome",
+            "carouselBlockHome",
+            "infoBlockFullWidthHome", 
+            "whitePaperBlockHome",
+            "imageTextBlockXero"
+        ]
+    },
+    {
         "id": "help",
         "path": "/help/",
         "title": "Help",

@@ -120,6 +120,14 @@ const GlobalStyles = createGlobalStyle`
         }
     }
 
+    ul {
+        padding-left: 20px;
+    }
+
+    li {
+        padding-bottom: 1rem;
+    }
+
     img {
         max-width: 100%;
     }
