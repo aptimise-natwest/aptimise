@@ -40,7 +40,7 @@ const CarouselBlocks = (props) => (
                                 twitter
                                 linkedIn
                                 facebook
-                                videoId
+                                youtubeVideoId
                             }
                         }
                     }
@@ -342,9 +342,8 @@ class Blocks extends Component {
 
         const sliderCommonSettings = {
             fade: true,
-            infinite: false,
+            // infinite: false,
             draggable: false,
-            focusOnSelect: false,
             arrows: false,
             swipe: false
         }
@@ -354,6 +353,7 @@ class Blocks extends Component {
         const { title, textHTML } = block.node
 
         const carouselBottom = block.node.carouselBlocks.map((block, i) => {
+            const youtubeSrc = `https://www.youtube.com/embed/${block.youtubeVideoId}?rel=0`
             return (
                 <div key={i}>
                     <Row>
@@ -383,7 +383,19 @@ class Blocks extends Component {
                             </LinkWrap>
                         </Col>
                         <Col md={6}>
-                            Video
+                            {block.youtubeVideoId !== "" &&
+                                <div className="embed-responsive embed-responsive-16by9">
+                                    <iframe
+                                        width="560"
+                                        height="315"
+                                        className="embed-responsive-item"
+                                        src={youtubeSrc}
+                                        frameBorder="0"
+                                        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                                        allowFullScreen
+                                        title="APtimise video"></iframe>
+                                </div>
+                            }
                         </Col>
                     </Row>
                 </div>
@@ -421,7 +433,7 @@ class Blocks extends Component {
                 <ContainerMaxWidth className="pt-3 pt-lg-4">
                     <Row>
                         <Col xs={12} md={8} lg={6}>
-                            <Text size="lg" className="pb-3">{title}</Text>
+                            <h4 className="pb-3">{title}</h4>
                             <Text dangerouslySetInnerHTML={{ __html: textHTML }}/>
                         </Col>
                     </Row>
@@ -448,7 +460,7 @@ class Blocks extends Component {
                         </MobileHexagons>
                     </Row>
                 </HexagonCarouselContainer>
-                <ContainerMaxWidth>
+                <ContainerMaxWidth className="pb-3 pb-lg-5">
                     <Row>
                         <Col xs={12}>
                             <Slider

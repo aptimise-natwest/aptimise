@@ -128,6 +128,11 @@ const GlobalStyles = createGlobalStyle`
         background-color: ${props => props.theme.colors.grey};
         opacity: .3 !important;
     }
+
+    /* Slick fade fix */
+    .slick-slide.slick-active { z-index: 999; }
+    .slick-slide { pointer-events: none; }
+    .slick-active { pointer-events: auto; }
 `;
 
 export default withTheme(GlobalStyles)
