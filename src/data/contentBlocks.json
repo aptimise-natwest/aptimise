@@ -47,7 +47,7 @@
         "type": "LinkBlock",
         "links": [
             {
-                "link": "https://google.com",
+                "link": "/pdfs/How_it_Works_Long_2.pdf",
                 "linkText": "download our “how it works” guide"
             },
             {
