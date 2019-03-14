@@ -24,6 +24,7 @@ import employee from "images/employee.svg"
 const CalculatorContainer = styled(ContainerMaxWidth)`
     position: relative;
     padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
 
     @media ${media.md} {
         padding-bottom: 12rem;

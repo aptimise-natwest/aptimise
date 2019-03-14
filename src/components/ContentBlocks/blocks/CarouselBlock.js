@@ -53,6 +53,11 @@ const CarouselBlocks = (props) => (
     />
 )
 
+const CarouselWrap = styled.div`
+    padding-top: 1.5rem;
+    padding-bottom: 3rem;
+`
+
 const LinkWrap = styled.div`
     display: flex;
     align-items: center;
@@ -430,48 +435,50 @@ class Blocks extends Component {
 
         return (
             <>
-                <ContainerMaxWidth className="pt-3 pt-lg-4">
-                    <Row>
-                        <Col xs={12} md={8} lg={6}>
-                            <h4 className="pb-3">{title}</h4>
-                            <Text dangerouslySetInnerHTML={{ __html: textHTML }}/>
-                        </Col>
-                    </Row>
-                </ContainerMaxWidth>
-                <HexagonCarouselContainer>
-                    <Row>
-                        <DesktopHexagons>
-                            <HexagonCarousel>
-                                {returnRenderDesktopButtons}
-                            </HexagonCarousel>
-                        </DesktopHexagons>
-                        <MobileHexagons>
-                            <HexagonCarousel>
-                                <ArrowLeft onClick={this.leftClick}>
-                                    <FontAwesomeIcon icon={faAngleLeft} />
-                                </ArrowLeft>
-                                <div className="absoluteHelper" style={style}>
-                                    {returnRenderMobileButtons}
-                                </div>
-                                <ArrowRight onClick={this.rightClick}>
-                                    <FontAwesomeIcon icon={faAngleRight} />
-                                </ArrowRight>
-                            </HexagonCarousel>
-                        </MobileHexagons>
-                    </Row>
-                </HexagonCarouselContainer>
-                <ContainerMaxWidth className="pb-3 pb-lg-5">
-                    <Row>
-                        <Col xs={12}>
-                            <Slider
-                                ref={slider => (this.carouselBottom = slider)}
-                                {...sliderCommonSettings}
-                            >
-                                {carouselBottom}
-                            </Slider>
-                        </Col>
-                    </Row>
-                </ContainerMaxWidth>
+                <CarouselWrap>
+                    <ContainerMaxWidth>
+                        <Row>
+                            <Col xs={12} md={8} lg={6}>
+                                <h4 className="pb-3">{title}</h4>
+                                <Text dangerouslySetInnerHTML={{ __html: textHTML }}/>
+                            </Col>
+                        </Row>
+                    </ContainerMaxWidth>
+                    <HexagonCarouselContainer>
+                        <Row>
+                            <DesktopHexagons>
+                                <HexagonCarousel>
+                                    {returnRenderDesktopButtons}
+                                </HexagonCarousel>
+                            </DesktopHexagons>
+                            <MobileHexagons>
+                                <HexagonCarousel>
+                                    <ArrowLeft onClick={this.leftClick}>
+                                        <FontAwesomeIcon icon={faAngleLeft} />
+                                    </ArrowLeft>
+                                    <div className="absoluteHelper" style={style}>
+                                        {returnRenderMobileButtons}
+                                    </div>
+                                    <ArrowRight onClick={this.rightClick}>
+                                        <FontAwesomeIcon icon={faAngleRight} />
+                                    </ArrowRight>
+                                </HexagonCarousel>
+                            </MobileHexagons>
+                        </Row>
+                    </HexagonCarouselContainer>
+                    <ContainerMaxWidth>
+                        <Row>
+                            <Col xs={12}>
+                                <Slider
+                                    ref={slider => (this.carouselBottom = slider)}
+                                    {...sliderCommonSettings}
+                                >
+                                    {carouselBottom}
+                                </Slider>
+                            </Col>
+                        </Row>
+                    </ContainerMaxWidth>
+                </CarouselWrap>
             </>
         )
     }
