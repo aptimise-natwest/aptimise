@@ -37,27 +37,29 @@ const XeroWrap = styled.span`
     }
 `
 
-const HeaderNavBar = (props) => (
-    <NavBar>
-        <NavBarContainer>
-            <Row className="justify-content-between align-items-center">
-                <LogoWrap xs="auto">
-                    <Link to="/">
-                        <AptimiseLogo />
-                    </Link>
-                    {props.data.pagesJson.id === "xero" &&
-                        <XeroWrap>
-                            <XeroLogo width="35" height="35" />
-                            <Text size="sm" className="pl-2" style={{ lineHeight: 1}}>connected <br />app</Text>
-                        </XeroWrap>
-                    }
-                </LogoWrap>
-                <Col xs="auto">
-                    <Button as="button" className="trigger-bookdemo-modal">book a demo</Button>
-                </Col>
-            </Row>
-        </NavBarContainer>
-    </NavBar>
-)
+const HeaderNavBar = (props) => {
+    return(
+        <NavBar>
+            <NavBarContainer>
+                <Row className="justify-content-between align-items-center">
+                    <LogoWrap xs="auto">
+                        <Link to="/">
+                            <AptimiseLogo />
+                        </Link>
+                        {typeof props.data !== 'undefined' && props.data.pagesJson.id === "xero" &&
+                            <XeroWrap>
+                                <XeroLogo width="35" height="35" />
+                                <Text size="sm" className="pl-2" style={{ lineHeight: 1}}>connected <br />app</Text>
+                            </XeroWrap>
+                        }
+                    </LogoWrap>
+                    <Col xs="auto">
+                        <Button as="button" className="trigger-bookdemo-modal">book a demo</Button>
+                    </Col>
+                </Row>
+            </NavBarContainer>
+        </NavBar>
+    )
+}
 
 export default HeaderNavBar
