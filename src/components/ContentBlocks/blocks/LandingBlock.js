@@ -15,14 +15,15 @@ import landingBlockSVG from "images/backgrounds/landing-block.svg"
 import landingMobileTopSVG from "images/backgrounds/landing-mobile-top.svg"
 import landingMobileBottomSVG from "images/backgrounds/landing-mobile-bottom.svg"
 
-const LandingWrapper = styled(Container)`
+const LandingWrapper = styled.div`
     max-width: 1500px;
+    width: 100%;
     padding: 0;
-    margin-bottom: 2rem;
+    margin: 0 auto 2rem;
     position: relative;
-    /* overflow: hidden; */
+    overflow: hidden;
     @media ${media.md} {
-        margin-bottom: 4rem;
+        margin: 0 auto 4rem;
     }
 `
 
@@ -64,12 +65,17 @@ const DesktopImg = styled(Img)`
 `
 
 const DesktopSvg = styled.img`
-    bottom: -2px;
-    position: absolute; 
-    width: calc(100% + 6px); 
-    left: 50%;
-    transform: translateX(-50%); 
-    max-width: none;
+    display: none;
+
+    @media ${media.md} {
+        display: block;
+        bottom: -2px;
+        position: absolute; 
+        width: calc(100% + 6px); 
+        left: 50%;
+        transform: translateX(-50%); 
+        max-width: none;
+    }
 `
 
 const MobileImg = styled(Img)`

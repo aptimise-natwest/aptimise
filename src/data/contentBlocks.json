@@ -91,14 +91,19 @@
       "buttonText": "pick your demo slot"
     },
     {
-        "id": "carouselBlocksHome",
-        "type": "CarouselBlocks",
+        "id": "carouselBlockHome",
+        "type": "CarouselBlock",
+        "title": "What’s APtimise worth to your business?",
+        "textHTML": "<p>Work out the potential savings you could make with the easy switch to APtimise.</p>",
         "carouselBlocks": [
             {
                 "imageCopy": "LEAP",
                 "name": "Raj Ahluwalia",
                 "position": "1 UK Finance Director, LEAP Legal",
                 "textHTML": "<p>1 “Often finance departments are the last to innovate – they’re typically very traditional”, Raj says. “It’s been my mission to update our processes and APtimise was the perfect product for us.”</p><p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Nullam quis risus eget urna mollis ornare vel eu leo.\n\nMaecenas faucibus mollis interdum. Vestibulum id ligula porta felis euismod semper. Aenean lacinia bibendum nulla sed consectetur. Cras mattis consectetur purus sit amet fermentum.</p>",
+                "twitter": "https://twtter.com",
+                "linkedIn": "https://linkedin.com",
+                "facebook": "https://facebook.com",
                 "videoId": ""
             },
             {
@@ -106,6 +111,9 @@
                 "name": "David Simon",
                 "position": "2 UK Finance Director, LEAP Legal",
                 "textHTML": "<p>“2 Often finance departments are the last to innovate – they’re typically very traditional”, Raj says. “It’s been my mission to update our processes and APtimise was the perfect product for us.”</p><p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Nullam quis risus eget urna mollis ornare vel eu leo.\n\nMaecenas faucibus mollis interdum. Vestibulum id ligula porta felis euismod semper. Aenean lacinia bibendum nulla sed consectetur. Cras mattis consectetur purus sit amet fermentum.</p>",
+                "twitter": "",
+                "linkedIn": "",
+                "facebook": "",
                 "videoId": ""
             },
             {
@@ -113,6 +121,9 @@
                 "name": "Tom Roberts",
                 "position": "3 UK Finance Director, LEAP Legal",
                 "textHTML": "<p>“3 Often finance departments are the last to innovate – they’re typically very traditional”, Raj says. “It’s been my mission to update our processes and APtimise was the perfect product for us.”</p><p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Nullam quis risus eget urna mollis ornare vel eu leo.\n\nMaecenas faucibus mollis interdum. Vestibulum id ligula porta felis euismod semper. Aenean lacinia bibendum nulla sed consectetur. Cras mattis consectetur purus sit amet fermentum.</p>",
+                "twitter": "",
+                "linkedIn": "",
+                "facebook": "",
                 "videoId": ""
             },
             {
@@ -120,6 +131,9 @@
                 "name": "Simon Richards",
                 "position": "4 UK Finance Director, LEAP Legal",
                 "textHTML": "<p>“4 Often finance departments are the last to innovate – they’re typically very traditional”, Raj says. “It’s been my mission to update our processes and APtimise was the perfect product for us.”</p><p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Nullam quis risus eget urna mollis ornare vel eu leo.\n\nMaecenas faucibus mollis interdum. Vestibulum id ligula porta felis euismod semper. Aenean lacinia bibendum nulla sed consectetur. Cras mattis consectetur purus sit amet fermentum.</p>",
+                "twitter": "",
+                "linkedIn": "",
+                "facebook": "",
                 "videoId": ""
             },
             {
@@ -127,6 +141,9 @@
                 "name": "Diane Hill",
                 "position": "5 UK Finance Director, LEAP Legal",
                 "textHTML": "<p>“5 Often finance departments are the last to innovate – they’re typically very traditional”, Raj says. “It’s been my mission to update our processes and APtimise was the perfect product for us.”</p><p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Nullam quis risus eget urna mollis ornare vel eu leo.\n\nMaecenas faucibus mollis interdum. Vestibulum id ligula porta felis euismod semper. Aenean lacinia bibendum nulla sed consectetur. Cras mattis consectetur purus sit amet fermentum.</p>",
+                "twitter": "",
+                "linkedIn": "",
+                "facebook": "",
                 "videoId": ""
             }
         ]

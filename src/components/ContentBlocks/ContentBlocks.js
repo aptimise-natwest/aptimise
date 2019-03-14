@@ -8,7 +8,7 @@ import CalculatorBlock from "./blocks/CalculatorBlock"
 import WhitePaperBlock from "./blocks/WhitePaperBlock"
 import LinkBlock from "./blocks/LinkBlock"
 import DeviceBlock from "./blocks/DeviceBlock"
-import CarouselBlocks from "./blocks/CarouselBlocks"
+import CarouselBlock from "./blocks/CarouselBlock"
 import FaqBlocks from "./blocks/FaqBlocks"
 
 const ContentBlocks = (props) => {
@@ -73,8 +73,8 @@ const ContentBlocks = (props) => {
                 case "DeviceBlock":
                     return <DeviceBlock id={block.node.id} key={i} />
 
-				case "CarouselBlocks":
-                    return <CarouselBlocks id={block.node.id} key={i} />
+				case "CarouselBlock":
+                    return <CarouselBlock id={block.node.id} key={i} />
 
                 case "FaqBlocks":
                     return <FaqBlocks id={block.node.id} key={i} />

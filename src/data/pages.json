@@ -11,9 +11,9 @@
             "linkBlockHome",
             "deviceBlockHome",
             "calculatorBlockHome",
+            "carouselBlockHome",
             "infoBlockFullWidthHome", 
-            "whitePaperBlockHome",
-			"carouselBlocksHome"
+            "whitePaperBlockHome"
         ]
     },
     {

@@ -11,17 +11,16 @@ import Slider from 'react-slick'
 import "slick-carousel/slick/slick.scss"
 import "slick-carousel/slick/slick-theme.css"
 import HexagonShape from "images/hexagon.svg"
-import ArrowLeft from "images/arrowLeft.svg"
-import ArrowRight from "images/arrowRight.svg"
 
 import styled from "styled-components"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import {
     faTwitter,
     faFacebookF,
-    faLinkedin,
-    faGoogle
+    faLinkedin
 } from '@fortawesome/free-brands-svg-icons'
+
+import { faAngleRight, faAngleLeft } from '@fortawesome/free-solid-svg-icons'
 
 const CarouselBlocks = (props) => (
     <StaticQuery
@@ -31,13 +30,16 @@ const CarouselBlocks = (props) => (
                     edges {
                         node {
                             id
+                            title
+                            textHTML
                             carouselBlocks {
-                                title
-                                topText
                                 imageCopy
                                 name
                                 position
                                 textHTML
+                                twitter
+                                linkedIn
+                                facebook
                                 videoId
                             }
                         }
@@ -52,10 +54,9 @@ const CarouselBlocks = (props) => (
 )
 
 const LinkWrap = styled.div`
-    padding: 1rem 0;
     display: flex;
     align-items: center;
-
+            
     img {
         width: 100%;
     }
@@ -76,17 +77,15 @@ const LinkItem = styled.a`
     }
 
     &:hover {
-        color: ${props => props.theme.colors.white};
+        color: ${props => props.theme.colors.grey};
     }
 `
 
-const sliderCommonSettings = {
-    fade: true,
-    infinite: false,
-    draggable: false,
-    focusOnSelect: true,
-    arrows: false
-}
+const HexagonCarouselContainer = styled(ContainerMaxWidth)`
+    padding-left: 0;
+    padding-right: 0;
+    overflow-x: hidden;
+`
 
 const HexagonCarousel = styled.div`
     overflow: hidden;
@@ -97,9 +96,9 @@ const HexagonCarousel = styled.div`
     
     @media ${media.md} {
         display: flex;
-        align-items: center;
-        justify-content: center;
-        margin-left: -70px;
+        /* align-items: center;
+        justify-content: center; */
+        /* margin-left: -70px; */
     }
     
     .absoluteHelper {
@@ -111,21 +110,38 @@ const HexagonCarousel = styled.div`
         justify-content: center;
         margin-left: -70px;
     }
-    
-    .arrow {
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        z-index: 100;
-        width: 32px;
-        
-        &-left {
-            left: 0;
-        }
-        
-        &-right {
-            right: 0;
-        }
+`
+
+const ArrowLeft = styled.button`
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 100;
+    font-size: 2.5rem;
+    left: 2rem;
+    background-color: transparent;
+    border: 0;
+    color: ${props => props.theme.colors.grey};
+`
+
+const ArrowRight = styled(ArrowLeft)`
+    left: auto;
+    right: 2rem;
+`
+
+const DesktopHexagons = styled(Col)`
+    display: none;
+
+    @media ${media.md} {
+        display: block;
+    }
+`
+
+const MobileHexagons = styled(Col)`
+    display: block;
+
+    @media ${media.md} {
+        display: none;
     }
 `
 
@@ -134,7 +150,7 @@ const HexagonCarouselItem = styled.div`
     width: 176px;
     overflow: hidden;
     
-    &:hover {
+    /* &:hover {
         >div:not(.active)  {
             opacity: 1 !important;
             z-index: 100 !important;
@@ -142,7 +158,7 @@ const HexagonCarouselItem = styled.div`
                 opacity: 0.8 !important;
             }
         }
-    }
+    } */
 `
 
 const HexagonCarouselMobileItem = styled.div`
@@ -160,8 +176,6 @@ class Blocks extends Component {
         super(props)
 
         this.state = {
-            // carouselTop: null,
-            carouselUnderImages: null,
             carouselImages: null,
             carouselBottom: null,
             slideIndex: 0,
@@ -169,9 +183,9 @@ class Blocks extends Component {
         }
 
         this.getBlock = this.getBlock.bind(this)
-        // this.syncSliders = this.syncSliders.bind(this)
+        this.leftClick = this.leftClick.bind(this)
+        this.rightClick = this.rightClick.bind(this)
         this.changeSliders = this.changeSliders.bind(this)
-        // this.changeImages = this.changeImages.bind(this)
     }
 
     componentDidMount() {
@@ -187,7 +201,6 @@ class Blocks extends Component {
 
         setTimeout(() => {
             this.carouselBottom.slickGoTo(next)
-            this.carouselUnderImages.slickGoTo(next)
         }, 200)
 
         this.setState({
@@ -207,7 +220,6 @@ class Blocks extends Component {
     }
 
     rightClick() {
-        console.log(this.state.maxIndex)
         this.imgClick(this.state.slideIndex === this.state.maxIndex ? 0 : (this.state.slideIndex + 1))
     }
 
@@ -253,7 +265,6 @@ class Blocks extends Component {
         let opacity = 0.05
         let className = ''
         const zIndex = 99 - Math.abs(this.state.slideIndex - id)
-        const transform = 'translateX(50%)'
 
         if (this.state.slideIndex === id) {
             opacity = 1
@@ -328,39 +339,50 @@ class Blocks extends Component {
     }
 
     render() {
+
+        const sliderCommonSettings = {
+            fade: true,
+            infinite: false,
+            draggable: false,
+            focusOnSelect: false,
+            arrows: false,
+            swipe: false
+        }
+
         const block = this.getBlock()
 
-        const carouselUnderImages = block.node.carouselBlocks.map((block, i) => {
-            return (
-                <div key={i}>
-                    <Text size="lg" className="pb-3">{block.name}</Text>
-                    <Text dangerouslySetInnerHTML={{__html: block.position}}/>
-                </div>
-            )
-        })
+        const { title, textHTML } = block.node
 
         const carouselBottom = block.node.carouselBlocks.map((block, i) => {
             return (
                 <div key={i}>
                     <Row>
-                        <Col xs={12} md={6}>
+                        <Col md={6}>
+                            <Text size="lg" className="pb-3">{block.name}</Text>
+                            <Text className="pb-3" dangerouslySetInnerHTML={{ __html: block.position }} />
                             <Text dangerouslySetInnerHTML={{__html: block.textHTML}}/>
                             <LinkWrap>
-                                <LinkItem href={block.twitter}>
-                                    <FontAwesomeIcon icon={faTwitter} />
-                                </LinkItem>
-                                <LinkItem href={block.linkedin}>
-                                    <FontAwesomeIcon icon={faLinkedin} />
-                                </LinkItem>
-                                <LinkItem href={block.google}>
+                                {block.twitter !== "" &&
+                                    <LinkItem href={block.twitter} target="_blank" rel="noopener noreferrer">
+                                        <FontAwesomeIcon icon={faTwitter} />
+                                    </LinkItem>
+                                }
+                                {block.linkedIn !== "" &&
+                                    <LinkItem href={block.linkedIn} target="_blank" rel="noopener noreferrer">
+                                        <FontAwesomeIcon icon={faLinkedin} />
+                                    </LinkItem>
+                                }
+                                {/* <LinkItem href={block.google}>
                                     <FontAwesomeIcon icon={faGoogle} />
-                                </LinkItem>
-                                <LinkItem href={block.facebook}>
-                                    <FontAwesomeIcon icon={faFacebookF} />
-                                </LinkItem>
+                                </LinkItem> */}
+                                {block.facebook !== "" &&
+                                    <LinkItem href={block.facebook} target="_blank" rel="noopener noreferrer">
+                                        <FontAwesomeIcon icon={faFacebookF} />
+                                    </LinkItem>
+                                }
                             </LinkWrap>
                         </Col>
-                        <Col xs={12} md={6}>
+                        <Col md={6}>
                             Video
                         </Col>
                     </Row>
@@ -395,52 +417,50 @@ class Blocks extends Component {
         }
 
         return (
-            <ContainerMaxWidth className="py-3">
-                <Row>
-                    <Col xs={12} md={8} lg={6}>
-                        <Text size="lg" className="pb-3">Don’t just take our word for it</Text>
-                        <Text>Find out how APtimise has helped innovative software company LEAP Legal to improve their processes and reduce time spent on Accounts Payable by an amazing 50%.</Text>
-                    </Col>
-                </Row>
-                <Row>
-                    <Col className="d-none d-md-block" xs={12}>
-                        <HexagonCarousel>
-                            {returnRenderDesktopButtons}
-                        </HexagonCarousel>
-                    </Col>
-                    <Col className="d-block d-md-none" xs={12}>
-                        <HexagonCarousel>
-                            <img src={ArrowLeft} className="arrow arrow-left" onClick={() => this.leftClick()}/>
-                            <div className="absoluteHelper" style={style}>
-                                {returnRenderMobileButtons}
-                            </div>
-                            <img src={ArrowRight} className="arrow arrow-right" onClick={() => this.rightClick()}/>
-                        </HexagonCarousel>
-                    </Col>
-                </Row>
-                <Row className="py-3">
-                    <Col xs={12} md={6}>
-                        <Slider
-                            ref={slider => (this.carouselUnderImages = slider)}
-                            className="carouselUnderImages"
-                            {...sliderCommonSettings}
-                        >
-                            {carouselUnderImages}
-                        </Slider>
-                    </Col>
-                </Row>
-                <Row>
-                    <Col xs={12}>
-                        <Slider
-                            ref={slider => (this.carouselBottom = slider)}
-                            className="carouselBottom"
-                            {...sliderCommonSettings}
-                        >
-                            {carouselBottom}
-                        </Slider>
-                    </Col>
-                </Row>
-            </ContainerMaxWidth>
+            <>
+                <ContainerMaxWidth className="pt-3 pt-lg-4">
+                    <Row>
+                        <Col xs={12} md={8} lg={6}>
+                            <Text size="lg" className="pb-3">{title}</Text>
+                            <Text dangerouslySetInnerHTML={{ __html: textHTML }}/>
+                        </Col>
+                    </Row>
+                </ContainerMaxWidth>
+                <HexagonCarouselContainer>
+                    <Row>
+                        <DesktopHexagons>
+                            <HexagonCarousel>
+                                {returnRenderDesktopButtons}
+                            </HexagonCarousel>
+                        </DesktopHexagons>
+                        <MobileHexagons>
+                            <HexagonCarousel>
+                                <ArrowLeft onClick={this.leftClick}>
+                                    <FontAwesomeIcon icon={faAngleLeft} />
+                                </ArrowLeft>
+                                <div className="absoluteHelper" style={style}>
+                                    {returnRenderMobileButtons}
+                                </div>
+                                <ArrowRight onClick={this.rightClick}>
+                                    <FontAwesomeIcon icon={faAngleRight} />
+                                </ArrowRight>
+                            </HexagonCarousel>
+                        </MobileHexagons>
+                    </Row>
+                </HexagonCarouselContainer>
+                <ContainerMaxWidth>
+                    <Row>
+                        <Col xs={12}>
+                            <Slider
+                                ref={slider => (this.carouselBottom = slider)}
+                                {...sliderCommonSettings}
+                            >
+                                {carouselBottom}
+                            </Slider>
+                        </Col>
+                    </Row>
+                </ContainerMaxWidth>
+            </>
         )
     }
 }
