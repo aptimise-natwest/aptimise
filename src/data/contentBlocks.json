@@ -95,39 +95,38 @@
         "type": "CarouselBlocks",
         "carouselBlocks": [
             {
-                "title": "1 Don’t just take our word for it",
-                "topText": "1 Find out how APtimise has helped innovative software company LEAP Legal to improve their processes and reduce time spent on Accounts Payable by an amazing 50%.",
-                "image": "",
+                "imageCopy": "LEAP",
                 "name": "Raj Ahluwalia",
                 "position": "1 UK Finance Director, LEAP Legal",
                 "textHTML": "<p>1 “Often finance departments are the last to innovate – they’re typically very traditional”, Raj says. “It’s been my mission to update our processes and APtimise was the perfect product for us.”</p><p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Nullam quis risus eget urna mollis ornare vel eu leo.\n\nMaecenas faucibus mollis interdum. Vestibulum id ligula porta felis euismod semper. Aenean lacinia bibendum nulla sed consectetur. Cras mattis consectetur purus sit amet fermentum.</p>",
                 "videoId": ""
             },
             {
-                "title": "2 Don’t just take our word for it",
-                "topText": "2 Find out how APtimise has helped innovative software company LEAP Legal to improve their processes and reduce time spent on Accounts Payable by an amazing 50%.",
-                "image": "",
+                "imageCopy": "SECOND",
                 "name": "David Simon",
                 "position": "2 UK Finance Director, LEAP Legal",
                 "textHTML": "<p>“2 Often finance departments are the last to innovate – they’re typically very traditional”, Raj says. “It’s been my mission to update our processes and APtimise was the perfect product for us.”</p><p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Nullam quis risus eget urna mollis ornare vel eu leo.\n\nMaecenas faucibus mollis interdum. Vestibulum id ligula porta felis euismod semper. Aenean lacinia bibendum nulla sed consectetur. Cras mattis consectetur purus sit amet fermentum.</p>",
                 "videoId": ""
             },
             {
-                "title": "3 Don’t just take our word for it",
-                "topText": "3 Find out how APtimise has helped innovative software company LEAP Legal to improve their processes and reduce time spent on Accounts Payable by an amazing 50%.",
-                "image": "",
+                "imageCopy": "OTHER",
                 "name": "Tom Roberts",
                 "position": "3 UK Finance Director, LEAP Legal",
                 "textHTML": "<p>“3 Often finance departments are the last to innovate – they’re typically very traditional”, Raj says. “It’s been my mission to update our processes and APtimise was the perfect product for us.”</p><p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Nullam quis risus eget urna mollis ornare vel eu leo.\n\nMaecenas faucibus mollis interdum. Vestibulum id ligula porta felis euismod semper. Aenean lacinia bibendum nulla sed consectetur. Cras mattis consectetur purus sit amet fermentum.</p>",
                 "videoId": ""
             },
             {
-                "title": "4 Don’t just take our word for it",
-                "topText": "4 Find out how APtimise has helped innovative software company LEAP Legal to improve their processes and reduce time spent on Accounts Payable by an amazing 50%.",
-                "image": "",
+                "imageCopy": "FOURTH",
                 "name": "Simon Richards",
                 "position": "4 UK Finance Director, LEAP Legal",
                 "textHTML": "<p>“4 Often finance departments are the last to innovate – they’re typically very traditional”, Raj says. “It’s been my mission to update our processes and APtimise was the perfect product for us.”</p><p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Nullam quis risus eget urna mollis ornare vel eu leo.\n\nMaecenas faucibus mollis interdum. Vestibulum id ligula porta felis euismod semper. Aenean lacinia bibendum nulla sed consectetur. Cras mattis consectetur purus sit amet fermentum.</p>",
+                "videoId": ""
+            },
+            {
+                "imageCopy": "FIFTH",
+                "name": "Diane Hill",
+                "position": "5 UK Finance Director, LEAP Legal",
+                "textHTML": "<p>“5 Often finance departments are the last to innovate – they’re typically very traditional”, Raj says. “It’s been my mission to update our processes and APtimise was the perfect product for us.”</p><p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Nullam quis risus eget urna mollis ornare vel eu leo.\n\nMaecenas faucibus mollis interdum. Vestibulum id ligula porta felis euismod semper. Aenean lacinia bibendum nulla sed consectetur. Cras mattis consectetur purus sit amet fermentum.</p>",
                 "videoId": ""
             }
         ]
