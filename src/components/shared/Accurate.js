@@ -1,6 +1,7 @@
 import React, { Component } from "react"
 import { TimelineMax } from "gsap"
-import { withTheme } from 'styled-components'
+import { withTheme } from "styled-components"
+import SvgWrap from "components/shared/SvgWrap"
 
 class Accurate extends Component {
     constructor(props) {
@@ -47,16 +48,19 @@ class Accurate extends Component {
 
     render() {
         const { theme } = this.props
+        const ratio = 100 * 90.7 / 75
         return (
-            <svg viewBox="0 0 75 90.7" 
-                style={{
-                    overflow: "visible",
-                    maxWidth: "100%"
-                }}
-            >
-                <path fill={theme.colors.turquoise} d="M0 68.82L37.45 90.7 75 68.65 37.45 47.33 0 68.82z" ref={(bottomPath) => this.bottomPath = bottomPath} />
-                <path fill={theme.colors.purpleDark} d="M0 21.48l37.45 21.88L75 21.32 37.45 0 0 21.48z" ref={(topPath) => this.topPath = topPath} />
-            </svg>
+            <SvgWrap style={{ paddingBottom: `${ratio}%`}}>
+                <svg viewBox="0 0 75 90.7"
+                    style={{
+                        overflow: "visible",
+                        maxWidth: "100%"
+                    }}
+                >
+                    <path fill={theme.colors.turquoise} d="M0 68.82L37.45 90.7 75 68.65 37.45 47.33 0 68.82z" ref={(bottomPath) => this.bottomPath = bottomPath} />
+                    <path fill={theme.colors.purpleDark} d="M0 21.48l37.45 21.88L75 21.32 37.45 0 0 21.48z" ref={(topPath) => this.topPath = topPath} />
+                </svg>
+            </SvgWrap>
         )
     }
 }

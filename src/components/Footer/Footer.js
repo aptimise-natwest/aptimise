@@ -176,6 +176,9 @@ class Footer extends Component {
                             <Link to="/">
                                 <AptimiseLogo width="200" white />
                             </Link>
+                            <Text color="white" className="pt-4">
+                                To use APtimise you only need a NatWest business, commercial or corporate bank account. You don't need to switch your entire banking. A monthly fee applies based on your invoice volumes and the level of software functionality required for your business. Our dedicated APtimise customer success team is here to help you every step of the way.
+                            </Text>
                             <Row>
                                 <Col md={4} lg={6}>
                                     <LinkWrap>
@@ -205,8 +208,8 @@ class Footer extends Component {
                                             </Link>
                                         </li>
                                         <li>
-                                            <Link to="/faqs/">
-                                                <Text size="md" color="white">FAQs</Text>
+                                            <Link to="/help/">
+                                                <Text size="md" color="white">Help?</Text>
                                             </Link>
                                         </li>
                                     </UsefulLinks>                            
