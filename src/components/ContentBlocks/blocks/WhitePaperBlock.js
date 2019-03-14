@@ -90,7 +90,7 @@ class WhitePaper extends Component {
                         <Container>
                             <Row className="justify-content-center">
                                 <Col md={6} lg={4}>
-                                    <h4 className="text-center pb-5">Download Whitepaper</h4>
+                                    <h4 className="text-center pb-3 pb-md-4">Download Whitepaper</h4>
                                     <WhitePaperForm />
                                 </Col>
                             </Row>
