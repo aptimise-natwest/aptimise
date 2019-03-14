@@ -26,7 +26,13 @@ const ModalAngled = styled(Modal)`
         border-radius: 0;
         border: 0;
         background-color: transparent;
+    }
 
+
+    .modal-body {
+        min-height: 80vh;
+        margin-top: 20vh;
+        background-color: ${props => props.theme.colors.white};
 
         ${props => props.background && css`
             @media ${media.md} {
@@ -41,13 +47,6 @@ const ModalAngled = styled(Modal)`
                 background-position: left center, right center;
             }
         `}
-    }
-
-
-    .modal-body {
-        min-height: 80vh;
-        margin-top: 20vh;
-        background-color: ${props => props.theme.colors.white};
 
         &:before {
             content: "";

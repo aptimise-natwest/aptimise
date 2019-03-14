@@ -71,6 +71,10 @@ const Button = styled.a`
             width: auto;
         }
     `}
+
+    ${props => props.block && css`
+        width: 100%;
+    `}
 `
 
 export default Button
