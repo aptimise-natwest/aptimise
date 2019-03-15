@@ -120,7 +120,9 @@ const RangesliderPeople = styled.div`
 
 const Input = styled.input`
     display: inline-block;
-    width: 15px;
+    width: 20px;
+    /* padding-left: .5rem;
+    padding-right: .5rem; */
     border: 0;
     color: ${props => props.theme.colors.purple};
     max-width: 50% !important;
@@ -328,7 +330,9 @@ class Calculator extends  Component {
     calculateHours() {
         // (10 min to enter + 1 min to approve) X number of invoices) + (20 X number of payment runs per month)
         // (11 X invoices per month) + (20 X payment runs per month) = NUMBER OF HOURS SAVED PER MONTH with automation
-        let hours = (11 * this.state.invoices) + (20 * this.state.payments)
+        const invoices = this.state.invoices === "" ? 0 : this.state.invoices
+        const payments = this.state.payments === "" ? 0 : this.state.payments
+        let hours = (11 * invoices) + (20 * payments)
         return hours
     }
 
@@ -359,7 +363,7 @@ class Calculator extends  Component {
         let textWidth = 15
 
         if (typeof window !== 'undefined') {
-            textWidth = window.innerWidth < 992 ? 15 : 25 
+            textWidth = window.innerWidth < 992 ? 18 : 28
         }
 
         // Change width of input based on input
@@ -371,17 +375,22 @@ class Calculator extends  Component {
         const target = e.target;
         const name = target.name
         const value = target.value
-        const number = /^[0-9\b]+$/;
+        const number = /^[0-9\b]+$/
 
-        // test the regex for number
-        if (number.test(value)) {
-            this.updateInputWidth(target)
-
-            // Update value in state
+        // Only update if number or empty
+        if (!number.test(value)) {
+            if (value === "") {
+                this.setState({
+                    [name]: value,
+                })
+            }
+        } else {
             this.setState({
                 [name]: value,
             })
-        }
+        } 
+
+        this.updateInputWidth(target)
     }
 
     render() {

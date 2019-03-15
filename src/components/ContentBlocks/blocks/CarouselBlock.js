@@ -347,7 +347,7 @@ class Blocks extends Component {
 
         const sliderCommonSettings = {
             fade: true,
-            // infinite: false,
+            adaptiveHeight: true,
             draggable: false,
             arrows: false,
             swipe: false
