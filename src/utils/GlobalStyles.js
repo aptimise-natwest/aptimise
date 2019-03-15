@@ -71,7 +71,7 @@ const GlobalStyles = createGlobalStyle`
 
     body {
         font-family: ${props => props.theme.font.family.body};
-        font-size: ${props => props.theme.font.size.base};
+        font-size: ${props => props.theme.font.size.md};
         font-weight: normal;
         line-height: ${props => props.theme.font.lineHeight.sm};
         color: ${props => props.theme.colors.blackOff};

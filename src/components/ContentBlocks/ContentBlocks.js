@@ -2,6 +2,7 @@ import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import LandingBlock from "./blocks/LandingBlock"
 import TextBlock from "./blocks/TextBlock"
+import TextBlockTerms from "./blocks/TextBlockTerms"
 import InfoBlocks from "./blocks/InfoBlocks"
 import InfoBlockFullWidth from "./blocks/InfoBlockFullWidth"
 import CalculatorBlock from "./blocks/CalculatorBlock"
@@ -55,6 +56,9 @@ const ContentBlocks = (props) => {
 
                 case "TextBlock":
                     return <TextBlock id={block.node.id} key={i} />
+
+                case "TextBlockTerms":
+                    return <TextBlockTerms id={block.node.id} key={i} />
 
                 case "InfoBlocks":
                     return <InfoBlocks id={block.node.id} key={i} />

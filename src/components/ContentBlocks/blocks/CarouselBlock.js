@@ -202,8 +202,6 @@ class Blocks extends Component {
     }
 
     changeSliders(next) {
-        console.log('Index ', next)
-
         setTimeout(() => {
             this.carouselBottom.slickGoTo(next)
         }, 200)

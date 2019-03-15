@@ -136,10 +136,6 @@ const DeviceBlock = (props) => (
 
 class Device extends Component {
 
-    constructor(props) {
-        super(props)
-    }
-
     componentDidMount() {
         // create animation
         this.animation()
