@@ -167,7 +167,7 @@ class Blocks extends Component {
                     <>
                         <FaqWrap>
                             <Col xs={3} md={2}>
-                                <Animation block={block} type={block.animation} play={this.state.animation[i]} />
+                                <Animation block={block} type={block.animation} play={i === 0 ? true : this.state.animation[i]} />
                             </Col>
                             <Col xs={9} md={10}>
                                 <CollapseToggle id={`faqBlock${i}`}>

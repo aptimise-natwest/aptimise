@@ -36,7 +36,7 @@ class FadeInUp extends Component {
 
     componentWillUnmount() {
         // Kill on unmount
-        // this.masterTimeline.kill()
+        this.masterTimeline.kill()
     }
 
     partialVisible() {

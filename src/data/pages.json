@@ -37,8 +37,9 @@
     {
         "id": "help",
         "path": "/help/",
-        "title": "Help",
+        "title": "Help?",
         "metaDescription": "",
+        "h1": "Help?",
         "contentBlocks": [
             "TextBlockHelp",
             "FaqBlockFullWidth"
