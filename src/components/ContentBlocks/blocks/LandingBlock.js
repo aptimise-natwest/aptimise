@@ -226,33 +226,21 @@ class Landing extends Component {
         super(props)
 
         this.state = {
-            modal: false,
-            player: null
+            modal: false
         }
 
-        this.toggle = this.toggle.bind(this);
+        this.toggle = this.toggle.bind(this)
+        this.onReady = this.onReady.bind(this)
     }
 
     toggle() {
         this.setState(prevState => ({
             modal: !prevState.modal
         }))
-
-        this.state.modal === true ? this.onPlayVideo : this.onPauseVideo
     }
 
     onReady(event) {
-        this.setState({
-            player: event.target,
-        })
-    }
-
-    onPlayVideo() {
-        this.state.player.playVideo()
-    }
-
-    onPauseVideo() {
-        this.state.player.pauseVideo()
+        event.target.playVideo()
     }
 
     render() {
@@ -263,14 +251,13 @@ class Landing extends Component {
         )[0]
 
         const { title, text, imageDesktop, imageMobile, videoText, youtubeVideoID } = block.node
-        // const youtubeSrc = `https://www.youtube.com/embed/${youtubeVideoID}?autoplay=1&amp;rel=0`
 
         const opts = {
             playerVars: { // https://developers.google.com/youtube/player_parameters
                 rel: 0
             }
-        };
-
+        }
+    
         return (
             <>
                 <LandingWrapper>
@@ -312,23 +299,12 @@ class Landing extends Component {
                                 <Row className="justify-content-center">
                                 {this.state.modal &&
                                     <div className="embed-responsive embed-responsive-16by9">
-                                        {/* <iframe
-                                            width="560"
-                                            height="315"
+                                        <YouTube
+                                            videoId={youtubeVideoID}
+                                            opts={opts}
+                                            onReady={this.onReady}
                                             className="embed-responsive-item"
-                                            src={youtubeSrc}
-                                            frameBorder="0"
-                                            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                                            allowFullScreen
-                                            title="APtimise video"></iframe> */}
-
-                                            <YouTube
-                                                videoId={youtubeVideoID}
-                                                opts={opts}
-                                                onReady={this.onReady}
-                                                className="embed-responsive-item"
-                                            />
-
+                                        />
                                     </div>
                                 }
                                 </Row>
