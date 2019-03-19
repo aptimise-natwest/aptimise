@@ -18,7 +18,7 @@ class Layout extends Component {
         return (
             <ThemeProvider theme={theme}>
                 <SiteWrap>
-                    <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
+                    <SEO title="Home" />
                     <GlobalStyles />
                     <Header data={this.props.data} />
                     <main>{this.props.children}</main>

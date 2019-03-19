@@ -73,7 +73,7 @@ module.exports = {
 		// {
 		// 	resolve: `gatsby-plugin-google-tagmanager`,
 		// 	options: {
-		// 		id: "",
+		// 		id: "GTM-MPFMW8W",
 
 		// 		// Include GTM in development.
 		// 		// Defaults to false meaning GTM will only be loaded in production.
@@ -83,6 +83,7 @@ module.exports = {
 		// 		// gtmAuth: "YOUR_GOOGLE_TAGMANAGER_ENVIROMENT_AUTH_STRING",
 		// 		// gtmPreview: "YOUR_GOOGLE_TAGMANAGER_ENVIROMENT_PREVIEW_NAME",
 		// 	},
+		// },
 		// this (optional) plugin enables Progressive Web App + Offline functionality
 		// To learn more, visit: https://gatsby.app/offline
 		'gatsby-plugin-offline',
