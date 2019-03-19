@@ -1,7 +1,7 @@
 module.exports = {
 	siteMetadata: {
 		title: `APtimise`,
-        description: `APtimise`,
+		description: `APtimise is the UK's only accounts payable software with invoice automation & intelligent payments in one cloud solution`,
 		author: `dewynters`,
 		siteUrl: `https://aptimise.com`
 	},
