@@ -237,7 +237,7 @@ class Footer extends Component {
                                         <img src={natwestLogo} alt="Natwest" style={{ maxWidth: "133px" }} />
                                     </a>
                                     <Text size="md" className="pt-2" color="white">
-                                        Our <Link to="/privacy-policy/">Privacy Policy</Link>
+                                        Our <Link to="/aptimise-privacy-policy/">Privacy Policy</Link>
                                     </Text>
                                 </Col>
                             </Row>

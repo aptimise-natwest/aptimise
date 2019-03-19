@@ -1,5 +1,6 @@
 import React, { Component } from "react"
 import PropTypes from "prop-types"
+import YouTube from "react-youtube"
 import { Container, Row, Col, ModalBody } from "reactstrap"
 import { StaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
@@ -245,7 +246,13 @@ class Landing extends Component {
         )[0]
 
         const { title, text, imageDesktop, imageMobile, videoText, youtubeVideoID } = block.node
-        const youtubeSrc = `https://www.youtube.com/embed/${youtubeVideoID}?autoplay=1&amp;rel=0`
+        // const youtubeSrc = `https://www.youtube.com/embed/${youtubeVideoID}?autoplay=1&amp;rel=0`
+
+        const opts = {
+            playerVars: { // https://developers.google.com/youtube/player_parameters
+                rel: 0
+            }
+        };
 
         return (
             <>
@@ -288,7 +295,7 @@ class Landing extends Component {
                                 <Row className="justify-content-center">
                                 {this.state.modal &&
                                     <div className="embed-responsive embed-responsive-16by9">
-                                        <iframe
+                                        {/* <iframe
                                             width="560"
                                             height="315"
                                             className="embed-responsive-item"
@@ -296,7 +303,14 @@ class Landing extends Component {
                                             frameBorder="0"
                                             allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                                             allowFullScreen
-                                            title="APtimise video"></iframe>
+                                            title="APtimise video"></iframe> */}
+
+                                            <YouTube
+                                                videoId={youtubeVideoID}
+                                                opts={opts}
+                                                className="embed-responsive-item"
+                                            />
+
                                     </div>
                                 }
                                 </Row>

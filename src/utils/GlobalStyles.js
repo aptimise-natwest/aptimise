@@ -124,10 +124,6 @@ const GlobalStyles = createGlobalStyle`
         padding-left: 20px;
     }
 
-    li {
-        padding-bottom: 1rem;
-    }
-
     img {
         max-width: 100%;
     }

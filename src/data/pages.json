@@ -53,5 +53,14 @@
         "contentBlocks": [
             "textBlockTermsTerms"
         ]
+    },
+    {
+        "id": "privacyNatwest",
+        "path": "/aptimise-privacy-policy/",
+        "title": "Privacy Policy",
+        "metaDescription": "",
+        "contentBlocks": [
+            "textBlockTermsPrivacyNatest"
+        ]
     }
 ]
