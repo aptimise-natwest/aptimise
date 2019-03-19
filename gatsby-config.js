@@ -1,7 +1,7 @@
 module.exports = {
 	siteMetadata: {
 		title: `APtimise`,
-        description: `APtimise`,
+		description: `APtimise is the UK's only accounts payable software with invoice automation & intelligent payments in one cloud solution`,
 		author: `dewynters`,
 		siteUrl: `https://aptimise.com`
 	},
@@ -31,33 +31,32 @@ module.exports = {
 		},
 		`gatsby-transformer-json`,
 		`gatsby-transformer-sharp`,
-		// `gatsby-plugin-sharp`,
-		// {
-		// 	resolve: `gatsby-plugin-sitemap`,
-		// 	options: {
-		// 		output: `/sitemap.xml`,
-		// 		// Exclude specific pages or groups of pages using glob parameters
-		// 		// See: https://github.com/isaacs/minimatch
-		// 		// The example below will exclude the single `path/to/page` and all routes beginning with `category`
-		// 		exclude: [],
-		// 		query: `
-		// 		{
-		// 			site {
-		// 				siteMetadata {
-		// 					siteUrl
-		// 				}
-		// 			}
-			
-		// 			allSitePage {
-		// 				edges {
-		// 					node {
-		// 						path
-		// 					}
-		// 				}
-		// 			}
-		// 		}`
-		// 	}
-		// },
+		`gatsby-plugin-sharp`,
+		{
+			resolve: `gatsby-plugin-sitemap`,
+			options: {
+				output: `/sitemap.xml`,
+				// Exclude specific pages or groups of pages using glob parameters
+				// See: https://github.com/isaacs/minimatch
+				// The example below will exclude the single `path/to/page` and all routes beginning with `category`
+				exclude: [],
+				query: `
+				{
+					site {
+						siteMetadata {
+							siteUrl
+						}
+					}
+					allSitePage {
+						edges {
+							node {
+								path
+							}
+						}
+					}
+				}`
+			}
+		},
 		{
 			resolve: `gatsby-plugin-manifest`,
 			options: {
@@ -73,7 +72,7 @@ module.exports = {
 		// {
 		// 	resolve: `gatsby-plugin-google-tagmanager`,
 		// 	options: {
-		// 		id: "",
+		// 		id: "GTM-MPFMW8W",
 
 		// 		// Include GTM in development.
 		// 		// Defaults to false meaning GTM will only be loaded in production.
@@ -83,6 +82,7 @@ module.exports = {
 		// 		// gtmAuth: "YOUR_GOOGLE_TAGMANAGER_ENVIROMENT_AUTH_STRING",
 		// 		// gtmPreview: "YOUR_GOOGLE_TAGMANAGER_ENVIROMENT_PREVIEW_NAME",
 		// 	},
+		// },
 		// this (optional) plugin enables Progressive Web App + Offline functionality
 		// To learn more, visit: https://gatsby.app/offline
 		'gatsby-plugin-offline',

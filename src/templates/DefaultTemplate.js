@@ -7,8 +7,6 @@ class DefaultTemplate extends Component {
     render() {
         const data = this.props.data
 
-        console.log(data.pagesJson)
-
         return (
             <Layout data={data}>
                 {data.pagesJson.h1 !== null &&

@@ -15,10 +15,16 @@ const SiteWrap = styled.div`
 
 class Layout extends Component {
     render() {
+
+        const {
+            title,
+            metaDescription
+        } = this.props.data.pagesJson
+
         return (
             <ThemeProvider theme={theme}>
                 <SiteWrap>
-                    <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
+                    <SEO title={title} description={metaDescription} />
                     <GlobalStyles />
                     <Header data={this.props.data} />
                     <main>{this.props.children}</main>
