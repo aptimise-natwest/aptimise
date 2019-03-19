@@ -27,6 +27,7 @@ query($id: String!) {
         path
         title
         metaDescription
+        h1
         contentBlocks
     }
 }

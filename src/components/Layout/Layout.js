@@ -16,15 +16,19 @@ const SiteWrap = styled.div`
 class Layout extends Component {
     render() {
 
-        const {
-            title,
-            metaDescription
-        } = this.props.data.pagesJson
-
+        let SEOMarkup
+        if (this.props.dynamicPage) {
+            const {
+                title,
+                metaDescription
+            } = this.props.data.pagesJson
+            SEOMarkup = <SEO title={title} description={metaDescription} />
+        }
+        
         return (
             <ThemeProvider theme={theme}>
                 <SiteWrap>
-                    <SEO title={title} description={metaDescription} />
+                    {SEOMarkup}
                     <GlobalStyles />
                     <Header data={this.props.data} />
                     <main>{this.props.children}</main>
@@ -34,6 +38,10 @@ class Layout extends Component {
             </ThemeProvider>
         )
     }
+}
+
+Layout.defaultProps = {
+    dynamicPage: true
 }
 
 Layout.propTypes = {

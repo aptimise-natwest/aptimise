@@ -10,10 +10,13 @@ const LinkButton = styled(Button)`
     margin-bottom: .5rem;
     position: relative;
     z-index: 1;
+    width: 100%;
 
     @media ${media.md} {
+         width: auto;
         margin-right: .5rem;
     }
+
 
     &.internalLink {
         color: ${props => props.theme.colors.blackOff};
@@ -67,8 +70,8 @@ const LinkBlock = (props) => {
                 <LinkButton
                     key={i}
                     href={link.link}
-                    blockMobile
-                    grey
+                    target="_blank"
+                    rel="noopener noreferrer"
                 >
                     {link.linkText}
                 </LinkButton>
