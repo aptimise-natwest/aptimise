@@ -226,7 +226,8 @@ class Landing extends Component {
         super(props)
 
         this.state = {
-            modal: false
+            modal: false,
+            player: null
         }
 
         this.toggle = this.toggle.bind(this);
@@ -236,6 +237,22 @@ class Landing extends Component {
         this.setState(prevState => ({
             modal: !prevState.modal
         }))
+
+        this.state.modal === true ? this.onPlayVideo : this.onPauseVideo
+    }
+
+    onReady(event) {
+        this.setState({
+            player: event.target,
+        })
+    }
+
+    onPlayVideo() {
+        this.state.player.playVideo()
+    }
+
+    onPauseVideo() {
+        this.state.player.pauseVideo()
     }
 
     render() {
@@ -308,6 +325,7 @@ class Landing extends Component {
                                             <YouTube
                                                 videoId={youtubeVideoID}
                                                 opts={opts}
+                                                onReady={this.onReady}
                                                 className="embed-responsive-item"
                                             />
 
