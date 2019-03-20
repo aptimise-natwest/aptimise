@@ -272,12 +272,14 @@ class Landing extends Component {
                                 <MobileImgWrap>
                                     <MobileImgSvgTop src={landingMobileTopSVG} alt="" />
                                     <MobileImg fluid={imageMobile.childImageSharp.fluid} alt="" />
+                                    {youtubeVideoID !== "" && youtubeVideoID !== null &&
                                     <WatchNowButton onClick={this.toggle}>
                                         <ButtonPlaySvg />
                                         <span className="ml-3">
                                             {videoText}
                                         </span>
                                     </WatchNowButton>
+                                    }
                                     <MobileImgSvgBottom src={landingMobileBottomSVG} alt="" />
                                 </MobileImgWrap>
 

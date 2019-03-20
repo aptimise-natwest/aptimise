@@ -1,6 +1,8 @@
-## Aptimise website
+## APtimise website
 
 ### Quick start
+
+Node / npm must be installed: https://nodejs.org/en/download/
 
 1. Install Gatsby on your machine:
     ```sh
@@ -15,12 +17,239 @@
     ```sh
     gatsby develop
     ```
-    Your site is now running at `http://localhost:8000`!
+    Your site is now running at `http://localhost:8000`! 
+    <br/>
 
 4. Build website:
     ```sh
     gatsby build
     ```
+
+5. Serve the built website locally:
+    ```sh
+    gatsby serve
+    ```
+    Your site is now running at `http://localhost:9000`! 
+    <br/>
+
+
+## Versioning / branches
+
+There are 3 branches that are auto deployed by Azure to their respective url endpoints when a push is made:
+
+1. master = live url
+2. staging
+3. dev
+
+## Website guide
+
+#### Data
+
+The content of the website is stored using JSON under the following directories:
+
+    ├── src
+        ├── data
+            ├── pages.json
+            ├── contentBlocks.json
+
+To create a new page add a new node inside pages.json with the following format:
+
+
+    id: string (unique)
+    path: string (unique)
+    title: string
+    metaDescription: string
+    h1: string (optional) adds a h1 title to top of the page
+    contentBlocks: array 
+
+    Example: 
+
+    {
+        "id": "about", 
+        "path": "/about/",
+        "template": string (optional) (name of template)
+        "title": "About",
+        "metaDescription": "About our company",
+        "h1": "About us"
+        "contentBlocks": [
+            "contentBlockId",
+            "anotherId"
+        ]
+    }
+
+The content blocks array contains a list of content block IDs.
+
+To create a new content block add a new node inside contentBlocks.json, there are a number of different content blocks that can be created these are:
+
+1. CalculatorBlock
+2. CarouselBlock
+3. DeviceBlock
+4. FaqBlocks
+5. ImageTextBlock
+6. InfoBlockFullWidth
+7. InfoBlocks
+8. LandingBlock
+9. LinkBlock
+10. TextBlock
+11. TextBlockTerms
+12. WhitePaperBlock
+
+Below are the fields that can be added for each block:
+
+1. CalculatorBlock
+
+        id: string (unique, required) 
+        type: "CalculatorBlock" (required)
+        title: string
+        textHTML: string (accepts HTML)
+        textInvoices: string
+        textPaymentRuns: string
+        textEmployees: string
+        textSummary: string
+        textButton: string 
+
+2. CarouselBlock
+
+        id: string (unique, required) 
+        type: "CarouselBlock" (required)
+        title: string,
+        textHTML: string (accepts HTML),
+        carouselBlocks: (array, required) [
+            object {
+                imageCopy: string,
+                name: string,
+                position: string
+                textHTML: string (accepts HTML),
+                twitter: string (url)
+                linkedIn: string (url)
+                facebook: string (url)
+                youtubeVideoId: string (Youtube ID)
+            }
+        ]
+
+3. DeviceBlock
+
+        id: string (unique, required)
+        type: "DeviceBlock" (required)
+        title: string
+        textHTML: string (acceps HTML)
+        buttonText: string (required)
+    
+            
+4. FaqBlocks
+
+        id: string (unique, required)
+        type: "FaqBlocks" (required)
+        title: string
+        shortIntroduction: string
+        faqBlocks: array (required) [
+            object {
+                id: string (unique, required)
+                title: string
+                color: string (theme color)
+                animation: string (animation type) (fast, accurate, secure, simple, more, oneElement)
+                faqBlockElements: array (required) [
+                    object {
+                        title: string
+                        textHTML: string (accepts HTML)
+                    }
+                ]
+            }
+        ]
+        
+            
+5. ImageTextBlock
+
+        id: string (unique, required)
+        type: "ImageTextBlock" (required)
+        title: string
+        textHTML: string (accepts HTML)
+        textPosition: string (right, left)
+        link: string (url)
+        linkText: string
+        imageSVG: string (path to SVG, these images should be stored under /static/images/, required)
+        imageCaption: string
+
+6. InfoBlockFullWidth
+    
+        id: "infoBlockFullWidthHome"
+        type: "InfoBlockFullWidth" (required)
+        animation: string (animation type) (fast, accurate, secure, simple, more, oneElement)
+        title: string
+        textIntroHTML: string (accepts HTML)
+        textHTML: string (accepts HTML)
+
+7. InfoBlocks
+    
+        id: string (unique, required)
+        type: "InfoBlocks" (required)
+        infoBlocks: array (required) [
+            object {
+                animation: string (animation type) (fast, accurate, secure, simple, more, oneElement)
+                title: string 
+                textHTML: string (accepts HTML)
+            }
+        ]
+
+8. LandingBlock
+    
+        id: string (unique, required)
+        type: "LandingBlock" (required)
+        imageDesktop: string (required) (path to image, located in /src/images/ written like this: ../images/image.jpg) 
+        imageMobile: string (required) (same as above)
+        title: string
+        videoText: string
+        youtubeVideoID: string (youtube ID)
+        text: string
+
+9. LinkBlock
+    
+        id: string (unique, required)
+        type: "LinkBlock" (required)
+        links: array (required) [
+            object {
+                link: string (url)
+                linkText: string
+            }
+        ]
+    
+10. TextBlock
+       
+        id: "TextBlockHelp" (unique, required)
+        type: "TextBlock" (required)
+        size: string (theme font size, e.g xl)
+        weight: string (theme font family, e.g light)
+        textHTML: string (accepts HTML)
+
+11. TextBlockTerms
+       
+        id: "TextBlockHelp" (unique, required)
+        type: "TextBlock" (required)
+        size: string (theme font size, e.g xl)
+        weight: string (theme font family, e.g light)
+        textHTML: string (accepts HTML)
+
+
+12. WhitePaperBlock
+
+        id: string (unique, required)
+        type: "WhitePaperBlock" (required)
+        title: string
+        textHTML: string (accepts HTML),
+        buttonText: string
+        image: string (required) (path to image, located in /src/images/ written like this: ../images/image.jpg) 
+    
+
+#### Diagrams
+
+1. Code base flow
+
+    ![alt text](/architecture-diagrams/codebase-flow.jpg "Logo Title Text 1")
+
+2. Architecture
+
+    [Website Architecture](/architecture-diagrams/aptimise-architecture.pdf)
+
 
 ## What's inside?
 
