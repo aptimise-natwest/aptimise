@@ -172,7 +172,7 @@ Below are the fields that can be added for each block:
 
 6. InfoBlockFullWidth
     
-        id: "infoBlockFullWidthHome"
+        id: string (unique, required)
         type: "InfoBlockFullWidth" (required)
         animation: string (animation type) (fast, accurate, secure, simple, more, oneElement)
         title: string
@@ -215,7 +215,7 @@ Below are the fields that can be added for each block:
     
 10. TextBlock
        
-        id: "TextBlockHelp" (unique, required)
+        id: string (unique, required)
         type: "TextBlock" (required)
         size: string (theme font size, e.g xl)
         weight: string (theme font family, e.g light)
@@ -223,8 +223,8 @@ Below are the fields that can be added for each block:
 
 11. TextBlockTerms
        
-        id: "TextBlockHelp" (unique, required)
-        type: "TextBlock" (required)
+        id: string (unique, required)
+        type: "TextBlockTerms" (required)
         size: string (theme font size, e.g xl)
         weight: string (theme font family, e.g light)
         textHTML: string (accepts HTML)
