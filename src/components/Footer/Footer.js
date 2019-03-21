@@ -181,13 +181,13 @@ class Footer extends Component {
                             <Row>
                                 <Col md={4} lg={6}>
                                     <LinkWrap>
-                                        <LinkItem href="https://twitter.com" target="_blank" rel="noreferrer">
+                                        <LinkItem href="https://twitter.com/aptimise" target="_blank" rel="noreferrer">
                                             <FontAwesomeIcon icon={faTwitter} />
                                         </LinkItem>
-                                        <LinkItem href="https://linkedin.com" target="_blank" rel="noreferrer">
+                                        <LinkItem href="https://www.linkedin.com/company/aptimise-com/" target="_blank" rel="noreferrer">
                                             <FontAwesomeIcon icon={faLinkedin} />
                                         </LinkItem>
-                                        <LinkItem href="https://facebook.com" target="_blank" rel="noreferrer">
+                                        <LinkItem href="https://en-gb.facebook.com/APtimise/" target="_blank" rel="noreferrer">
                                             <FontAwesomeIcon icon={faFacebookF} />
                                         </LinkItem>
                                     </LinkWrap>
