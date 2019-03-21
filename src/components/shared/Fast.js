@@ -7,6 +7,7 @@ class Fast extends Component {
     constructor(props) {
         super(props);
         this.masterTimeline = new TimelineMax({paused: true})
+        this.bottomRectTimelineInitial = new TimelineMax()
         this.play = this.play.bind(this)
     }
 
@@ -34,6 +35,9 @@ class Fast extends Component {
     animation() {
         const topPathTimeline = new TimelineMax()
         const bottomRectTimeline = new TimelineMax()
+
+        this.bottomRectTimelineInitial
+            .set(this.bottomRect, { transform: "skew(-54deg) rotate(19deg)", transformOrigin: "50% 50%" })
 
         topPathTimeline
             .from(this.topPath , .5, { opacity: 0, y: -40 })
@@ -65,12 +69,7 @@ class Fast extends Component {
                     <path fill={theme.colors.pink} d="M76.18 41.74V28L40.46 48.52v13.54z" />
                     <path fill={theme.colors.turquoise} d="M0 61.68V48.09l35.51 20.34V82z" />
                     <path fill={theme.colors.blue} d="M76.18 61.68V48.09L40.46 68.43V82z" />
-                    <rect fill={theme.colors.purpleDark} width="0" height="23" x="118" y="40" ref={(bottomRect) => this.bottomRect = bottomRect} 
-                        style={{
-                            transform: "skew(-53deg) rotate(19deg)",
-                            transformOrigin: "50% 50%"
-                        }}
-                    />
+                    <rect fill={theme.colors.purpleDark} width="0" height="23" x="183" y="8" ref={(bottomRect) => this.bottomRect = bottomRect} />
                 </svg>
             </SvgWrap>
         )
