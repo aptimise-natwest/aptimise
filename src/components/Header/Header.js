@@ -37,7 +37,7 @@ class Header extends Component {
         return(
             <HeaderWrap ref={(headerWrap) => this.headerWrap = headerWrap}>
                 <HeaderBrandBar />
-                <HeaderNavBar />
+                <HeaderNavBar data={this.props.data} />
             </HeaderWrap>
         )
     }

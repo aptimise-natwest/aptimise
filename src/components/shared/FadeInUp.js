@@ -34,6 +34,11 @@ class FadeInUp extends Component {
         this.partialVisible()
     }
 
+    componentWillUnmount() {
+        // Kill on unmount
+        this.masterTimeline.kill()
+    }
+
     partialVisible() {
         if (typeof window !== undefined) {
             const breakpoint = this.props.theme.sizes.lg.replace('px', '')

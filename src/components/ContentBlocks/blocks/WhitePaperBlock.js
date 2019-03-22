@@ -3,6 +3,7 @@ import PropTypes from "prop-types"
 import { StaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
 import { Container, Row, Col, ModalBody } from "reactstrap"
+import WhitePaperForm from "components/WhitePaperForm/WhitePaperForm"
 import ContainerMaxWidth from "components/shared/ContainerMaxWidth"
 import Text from "components/shared/Text"
 import Button from "components/shared/Button"
@@ -75,7 +76,7 @@ class WhitePaper extends Component {
                     </Row>
                     <Row>
                         <Col lg={{ size: 6, order: 2 }}>
-                            <Img fluid={image.childImageSharp.fluid} className="py-3" alt={title} />
+                            <Img fluid={image.childImageSharp.fluid} className="my-3" alt={title} />
                         </Col>
                         <Col lg={{ size: 6, order: 1 }}>
                             <Text dangerouslySetInnerHTML={{ __html: textHTML }} className="py-2" />
@@ -88,8 +89,9 @@ class WhitePaper extends Component {
                     <ModalBody>
                         <Container>
                             <Row className="justify-content-center">
-                                <Col md={6}>
-                                    <p>Lorem ipsum dolor</p>
+                                <Col md={6} lg={4}>
+                                    <h4 className="text-center pb-3 pb-md-4">Download Whitepaper</h4>
+                                    <WhitePaperForm />
                                 </Col>
                             </Row>
                         </Container>

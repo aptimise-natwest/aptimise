@@ -22,6 +22,11 @@ class Secure extends Component {
         }
     }
 
+    componentWillUnmount() {
+        // Kill on unmount
+        this.masterTimeline.kill()
+    }
+
     play() {
         this.masterTimeline.play()
     }

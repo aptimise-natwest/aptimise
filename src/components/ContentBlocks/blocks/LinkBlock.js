@@ -8,9 +8,23 @@ import Button from "components/shared/Button"
 
 const LinkButton = styled(Button)`
     margin-bottom: .5rem;
+    position: relative;
+    z-index: 1;
+    width: 100%;
 
     @media ${media.md} {
+         width: auto;
         margin-right: .5rem;
+    }
+
+
+    &.internalLink {
+        color: ${props => props.theme.colors.blackOff};
+        background-color: ${ props => props.theme.colors.grey};
+        &:hover {
+            color: ${props => props.theme.colors.white};
+            background-color: ${props => props.theme.colors.purpleDark };
+        }
     }
 `
 
@@ -44,10 +58,9 @@ const LinkBlock = (props) => {
             return (
                 <LinkButton
                     key={i}
-                    to={link.link}
                     as={Link}
-                    blockMobile
-                    grey
+                    className="internalLink"
+                    to={link.link}
                 >
                     {link.linkText}
                 </LinkButton>
@@ -57,8 +70,8 @@ const LinkBlock = (props) => {
                 <LinkButton
                     key={i}
                     href={link.link}
-                    blockMobile
-                    grey
+                    target="_blank"
+                    rel="noopener noreferrer"
                 >
                     {link.linkText}
                 </LinkButton>

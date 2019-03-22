@@ -21,7 +21,7 @@ const DeviceContainer = styled(ContainerMaxWidth)`
 const DeviceContent = styled(Row)`
     position: relative;
     z-index: 2;
-    padding-top: 5rem;
+    padding-top: 3rem;
     padding-bottom: 15rem;
 
     @media ${media.sm} {
@@ -135,10 +135,6 @@ const DeviceBlock = (props) => (
 )
 
 class Device extends Component {
-
-    constructor(props) {
-        super(props)
-    }
 
     componentDidMount() {
         // create animation

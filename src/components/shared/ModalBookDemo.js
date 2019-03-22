@@ -1,9 +1,9 @@
-import React from "react"
-import { Modal, ModalBody } from "reactstrap"
+import React, { Component } from "react"
+import { ModalBody } from "reactstrap"
 import ModalAngled from "components/shared/ModalAngled"
 import ModalAngledClose from "components/shared/ModalAngledClose"
 
-class ModalBookDemo extends React.Component {
+class ModalBookDemo extends Component {
     constructor(props) {
         super(props);
         this.state = {

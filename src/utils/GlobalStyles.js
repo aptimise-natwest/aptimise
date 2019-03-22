@@ -71,7 +71,7 @@ const GlobalStyles = createGlobalStyle`
 
     body {
         font-family: ${props => props.theme.font.family.body};
-        font-size: ${props => props.theme.font.size.base};
+        font-size: ${props => props.theme.font.size.md};
         font-weight: normal;
         line-height: ${props => props.theme.font.lineHeight.sm};
         color: ${props => props.theme.colors.blackOff};
@@ -120,6 +120,10 @@ const GlobalStyles = createGlobalStyle`
         }
     }
 
+    ul {
+        padding-left: 20px;
+    }
+
     img {
         max-width: 100%;
     }
@@ -128,6 +132,11 @@ const GlobalStyles = createGlobalStyle`
         background-color: ${props => props.theme.colors.grey};
         opacity: .3 !important;
     }
+
+    /* Slick fade fix */
+    .slick-slide.slick-active { z-index: 999; }
+    .slick-slide { pointer-events: none; }
+    .slick-active { pointer-events: auto; }
 `;
 
 export default withTheme(GlobalStyles)

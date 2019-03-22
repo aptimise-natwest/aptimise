@@ -1,48 +1,259 @@
-<!-- AUTO-GENERATED-CONTENT:START (STARTER) -->
-<p align="center">
-  <a href="https://www.gatsbyjs.org">
-    <img alt="Gatsby" src="https://www.gatsbyjs.org/monogram.svg" width="60" />
-  </a>
-</p>
-<h1 align="center">
-  Gatsby's default starter
-</h1>
+## APtimise website
 
-Kick off your project with this default boilerplate. This starter ships with the main Gatsby configuration files you might need to get up and running blazing fast with the blazing fast app generator for React.
+### Quick start
 
-_Have another more specific idea? You may want to check out our vibrant collection of [official and community-created starters](https://www.gatsbyjs.org/docs/gatsby-starters/)._
+Node / npm must be installed: https://nodejs.org/en/download/
 
-## 🚀 Quick start
-
-1.  **Create a Gatsby site.**
-
-    Use the Gatsby CLI to create a new site, specifying the default starter.
-
+1. Install Gatsby on your machine:
     ```sh
-    # create a new Gatsby site using the default starter
-    npx gatsby new my-default-starter https://github.com/gatsbyjs/gatsby-starter-default
+    npm install -g gatsby-cli
     ```
 
-1.  **Start developing.**
-
-    Navigate into your new site’s directory and start it up.
-
+2. Install modules:
     ```sh
-    cd my-default-starter/
+    npm install
+    ```
+3. Develop site:
+    ```sh
     gatsby develop
     ```
+    Your site is now running at `http://localhost:8000`! 
+    <br/>
 
-1.  **Open the source code and start editing!**
+4. Build website:
+    ```sh
+    gatsby build
+    ```
 
-    Your site is now running at `http://localhost:8000`!
+5. Serve the built website locally:
+    ```sh
+    gatsby serve
+    ```
+    Your site is now running at `http://localhost:9000`! 
+    <br/>
 
-    _Note: You'll also see a second link: _`http://localhost:8000/___graphql`_. This is a tool you can use to experiment with querying your data. Learn more about using this tool in the [Gatsby tutorial](https://www.gatsbyjs.org/tutorial/part-five/#introducing-graphiql)._
 
-    Open the `my-default-starter` directory in your code editor of choice and edit `src/pages/index.js`. Save your changes and the browser will update in real time!
+## Versioning / branches
 
-## 🧐 What's inside?
+There are 3 branches that are auto deployed by Azure to their respective url endpoints when a push is made:
 
-A quick look at the top-level files and directories you'll see in a Gatsby project.
+1. master = live url
+2. staging
+3. dev
+
+## Website guide
+
+#### Data
+
+The content of the website is stored using JSON under the following directories:
+
+    ├── src
+        ├── data
+            ├── pages.json
+            ├── contentBlocks.json
+
+To create a new page add a new node inside pages.json with the following format:
+
+
+    id: string (unique)
+    path: string (unique)
+    title: string
+    metaDescription: string
+    h1: string (optional) adds a h1 title to top of the page
+    contentBlocks: array 
+
+    Example: 
+
+    {
+        "id": "about", 
+        "path": "/about/",
+        "template": string (optional) (name of template)
+        "title": "About",
+        "metaDescription": "About our company",
+        "h1": "About us"
+        "contentBlocks": [
+            "contentBlockId",
+            "anotherId"
+        ]
+    }
+
+The content blocks array contains a list of content block IDs.
+
+To create a new content block add a new node inside contentBlocks.json, there are a number of different content blocks that can be created these are:
+
+1. CalculatorBlock
+2. CarouselBlock
+3. DeviceBlock
+4. FaqBlocks
+5. ImageTextBlock
+6. InfoBlockFullWidth
+7. InfoBlocks
+8. LandingBlock
+9. LinkBlock
+10. TextBlock
+11. TextBlockTerms
+12. WhitePaperBlock
+
+Below are the fields that can be added for each block:
+
+1. CalculatorBlock
+
+        id: string (unique, required) 
+        type: "CalculatorBlock" (required)
+        title: string
+        textHTML: string (accepts HTML)
+        textInvoices: string
+        textPaymentRuns: string
+        textEmployees: string
+        textSummary: string
+        textButton: string 
+
+2. CarouselBlock
+
+        id: string (unique, required) 
+        type: "CarouselBlock" (required)
+        title: string,
+        textHTML: string (accepts HTML),
+        carouselBlocks: (array, required) [
+            object {
+                imageCopy: string,
+                name: string,
+                position: string
+                textHTML: string (accepts HTML),
+                twitter: string (url)
+                linkedIn: string (url)
+                facebook: string (url)
+                youtubeVideoId: string (Youtube ID)
+            }
+        ]
+
+3. DeviceBlock
+
+        id: string (unique, required)
+        type: "DeviceBlock" (required)
+        title: string
+        textHTML: string (acceps HTML)
+        buttonText: string (required)
+    
+            
+4. FaqBlocks
+
+        id: string (unique, required)
+        type: "FaqBlocks" (required)
+        title: string
+        shortIntroduction: string
+        faqBlocks: array (required) [
+            object {
+                id: string (unique, required)
+                title: string
+                color: string (theme color)
+                animation: string (animation type) (fast, accurate, secure, simple, more, oneElement)
+                faqBlockElements: array (required) [
+                    object {
+                        title: string
+                        textHTML: string (accepts HTML)
+                    }
+                ]
+            }
+        ]
+        
+            
+5. ImageTextBlock
+
+        id: string (unique, required)
+        type: "ImageTextBlock" (required)
+        title: string
+        textHTML: string (accepts HTML)
+        textPosition: string (right, left)
+        link: string (url)
+        linkText: string
+        imageSVG: string (path to SVG, these images should be stored under /static/images/, required)
+        imageCaption: string
+
+6. InfoBlockFullWidth
+    
+        id: string (unique, required)
+        type: "InfoBlockFullWidth" (required)
+        animation: string (animation type) (fast, accurate, secure, simple, more, oneElement)
+        title: string
+        textIntroHTML: string (accepts HTML)
+        textHTML: string (accepts HTML)
+
+7. InfoBlocks
+    
+        id: string (unique, required)
+        type: "InfoBlocks" (required)
+        infoBlocks: array (required) [
+            object {
+                animation: string (animation type) (fast, accurate, secure, simple, more, oneElement)
+                title: string 
+                textHTML: string (accepts HTML)
+            }
+        ]
+
+8. LandingBlock
+    
+        id: string (unique, required)
+        type: "LandingBlock" (required)
+        imageDesktop: string (required) (path to image, located in /src/images/ written like this: ../images/image.jpg) 
+        imageMobile: string (required) (same as above)
+        title: string
+        videoText: string
+        youtubeVideoID: string (youtube ID)
+        text: string
+
+9. LinkBlock
+    
+        id: string (unique, required)
+        type: "LinkBlock" (required)
+        links: array (required) [
+            object {
+                link: string (url)
+                linkText: string
+            }
+        ]
+    
+10. TextBlock
+       
+        id: string (unique, required)
+        type: "TextBlock" (required)
+        size: string (theme font size, e.g xl)
+        weight: string (theme font family, e.g light)
+        textHTML: string (accepts HTML)
+
+11. TextBlockTerms
+       
+        id: string (unique, required)
+        type: "TextBlockTerms" (required)
+        size: string (theme font size, e.g xl)
+        weight: string (theme font family, e.g light)
+        textHTML: string (accepts HTML)
+
+
+12. WhitePaperBlock
+
+        id: string (unique, required)
+        type: "WhitePaperBlock" (required)
+        title: string
+        textHTML: string (accepts HTML),
+        buttonText: string
+        image: string (required) (path to image, located in /src/images/ written like this: ../images/image.jpg) 
+    
+
+#### Diagrams
+
+1. Code base flow
+
+    ![alt text](/architecture-diagrams/codebase-flow.jpg "Logo Title Text 1")
+
+2. Architecture
+
+    [Website Architecture](/architecture-diagrams/aptimise-architecture.pdf)
+
+
+## What's inside?
+
+A quick look at the top-level files and directories you'll see.
 
     .
     ├── node_modules
@@ -84,13 +295,3 @@ A quick look at the top-level files and directories you'll see in a Gatsby proje
 ## 🎓 Learning Gatsby
 
 Looking for more guidance? Full documentation for Gatsby lives [on the website](https://www.gatsbyjs.org/). Here are some places to start:
-
-- **For most developers, we recommend starting with our [in-depth tutorial for creating a site with Gatsby](https://www.gatsbyjs.org/tutorial/).** It starts with zero assumptions about your level of ability and walks through every step of the process.
-
-- **To dive straight into code samples, head [to our documentation](https://www.gatsbyjs.org/docs/).** In particular, check out the _Guides_, _API Reference_, and _Advanced Tutorials_ sections in the sidebar.
-
-## 💫 Deploy
-
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/gatsbyjs/gatsby-starter-default)
-
-<!-- AUTO-GENERATED-CONTENT:END -->

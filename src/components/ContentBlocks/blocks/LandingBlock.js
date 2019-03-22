@@ -1,5 +1,6 @@
 import React, { Component } from "react"
 import PropTypes from "prop-types"
+import YouTube from "react-youtube"
 import { Container, Row, Col, ModalBody } from "reactstrap"
 import { StaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
@@ -12,17 +13,19 @@ import ModalAngled from "components/shared/ModalAngled"
 import ModalAngledClose from "components/shared/ModalAngledClose"
 
 import landingBlockSVG from "images/backgrounds/landing-block.svg"
+import landingTextMobileSVG from "images/backgrounds/landing-text-mobile.svg"
 import landingMobileTopSVG from "images/backgrounds/landing-mobile-top.svg"
 import landingMobileBottomSVG from "images/backgrounds/landing-mobile-bottom.svg"
 
-const LandingWrapper = styled(Container)`
+const LandingWrapper = styled.div`
     max-width: 1500px;
+    width: 100%;
     padding: 0;
-    margin-bottom: 2rem;
+    margin: 0 auto 2rem;
     position: relative;
-    /* overflow: hidden; */
+    overflow: hidden;
     @media ${media.md} {
-        margin-bottom: 4rem;
+        margin: 0 auto 4rem;
     }
 `
 
@@ -64,12 +67,17 @@ const DesktopImg = styled(Img)`
 `
 
 const DesktopSvg = styled.img`
-    bottom: -2px;
-    position: absolute; 
-    width: calc(100% + 6px); 
-    left: 50%;
-    transform: translateX(-50%); 
-    max-width: none;
+    display: none;
+
+    @media ${media.md} {
+        display: block;
+        bottom: -2px;
+        position: absolute; 
+        width: calc(100% + 6px); 
+        left: 50%;
+        transform: translateX(-50%); 
+        max-width: none;
+    }
 `
 
 const MobileImg = styled(Img)`
@@ -221,13 +229,18 @@ class Landing extends Component {
             modal: false
         }
 
-        this.toggle = this.toggle.bind(this);
+        this.toggle = this.toggle.bind(this)
+        this.onReady = this.onReady.bind(this)
     }
 
     toggle() {
         this.setState(prevState => ({
             modal: !prevState.modal
         }))
+    }
+
+    onReady(event) {
+        event.target.playVideo()
     }
 
     render() {
@@ -238,8 +251,13 @@ class Landing extends Component {
         )[0]
 
         const { title, text, imageDesktop, imageMobile, videoText, youtubeVideoID } = block.node
-        const youtubeSrc = `https://www.youtube.com/embed/${youtubeVideoID}?autoplay=1&amp;rel=0`
 
+        const opts = {
+            playerVars: { // https://developers.google.com/youtube/player_parameters
+                rel: 0
+            }
+        }
+    
         return (
             <>
                 <LandingWrapper>
@@ -254,12 +272,14 @@ class Landing extends Component {
                                 <MobileImgWrap>
                                     <MobileImgSvgTop src={landingMobileTopSVG} alt="" />
                                     <MobileImg fluid={imageMobile.childImageSharp.fluid} alt="" />
+                                    {youtubeVideoID !== "" && youtubeVideoID !== null &&
                                     <WatchNowButton onClick={this.toggle}>
                                         <ButtonPlaySvg />
                                         <span className="ml-3">
                                             {videoText}
                                         </span>
                                     </WatchNowButton>
+                                    }
                                     <MobileImgSvgBottom src={landingMobileBottomSVG} alt="" />
                                 </MobileImgWrap>
 
@@ -267,6 +287,7 @@ class Landing extends Component {
                                     <LandingText
                                         dangerouslySetInnerHTML={{ __html: text }}
                                     />
+                                    <LandingTextBgSvg src={landingTextMobileSVG} alt="" />
                                 </LandingTextWrap>
                             </Col>
                         </Row>
@@ -279,14 +300,14 @@ class Landing extends Component {
                             <Container>
                                 <Row className="justify-content-center">
                                 {this.state.modal &&
-                                    <iframe
-                                        width="560"
-                                        height="315"
-                                        src={youtubeSrc}
-                                        frameBorder="0"
-                                        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                                        allowfullscreen
-                                        title="APtimise video"></iframe>
+                                    <div className="embed-responsive embed-responsive-16by9">
+                                        <YouTube
+                                            videoId={youtubeVideoID}
+                                            opts={opts}
+                                            onReady={this.onReady}
+                                            className="embed-responsive-item"
+                                        />
+                                    </div>
                                 }
                                 </Row>
                             </Container>

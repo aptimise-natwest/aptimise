@@ -20,13 +20,12 @@ import natwestLogo from "images/logos/natwest-logo-white.svg"
 import { 
     faTwitter,
     faFacebookF,
-    faLinkedin,
-    faGoogle
+    faLinkedin
 } from '@fortawesome/free-brands-svg-icons'
 
 const FooterWrap = styled.footer`
     position: relative;
-    margin-top: 100px;
+    margin-top: calc(100px + 4rem);
     color: ${props => props.theme.colors.white};
 
     a {
@@ -182,29 +181,31 @@ class Footer extends Component {
                             <Row>
                                 <Col md={4} lg={6}>
                                     <LinkWrap>
-                                        <LinkItem href="#">
+                                        <LinkItem href="https://twitter.com/aptimise" target="_blank" rel="noreferrer">
                                             <FontAwesomeIcon icon={faTwitter} />
                                         </LinkItem>
-                                        <LinkItem href="#">
+                                        <LinkItem href="https://www.linkedin.com/company/aptimise-com/" target="_blank" rel="noreferrer">
                                             <FontAwesomeIcon icon={faLinkedin} />
                                         </LinkItem>
-                                        <LinkItem href="#">
-                                            <FontAwesomeIcon icon={faGoogle} />
-                                        </LinkItem>
-                                        <LinkItem href="#">
+                                        <LinkItem href="https://en-gb.facebook.com/APtimise/" target="_blank" rel="noreferrer">
                                             <FontAwesomeIcon icon={faFacebookF} />
                                         </LinkItem>
                                     </LinkWrap>
                                     <Text className="pb-3" size="md" color="white">WeWork building 8, Devonshire Square, London, EC2M 4PL</Text>
                                     <UsefulLinks>
                                         <li>
-                                            <a href="mailto:">
+                                            <a href="mailto:aptimise@natwest.com?subject=Let's talk about Accounts Payable automation">
                                                 <Text size="md" color="white">Contact us</Text>
                                             </a>
                                         </li>
                                         <li>
                                             <Link to="/privacy-policy/">
                                                 <Text size="md" color="white">Privacy Policy</Text>
+                                            </Link>
+                                        </li>
+                                        <li>
+                                            <Link to="/terms-conditions/">
+                                                <Text size="md" color="white">Terms &amp; Conditions</Text>
                                             </Link>
                                         </li>
                                         <li>
@@ -217,7 +218,7 @@ class Footer extends Component {
                                 <Col md={{ offset: 1, size: 7}} lg={{ offset: 0, size: 6}}>
                                     <LinkWrap>
                                         <CompanyLinkItem href="#">
-                                            <img src={xeroLogo} alt="Xero" style={{ maxWidth: "56px" }}/>
+                                            <img src={xeroLogo} alt="Xero" style={{ maxWidth: "56px", width: "100%" }}/>
                                         </CompanyLinkItem>
                                         <CompanyLinkItem href="#">
                                             <img src={sageLogo} alt="Sage" style={{ maxWidth: "64px" }}/>
@@ -232,11 +233,11 @@ class Footer extends Component {
                                             <img src={netsuiteLogo} alt="Netsuite" style={{ maxWidth: "113px" }} />
                                         </CompanyLinkItem>
                                     </LinkWrap>
-                                    <a href="#">
+                                    <a href="https://natwest.com">
                                         <img src={natwestLogo} alt="Natwest" style={{ maxWidth: "133px" }} />
                                     </a>
                                     <Text size="md" className="pt-2" color="white">
-                                        Our <Link to="/privacy-policy/">Privacy Policy</Link>
+                                        Our <Link to="/aptimise-privacy-policy/">Privacy Policy</Link>
                                     </Text>
                                 </Col>
                             </Row>
