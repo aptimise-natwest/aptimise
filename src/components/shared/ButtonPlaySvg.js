@@ -1,6 +1,5 @@
 import React, { Component } from "react"
 import { TimelineMax } from "gsap/all"
-import "js/DrawSVGPlugin"
 
 class ButtonPlaySvg extends Component {
 
@@ -12,6 +11,11 @@ class ButtonPlaySvg extends Component {
     }
 
     componentDidMount() {
+        try {
+            require('js/DrawSVGPlugin.js')
+        } catch (e) {
+            console.error(e)
+        }
         // create animation
         this.animation()
     }
