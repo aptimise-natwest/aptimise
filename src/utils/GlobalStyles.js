@@ -1,5 +1,5 @@
 import { createGlobalStyle, withTheme } from "styled-components";
-import { media } from "utils/Media"
+import { media } from "utils/Media";
 import fontFiles from "./Fonts";
 
 const GlobalStyles = createGlobalStyle`
@@ -89,7 +89,7 @@ const GlobalStyles = createGlobalStyle`
     h4, 
     h5, 
     h6 {
-        font-family: ${props => props.theme.font.family.light};
+        font-family: ${props => props.theme.font.family.bold};
         font-weight: normal;
         line-height: ${props => props.theme.font.lineHeight.headings};
     }
@@ -139,4 +139,4 @@ const GlobalStyles = createGlobalStyle`
     .slick-active { pointer-events: auto; }
 `;
 
-export default withTheme(GlobalStyles)
+export default withTheme(GlobalStyles);
