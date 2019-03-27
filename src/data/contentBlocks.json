@@ -4,7 +4,7 @@
         "type": "LandingBlock",
         "imageDesktop": "../images/backgrounds/landing-home.jpg",
         "imageMobile": "../images/backgrounds/landing-home-mobile.jpg",
-        "title": "Revolutionise your<br/> accounts payable<br/> with APtimise",
+        "title": "Nana Rocks - Revolutionise your<br/> accounts payable<br/> with APtimise",
         "videoText": "Watch now",
         "youtubeVideoID": "5sFoqY8ZcBo",
         "text": "Reduce your invoice processing time by up to 50% with the UK’s only end-end accounts payable solution"
@@ -100,7 +100,7 @@
                 "imageCopy": "LEAP",
                 "name": "Raj Ahluwalia",
                 "position": "UK Finance Director, LEAP Legal",
-                "textHTML": "<p>“Often finance departments are the last to innovate – they’re typically very traditional”, Raj says. “It’s been my mission to update our processes and APtimise was the perfect product for us.”</p><p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Nullam quis risus eget urna mollis ornare vel eu leo.\n\nMaecenas faucibus mollis interdum. Vestibulum id ligula porta felis euismod semper. Aenean lacinia bibendum nulla sed consectetur. Cras mattis consectetur purus sit amet fermentum.</p>",
+                "textHTML": "<p>“Often finance departments are the last to innovate – they’re typically very traditional”, Raj says. “It’s been my mission to update our processes and APtimise was the perfect product for us.”<p>",
                 "twitter": "https://twtter.com",
                 "linkedIn": "https://linkedin.com",
                 "facebook": "https://facebook.com",
@@ -108,9 +108,9 @@
             },
             {
                 "imageCopy": "SECOND",
-                "name": "David Simon",
-                "position": "2 UK Finance Director, LEAP Legal",
-                "textHTML": "<p>“2 Often finance departments are the last to innovate – they’re typically very traditional”, Raj says. “It’s been my mission to update our processes and APtimise was the perfect product for us.”</p><p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Nullam quis risus eget urna mollis ornare vel eu leo.\n\nMaecenas faucibus mollis interdum. Vestibulum id ligula porta felis euismod semper. Aenean lacinia bibendum nulla sed consectetur. Cras mattis consectetur purus sit amet fermentum.</p>",
+                "name": "Sarah Campbell",
+                "position": "Office Manager, Spectrum Chemicals",
+                "textHTML": "<p>“The data capture amazes me. There's very little human input, so there's less chance of errors and typos. It's very clever technology” </p>", 
                 "twitter": "",
                 "linkedIn": "",
                 "facebook": "",
@@ -120,7 +120,7 @@
                 "imageCopy": "OTHER",
                 "name": "Tom Roberts",
                 "position": "3 UK Finance Director, LEAP Legal",
-                "textHTML": "<p>“3 Often finance departments are the last to innovate – they’re typically very traditional”, Raj says. “It’s been my mission to update our processes and APtimise was the perfect product for us.”</p><p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Nullam quis risus eget urna mollis ornare vel eu leo.\n\nMaecenas faucibus mollis interdum. Vestibulum id ligula porta felis euismod semper. Aenean lacinia bibendum nulla sed consectetur. Cras mattis consectetur purus sit amet fermentum.</p>",
+                "textHTML": "<p>“3 Often finance departments are the last to innovate – they’re typically very traditional”, Raj says. “It’s been my mission to update our processes and APtimise was the perfect product for us.” </p>",
                 "twitter": "",
                 "linkedIn": "",
                 "facebook": "",
@@ -130,7 +130,7 @@
                 "imageCopy": "FOURTH",
                 "name": "Simon Richards",
                 "position": "4 UK Finance Director, LEAP Legal",
-                "textHTML": "<p>“4 Often finance departments are the last to innovate – they’re typically very traditional”, Raj says. “It’s been my mission to update our processes and APtimise was the perfect product for us.”</p><p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Nullam quis risus eget urna mollis ornare vel eu leo.\n\nMaecenas faucibus mollis interdum. Vestibulum id ligula porta felis euismod semper. Aenean lacinia bibendum nulla sed consectetur. Cras mattis consectetur purus sit amet fermentum.</p>",
+                "textHTML": "<p>“4 Often finance departments are the last to innovate – they’re typically very traditional”, Raj says. “It’s been my mission to update our processes and APtimise was the perfect product for us.” </p>",
                 "twitter": "",
                 "linkedIn": "",
                 "facebook": "",
@@ -140,7 +140,7 @@
                 "imageCopy": "FIFTH",
                 "name": "Diane Hill",
                 "position": "5 UK Finance Director, LEAP Legal",
-                "textHTML": "<p>“5 Often finance departments are the last to innovate – they’re typically very traditional”, Raj says. “It’s been my mission to update our processes and APtimise was the perfect product for us.”</p><p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Nullam quis risus eget urna mollis ornare vel eu leo.\n\nMaecenas faucibus mollis interdum. Vestibulum id ligula porta felis euismod semper. Aenean lacinia bibendum nulla sed consectetur. Cras mattis consectetur purus sit amet fermentum.</p>",
+                "textHTML": "<p>“5 Often finance departments are the last to innovate – they’re typically very traditional”, Raj says. “It’s been my mission to update our processes and APtimise was the perfect product for us.” </p>",
                 "twitter": "",
                 "linkedIn": "",
                 "facebook": "",
@@ -307,6 +307,12 @@
             }
         ]
     },
+   
+
+
+
+
+
     {
       "id": "imageTextBlockXero",
       "type": "ImageTextBlock",
@@ -318,6 +324,16 @@
       "imageSVG": "/images/xero.svg",
       "imageCaption": "Connected app"
     },
+{
+"id":"TextBlockPpolicy",
+"type":"ImageTextBlock",
+"title":"Public Policy",
+"textHTML": "<h1>Everything you need to know about our privacy policy.</h1>",
+
+},
+
+
+
     {
         "id": "textBlockTermsTerms",
         "type": "TextBlockTerms",
