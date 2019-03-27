@@ -30,9 +30,30 @@ const LogoWrap = styled(Col)`
 const BreadCrumb = styled.div`
   order: 2;
   padding-left: 1rem;
+  padding-top: 0.5rem;
+  font-size: 0.8rem;
 
   @media ${media.sm} {
     order: 0;
+    padding-top: 0rem;
+  }
+
+  .default {
+    color: ${props => props.theme.colors.purple};
+    text-decoration: none;
+  }
+
+  .default:hover {
+    text-decoration: none;
+  }
+
+  .current {
+    color: #696969;
+    text-decoration: none;
+  }
+
+  .current:hover {
+    text-decoration: none;
   }
 `;
 
@@ -46,9 +67,9 @@ const XeroWrap = styled.span`
   }
 `;
 
-const BreadCrumbs = data => {
-  let path = data.data.path;
-  let title = data.data.title;
+const BreadCrumbs = props => {
+  let path = props.data.path;
+  let title = props.data.title;
   let jsonPath = path;
   let breadCrumb = jsonPath.split("/");
 
@@ -95,7 +116,9 @@ const HeaderNavBar = props => {
           </LogoWrap>
 
           <BreadCrumb>
-            <BreadCrumbs data={props.data.pagesJson} />
+            {typeof props.data !== "undefined" && (
+              <BreadCrumbs data={props.data.pagesJson} />
+            )}
           </BreadCrumb>
 
           <Col xs="auto">
