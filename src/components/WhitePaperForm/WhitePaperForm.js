@@ -14,7 +14,6 @@ class WhitePaperForm extends Component {
   };
 
   checkForm(firstname, lastname, email, mobile, company) {
-
     const missedFields = [];
 
     if (firstname.length === 0) {
@@ -65,7 +64,7 @@ class WhitePaperForm extends Component {
     }
 
     let link = document.getElementById("downloadbutton");
-    link.setAttribute("href", "pdfs/Aptimise_Whitepaper_Final.pdf");
+    link.setAttribute("href", "/pdfs/Aptimise-whitepaper.pdf");
 
     form.submit();
   };
@@ -116,7 +115,7 @@ class WhitePaperForm extends Component {
           download
           onClick={this.onSubmit}
         >
-          download whitepaper
+          Download whitepaper
         </Button>
       </Form>
     );
