@@ -1,16 +1,15 @@
-import { media } from "utils/Media";
-import Footer from "components/Footer/Footer";
-import GlobalStyles from "utils/GlobalStyles";
-import Header from "components/Header/Header";
-import ModalBookDemo from "components/shared/ModalBookDemo";
-import PropTypes from "prop-types";
-import React, { Component } from "react";
-import SEO from "utils/Seo";
+import React, { Component } from "react"
+import PropTypes from "prop-types"	
 import styled, { ThemeProvider } from "styled-components";
+import "scss/bootstrap.scss";
 import theme from "utils/Theme";
 
-import "scss/bootstrap.scss";
-
+import GlobalStyles from "utils/GlobalStyles";
+import SEO from "utils/Seo";
+import Header from "components/Header/Header";
+import Footer from "components/Footer/Footer";
+import ModalBookDemo from "components/shared/ModalBookDemo";
+import { media } from "utils/Media";
 const SiteWrap = styled.div`
   padding-top: 95px;
 `;
@@ -22,6 +21,7 @@ const MainWrap = styled.span`
   }
   margin-top: 1rem !important;
   display: block;
+  
 `;
 
 class Layout extends Component {
