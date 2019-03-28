@@ -14,6 +14,7 @@ class WhitePaperForm extends Component {
   };
 
   checkForm(firstname, lastname, email, mobile, company) {
+
     const missedFields = [];
 
     if (firstname.length === 0) {
