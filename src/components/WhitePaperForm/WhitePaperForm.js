@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import { Form, FormGroup, Alert } from "reactstrap";
 import Button from "components/shared/Button";
 import FloatingLabelInput from "components/shared/FloatingLabelInput";
-import styled from "styled-components";
 
 class WhitePaperForm extends Component {
   constructor(...args) {
@@ -15,7 +14,7 @@ class WhitePaperForm extends Component {
   };
 
   checkForm(firstname, lastname, email, mobile, company) {
-    const { validated } = this.state;
+
     const missedFields = [];
 
     if (firstname.length === 0) {
@@ -78,7 +77,6 @@ class WhitePaperForm extends Component {
         action="http://go.pardot.com/l/598401/2018-09-18/2hp89v"
         method="post"
         id="whitepaper"
-        
       >
         <Alert color="danger" isOpen={this.state.errors}>
           Please enter your details to download the whitepaper!
@@ -107,17 +105,7 @@ class WhitePaperForm extends Component {
             name="Company"
           />
         </FormGroup>
-        {/* <IframeContainer>
-          <Iframe
-            url="http://go.pardot.com/l/598401/2018-08-15/2gjm7g"
-            width="450px"
-            height="450px"
-            id="myId"
-            className="myClassname"
-            display="initial"
-            position="relative"
-          />
-        </IframeContainer> */}
+
         <Button
           id="downloadbutton"
           className="mt-3"
@@ -131,23 +119,6 @@ class WhitePaperForm extends Component {
           download whitepaper
         </Button>
       </Form>
-
-      // <form
-      //   action="http://go.pardot.com/l/598401/2018-09-18/2hp89v"
-      //   method="post"
-      // >
-      //   <label>First Name</label>
-      //   <input type="text" name="FirstName" required="required" />
-      //   <label>Last Name</label>
-      //   <input type="text" name="LastName" required="required" />
-      //   <label>Email Address</label>
-      //   <input type="email" name="Email" required="required" />
-      //   <label>Company</label>
-      //   <input type="text" name="Company" required="required" />
-      //   <label>mobile</label>
-      //   <input type="text" name="Mobile" required="required" />
-      //   <input type="submit" value="submit" required="required" />
-      // </form>
     );
   }
 }
