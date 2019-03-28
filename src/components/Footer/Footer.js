@@ -209,8 +209,8 @@ class Footer extends Component {
                                             </Link>
                                         </li>
                                         <li>
-                                            <Link to="/help/">
-                                                <Text size="md" color="white">Help?</Text>
+                                            <Link to="/faqs/">
+                                                <Text size="md" color="white">FAQs</Text>
                                             </Link>
                                         </li>
                                     </UsefulLinks>                            
@@ -237,7 +237,7 @@ class Footer extends Component {
                                         <img src={natwestLogo} alt="Natwest" style={{ maxWidth: "133px" }} />
                                     </a>
                                     <Text size="md" className="pt-2" color="white">
-                                        Our <Link to="/aptimise-privacy-policy/">Privacy Policy</Link>
+                                        Our <Link to="/privacy-policy/">Privacy Policy</Link>
                                     </Text>
                                 </Col>
                             </Row>

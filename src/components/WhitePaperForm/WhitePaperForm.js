@@ -43,7 +43,7 @@ class WhitePaperForm extends Component {
                     // onChange={this.handleTextChange}
                     />
                 </FormGroup>
-                <Button className="mt-3" purple block as="a" href="/pdfs/Aptimise_Whitepaper_Final.pdf" download>download whitepaper</Button>
+                <Button className="mt-3" purple block as="a" href="/pdfs/Aptimise-whitepaper.pdf" download>Download whitepaper</Button>
             </Form>
         )
     }

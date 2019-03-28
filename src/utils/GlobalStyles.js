@@ -89,7 +89,7 @@ const GlobalStyles = createGlobalStyle`
     h4, 
     h5, 
     h6 {
-        font-family: ${props => props.theme.font.family.light};
+        font-family: ${props => props.theme.font.family.bold};
         font-weight: normal;
         line-height: ${props => props.theme.font.lineHeight.headings};
     }
