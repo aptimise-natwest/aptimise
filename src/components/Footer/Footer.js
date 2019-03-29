@@ -31,6 +31,10 @@ const FooterWrap = styled.footer`
     a {
         color: ${props => props.theme.colors.white};
     }
+
+    a:hover {
+       text-decoration:none;
+   }
 `
 
 const FooterContent = styled.div`
