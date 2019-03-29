@@ -12,8 +12,9 @@ const HexagonCopy = styled.div`
     
     div {
         color: #ffffff;
-        font-size: 2.25rem;
+        font-size: 1.65rem;
         padding: 0;
+        line-height: 1.4;
         font-weight: 700;
         position: absolute;
         top: 50%;

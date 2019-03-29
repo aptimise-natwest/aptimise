@@ -60,7 +60,6 @@ const CollapseToggle = styled.h3`
     font-size: ${props => props.theme.font.h4.size};
 
     @media ${media.md} {
-        cursor: default;
         font-size: ${props => props.theme.font.h3.size};
     }
 `
@@ -122,13 +121,13 @@ class Blocks extends Component {
     // Method to determine whether collapses should be open or closed, depending on window width
     collapseToggleWindowWidth() {
         const width = window.innerWidth;
-        let collapsed;
+        let collapsed = false;
 
-        if (width < 992) {
-            collapsed = false;
-        } else {
-            collapsed = true;
-        }
+        // if (width < 992) {
+        //     collapsed = false;
+        // } else {
+        //     collapsed = true;
+        // }
 
         this.setState({
             collapseState: collapsed

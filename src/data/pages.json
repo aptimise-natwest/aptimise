@@ -36,10 +36,10 @@
     },
     {
         "id": "help",
-        "path": "/help/",
-        "title": "Help?",
+        "path": "/faqs/",
+        "title": "Frequently Asked Questions",
         "metaDescription": "",
-        "h1": "Help?",
+        "h1": "Frequently Asked Questions",
         "contentBlocks": [
             "TextBlockHelp",
             "FaqBlockFullWidth"
@@ -56,11 +56,11 @@
     },
     {
         "id": "privacyNatwest",
-        "path": "/aptimise-privacy-policy/",
+        "path": "/privacy-policy/",
         "title": "Privacy Policy",
         "metaDescription": "",
         "contentBlocks": [
-            "textBlockTermsPrivacyNatest"
+            "textBlockTermsPrivacyNatwest"
         ]
     }
 ]
