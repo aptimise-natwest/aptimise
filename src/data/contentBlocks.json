@@ -1,320 +1,311 @@
 [
-    {
-        "id": "landingBlockHome",
-        "type": "LandingBlock",
-        "imageDesktop": "../images/backgrounds/landing-home.jpg",
-        "imageMobile": "../images/backgrounds/landing-home-mobile.jpg",
-        "title": "Revolutionise your<br/> accounts payable<br/> with APtimise",
-        "videoText": "Watch now",
-        "youtubeVideoID": "5sFoqY8ZcBo",
-        "text": "Reduce your invoice processing time by up to 50% with the UK’s only end-end accounts payable solution"
-    },
-    {
-        "id": "textBlockHome",
-        "type": "TextBlock",
-        "size": "xl",
-        "weight": "regular",
-        "textHTML": "<p>Designed for SMEs, APtimise is the UK’s only end-to-end invoices and payments solution, removing the frustration of the traditional Accounts Payable process and making it faster, more accurate, simpler and secure.</p>"
-    },
-    {
-        "id": "infoBlocksHome",
-        "type": "InfoBlocks",
-        "infoBlocks": [
-            {
-                "animation": "fast",
-                "title": "Fast",
-                "textHTML": "<p>APtimise automatically reads and validates your invoices, removing the need for manual keying.</p><p>It’s proven to reduce the Accounts Payable time by 50%, freeing up staff to focus on growing the business. And it’s compatible with most leading accounting software.</p>"
-            },
-            {
-                "animation": "simple",
-                "title": "Simple",
-                "textHTML": "<p>Using APtimise is easy – you simply log on to our web-based solution from anywhere and get going.</p><p>Digitised approvals, intelligent payments and instant notifications will take the hassle out of your Accounts Payable process.</p>"
-            },
-            {
-                "animation": "accurate",
-                "title": "Accurate",
-                "textHTML": "<p>With a 99.5% accuracy read rate at line item level, APtimise is a unique Accounts Payable solution.</p><p>It radically reduces the chance of human error with further smart automations such as invoice-to-PO matching, automated coding and exception flagging.</p>"
-            },
-            {
-                "animation": "secure",
-                "title": "Secure",
-                "textHTML": "<p>APtimise actively monitors for signs of fraud – 47% of SMEs received a suspicious or fraudulent invoice in 2017 – so it might come in handy. You’ll have full visibility of audit trails too.</p><p>And because it’s backed by NatWest, it comes with bank-grade security for complete peace of mind.</p>"
-            }
+  {
+    "id": "landingBlockHome",
+    "type": "LandingBlock",
+    "imageDesktop": "../images/backgrounds/landing-home.jpg",
+    "imageMobile": "../images/backgrounds/landing-home-mobile.jpg",
+    "title": "Revolutionise your<br/> Accounts Payable<br/> with APtimise",
+    "videoText": "Watch now",
+    "youtubeVideoID": "5sFoqY8ZcBo",
+    "text": "Reduce your invoice processing time by up to 50% with the UK’s only end-end Accounts Payable solution"
+  },
+  {
+    "id": "textBlockHome",
+    "type": "TextBlock",
+    "size": "xl",
+    "weight": "regular",
+    "textHTML": "<p>Designed for SMEs, APtimise is the UK’s only end-to-end invoices and payments solution, removing the frustration of the traditional Accounts Payable process and making it faster, more accurate, simpler and secure.</p>"
+  },
+  {
+    "id": "infoBlocksHome",
+    "type": "InfoBlocks",
+    "infoBlocks": [
+      {
+        "animation": "fast",
+        "title": "Fast",
+        "textHTML": "<p>APtimise automatically reads and validates your invoices, removing the need for manual keying.</p><p>It’s proven to reduce the Accounts Payable time by 50%, freeing up staff to focus on growing the business. And it’s compatible with most leading accounting software.</p>"
+      },
+      {
+        "animation": "simple",
+        "title": "Simple",
+        "textHTML": "<p>Using APtimise is easy – you simply log on to our web-based solution from anywhere and get going.</p><p>Digitised approvals, intelligent payments and instant notifications will take the hassle out of your Accounts Payable process.</p>"
+      },
+      {
+        "animation": "accurate",
+        "title": "Accurate",
+        "textHTML": "<p>With a 99.5% accuracy read rate at line item level, APtimise is a unique Accounts Payable solution.</p><p>It radically reduces the chance of human error with further smart automations such as invoice-to-PO matching, automated coding and exception flagging.</p>"
+      },
+      {
+        "animation": "secure",
+        "title": "Secure",
+        "textHTML": "<p>APtimise actively monitors for signs of fraud – 47% of SMEs received a suspicious or fraudulent invoice in 2017 – so it might come in handy. You’ll have full visibility of audit trails too.</p><p>And because it’s backed by NatWest, it comes with bank-grade security for complete peace of mind.</p>"
+      }
+    ]
+  },
+  {
+    "id": "linkBlockHome",
+    "type": "LinkBlock",
+    "links": [
+      {
+        "download": "true",
+        "link": "/pdfs/Aptimise-how-it-works.pdf",
+        "linkText": "Download our “how it works” guide"
+      },
+      {
+        "link": "/faqs/",
+        "linkText": "FAQs"
+      }
+    ]
+  },
+  {
+    "id": "infoBlockFullWidthHome",
+    "type": "InfoBlockFullWidth",
+    "animation": "more",
+    "title": "Still with us? There’s more!",
+    "textIntroHTML": "<p>It sounds too good to be true, right? See how it could work for your business with an online demo.</p>",
+    "textHTML": "<p>Get up-and-running quickly with the ‘APtimise hour’: set-up and training in 60 minutes </p><p> Our dedicated success managers will help you every step of the way </p><p> Out-of-the-box integration with Xero, Sage50 & 200, Quickbooks, Aqilla and NetSuite </p><p> Not a NatWest customer? No problem. You don’t need to switch your primary banking and our team will help you get going </p>"
+  },
+  {
+    "id": "calculatorBlockHome",
+    "type": "CalculatorBlock",
+    "title": "What’s APtimise worth to your business?",
+    "textHTML": "Work out the potential savings you could make with the easy switch to APtimise.",
+    "textInvoices": "purchase invoices received per month",
+    "textPaymentRuns": "per month",
+    "textEmployees": "Number of accounting employees",
+    "textSummary": "saved a month",
+    "textButton": "Pick your demo slot"
+  },
+  {
+    "id": "whitePaperBlockHome",
+    "type": "WhitePaperBlock",
+    "title": "Accounts Payable is Changing: Your Guide to an Automated Future",
+    "textHTML": "<p>Today’s Financial Directors are recognising that Accounts Payable is an untapped area that’s poised for transformation. By automating their invoices and payments solution, FDs can remove the need for repetitive, manual work, so staff can focus on strategic initiatives that help business growth.</p>",
+    "buttonText": "Download whitepaper",
+    "image": "../images/whitepaper.jpg"
+  },
+  {
+    "id": "deviceBlockHome",
+    "type": "DeviceBlock",
+    "title": "Book a 20 minute online demo now",
+    "textHTML": "<p>It sounds too good to be true, right? See how it could work for your business with an online demo.</p>",
+    "buttonText": "Pick your demo slot"
+  },
+  {
+    "id": "carouselBlockHome",
+    "type": "CarouselBlock",
+    "title": "Don’t just take our word for it",
+    "carouselBlocks": [
+      {
+        "imageCopy": "LEAP",
+        "name": "Raj Ahluwalia",
+        "position": "UK Finance Director, LEAP Legal",
+        "textHTML": "<p>“By reducing our processing time by 50%, APtimise has allowed my team to shift from data entry to value-add.” </br></br> Watch to find out how APtimise has helped software company LEAP Legal to improve their processes, save time and grow.</p>",
+        "twitter": "",
+        "linkedIn": "",
+        "facebook": "",
+        "youtubeVideoId": "QajgdUsXQFs"
+      },
+      {
+        "imageCopy": "Spectrum Chemicals",
+        "name": "Sarah Campbell",
+        "position": "Office Manager, Spectrum Chemicals",
+        "textHTML": "<p>“The data capture amazes me. There's very little human input, so there's less chance of errors and typos. It's very clever technology.”</p>",
+        "twitter": "",
+        "linkedIn": "",
+        "facebook": "",
+        "youtubeVideoId": ""
+      }
+    ]
+  },
+  {
+    "id": "TextBlockHelp",
+    "type": "TextBlock",
+    "size": "xl",
+    "weight": "regular",
+    "textHTML": "<p>Advice and guidance from the APtimise team.</p><p>If you're already an APtimise customer, your dedicated customer success team is the best place to go for support. </p>"
+  },
+  {
+    "id": "FaqBlockFullWidth",
+    "type": "FaqBlocks",
+    "title": "FAQs",
+    "shortIntroduction": "Short Introduction - Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    "faqBlocks": [
+      {
+        "id": "purchaseOrders",
+        "title": "Purchase Orders",
+        "color": "purpleDark",
+        "animation": "oneElement",
+        "faqBlockElements": [
+          {
+            "title": "How do purchase orders (POs) appear in APtimise?",
+            "textHTML": "<p>Once you have submitted / approved a PO it automatically appears in your accounting package and in APtimise, where it will be linked to matched invoices. APtimise regularly syncs with your accounting package, so the PO may take a few moments to sync and appear. POs marked as “draft” will not appear in APtimise.</p>"
+          },
+          {
+            "title": "How can I see the matched and unmatched POs?",
+            "textHTML": "<p>POs will automatically link to invoices using the invoice number. This can be viewed at the bottom of the invoice it has been matched to. To view a PO that has not been matched to an invoice, click on the Vender tab and scroll down to “Open POs”. To view the image of a matched PO, click on the matched invoice number. When the image of the invoice appears, you can toggle to the PO image by using the tab on the top left.</p>"
+          },
+          {
+            "title": "How do I deal with PO exceptions?",
+            "textHTML": "<p>Mismatches between invoices and POs will be identified on APtimise with a red PO icon on the invoice tab. If the amount in the invoice is lower than your PO, amend the PO manually in your Enterprise Resource Planning (ERP) system – the PO would be closed when the invoice is paid.</p>"
+          },
+          {
+            "title": "How are POs matched to invoices?",
+            "textHTML": "<p>Every time a new invoice is created, whether manually or via the invoice capture process, the engine will attempt to link each line-item and expense to a corresponding line-item and expense on an open PO for the same vendor – reading to match the following items: <strong>Quantity, Cost per, Description</strong> and <strong>Amounts.</strong>"
+          }
         ]
-    },
-    {
-        "id": "linkBlockHome",
-        "type": "LinkBlock",
-        "links": [
-            {
-                "link": "/pdfs/Aptimise-how-it-works.pdf",
-                "linkText": "Download our “how it works” guide"
-            },
-            {
-                "link": "/faqs/",
-                "linkText": "FAQs"
-            }
+      },
+      {
+        "id": "invoices",
+        "title": "Invoices",
+        "color": "yellow",
+        "animation": "oneElement",
+        "faqBlockElements": [
+          {
+            "title": "How long will it take for invoices to appear on APtimise?",
+            "textHTML": "<p>Once you have forwarded your invoice it can take up to 24 hours for the technology to have received the information, scanned and interpreted the input, and for it to be checked by our team for the highest levels of accuracy.</p>"
+          },
+          {
+            "title": "How do I create an urgent invoice / make an urgent payment?",
+            "textHTML": "<p>In the invoice tab – click on create an invoice without a doc. Add vendor details and amount.</p><p>Click create – a new invoice is generated, added to the inbox and scheduled for authorisation and payment in the normal way. If you make payment via a different method, mark the invoice as paid by “Bill Portal”. If the supplier then emails their invoice in, the invoice is identified as a duplicate by invoice no and highlighted with a red icon for manual deletion.</p>"
+          },
+          {
+            "title": "How do I manage multiple invoices to the same supplier?",
+            "textHTML": "<p>The invoice tab can be sorted by vendor, (or filtered) by vendor which totals the invoices outstanding by vendor.</p>"
+          },
+          {
+            "title": "Can I get a single view of invoices due for payment?",
+            "textHTML": "<p>Filter the invoice by unpaid or run a report of open invoices or the bill detail report.</p>"
+          },
+          {
+            "title": "How do I add Invoice Approvers?",
+            "textHTML": "<p>You can authorise a named individual as an invoice approver with an automated rule. Alternatively, you can send invoices to individuals for approval ad hoc.</p><p>For ad hoc approvals, Accounting Managers should enter the email of the invoice approver under “Invoice Approval Routing” on the Invoice Details screen. If this is a new invoice approver, you will be shown a link to “Add New Approver”, which will request their email address and name. Once the approver is added, you can save the invoice in APtimise and a request will be sent to the person you approved. To set up an automated rule for a vendor, as an Accounting Manager click on the vendor name in the search tab. Scroll down the vendor details to “default invoice preferences”. Enter the email address under “Manage Invoice Approvers” and save, with any invoice value tiers for secondary invoice approvers. Any future invoices entered into APtimise will be automatically routed to those invoice approvers values and will show in your invoice tab as awaiting approval.</p><p>To set up automated rules for other dimensions such as Class, Department, etc., go to Settings -> Company Profile -> Invoice Approval Rules. Click “Add New Approval Rule”, select the dimension type, then enter the specific dimension. A box will appear to enter the invoice approvers.</p>"
+          },
+          {
+            "title": "How do I deal with duplicates or delete invoices?",
+            "textHTML": "<p>Duplicate invoices will be highlighted with a red duplicate icon in the invoices tab.</p><p>To delete an invoice in APtimise, go to the invoices tab and click on the invoice number link (if there is no invoice number, the link will say “details”). You can delete the selected invoice by clicking on the trash can icon. If the invoice has payments linked to it, the trash can icon will not display. You’ll need to void these payments before you can delete the invoice.</p><p>Please note: If you delete an invoice in your accounting system, the deletion will NOT sync back to APtimise. You will need to manually delete the invoice in APtimise separately.</p>"
+          }
         ]
-    },
-    {
-        "id": "infoBlockFullWidthHome",
-        "type": "InfoBlockFullWidth",
-        "animation": "more",
-        "title": "Still with us? There’s more!",
-        "textIntroHTML": "<p>It sounds too good to be true, right? See how it could work for your business with an online demo.</p>",
-        "textHTML": "<p>Get up-and-running quickly with the ‘APtimise hour’: set-up and training in 60 minutes </p><p> Our dedicated success managers will help you every step of the way </p><p> Out-of-the-box integration with Xero, Sage50 & 200, Quickbooks, Aqilla and NetSuite </p><p> Not a NatWest customer? No problem. You don’t need to switch your primary banking and our team will help you get going </p>"
-    },
-    {
-        "id": "calculatorBlockHome",
-        "type": "CalculatorBlock",
-        "title": "What’s APtimise worth to your business?",
-        "textHTML": "Work out the potential savings you could make with the easy switch to APtimise.",
-        "textInvoices": "purchase invoices received per month",
-        "textPaymentRuns": "per month",
-        "textEmployees": "Number of accounting employees",
-        "textSummary": "saved a month",
-        "textButton": "Pick your demo slot"
-    },
-    {
-        "id": "whitePaperBlockHome",
-        "type": "WhitePaperBlock",
-        "title": "Accounts Payable is Changing: Your Guide to an Automated Future",
-        "textHTML": "<p>Today’s Financial Directors are recognising that Accounts Payable is an untapped area that’s poised for transformation. By automating their invoices and payments solution, FDs can remove the need for repetitive, manual work, so staff can focus on strategic initiatives that help business growth.</p>",
-        "buttonText": "Download whitepaper",
-        "image": "../images/whitepaper.jpg"
-    },
-    {
-      "id": "deviceBlockHome",
-      "type": "DeviceBlock",
-      "title": "Book a 20 minute online demo now",
-      "textHTML": "<p>It sounds too good to be true, right? See how it could work for your business with an online demo.</p>",
-      "buttonText": "Pick your demo slot"
-    },
-    {
-        "id": "carouselBlockHome",
-        "type": "CarouselBlock",
-        "title": "Don’t just take our word for it",
-        "textHTML": "<p>Find out how APtimise has helped innovative software company LEAP Legal to improve their processes and reduce time spent on Accounts Payable by an amazing 50%.</p>",
-        "carouselBlocks": [
-            {
-                "imageCopy": "LEAP",
-                "name": "Raj Ahluwalia",
-                "position": "UK Finance Director, LEAP Legal",
-                "textHTML": "<p>“Often finance departments are the last to innovate – they’re typically very traditional”, Raj says. “It’s been my mission to update our processes and APtimise was the perfect product for us.”<p>",
-                "twitter": "",
-                "linkedIn": "",
-                "facebook": "",
-                "youtubeVideoId": "QajgdUsXQFs"
-            },
-            {
-                "imageCopy": "Spectrum Chemicals",
-                "name": "Sarah Campbell",
-                "position": "Office Manager, Spectrum Chemicals",
-                "textHTML": "<p>“The data capture amazes me. There's very little human input, so there's less chance of errors and typos. It's very clever technology.”</p>",
-                "twitter": "",
-                "linkedIn": "",
-                "facebook": "",
-                "youtubeVideoId": ""
-            }
+      },
+      {
+        "id": "payments",
+        "title": "Payments",
+        "color": "turquoise",
+        "animation": "oneElement",
+        "faqBlockElements": [
+          {
+            "title": "How do I apply Credit Notes in APtimise?",
+            "textHTML": "<p>You need to add credit notes to your Accounting Package for credits to display in APtimise.</p><p>To see available credit notes per vendor, log on as an AM, go to the search screen, click on the vendor overall credit balance, shown on the Vendor Details and Invoice Details screens. To apply credits to a vendor invoice or payment, you will need to apply these against and invoice directly in your ERP/accounting system. This will then sync to APtimise automatically and update the balance outstanding.</p>"
+          },
+          {
+            "title": "Is it possible to stop a customer payment?",
+            "textHTML": "<p>As an Accounting Manager it’s possible to reject a payment even after the payment has been authorised, as long as you do it at least one working day before the date of the scheduled transmission.</p><p>If you want to reject a payment, go to the Payments tab, search for the payment you’d like to recall, click on the payment amount link, and select “Add to Queue”. This will bring the payment back to the Selected Payments queue Invoices tab, then you can click “Remove All” to move it to the Unpaid Invoices list.</p><p>Payment Approvers can reject a payment before it is authorised. However, if you need to reject a payment after authorisation, ask the Accounting Manager to reject the payment (up to the day before scheduled transmission). A Payment Approver is unable to reject a payment after it has been authorised.</p>"
+          },
+          {
+            "title": "Can partial payments be made against an invoice?",
+            "textHTML": "<p>Yes – manually amend the amount to be paid in the payment column, which you can find on the right-hand side of the Accounting Manager log in. APtimise will keep the invoice open with the remaining balance open until the invoice has been paid in full.</p>"
+          },
+          {
+            "title": "What are the cut off times for making payments?",
+            "textHTML": "<p>Payments are issued same day as scheduled and paid to suppliers as a Faster Payment, however, payments posted after 11.45pm will be paid the next day.</p>"
+          },
+          {
+            "title": "How does the supplier know that we have paid?",
+            "textHTML": "<p>The payment to the supplier shows the invoice number in the remittance note and in the beneficiary bank narrative as follows:</p><p>If one invoice # is being paid that is <= 13 characters long: \"Inv(inv#)\"</p><p>If one invoice # is being paid that is > 12 characters long: \"Inv*(last 12 digits of invoice #)\"</p><p>If multiples invoices are being paid and the first invoice # is < 13 characters long: \"Inv(inv#)+\"</p><p>If multiples invoices are being paid and the first invoice # >= 13 characters long: \"Inv*(last 11 digits of invoice)+\"</p>"
+          },
+          {
+            "title": "Can I post payments to previous dates?",
+            "textHTML": "<p>No – posting payments to a previous date will result in an error message</p>"
+          }
         ]
-    },
-    {
-        "id": "TextBlockHelp",
-        "type": "TextBlock",
-        "size": "xl",
-        "weight": "regular",
-        "textHTML": "<p>Advice and guidance from the APtimise team.</p><p>If you're already an APtimise customer, your dedicated customer success team is the best place to go for support. </p>"
-    },
-    {
-        "id": "FaqBlockFullWidth",
-        "type": "FaqBlocks",
-        "title": "FAQs",
-        "shortIntroduction": "Short Introduction - Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-        "faqBlocks": [
-            {
-                "id": "purchaseOrders",
-                "title": "Purchase Orders",
-                "color": "purpleDark",
-                "animation": "oneElement",
-                "faqBlockElements": [
-                    {
-                        "title": "How do purchase orders (POs) appear in APtimise?",
-                        "textHTML": "<p>Once you have submitted / approved a PO it automatically appears in your accounting package and in APtimise, where it will be linked to matched invoices. APtimise regularly syncs with your accounting package, so the PO may take a few moments to sync and appear. POs marked as “draft” will not appear in APtimise.</p>"
-                    },
-                    {
-                        "title": "How can I see the matched and unmatched POs?",
-                        "textHTML": "<p>POs will automatically link to invoices using the invoice number. This can be viewed at the bottom of the invoice it has been matched to. To view a PO that has not been matched to an invoice, click on the Vender tab and scroll down to “Open POs”. To view the image of a matched PO, click on the matched invoice number. When the image of the invoice appears, you can toggle to the PO image by using the tab on the top left.</p>"
-                    },
-                    {
-                        "title": "How do I deal with PO exceptions?",
-                        "textHTML": "<p>Mismatches between invoices and POs will be identified on APtimise with a red PO icon on the invoice tab. If the amount in the invoice is lower than your PO, amend the PO manually in your Enterprise Resource Planning (ERP) system – the PO would be closed when the invoice is paid.</p>"
-                    },
-                    {
-                        "title": "How are POs matched to invoices?",
-                        "textHTML": "<p>Every time a new invoice is created, whether manually or via the invoice capture process, the engine will attempt to link each line-item and expense to a corresponding line-item and expense on an open PO for the same vendor – reading to match the following items: <strong>Quantity, Cost per, Description</strong> and <strong>Amounts.</strong>"
-                    }
-                ]
-            },
-            {
-                "id": "invoices",
-                "title": "Invoices",
-                "color": "yellow",
-                "animation": "oneElement",
-                "faqBlockElements": [
-                    {
-                        "title": "How long will it take for invoices to appear on APtimise?",
-                        "textHTML": "<p>Once you have forwarded your invoice it can take up to 24 hours for the technology to have received the information, scanned and interpreted the input, and for it to be checked by our team for the highest levels of accuracy.</p>"
-                    },
-                    {
-                        "title": "How do I create an urgent invoice / make an urgent payment?",
-                        "textHTML": "<p>In the invoice tab – click on create an invoice without a doc. Add vendor details and amount.</p><p>Click create – a new invoice is generated, added to the inbox and scheduled for authorisation and payment in the normal way. If you make payment via a different method, mark the invoice as paid by “Bill Portal”. If the supplier then emails their invoice in, the invoice is identified as a duplicate by invoice no and highlighted with a red icon for manual deletion.</p>"
-                    },
-                    {
-                      "title": "How do I manage multiple invoices to the same supplier?",
-                      "textHTML": "<p>The invoice tab can be sorted by vendor, (or filtered) by vendor which totals the invoices outstanding by vendor.</p>"
-                    },
-                    {
-                      "title": "Can I get a single view of invoices due for payment?",
-                      "textHTML": "<p>Filter the invoice by unpaid or run a report of open invoices or the bill detail report.</p>"
-                    },
-                    {
-                      "title": "How do I add Invoice Approvers?",
-                      "textHTML": "<p>You can authorise a named individual as an invoice approver with an automated rule. Alternatively, you can send invoices to individuals for approval ad hoc.</p><p>For ad hoc approvals, Accounting Managers should enter the email of the invoice approver under “Invoice Approval Routing” on the Invoice Details screen. If this is a new invoice approver, you will be shown a link to “Add New Approver”, which will request their email address and name. Once the approver is added, you can save the invoice in APtimise and a request will be sent to the person you approved. To set up an automated rule for a vendor, as an Accounting Manager click on the vendor name in the search tab. Scroll down the vendor details to “default invoice preferences”. Enter the email address under “Manage Invoice Approvers” and save, with any invoice value tiers for secondary invoice approvers. Any future invoices entered into APtimise will be automatically routed to those invoice approvers values and will show in your invoice tab as awaiting approval.</p><p>To set up automated rules for other dimensions such as Class, Department, etc., go to Settings -> Company Profile -> Invoice Approval Rules. Click “Add New Approval Rule”, select the dimension type, then enter the specific dimension. A box will appear to enter the invoice approvers.</p>"
-                    },
-                    {
-                      "title": "How do I deal with duplicates or delete invoices?",
-                      "textHTML": "<p>Duplicate invoices will be highlighted with a red duplicate icon in the invoices tab.</p><p>To delete an invoice in APtimise, go to the invoices tab and click on the invoice number link (if there is no invoice number, the link will say “details”). You can delete the selected invoice by clicking on the trash can icon. If the invoice has payments linked to it, the trash can icon will not display. You’ll need to void these payments before you can delete the invoice.</p><p>Please note: If you delete an invoice in your accounting system, the deletion will NOT sync back to APtimise. You will need to manually delete the invoice in APtimise separately.</p>"
-                    }
-                ]
-            },
-            {
-                "id": "payments",
-                "title": "Payments",
-                "color": "turquoise",
-                "animation": "oneElement",
-                "faqBlockElements": [
-                    {
-                      "title": "How do I apply Credit Notes in APtimise?",
-                      "textHTML": "<p>You need to add credit notes to your Accounting Package for credits to display in APtimise.</p><p>To see available credit notes per vendor, log on as an AM, go to the search screen, click on the vendor overall credit balance, shown on the Vendor Details and Invoice Details screens. To apply credits to a vendor invoice or payment, you will need to apply these against and invoice directly in your ERP/accounting system. This will then sync to APtimise automatically and update the balance outstanding.</p>"
-                    },
-                    {
-                      "title": "Is it possible to stop a customer payment?",
-                      "textHTML": "<p>As an Accounting Manager it’s possible to reject a payment even after the payment has been authorised, as long as you do it at least one working day before the date of the scheduled transmission.</p><p>If you want to reject a payment, go to the Payments tab, search for the payment you’d like to recall, click on the payment amount link, and select “Add to Queue”. This will bring the payment back to the Selected Payments queue Invoices tab, then you can click “Remove All” to move it to the Unpaid Invoices list.</p><p>Payment Approvers can reject a payment before it is authorised. However, if you need to reject a payment after authorisation, ask the Accounting Manager to reject the payment (up to the day before scheduled transmission). A Payment Approver is unable to reject a payment after it has been authorised.</p>"
-                    },
-                    {
-                      "title": "Can partial payments be made against an invoice?",
-                      "textHTML": "<p>Yes – manually amend the amount to be paid in the payment column, which you can find on the right-hand side of the Accounting Manager log in. APtimise will keep the invoice open with the remaining balance open until the invoice has been paid in full.</p>"
-                    },
-                    {
-                      "title": "What are the cut off times for making payments?",
-                      "textHTML": "<p>Payments are issued same day as scheduled and paid to suppliers as a Faster Payment, however, payments posted after 11.45pm will be paid the next day.</p>"
-                    },
-                    {
-                      "title": "How does the supplier know that we have paid?",
-                      "textHTML": "<p>The payment to the supplier shows the invoice number in the remittance note and in the beneficiary bank narrative as follows:</p><p>If one invoice # is being paid that is <= 13 characters long: \"Inv(inv#)\"</p><p>If one invoice # is being paid that is > 12 characters long: \"Inv*(last 12 digits of invoice #)\"</p><p>If multiples invoices are being paid and the first invoice # is < 13 characters long: \"Inv(inv#)+\"</p><p>If multiples invoices are being paid and the first invoice # >= 13 characters long: \"Inv*(last 11 digits of invoice)+\"</p>"
-                    },
-                    {
-                      "title": "Can I post payments to previous dates?",
-                      "textHTML": "<p>No – posting payments to a previous date will result in an error message</p>"
-                    }
-                ]
-            },
-            {
-                "id": "keyResources",
-                "title": "Key Resources Accounting System",
-                "color": "pink",
-                "animation": "oneElement",
-                "faqBlockElements": [
-                    {
-                      "title": "How do I know APtimise is syncing with my Accounting Package?",
-                      "textHTML": "<p>The automatic sync is constantly running, which means that there’s no need for a manual sync function on the platform. Regular syncing happens automatically.</p><p>Run the Open Invoices report to check whether the volumes total the open invoices in your accounting package.</p><p>If you can’t find specific records from your accounting system in APtimise or believe you may have an issue with your connection, contact aptimiseonboarding@natwest.com for help.</p>"
-                    },
-                    {
-                      "title": "How do I resolve syncing issues?",
-                      "textHTML": "<p>Sync error reports will be available in later APtimise functionality developments.</p><p>However, APtimise will highlight where it will be unable to post back to your Accounting Package where an action is required against individual invoices. Error messages will be displayed related to the sync and provide instructions on how to resolve.</p>"
-                    }
-                ]
-            },
-            {
-                "id": "security",
-                "title": "Security",
-                "color": "blue",
-                "animation": "oneElement",
-                "faqBlockElements": [
-                    {
-                      "title": "I don’t remember my username and/or password.",
-                      "textHTML": "<p>What should I do? Your username is always your email address. To reset your password, use the password reset link on the login page and an email with a new temporary password will be sent to your email inbox. Your APtimise Admin user can also resend an APtimise invitation or a password reset – through the Company Settings, User Settings tab.</p>"
-                    },
-                    {
-                      "title": "How do I add or change user information?",
-                      "textHTML": "<p>Your company’s APtimise Admin users can add new users and amend information for non-admin users. To change user verification phone numbers or email addresses, you’ll need to contact us <a href='mailto:aptimiseonboard@natwest.com'>aptimiseonboard@natwest.com</a></p>"
-                    },
-                    {
-                      "title": "What do I do if my supplier Bank Account details quoted on the invoice do not match those held on my accounting package?",
-                      "textHTML": "<p>Speak to a known contact at the Supplier, using contact details held in your own records, not those on the invoice. If the Supplier states that the account details are not correct and does not recognise them, it may be that the email or invoice document have been fraudulently amended. Do not process the Invoice or sanction payment. Ask the Supplier to resubmit the invoice with the correct account details. Report this to the Bank Fraud team so they can ensure the fraudulent account details can be passed to the beneficiary bank to take appropriate action.</p><p>If the Supplier states the account details on the invoice are correct, confirm if the Supplier has recently changed their Bank details, asking them to confirm in writing, before updating your accounting software system to reflect the change.</p><p>If the Supplier has not confirmed they have changed their details recently, refer to your Accounting Software system to ascertain when the bank account details had been changed and by whom. Ascertain if there was a request to change the bank account details (email or letter). Refer this to the Bank Fraud team. Had the details been changed by a member of staff without any request from the Supplier? Undertake an internal investigation for insider fraud.</p><p>Investigate to see if an external party has gained access to the accounting software and made the alteration fraudulently. If any payments have been made to the amended account details on the system refer to the Bank Fraud team.</p>"
-                    },
-                    {
-                      "title": "How do I keep my APtimise account safe?",
-                      "textHTML": "<p>APtimise logging on and payment authorisations will be set up as dual authentication (using passwords plus SMS or voice messaging) as standard, we recommend that you keep these security measures in place. We will also set up different roles for Accounting Managers and Payment Authorisers to help you preserve segregation of duties in your AP team.</p><p>We recommend that you regularly review your APtimise invoice and payment approval rules and limits and add dual or tiered approval limits where appropriate. We will add Administration rights to the users that you request at account setup. APtimise Users and their roles can be viewed in the account settings tab – include reviewing this information as part of your on-going checks and controls.</p><p>Never share your APtimise password or provide the validation number to someone else to access the system or make a payment.</p><p>We will never contact you to ask for your APtimise or Bankline Direct password or ask you to make payments to unknown suppliers.</p><p>If you suspect that you are being contacted by a fraudster asking for details to your account, terminate the call and contact the Fraud Team at your bank using the telephone number you are familiar with.</p>"
-                    },
-                    {
-                      "title": "How do I add or change Admin users?",
-                      "textHTML": "<p>Payment Approvers and Accounting Managers can be made APtimise Admin users. Ask your current company APtimise Admin to contact us at APtimiseonboard@natwest.com to make this amendment to your company profile, or to amend the details of any existing admin users.</p>"
-                    },
-                    {
-                      "title": "What should I do if I receive requests from Suppliers to change Bank Account details?",
-                      "textHTML": "<p>Always ensure any requests from Suppliers to change bank account details for the receipt of payments are confirmed as genuine using known contact details held in your records and by an alternative communication method to that used to make the request.</p>"
-                    },
-                    {
-                      "title": "How can I protect against “Bogus Boss” or CEO fraud?",
-                      "textHTML": "<p>This occurs when a criminal has intercepted email traffic or conducts a takeover of an email account of the CEO. Fraudsters replicate internal emails purporting to come from the CEO or their equivalent asking for urgent payments to be undertaken immediately. Ensure you have a policy in place so that all internally requested payments follow an agreed process without exception, including confirming that the request is genuine using an alternative communication method than one used by the initiator.</p>"
-                    },
-                    {
-                      "title": "How can I protect internal systems?",
-                      "textHTML": "<p>Ensure that all internal computer systems and software have the appropriate levels of security operating and staff have the required level of access. Do not share passwords.</p>"
-                    }
-                ]
-            }
+      },
+      {
+        "id": "keyResources",
+        "title": "Key Resources Accounting System",
+        "color": "pink",
+        "animation": "oneElement",
+        "faqBlockElements": [
+          {
+            "title": "How do I know APtimise is syncing with my Accounting Package?",
+            "textHTML": "<p>The automatic sync is constantly running, which means that there’s no need for a manual sync function on the platform. Regular syncing happens automatically.</p><p>Run the Open Invoices report to check whether the volumes total the open invoices in your accounting package.</p><p>If you can’t find specific records from your accounting system in APtimise or believe you may have an issue with your connection, contact aptimiseonboard@natwest.com for help.</p>"
+          },
+          {
+            "title": "How do I resolve syncing issues?",
+            "textHTML": "<p>Sync error reports will be available in later APtimise functionality developments.</p><p>However, APtimise will highlight where it will be unable to post back to your Accounting Package where an action is required against individual invoices. Error messages will be displayed related to the sync and provide instructions on how to resolve.</p>"
+          }
         ]
-    },
-   
+      },
+      {
+        "id": "security",
+        "title": "Security",
+        "color": "blue",
+        "animation": "oneElement",
+        "faqBlockElements": [
+          {
+            "title": "I don’t remember my username and/or password.",
+            "textHTML": "<p>What should I do? Your username is always your email address. To reset your password, use the password reset link on the login page and an email with a new temporary password will be sent to your email inbox. Your APtimise Admin user can also resend an APtimise invitation or a password reset – through the Company Settings, User Settings tab.</p>"
+          },
+          {
+            "title": "How do I add or change user information?",
+            "textHTML": "<p>Your company’s APtimise Admin users can add new users and amend information for non-admin users. To change user verification phone numbers or email addresses, you’ll need to contact us <a href='mailto:aptimiseonboard@natwest.com'>aptimiseonboard@natwest.com</a></p>"
+          },
+          {
+            "title": "What do I do if my supplier Bank Account details quoted on the invoice do not match those held on my accounting package?",
+            "textHTML": "<p>Speak to a known contact at the Supplier, using contact details held in your own records, not those on the invoice. If the Supplier states that the account details are not correct and does not recognise them, it may be that the email or invoice document have been fraudulently amended. Do not process the Invoice or sanction payment. Ask the Supplier to resubmit the invoice with the correct account details. Report this to the Bank Fraud team so they can ensure the fraudulent account details can be passed to the beneficiary bank to take appropriate action.</p><p>If the Supplier states the account details on the invoice are correct, confirm if the Supplier has recently changed their Bank details, asking them to confirm in writing, before updating your accounting software system to reflect the change.</p><p>If the Supplier has not confirmed they have changed their details recently, refer to your Accounting Software system to ascertain when the bank account details had been changed and by whom. Ascertain if there was a request to change the bank account details (email or letter). Refer this to the Bank Fraud team. Had the details been changed by a member of staff without any request from the Supplier? Undertake an internal investigation for insider fraud.</p><p>Investigate to see if an external party has gained access to the accounting software and made the alteration fraudulently. If any payments have been made to the amended account details on the system refer to the Bank Fraud team.</p>"
+          },
+          {
+            "title": "How do I keep my APtimise account safe?",
+            "textHTML": "<p>APtimise logging on and payment authorisations will be set up as dual authentication (using passwords plus SMS or voice messaging) as standard, we recommend that you keep these security measures in place. We will also set up different roles for Accounting Managers and Payment Authorisers to help you preserve segregation of duties in your AP team.</p><p>We recommend that you regularly review your APtimise invoice and payment approval rules and limits and add dual or tiered approval limits where appropriate. We will add Administration rights to the users that you request at account setup. APtimise Users and their roles can be viewed in the account settings tab – include reviewing this information as part of your on-going checks and controls.</p><p>Never share your APtimise password or provide the validation number to someone else to access the system or make a payment.</p><p>We will never contact you to ask for your APtimise or Bankline Direct password or ask you to make payments to unknown suppliers.</p><p>If you suspect that you are being contacted by a fraudster asking for details to your account, terminate the call and contact the Fraud Team at your bank using the telephone number you are familiar with.</p>"
+          },
+          {
+            "title": "How do I add or change Admin users?",
+            "textHTML": "<p>Payment Approvers and Accounting Managers can be made APtimise Admin users. Ask your current company APtimise Admin to contact us at APtimiseonboard@natwest.com to make this amendment to your company profile, or to amend the details of any existing admin users.</p>"
+          },
+          {
+            "title": "What should I do if I receive requests from Suppliers to change Bank Account details?",
+            "textHTML": "<p>Always ensure any requests from Suppliers to change bank account details for the receipt of payments are confirmed as genuine using known contact details held in your records and by an alternative communication method to that used to make the request.</p>"
+          },
+          {
+            "title": "How can I protect against “Bogus Boss” or CEO fraud?",
+            "textHTML": "<p>This occurs when a criminal has intercepted email traffic or conducts a takeover of an email account of the CEO. Fraudsters replicate internal emails purporting to come from the CEO or their equivalent asking for urgent payments to be undertaken immediately. Ensure you have a policy in place so that all internally requested payments follow an agreed process without exception, including confirming that the request is genuine using an alternative communication method than one used by the initiator.</p>"
+          },
+          {
+            "title": "How can I protect internal systems?",
+            "textHTML": "<p>Ensure that all internal computer systems and software have the appropriate levels of security operating and staff have the required level of access. Do not share passwords.</p>"
+          }
+        ]
+      }
+    ]
+  },
 
+  {
+    "id": "imageTextBlockXero",
+    "type": "ImageTextBlock",
+    "title": "Xero is world-leading online accounting software built for small business.",
+    "textHTML": "<ul><li>Get a real-time view of your cashflow. Log in anytime, anywhere on your Mac, PC, tablet or phone to get a real-time view of your cash flow. It’s smalll business accounting software that’s simple, smart and occasionally magical</li><li>Run your business on the go. Use our mobile app to reconcile, send invoices, or create expense claims - from anywhere.</li><li>Get paid faster with online invoicing. Send online invoices to your customers - and get updated when they’re opened.</li><li>Reconcile in seconds. Xero imports and categorises your latest bank transactions. Just click ok to reconcile.</li>",
+    "textPosition": "right",
+    "link": "https://google.com",
+    "linkText": "try XERO for free",
+    "imageSVG": "/images/xero.svg",
+    "imageCaption": "Connected app"
+  },
+  {
+    "id": "TextBlockPpolicy",
+    "type": "ImageTextBlock",
+    "title": "Public Policy",
+    "textHTML": "<h1>sdfsdfsdfs</h1>"
+  },
 
-
-
-
-    {
-      "id": "imageTextBlockXero",
-      "type": "ImageTextBlock",
-      "title": "Xero is world-leading online accounting software built for small business.",
-      "textHTML": "<ul><li>Get a real-time view of your cashflow. Log in anytime, anywhere on your Mac, PC, tablet or phone to get a real-time view of your cash flow. It’s smalll business accounting software that’s simple, smart and occasionally magical</li><li>Run your business on the go. Use our mobile app to reconcile, send invoices, or create expense claims - from anywhere.</li><li>Get paid faster with online invoicing. Send online invoices to your customers - and get updated when they’re opened.</li><li>Reconcile in seconds. Xero imports and categorises your latest bank transactions. Just click ok to reconcile.</li>",
-      "textPosition": "right",
-      "link": "https://google.com",
-      "linkText": "try XERO for free",
-      "imageSVG": "/images/xero.svg",
-      "imageCaption": "Connected app"
-    },
-{
-"id":"TextBlockPpolicy",
-"type":"ImageTextBlock",
-"title":"Public Policy",
-"textHTML": "<h1>sdfsdfsdfs</h1>"
-
-
-},
-
-
-
-    {
-        "id": "textBlockTermsTerms",
-        "type": "TextBlockTerms",
-        "title": "APtimise Terms & Conditions",
-        "textHTML": "<h1>APtimise Terms & Conditions</h1><p>Last modified: 28th March 2019</p><p><h5>Terms and Conditions of Use of the APtimise Website.</h5></p><p>This website is owned and maintained by National Westminster Bank Plc (“us“, “we“ or “NatWest“), which is part of The Royal Bank of Scotland Group (“the RBS Group“). The use of this website is subject to the following terms and conditions that you should read carefully. By using this website you agree to be legally bound by these terms and conditions. If you do not accept these terms and conditions, please do not use this website. In addition, all of our products and services have their own terms and conditions. If you are considering applying for any of our products or services, please read the applicable product and/or service terms and conditions first. We make these available by at least one of the following methods: (i) by clicking the link on the relevant pages of this website; or (ii) on request from us. These should be read together with the following website terms and conditions. However if there is any conflict between the two, the terms and conditions for the particular product or service will prevail.</p>​<ul><li>Use of this Website</li> <li>Exclusion of Liability</li> <li>Copyright</li> <li>Trade Marks</li> <li>Advice</li> <li>Changes to this Website</li> <li>Telephone Calls and Customer Chat</li> <li>Internet Communications</li> <li>Australian Residents</li> <li>Regulatory Information</li> <li>General Information</li></ul><p><strong>Use of Website</strong> <br/>1. The information provided on this website or in any communication containing a link to this site is for personal use and information purposes only and is not intended for distribution to, or use by, any person or entity in any jurisdiction in any country where such distribution or use would be contrary to law or regulation or which would subject any member of the RBS Group to any registration requirement within such jurisdiction or country. Where any opinions are expressed on this website, they are provided by NatWest for personal use and for information purposes only. <br/>2. Unless otherwise stated on the product pages, the services and products on this website are intended for use by residents of the United Kingdom only, and are not aimed at or intended for use by residents of any other jurisdiction. <br/>3. Where any information on this website constitutes a financial promotion for the purposes of the Financial Services and Markets Act 2000, it is issued and approved by us for distribution and use in the UK only. <br/>4. This website is designed to be accessed through its principal home pages and such other pages as we may decide. If you access the site through individual pages directly, which are not designed for this purpose, you may not see important information that is relevant to information on this website. </p><p><strong>Exclusion of Liability</strong> <br/>5. These 'Exclusion of Liability' provisions should be read carefully as they exclude or limit our legal liability in connection with your use of this website. Nothing in these terms and conditions and in particular within the 'Exclusion of Liability' clauses shall attempt to exclude liability that is not permissible to exclude under applicable law, including without limitation, for death or personal injury, or for fraudulent misrepresentation. <br/>6. Nothing in these terms and conditions shall exclude or limit or restrict our duties and liabilities to you under the Financial Services and Markets Act 2000, or any conduct of business rules which we are bound to comply with. <br/>7. While we have taken all reasonable steps to ensure the accuracy and completeness of the content of the website, we exclude any warranties, undertakings or representations (either express or implied) to the full extent permitted under applicable law, that the website or (including without limitation) all or any part of the content or materials, accuracy, availability or completeness of the content of the website or any part of the content or materials, are appropriate or available for use either in the United Kingdom or in other jurisdictions. If you use this website from other jurisdictions, you are responsible for compliance with applicable local laws. <br/>8. We accept no liability however caused (to the maximum extent permitted by applicable law) arising out of the use of or access to this website (which includes without limitation) any errors or omissions contained in this website or if the website is unavailable and we shall not be liable for any direct or indirect: <br/>a. economic losses (including without limitation loss of revenues, data, profits, contracts, use, opportunity, business or anticipated savings); <br/>b. loss of goodwill or reputation; or <br/>c. loss or damage which was not reasonably foreseeable, <br/>d. suffered or incurred arising out of or in connection with your use of this website and/or these terms and conditions. <br/>9. Access to and use of this website is at your own risk and we do not warrant that the use of this website or any material downloaded from it will not cause damage to any property, or otherwise minimise or eliminate the inherent risks of the internet including but not limited to loss of data, computer virus infection, spyware, malicious software, trojans and worms. Also, we accept no liability in respect of losses or damages arising out of changes made to the content of this website by unauthorised third parties. <br/>10. To provide increased value to users of this website, we may provide links to other websites or resources (that are not part of the RBS Group) for you to access at your sole discretion. You acknowledge and agree that, as you have chosen to enter the linked website we are not responsible for the availability of such external sites or resources, and that we do not review or endorse and shall not be responsible or liable, directly or indirectly, for (i) the privacy practices of such websites, (ii) the content of such websites, including (without limitation) any advertising, content, products, goods or other materials or services on or available from such websites or resources or (iii) the use that others make of these websites or resources, nor for any damage, loss or offence caused or alleged to be caused by, or in connection with, the use of or reliance on any such advertising, content, products, goods or other materials or services available on such external websites or resources.</p><p><strong>Copyright</strong> <br/>11. © 2019 National Westminster Bank Plc. All rights, save as expressly granted, are reserved. Reproduction in any form of any part of the contents of this website without our prior written consent is prohibited unless for personal use only.</p><p><strong>Trade Marks</strong> <br/>12. This website contains numerous trade marks belonging to NatWest and other companies in the RBS Group. These trade marks include, but are not limited to, the National Westminster Bank Plc THREE CHEVRONS logo, NatWest and APtimise. If you are in doubt as to whether an item is a trade mark of NatWest or a member of the RBS Group, please contact us for clarification at the registered office address below.</p><p><strong>Advice</strong> <br/>13. The contents of this website do not purport to provide any financial, investment or professional advice and nothing on the pages of this website shall be deemed to constitute the offer or provision of financial, investment or other professional advice in any way. </p><p><strong>Changes to this Website</strong> <br/>14. The contents of this website, including these terms and conditions of use, are subject to change by us without notification. Additionally NatWest shall not be obliged to remove any outdated information from the website or to expressly mark it as being outdated.</p><p><strong>Telephone Calls and Customer Chat</strong> <br/>15. Calls and chats may be recorded for monitoring and training purposes.</p><p><strong>Internal Communications</strong> <br/>16. In order to maintain the security of its systems, protect its staff and detect fraud and other crimes, NatWest reserves the right to monitor all internet communications, including web and email traffic, into and out of its domain. Monitoring includes (without limitation) checks for viruses and other malignant code, criminal activity, and use or content that is unauthorised or unlawful or material that may cause offence in any way.</p><p><strong>Australian Residents</strong> <br/>17. Persons accessing this website from Australia should note that their access to, and use of, the information, services and products on this website may be prohibited under the Australian Corporations Act 2001 or under the RBS Group's Australian Financial Services Licence. Nothing contained in this website should be construed as an authorisation to access or use the information, services or products on this website, in Australia, where such prohibitions apply. </p><p><strong>Other Important Information</strong> <br/>18. The information, and any opinion contained in this website does not constitute a public offer under any applicable legislation or an offer to sell or solicitation or an offer to buy any securities or financial instruments or any advice or recommendation with respect to such securities or other financial instruments. <br/>19. This website contains certain 'forward looking statements' as that term is defined in the United States Private Securities Litigation Reform Act of 1995, such as statements that include the words 'expect', 'estimate', 'project', 'anticipate', 'should', 'intend', 'plan', 'probability'', 'risk', 'Value-at-Risk ('VAR')', 'target', 'goal', 'objective', 'will', 'endeavour', 'outlook', 'optimistic', 'prospects' and similar expressions or variations on such expressions. <br/>20. Factors that could cause actual results to differ materially from those estimated by the forward-looking statements contained in this website include, but are not limited to, general economic conditions in the UK and in other countries in which the RBS Group has significant business activities or investments, including in the United States; the monetary and interest rate policies of the Bank of England, the Board of Governors of the Federal Reserve System and other G-8 central banks; unanticipated turbulence in interest rates, foreign currency exchange rates, commodity prices or equity prices; changes in UK or foreign laws, regulations or taxes; changes in competition or pricing environments; natural and other disasters; the inability to hedge certain risks economically; the adequacy of loss reserves; acquisitions or restructurings; technology changes; changes in consumer spending and saving habits; and the success of the RBS Group in managing the risks involved in the foregoing. The risks and uncertainties are discussed in the RBS Group's SEC filings. The forward-looking statements contained in this website speak only as of the date of the related document, and the RBS Group does not undertake to update any forward looking statement to reflect events or circumstances after the date hereof. <br/>21. The information contained in this website is subject to, and must be read in conjunction with, all other publicly available information, including, where relevant any fuller disclosure document published by the RBS Group. Any person at any time acquiring the securities must do so only on the basis of such person's own judgement as to the merits of the suitability of the securities for its purposes and only on such information as is contained such in public information having taken all such professional or other advice as it considers necessary or appropriate in the circumstances and not in reliance on the information contained herein. The information is not tailored for any particular investor and does not constitute individual investment advice. <br/>22. Information in this website relating to the price at which investments have been bought or sold in the past or the yield on investments cannot be relied upon as a guide to future performance. <br/>23. The financial information published or to be published on this website, or made available or to be made available through this website, such as annual reports and quarterly reports, is compiled and placed on this website with the greatest of care. Nevertheless, only the original hard-copy English versions of this information shall be regarded as the original version. No rights may be derived from financial information published or to be published on this website, or available or to be made available through this website, including with regard to its accuracy and completeness. <br/>24. In addition, it should be noted that the annual report and accounts of the RBS Group which are published on this website or made available through this website, may be subject to adoption by the Annual General Meeting of Shareholders of the RBS Group for the year to which the report and accounts relate.</p><p><strong>Regulatory Information</strong> <br/>25. National Westminster Bank Plc. Registered in England and Wales (Registered Number 929027), Registered Office: 250 Bishopsgate, London EC2M 4AA. Authorised by the Prudential Regulation Authority and regulated by the Financial Conduct Authority and the Prudential Regulation Authority. NatWest is entered on the Financial Services Register and its Register number is 121878. The Financial Services Register can be accessed at www.fca.org.uk/register. NatWest's registered VAT number is GB 243852752. <br/>26. NatWest adheres to the Standards of Lending Practice which are monitored and enforced by the LSB. Find out more at <a href='www.lendingstandardsboard.org.uk' target=“_blnak“>www.lendingstandardsboard.org.uk</a>. <br/>27. If you are not satisfied with any NatWest product or service we have a complaint handling procedure that you can use to resolve such matters. NatWest is covered by The Financial Ombudsman Service. If you are still not satisfied after following the NatWest procedures, you can ask the Ombudsman to review the complaint. You can find out more about The Financial Ombudsman Service in a leaflet available from any branch or by telephoning NatWest. Alternatively you can write to: Financial Ombudsman Service, Exchange Tower, London, E14 9SR or telephone 020 7964 1000.</p><p><strong>Jurisdiction and Enforceability</strong> <br/>28. In the event that any provision of these terms and conditions of use of this website is held unenforceable, it will not affect the validity and enforceability of the remaining provisions. <br/>29. The terms and conditions of use of this website are governed by the laws of England and any dispute regarding this website shall be subject to the non-exclusive jurisdiction of the courts of England and Wales.</p>"
-    },
-    {
-        "id": "textBlockTermsPrivacyNatwest",
-        "type": "TextBlockTerms",
-        "title": "Privacy Policy",
-        "textHTML": "<h1>Privacy Policy</h1><h3>Everything you need to know about our privacy policy</h3><p>Last modified: 28th March 2019</p><p>This privacy notice gives you a comprehensive overview about how we handle data at NatWest, including information we may collect from our customers. We talk in detail about the information we hold, what we do with this data and when we share it outside of NatWest (and with whom). You can read more about your rights around data and can also contact us.</p><p>We respect individuals’ rights to privacy and to the protection of personal information. The purpose of this Privacy Notice is to explain how we collect and use personal information in connection with our business. “Personal information” means information about a living individual who can be identified from that information (either by itself or when it is combined with other information).</p><p>We may update our Privacy Notice from time to time. When we do we will communicate any changes to you and publish the updated Privacy Notice on our website. We would encourage you to visit our website regularly to stay informed of the purposes for which we process your information and your rights to control how we process it.</p><a target='_blank' href='/pdfs/NW-privacy-notice.pdf'>Download our privacy policy</a>"
-    }
+  {
+    "id": "textBlockTermsTerms",
+    "type": "TextBlockTerms",
+    "title": "APtimise Terms & Conditions",
+    "textHTML": "<h1>APtimise Terms & Conditions</h1><p>Last modified: 28th March 2019</p><p><h5>Terms and Conditions of Use of the APtimise Website.</h5></p><p>This website is owned and maintained by National Westminster Bank Plc (“us“, “we“ or “NatWest“), which is part of The Royal Bank of Scotland Group (“the RBS Group“). The use of this website is subject to the following terms and conditions that you should read carefully. By using this website you agree to be legally bound by these terms and conditions. If you do not accept these terms and conditions, please do not use this website. In addition, all of our products and services have their own terms and conditions. If you are considering applying for any of our products or services, please read the applicable product and/or service terms and conditions first. We make these available by at least one of the following methods: (i) by clicking the link on the relevant pages of this website; or (ii) on request from us. These should be read together with the following website terms and conditions. However if there is any conflict between the two, the terms and conditions for the particular product or service will prevail.</p>​<ul><li>Use of this Website</li> <li>Exclusion of Liability</li> <li>Copyright</li> <li>Trade Marks</li> <li>Advice</li> <li>Changes to this Website</li> <li>Telephone Calls and Customer Chat</li> <li>Internet Communications</li> <li>Australian Residents</li> <li>Regulatory Information</li> <li>General Information</li></ul><p><strong>Use of Website</strong> <br/>1. The information provided on this website or in any communication containing a link to this site is for personal use and information purposes only and is not intended for distribution to, or use by, any person or entity in any jurisdiction in any country where such distribution or use would be contrary to law or regulation or which would subject any member of the RBS Group to any registration requirement within such jurisdiction or country. Where any opinions are expressed on this website, they are provided by NatWest for personal use and for information purposes only. <br/>2. Unless otherwise stated on the product pages, the services and products on this website are intended for use by residents of the United Kingdom only, and are not aimed at or intended for use by residents of any other jurisdiction. <br/>3. Where any information on this website constitutes a financial promotion for the purposes of the Financial Services and Markets Act 2000, it is issued and approved by us for distribution and use in the UK only. <br/>4. This website is designed to be accessed through its principal home pages and such other pages as we may decide. If you access the site through individual pages directly, which are not designed for this purpose, you may not see important information that is relevant to information on this website. </p><p><strong>Exclusion of Liability</strong> <br/>5. These 'Exclusion of Liability' provisions should be read carefully as they exclude or limit our legal liability in connection with your use of this website. Nothing in these terms and conditions and in particular within the 'Exclusion of Liability' clauses shall attempt to exclude liability that is not permissible to exclude under applicable law, including without limitation, for death or personal injury, or for fraudulent misrepresentation. <br/>6. Nothing in these terms and conditions shall exclude or limit or restrict our duties and liabilities to you under the Financial Services and Markets Act 2000, or any conduct of business rules which we are bound to comply with. <br/>7. While we have taken all reasonable steps to ensure the accuracy and completeness of the content of the website, we exclude any warranties, undertakings or representations (either express or implied) to the full extent permitted under applicable law, that the website or (including without limitation) all or any part of the content or materials, accuracy, availability or completeness of the content of the website or any part of the content or materials, are appropriate or available for use either in the United Kingdom or in other jurisdictions. If you use this website from other jurisdictions, you are responsible for compliance with applicable local laws. <br/>8. We accept no liability however caused (to the maximum extent permitted by applicable law) arising out of the use of or access to this website (which includes without limitation) any errors or omissions contained in this website or if the website is unavailable and we shall not be liable for any direct or indirect: <br/>a. economic losses (including without limitation loss of revenues, data, profits, contracts, use, opportunity, business or anticipated savings); <br/>b. loss of goodwill or reputation; or <br/>c. loss or damage which was not reasonably foreseeable, <br/>d. suffered or incurred arising out of or in connection with your use of this website and/or these terms and conditions. <br/>9. Access to and use of this website is at your own risk and we do not warrant that the use of this website or any material downloaded from it will not cause damage to any property, or otherwise minimise or eliminate the inherent risks of the internet including but not limited to loss of data, computer virus infection, spyware, malicious software, trojans and worms. Also, we accept no liability in respect of losses or damages arising out of changes made to the content of this website by unauthorised third parties. <br/>10. To provide increased value to users of this website, we may provide links to other websites or resources (that are not part of the RBS Group) for you to access at your sole discretion. You acknowledge and agree that, as you have chosen to enter the linked website we are not responsible for the availability of such external sites or resources, and that we do not review or endorse and shall not be responsible or liable, directly or indirectly, for (i) the privacy practices of such websites, (ii) the content of such websites, including (without limitation) any advertising, content, products, goods or other materials or services on or available from such websites or resources or (iii) the use that others make of these websites or resources, nor for any damage, loss or offence caused or alleged to be caused by, or in connection with, the use of or reliance on any such advertising, content, products, goods or other materials or services available on such external websites or resources.</p><p><strong>Copyright</strong> <br/>11. © 2019 National Westminster Bank Plc. All rights, save as expressly granted, are reserved. Reproduction in any form of any part of the contents of this website without our prior written consent is prohibited unless for personal use only.</p><p><strong>Trade Marks</strong> <br/>12. This website contains numerous trade marks belonging to NatWest and other companies in the RBS Group. These trade marks include, but are not limited to, the National Westminster Bank Plc THREE CHEVRONS logo, NatWest and APtimise. If you are in doubt as to whether an item is a trade mark of NatWest or a member of the RBS Group, please contact us for clarification at the registered office address below.</p><p><strong>Advice</strong> <br/>13. The contents of this website do not purport to provide any financial, investment or professional advice and nothing on the pages of this website shall be deemed to constitute the offer or provision of financial, investment or other professional advice in any way. </p><p><strong>Changes to this Website</strong> <br/>14. The contents of this website, including these terms and conditions of use, are subject to change by us without notification. Additionally NatWest shall not be obliged to remove any outdated information from the website or to expressly mark it as being outdated.</p><p><strong>Telephone Calls and Customer Chat</strong> <br/>15. Calls and chats may be recorded for monitoring and training purposes.</p><p><strong>Internal Communications</strong> <br/>16. In order to maintain the security of its systems, protect its staff and detect fraud and other crimes, NatWest reserves the right to monitor all internet communications, including web and email traffic, into and out of its domain. Monitoring includes (without limitation) checks for viruses and other malignant code, criminal activity, and use or content that is unauthorised or unlawful or material that may cause offence in any way.</p><p><strong>Australian Residents</strong> <br/>17. Persons accessing this website from Australia should note that their access to, and use of, the information, services and products on this website may be prohibited under the Australian Corporations Act 2001 or under the RBS Group's Australian Financial Services Licence. Nothing contained in this website should be construed as an authorisation to access or use the information, services or products on this website, in Australia, where such prohibitions apply. </p><p><strong>Other Important Information</strong> <br/>18. The information, and any opinion contained in this website does not constitute a public offer under any applicable legislation or an offer to sell or solicitation or an offer to buy any securities or financial instruments or any advice or recommendation with respect to such securities or other financial instruments. <br/>19. This website contains certain 'forward looking statements' as that term is defined in the United States Private Securities Litigation Reform Act of 1995, such as statements that include the words 'expect', 'estimate', 'project', 'anticipate', 'should', 'intend', 'plan', 'probability'', 'risk', 'Value-at-Risk ('VAR')', 'target', 'goal', 'objective', 'will', 'endeavour', 'outlook', 'optimistic', 'prospects' and similar expressions or variations on such expressions. <br/>20. Factors that could cause actual results to differ materially from those estimated by the forward-looking statements contained in this website include, but are not limited to, general economic conditions in the UK and in other countries in which the RBS Group has significant business activities or investments, including in the United States; the monetary and interest rate policies of the Bank of England, the Board of Governors of the Federal Reserve System and other G-8 central banks; unanticipated turbulence in interest rates, foreign currency exchange rates, commodity prices or equity prices; changes in UK or foreign laws, regulations or taxes; changes in competition or pricing environments; natural and other disasters; the inability to hedge certain risks economically; the adequacy of loss reserves; acquisitions or restructurings; technology changes; changes in consumer spending and saving habits; and the success of the RBS Group in managing the risks involved in the foregoing. The risks and uncertainties are discussed in the RBS Group's SEC filings. The forward-looking statements contained in this website speak only as of the date of the related document, and the RBS Group does not undertake to update any forward looking statement to reflect events or circumstances after the date hereof. <br/>21. The information contained in this website is subject to, and must be read in conjunction with, all other publicly available information, including, where relevant any fuller disclosure document published by the RBS Group. Any person at any time acquiring the securities must do so only on the basis of such person's own judgement as to the merits of the suitability of the securities for its purposes and only on such information as is contained such in public information having taken all such professional or other advice as it considers necessary or appropriate in the circumstances and not in reliance on the information contained herein. The information is not tailored for any particular investor and does not constitute individual investment advice. <br/>22. Information in this website relating to the price at which investments have been bought or sold in the past or the yield on investments cannot be relied upon as a guide to future performance. <br/>23. The financial information published or to be published on this website, or made available or to be made available through this website, such as annual reports and quarterly reports, is compiled and placed on this website with the greatest of care. Nevertheless, only the original hard-copy English versions of this information shall be regarded as the original version. No rights may be derived from financial information published or to be published on this website, or available or to be made available through this website, including with regard to its accuracy and completeness. <br/>24. In addition, it should be noted that the annual report and accounts of the RBS Group which are published on this website or made available through this website, may be subject to adoption by the Annual General Meeting of Shareholders of the RBS Group for the year to which the report and accounts relate.</p><p><strong>Regulatory Information</strong> <br/>25. National Westminster Bank Plc. Registered in England and Wales (Registered Number 929027), Registered Office: 250 Bishopsgate, London EC2M 4AA. Authorised by the Prudential Regulation Authority and regulated by the Financial Conduct Authority and the Prudential Regulation Authority. NatWest is entered on the Financial Services Register and its Register number is 121878. The Financial Services Register can be accessed at www.fca.org.uk/register. NatWest's registered VAT number is GB 243852752. <br/>26. NatWest adheres to the Standards of Lending Practice which are monitored and enforced by the LSB. Find out more at <a href='www.lendingstandardsboard.org.uk' target=“_blnak“>www.lendingstandardsboard.org.uk</a>. <br/>27. If you are not satisfied with any NatWest product or service we have a complaint handling procedure that you can use to resolve such matters. NatWest is covered by The Financial Ombudsman Service. If you are still not satisfied after following the NatWest procedures, you can ask the Ombudsman to review the complaint. You can find out more about The Financial Ombudsman Service in a leaflet available from any branch or by telephoning NatWest. Alternatively you can write to: Financial Ombudsman Service, Exchange Tower, London, E14 9SR or telephone 020 7964 1000.</p><p><strong>Jurisdiction and Enforceability</strong> <br/>28. In the event that any provision of these terms and conditions of use of this website is held unenforceable, it will not affect the validity and enforceability of the remaining provisions. <br/>29. The terms and conditions of use of this website are governed by the laws of England and any dispute regarding this website shall be subject to the non-exclusive jurisdiction of the courts of England and Wales.</p>"
+  },
+  {
+    "id": "textBlockTermsPrivacyNatwest",
+    "type": "TextBlockTerms",
+    "title": "Privacy Policy",
+    "textHTML": "<h1>Privacy Policy</h1><h3>Everything you need to know about our privacy policy</h3><p>Last modified: 28th March 2019</p><p>This privacy notice gives you a comprehensive overview about how we handle data at NatWest, including information we may collect from our customers. We talk in detail about the information we hold, what we do with this data and when we share it outside of NatWest (and with whom). You can read more about your rights around data and can also contact us.</p><p>We respect individuals’ rights to privacy and to the protection of personal information. The purpose of this Privacy Notice is to explain how we collect and use personal information in connection with our business. “Personal information” means information about a living individual who can be identified from that information (either by itself or when it is combined with other information).</p><p>We may update our Privacy Notice from time to time. When we do we will communicate any changes to you and publish the updated Privacy Notice on our website. We would encourage you to visit our website regularly to stay informed of the purposes for which we process your information and your rights to control how we process it.</p><a target='_blank' href='/pdfs/NW-privacy-notice.pdf'>Download our privacy policy</a>"
+  }
 ]
