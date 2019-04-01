@@ -159,9 +159,10 @@ class WhitePaper extends Component {
 
   componentDidMount() {
     console.log(this.state);
+    console.log(window.location);
     this.setState(prevState => ({
-      modal: window.location.search.includes("thanksyou"),
-      downloaded: window.location.search.includes("thanksyou")
+      modal: window.location.search.includes("thankyou"),
+      downloaded: window.location.search.includes("thankyou")
     }));
     console.log(this.state);
   }
