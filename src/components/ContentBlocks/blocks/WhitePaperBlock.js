@@ -104,7 +104,7 @@ const ThanksYou = props => {
           for your business, schedule a personalised AP consultation today.{" "}
         </p>
         <p>
-          <Button as="button" className="trigger-bookdemo-modal">
+          <Button as="button" className="trigger-bookdemo-modal" onClick={props.toggleModal}>
             Schedule now
           </Button>
           <p>
@@ -210,7 +210,7 @@ class WhitePaper extends Component {
             <Container>
               <Row className="justify-content-center">
                 <Col md={6} lg={6}>
-                  <ThanksYou downloaded={this.state.downloaded} />
+                  <ThanksYou downloaded={this.state.downloaded} toggleModal={this.toggle}/>
                   <DownloadForm
                     display={this.state.downloaded ? "none" : "block"}
                   >
