@@ -107,7 +107,7 @@ class WhitePaperForm extends Component {
       formName: "Download Whitepaper",
       formStatus: "Successful"
     });
-    //form.submit();
+    form.submit();
   };
 
   invertClick = e => {
