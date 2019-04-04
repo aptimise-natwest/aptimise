@@ -53,7 +53,7 @@ const LinkBlock = props => {
   const block = data.allContentBlocksJson.edges.filter(
     ({ node }) => props.id === node.id
   )[0];
-  console.log(props);
+
   const links = block.node.links.map((link, i) => {
     if (link.link.charAt(0) === "/") {
       // Switch to gatsby Link if internal

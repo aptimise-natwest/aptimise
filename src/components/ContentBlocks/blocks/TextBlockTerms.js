@@ -30,7 +30,7 @@ const TextBlockTerms = props => {
   )[0];
 
   const { textHTML } = block.node;
-
+ 
   return (
     <ContainerMaxWidth className="py-3 py-lg-4">
       <Row>
@@ -39,7 +39,7 @@ const TextBlockTerms = props => {
         </Col>
         <Col xs={12} md={10}>
           <div dangerouslySetInnerHTML={{ __html: textHTML }} />
-          <LinkBlock {...props} padding={false} />
+          {block.node.links !== null && <LinkBlock {...props} padding={false} />}
         </Col>
       </Row>
     </ContainerMaxWidth>
