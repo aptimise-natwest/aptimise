@@ -63,7 +63,7 @@ const LinkBlock = props => {
         linkButton = (
           <LinkButton
             key={i}
-            className="internalLink"
+            className="internalLink download"
             as="a"
             href={link.link}
             download

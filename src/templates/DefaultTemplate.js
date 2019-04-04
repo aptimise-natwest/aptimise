@@ -7,6 +7,7 @@ class DefaultTemplate extends Component {
   constructor(props) {
     super(props);
     this.createChat = this.createChat.bind(this);
+    // this.logGa = this.logGa.bind(this);
   }
 
   createChat() {
@@ -16,11 +17,17 @@ class DefaultTemplate extends Component {
     s.setAttribute("async", true);
     s.setAttribute("id", "chatScript");
     document.body.appendChild(s);
+    window.disableSmallchatGoogleAnalytics = true;
   }
 
   componentDidMount() {
     this.createChat();
   }
+
+  // logGa() {
+  //   console.log("logging GA");
+  // }
+
   render() {
     const data = this.props.data;
 
@@ -31,6 +38,7 @@ class DefaultTemplate extends Component {
             <h1 className="pt-4">{data.pagesJson.title}</h1>
           </ContainerMaxWidth>
         )}
+        {/* <ContentBlocks data={data} log={this.logGa} /> */}
         <ContentBlocks data={data} />
       </Layout>
     );

@@ -9,7 +9,7 @@ import Text from "components/shared/Text";
 import Button from "components/shared/Button";
 import ModalAngled from "components/shared/ModalAngled";
 import ModalAngledClose from "components/shared/ModalAngledClose";
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faTwitter,
@@ -40,6 +40,7 @@ const WhitePaperBlock = props => (
         }
       }
     `}
+    // render={data => <WhitePaper data={data} id={props.id} log={props.log} />}
     render={data => <WhitePaper data={data} id={props.id} />}
   />
 );
@@ -104,7 +105,11 @@ const ThanksYou = props => {
           for your business, schedule a personalised AP consultation today.{" "}
         </p>
         <p>
-          <Button as="button" className="trigger-bookdemo-modal" onClick={props.toggleModal}>
+          <Button
+            as="button"
+            className="trigger-bookdemo-modal"
+            onClick={props.toggleModal}
+          >
             Schedule now
           </Button>
           <p>
@@ -158,13 +163,15 @@ class WhitePaper extends Component {
   }
 
   componentDidMount() {
-    console.log(this.state);
-    console.log(window.location);
+    // console.log(this.state);
+    // console.log(window.location);
     this.setState(prevState => ({
       modal: window.location.search.includes("thankyou"),
       downloaded: window.location.search.includes("thankyou")
     }));
-    console.log(this.state);
+    // console.log("--------");
+    // console.log(this.props);
+    // console.log("--------");
   }
   render() {
     // Retrieve block
@@ -194,7 +201,13 @@ class WhitePaper extends Component {
                 dangerouslySetInnerHTML={{ __html: textHTML }}
                 className="py-2"
               />
-              <Button onClick={this.toggle} as="button" purple blockMobile>
+              <Button
+                onClick={this.toggle}
+                as="button"
+                purple
+                blockMobile
+                id="whitepaper-download-button"
+              >
                 {buttonText}
               </Button>
             </Col>
@@ -210,7 +223,10 @@ class WhitePaper extends Component {
             <Container>
               <Row className="justify-content-center">
                 <Col md={6} lg={6}>
-                  <ThanksYou downloaded={this.state.downloaded} toggleModal={this.toggle}/>
+                  <ThanksYou
+                    downloaded={this.state.downloaded}
+                    toggleModal={this.toggle}
+                  />
                   <DownloadForm
                     display={this.state.downloaded ? "none" : "block"}
                   >
