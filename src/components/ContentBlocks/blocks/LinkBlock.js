@@ -27,6 +27,10 @@ const LinkButton = styled(Button)`
   }
 `;
 
+const UnPadded = styled(ContainerMaxWidth)`
+  padding: 0 !important;
+`;
+
 const LinkBlock = props => {
   const data = useStaticQuery(graphql`
     query {
@@ -49,6 +53,7 @@ const LinkBlock = props => {
   const block = data.allContentBlocksJson.edges.filter(
     ({ node }) => props.id === node.id
   )[0];
+  console.log(props);
   const links = block.node.links.map((link, i) => {
     if (link.link.charAt(0) === "/") {
       // Switch to gatsby Link if internal
@@ -87,13 +92,16 @@ const LinkBlock = props => {
     }
   });
 
-  return (
+  return props.padding || props.padding === undefined ? (
     <ContainerMaxWidth className="py-3 py-lg-4">{links}</ContainerMaxWidth>
+  ) : (
+    <UnPadded className="py-3 py-lg-4">{links}</UnPadded>
   );
 };
 
 LinkBlock.propTypes = {
-  id: PropTypes.node.isRequired
+  id: PropTypes.node.isRequired,
+  padding: PropTypes.bool
 };
 
 export default LinkBlock;
