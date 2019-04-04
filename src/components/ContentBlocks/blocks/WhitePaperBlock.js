@@ -90,6 +90,11 @@ const LinkItem = styled.a`
   }
 `;
 
+const RowVerticalAlign = styled(Row)`
+  display: flex;
+  align-items: center;
+`;
+
 const ThanksYou = props => {
   var thankYouBlock;
 
@@ -183,12 +188,7 @@ class WhitePaper extends Component {
     return (
       <>
         <ContainerMaxWidth className="py-3 py-lg-4">
-          <Row>
-            <Col lg={6}>
-              <h4>{title}</h4>
-            </Col>
-          </Row>
-          <Row>
+          <RowVerticalAlign>
             <Col lg={{ size: 6, order: 2 }}>
               <Img
                 fluid={image.childImageSharp.fluid}
@@ -197,6 +197,7 @@ class WhitePaper extends Component {
               />
             </Col>
             <Col lg={{ size: 6, order: 1 }}>
+              <h4>{title}</h4>
               <Text
                 dangerouslySetInnerHTML={{ __html: textHTML }}
                 className="py-2"
@@ -211,7 +212,7 @@ class WhitePaper extends Component {
                 {buttonText}
               </Button>
             </Col>
-          </Row>
+          </RowVerticalAlign>
         </ContainerMaxWidth>
         <ModalAngled
           isOpen={this.state.modal}
