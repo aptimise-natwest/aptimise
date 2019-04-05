@@ -95,6 +95,10 @@
     "id": "carouselBlockHome",
     "type": "CarouselBlock",
     "title": "Don’t just take our word for it",
+    "carouselBlocks": [
+      {
+        "imageCopy": "LEAP",
+        "name": "Raj Ahluwalia",
         "position": "UK Finance Director, LEAP Legal",
         "textHTML": "<p>“By reducing our processing time by 50%, APtimise has allowed my team to shift from data entry to value-add.” </br></br> Watch to find out how APtimise has helped software company LEAP Legal to improve their processes, save time and grow.</p>",
         "twitter": "",
