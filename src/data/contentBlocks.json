@@ -114,7 +114,14 @@
         "twitter": "",
         "linkedIn": "",
         "facebook": "",
-        "youtubeVideoId": ""
+        "youtubeVideoId": "",
+        "links": [
+          {
+            "download": "true",
+            "link": "/pdfs/case-study/Spectrum-Case-Study.pdf",
+            "linkText": "Download case study"
+          }
+        ]
       }
     ]
   },
@@ -283,10 +290,10 @@
     "title": "Xero is world-leading online accounting software built for small business.",
     "textHTML": "<ul><li>Get a real-time view of your cashflow. Log in anytime, anywhere on your Mac, PC, tablet or phone to get a real-time view of your cash flow. It’s smalll business accounting software that’s simple, smart and occasionally magical</li><li>Run your business on the go. Use our mobile app to reconcile, send invoices, or create expense claims - from anywhere.</li><li>Get paid faster with online invoicing. Send online invoices to your customers - and get updated when they’re opened.</li><li>Reconcile in seconds. Xero imports and categorises your latest bank transactions. Just click ok to reconcile.</li>",
     "textPosition": "right",
-    "link": "https://google.com",
-    "linkText": "try XERO for free",
+    "link": "https://www.xero.com/uk/signup/?xtid=x30aptimise",
+    "linkText": "Try Xero for free",
     "imageSVG": "/images/xero.svg",
-    "imageCaption": "Connected app"
+    "imageCaption": ""
   },
   {
     "id": "TextBlockPpolicy",
