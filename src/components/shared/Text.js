@@ -8,7 +8,7 @@ const Text = styled.div`
 
 Text.defaultProps = {
     size: 'md',
-    weight: 'light',
+    weight: 'regular',
     color: 'blackOff'
 }
 

@@ -123,7 +123,7 @@ const HeaderNavBar = props => {
 
           <Col xs="auto">
             <Button as="button" className="trigger-bookdemo-modal">
-              book a demo
+              Book a demo
             </Button>
           </Col>
         </Row>

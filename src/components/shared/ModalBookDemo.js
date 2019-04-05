@@ -20,10 +20,13 @@ class ModalBookDemo extends Component {
 
   detectBookDemo() {
     // Globally detect book demo button click
-    const classes = document.getElementsByClassName("trigger-bookdemo-modal");
-    for (let i = 0; i < classes.length; i++) {
-      classes[i].addEventListener("click", () => this.toggle());
-    }
+    document.addEventListener('click', (e) => {
+      if (e.target && e.target.nodeName === 'BUTTON' || e.target.nodeName === 'A') {
+        if (e.target.className !== 'undefined' && e.target.className.indexOf("trigger-bookdemo-modal") > -1) {
+          this.toggle()
+        }
+      }
+    });
   }
 
   toggle() {
