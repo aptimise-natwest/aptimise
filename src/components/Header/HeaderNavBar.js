@@ -106,21 +106,17 @@ const HeaderNavBar = props => {
             {typeof props.data !== "undefined" &&
               props.data.pagesJson.id === "xero" && (
                 <XeroWrap>
-                  <XeroLogo width="35" height="35" />
-                  <Text size="sm" className="pl-2" style={{ lineHeight: 1 }}>
-                    connected <br />
-                    app
-                  </Text>
+                  <XeroLogo width="70" />
                 </XeroWrap>
               )}
           </LogoWrap>
 
-          <BreadCrumb>
-            {typeof props.data !== "undefined" && (
-              <BreadCrumbs data={props.data.pagesJson} />
+          {typeof props.data !== "undefined" &&
+            props.data.pagesJson.id !== "xero" && (
+              <BreadCrumb>
+                <BreadCrumbs data={props.data.pagesJson} />
+              </BreadCrumb>
             )}
-          </BreadCrumb>
-
           <Col xs="auto">
             <Button as="button" className="trigger-bookdemo-modal">
               Book a demo
