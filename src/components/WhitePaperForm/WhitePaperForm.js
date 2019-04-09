@@ -93,7 +93,15 @@ class WhitePaperForm extends Component {
     if (validation) {
       return;
     }
-
+    if (form.gdprEmail.value === "") {
+      form.gdprEmail.value = "false";
+    }
+    if (form.gdprPhone.value === "") {
+      form.gdprPhone.value = "false";
+    }
+    if (form.gdprText.value === "") {
+      form.gdprText.value = "false";
+    }
     let link = document.getElementById("whitepaperformdownloadbutton");
     link.setAttribute("href", "/pdfs/Aptimise-whitepaper.pdf");
     // window.ga("gtm4.send", {
@@ -107,16 +115,21 @@ class WhitePaperForm extends Component {
       formName: "Download Whitepaper",
       formStatus: "Successful"
     });
+
+    // console.log(`GDPR Email : ${form.gdprEmail.value}`);
+    // console.log(`GDPR Phone : ${form.gdprPhone.value}`);
+    // console.log(`GDPR Text : ${form.gdprText.value}`);
     form.submit();
   };
 
   invertClick = e => {
     let elementCheckbox = e.currentTarget;
+    // console.log(elementCheckbox);
     let hiddenCheckbox = document.getElementsByName(
       elementCheckbox.name.split("Display")[0]
     );
-    hiddenCheckbox[0].value = !elementCheckbox.checked;
-
+    hiddenCheckbox[0].value = elementCheckbox.checked;
+    // console.log(hiddenCheckbox[0].value);
     // console.log(
     //   `Element : ${hiddenCheckbox[0].name} value : ${hiddenCheckbox[0].value}`
     // );
@@ -217,12 +230,7 @@ class WhitePaperForm extends Component {
                 onClick={this.invertClick}
               />{" "}
               Email
-              <Input
-                type="hidden"
-                name="gdprEmail"
-                id="gdprEmail"
-                value="true"
-              />
+              <Input type="hidden" name="gdprEmail" id="gdprEmail" />
             </Label>
           </FormGroup>
           <FormGroup check inline={true}>
@@ -233,12 +241,7 @@ class WhitePaperForm extends Component {
                 onClick={this.invertClick}
               />{" "}
               Phone
-              <Input
-                type="hidden"
-                name="gdprPhone"
-                id="gdprPhone"
-                value="true"
-              />
+              <Input type="hidden" name="gdprPhone" id="gdprPhone" />
             </Label>
           </FormGroup>
           <FormGroup check inline={true}>
@@ -249,7 +252,7 @@ class WhitePaperForm extends Component {
                 onClick={this.invertClick}
               />{" "}
               Text
-              <Input type="hidden" name="gdprText" id="gdprText" value="true" />
+              <Input type="hidden" name="gdprText" id="gdprText" />
             </Label>
           </FormGroup>
         </Gdpr>

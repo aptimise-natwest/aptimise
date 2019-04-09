@@ -7,7 +7,7 @@
     "title": "Revolutionise your<br/> Accounts Payable<br/> with APtimise",
     "videoText": "Watch now",
     "youtubeVideoID": "5sFoqY8ZcBo",
-    "text": "Reduce your invoice processing time by up to 50% with the UK’s only end-end Accounts Payable solution"
+    "text": "Reduce your invoice processing time by up to 50% with the UK’s only end-to-end Accounts Payable solution"
   },
   {
     "id": "textBlockHome",
@@ -23,7 +23,7 @@
       {
         "animation": "fast",
         "title": "Fast",
-        "textHTML": "<p>APtimise automatically reads and validates your invoices, removing the need for manual keying.</p><p>It’s proven to reduce the Accounts Payable time by 50%, freeing up staff to focus on growing the business. And it’s compatible with most leading accounting software.</p>"
+        "textHTML": "<p>APtimise automatically reads and validates your invoices, removing the need for manual keying.</p><p>It's proven to reduce the time spent on Accounts Payable by 50%, freeing up staff to focus on growing the business. And it's compatible with most leading accounting software.</p>"
       },
       {
         "animation": "simple",
@@ -63,7 +63,7 @@
     "animation": "more",
     "title": "Still with us? There’s more!",
     "textIntroHTML": "<p>It sounds too good to be true, right? See how it could work for your business with an online demo.</p>",
-    "textHTML": "<p>Get up-and-running quickly with the ‘APtimise hour’: set-up and training in 60 minutes </p><p> Our dedicated success managers will help you every step of the way </p><p> Out-of-the-box integration with Xero, Sage50 & 200, Quickbooks, Aqilla and NetSuite </p><p> Not a NatWest customer? No problem. You don’t need to switch your primary banking and our team will help you get going </p>"
+    "textHTML": "<p>Get up-and-running quickly with the ‘APtimise hour’: set-up and training in 60 minutes </p><p> Our dedicated success managers will help you every step of the way </p><p> Out-of-the-box integration with Xero, Sage50 & 200, QuickBooks and NetSuite </p><p> Not a NatWest customer? No problem. You don’t need to switch your primary banking and our team will help you get going </p>"
   },
   {
     "id": "calculatorBlockHome",
@@ -149,16 +149,16 @@
             "textHTML": "<p>Once you have submitted / approved a PO it automatically appears in your accounting package and in APtimise, where it will be linked to matched invoices. APtimise regularly syncs with your accounting package, so the PO may take a few moments to sync and appear. POs marked as “draft” will not appear in APtimise.</p>"
           },
           {
+            "title": "How are POs matched to invoices?",
+            "textHTML": "<p>Every time a new invoice is created, whether manually or via the invoice capture process, the engine will attempt to link each line-item and expense to a corresponding line-item and expense on an open PO for the same vendor – reading to match the following items: <strong>Quantity, Cost per, Description</strong> and <strong>Amounts.</strong>"
+          },
+          {
             "title": "How can I see the matched and unmatched POs?",
-            "textHTML": "<p>POs will automatically link to invoices using the invoice number. This can be viewed at the bottom of the invoice it has been matched to. To view a PO that has not been matched to an invoice, click on the Vender tab and scroll down to “Open POs”. To view the image of a matched PO, click on the matched invoice number. When the image of the invoice appears, you can toggle to the PO image by using the tab on the top left.</p>"
+            "textHTML": "<p>When a PO has been matched this will be visible at the top of the invoice as well as each of the line items it has matched to. To view a PO that has not been matched to an invoice, click on the Vendor tab and scroll down to “Open POs”. To view the details of a matched PO, click on the matched invoice number. When the image of the invoice appears, you can toggle to the PO details by using the tab on the top left.</p>"
           },
           {
             "title": "How do I deal with PO exceptions?",
             "textHTML": "<p>Mismatches between invoices and POs will be identified on APtimise with a red PO icon on the invoice tab. If the amount in the invoice is lower than your PO, amend the PO manually in your Enterprise Resource Planning (ERP) system – the PO would be closed when the invoice is paid.</p>"
-          },
-          {
-            "title": "How are POs matched to invoices?",
-            "textHTML": "<p>Every time a new invoice is created, whether manually or via the invoice capture process, the engine will attempt to link each line-item and expense to a corresponding line-item and expense on an open PO for the same vendor – reading to match the following items: <strong>Quantity, Cost per, Description</strong> and <strong>Amounts.</strong>"
           }
         ]
       },
@@ -186,7 +186,7 @@
           },
           {
             "title": "How do I add Invoice Approvers?",
-            "textHTML": "<p>You can authorise a named individual as an invoice approver with an automated rule. Alternatively, you can send invoices to individuals for approval ad hoc.</p><p>For ad hoc approvals, Accounting Managers should enter the email of the invoice approver under “Invoice Approval Routing” on the Invoice Details screen. If this is a new invoice approver, you will be shown a link to “Add New Approver”, which will request their email address and name. Once the approver is added, you can save the invoice in APtimise and a request will be sent to the person you approved. To set up an automated rule for a vendor, as an Accounting Manager click on the vendor name in the search tab. Scroll down the vendor details to “default invoice preferences”. Enter the email address under “Manage Invoice Approvers” and save, with any invoice value tiers for secondary invoice approvers. Any future invoices entered into APtimise will be automatically routed to those invoice approvers values and will show in your invoice tab as awaiting approval.</p><p>To set up automated rules for other dimensions such as Class, Department, etc., go to Settings -> Company Profile -> Invoice Approval Rules. Click “Add New Approval Rule”, select the dimension type, then enter the specific dimension. A box will appear to enter the invoice approvers.</p>"
+            "textHTML": "<p>You can authorise a named individual as an invoice approver with an automated rule. Alternatively, you can send invoices to individuals for approval ad hoc.</p><p>You can also set up automated approval rules based Vendor, Account and Department. Go to Settings -> Company Profile -> Invoice Approval Rules. Click “Add New Approval Rule”, select the dimension type, then enter the specific dimension. A box will appear to enter the invoice approvers.</p>"
           },
           {
             "title": "How do I deal with duplicates or delete invoices?",
@@ -202,7 +202,7 @@
         "faqBlockElements": [
           {
             "title": "How do I apply Credit Notes in APtimise?",
-            "textHTML": "<p>You need to add credit notes to your Accounting Package for credits to display in APtimise.</p><p>To see available credit notes per vendor, log on as an AM, go to the search screen, click on the vendor overall credit balance, shown on the Vendor Details and Invoice Details screens. To apply credits to a vendor invoice or payment, you will need to apply these against and invoice directly in your ERP/accounting system. This will then sync to APtimise automatically and update the balance outstanding.</p>"
+            "textHTML": "<p>You need to add credit notes to your Accounting Package for credits to display in APtimise.</p><p>To see available credit notes per vendor, log on as an Accounting Manager, go to the search screen and then click on the 'Credits' tab. To apply credits to a vendor invoice or payment, you will need to apply these against and invoice directly in your ERP/accounting system. This will then sync to APtimise automatically and update the balance outstanding.</p>"
           },
           {
             "title": "Is it possible to stop a customer payment?",
@@ -218,11 +218,11 @@
           },
           {
             "title": "How does the supplier know that we have paid?",
-            "textHTML": "<p>The payment to the supplier shows the invoice number in the remittance note and in the beneficiary bank narrative as follows:</p><p>If one invoice # is being paid that is <= 13 characters long: \"Inv(inv#)\"</p><p>If one invoice # is being paid that is > 12 characters long: \"Inv*(last 12 digits of invoice #)\"</p><p>If multiples invoices are being paid and the first invoice # is < 13 characters long: \"Inv(inv#)+\"</p><p>If multiples invoices are being paid and the first invoice # >= 13 characters long: \"Inv*(last 11 digits of invoice)+\"</p>"
+            "textHTML": "<p>Within APtimise you can create a peronsalised remittance note that will emailed to your suppliers. The payment to the supplier shows the invoice number in the remittance note as well as in the bank payment reference."
           },
           {
             "title": "Can I post payments to previous dates?",
-            "textHTML": "<p>No – posting payments to a previous date will result in an error message</p>"
+            "textHTML": "<p>No – posting payments to a previous date will result in an error message.</p>"
           }
         ]
       },
@@ -258,7 +258,7 @@
           },
           {
             "title": "What do I do if my supplier Bank Account details quoted on the invoice do not match those held on my accounting package?",
-            "textHTML": "<p>Speak to a known contact at the Supplier, using contact details held in your own records, not those on the invoice. If the Supplier states that the account details are not correct and does not recognise them, it may be that the email or invoice document have been fraudulently amended. Do not process the Invoice or sanction payment. Ask the Supplier to resubmit the invoice with the correct account details. Report this to the Bank Fraud team so they can ensure the fraudulent account details can be passed to the beneficiary bank to take appropriate action.</p><p>If the Supplier states the account details on the invoice are correct, confirm if the Supplier has recently changed their Bank details, asking them to confirm in writing, before updating your accounting software system to reflect the change.</p><p>If the Supplier has not confirmed they have changed their details recently, refer to your Accounting Software system to ascertain when the bank account details had been changed and by whom. Ascertain if there was a request to change the bank account details (email or letter). Refer this to the Bank Fraud team. Had the details been changed by a member of staff without any request from the Supplier? Undertake an internal investigation for insider fraud.</p><p>Investigate to see if an external party has gained access to the accounting software and made the alteration fraudulently. If any payments have been made to the amended account details on the system refer to the Bank Fraud team.</p>"
+            "textHTML": "<p>Speak to a known contact at the Supplier, using contact details held in your own records, not those on the invoice. If the Supplier states that the account details are not correct and does not recognise them, it may be that the email or invoice document have been fraudulently amended. Do not process the Invoice or sanction payment. Ask the Supplier to resubmit the invoice with the correct account details. Report this to your Bank Fraud team so they can ensure the fraudulent account details can be passed to the beneficiary bank to take appropriate action.</p><p>If the Supplier states the account details on the invoice are correct, confirm if the Supplier has recently changed their Bank details, asking them to confirm in writing, before updating your accounting software system to reflect the change.</p><p>If the Supplier has not confirmed they have changed their details recently, refer to your Accounting Software system to ascertain when the bank account details had been changed and by whom. Ascertain if there was a request to change the bank account details (email or letter). Refer this to the Bank Fraud team. Had the details been changed by a member of staff without any request from the Supplier? Undertake an internal investigation for insider fraud.</p><p>Investigate to see if an external party has gained access to the accounting software and made the alteration fraudulently. If any payments have been made to the amended account details on the system refer to the Bank Fraud team.</p>"
           },
           {
             "title": "How do I keep my APtimise account safe?",

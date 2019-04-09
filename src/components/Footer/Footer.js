@@ -291,13 +291,6 @@ class Footer extends Component {
                     </CompanyLinkItem>
                     <CompanyLinkItem>
                       <img
-                        src={aqillaLogo}
-                        alt="Aqilla"
-                        style={{ maxWidth: "51px" }}
-                      />
-                    </CompanyLinkItem>
-                    <CompanyLinkItem>
-                      <img
                         src={netsuiteLogo}
                         alt="Netsuite"
                         style={{ maxWidth: "113px" }}
