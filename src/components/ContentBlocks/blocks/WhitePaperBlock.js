@@ -101,7 +101,7 @@ const ThanksYou = props => {
   if (props.downloaded) {
     thankYouBlock = (
       <ThankYouContainer>
-        <h2>Thank you !</h2>
+        <h2>Thank you!</h2>
 
         <p>Your guide to an automated future is now in your downloads.</p>
 
