@@ -66,7 +66,7 @@ const CollapseToggleIcon = styled(FontAwesomeIcon)`
   position: absolute;
   right: -1rem;
   top: 0.5rem;
-  color: ${props => props.theme.colors.grey};
+  color: ${props => props.theme.colors.black};
 `;
 
 const FaqWrap = styled(Row)`
@@ -158,6 +158,11 @@ class Blocks extends Component {
     this.setState(prevState => ({ [keyFaq]: !prevState[keyFaq] }));
   };
 
+  handleClickIcon = e => {
+    var keyFaq = e.currentTarget.getAttribute('data-faq');
+     this.setState(prevState => ({ [keyFaq]: !prevState[keyFaq] }));
+  };
+
   render() {
     const contentBlock = this.getBlock();
 
@@ -181,8 +186,9 @@ class Blocks extends Component {
                 <CollapseToggle id={`faqBlock${i}`} onClick={this.handleClick}>
                   {block.title}
                   <CollapseToggleIcon
+                    data-faq={`faqBlock${i}`}
                     icon={faAngleDown}
-                    className="d-md-none"
+                    onClick={this.handleClickIcon}
                   />
                 </CollapseToggle>
                 <UncontrolledCollapse
