@@ -1,66 +1,60 @@
 [
-    {
-        "id": "home",
-        "path": "/",
-        "title": "Home",
-        "metaDescription": "APtimise is the UK's only accounts payable software with invoice automation & intelligent payments in one cloud solution",
-        "contentBlocks": [ 
-            "landingBlockHome",
-            "textBlockHome", 
-            "infoBlocksHome", 
-            "linkBlockHome",
-            "deviceBlockHome",
-            "calculatorBlockHome",
-            "carouselBlockHome",
-            "infoBlockFullWidthHome", 
-            "whitePaperBlockHome"
-        ]
-    },
-    {
-        "id": "xero",
-        "path": "/xero/",
-        "title": "Xero",
-        "metaDescription": "",
-        "contentBlocks": [ 
-            "landingBlockHome",
-            "textBlockHome", 
-            "infoBlocksHome", 
-            "linkBlockHome",
-            "deviceBlockHome",
-            "calculatorBlockHome",
-            "carouselBlockHome",
-            "infoBlockFullWidthHome", 
-            "whitePaperBlockHome",
-            "imageTextBlockXero"
-        ]
-    },
-    {
-        "id": "help",
-        "path": "/faqs/",
-        "title": "Frequently Asked Questions",
-        "metaDescription": "",
-        "h1": "Frequently Asked Questions",
-        "contentBlocks": [
-            "TextBlockHelp",
-            "FaqBlockFullWidth"
-        ]
-    },
-    {
-        "id": "terms",
-        "path": "/terms-conditions/",
-        "title": "Terms & Conditions",
-        "metaDescription": "",
-        "contentBlocks": [
-            "textBlockTermsTerms"
-        ]
-    },
-    {
-        "id": "privacyNatwest",
-        "path": "/privacy-policy/",
-        "title": "Privacy Policy",
-        "metaDescription": "",
-        "contentBlocks": [
-            "textBlockTermsPrivacyNatwest"
-        ]
-    }
+  {
+    "id": "home",
+    "path": "/",
+    "title": "Home",
+    "metaDescription": "APtimise is the UK's only accounts payable software with invoice automation & intelligent payments in one cloud solution",
+    "contentBlocks": [
+      "landingBlockHome",
+      "textBlockHome",
+      "infoBlocksHome",
+
+      "linkBlockHome",
+      "whitePaperBlockHome",
+      "deviceBlockHome",
+      "calculatorBlockHome",
+      "carouselBlockHome",
+      "infoBlockFullWidthHome"
+    ]
+  },
+  {
+    "id": "xero",
+    "path": "/xero/",
+    "title": "Xero",
+    "metaDescription": "",
+    "contentBlocks": [
+      "landingBlockHome",
+      "textBlockHome",
+      "infoBlocksHome",
+      "linkBlockHome",
+      "deviceBlockHome",
+      "calculatorBlockHome",
+      "carouselBlockHome",
+      "infoBlockFullWidthHome",
+      "whitePaperBlockHome",
+      "imageTextBlockXero"
+    ]
+  },
+  {
+    "id": "help",
+    "path": "/faqs/",
+    "title": "Frequently Asked Questions",
+    "metaDescription": "",
+    "h1": "Frequently Asked Questions",
+    "contentBlocks": ["TextBlockHelp", "FaqBlockFullWidth"]
+  },
+  {
+    "id": "terms",
+    "path": "/terms-conditions/",
+    "title": "Terms & Conditions",
+    "metaDescription": "",
+    "contentBlocks": ["textBlockTermsTerms"]
+  },
+  {
+    "id": "privacyNatwest",
+    "path": "/privacy-policy/",
+    "title": "Privacy Policy",
+    "metaDescription": "",
+    "contentBlocks": ["textBlockTermsPrivacyNatwest"]
+  }
 ]

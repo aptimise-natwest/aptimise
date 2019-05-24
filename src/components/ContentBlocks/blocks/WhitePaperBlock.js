@@ -120,21 +120,21 @@ const ThanksYou = props => {
           <p>
             <LinkWrap>
               <LinkItem
-                href="https://twitter.com/aptimise"
+                href="https://twitter.com/NatWestBusiness"
                 target="_blank"
                 rel="noreferrer"
               >
                 <FontAwesomeIcon icon={faTwitter} color="#42145F" />
               </LinkItem>
               <LinkItem
-                href="https://www.linkedin.com/company/aptimise-com/"
+                href="https://www.linkedin.com/company/natwest-business"
                 target="_blank"
                 rel="noreferrer"
               >
                 <FontAwesomeIcon icon={faLinkedin} color="#42145F" />
               </LinkItem>
               <LinkItem
-                href="https://en-gb.facebook.com/APtimise/"
+                href="https://www.facebook.com/NatWestBusiness"
                 target="_blank"
                 rel="noreferrer"
               >
