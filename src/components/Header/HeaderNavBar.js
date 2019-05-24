@@ -18,6 +18,14 @@ const NavBar = styled.div`
     padding: 0.5rem;
   }
 `;
+
+const BookADemo = styled(Button)`
+  font-size: 0.9em;
+  @media ${media.sm} {
+    font-size: 1rem;
+  }
+`;
+
 const NavBarContainer = styled(ContainerMaxWidth)`
   padding-left: 1rem;
   padding-right: 1rem;
@@ -118,9 +126,9 @@ const HeaderNavBar = props => {
               </BreadCrumb>
             )}
           <Col xs="auto">
-            <Button as="button" className="trigger-bookdemo-modal">
+            <BookADemo as="button" className="trigger-bookdemo-modal">
               Book a demo
-            </Button>
+            </BookADemo>
           </Col>
         </Row>
       </NavBarContainer>
