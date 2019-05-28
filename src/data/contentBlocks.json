@@ -14,7 +14,7 @@
     "type": "TextBlock",
     "size": "xl",
     "weight": "regular",
-    "textHTML": "<p>Designed for SMEs, APtimise is the UK’s only end-to-end invoices and payments solution, removing the frustration of the traditional Accounts Payable process and making it faster, more accurate, simpler and secure.</p>"
+    "textHTML": "<p>Designed for small businesses, APtimise is the UK’s only end-to-end invoices and payments solution, removing the frustration of the traditional Accounts Payable process and making it faster, more accurate, simpler and secure.</p>"
   },
   {
     "id": "infoBlocksHome",
@@ -38,7 +38,7 @@
       {
         "animation": "secure",
         "title": "Secure",
-        "textHTML": "<p>APtimise actively monitors for signs of fraud – 47% of SMEs received a suspicious or fraudulent invoice in 2017 – so it might come in handy. You’ll have full visibility of audit trails too.</p><p>And because it’s backed by NatWest, it comes with bank-grade security for complete peace of mind.</p>"
+        "textHTML": "<p>APtimise actively monitors for signs of fraud – 47% of small businesses received a suspicious or fraudulent invoice in 2017 – so it might come in handy. You’ll have full visibility of audit trails too.</p><p>And because it’s backed by NatWest, it comes with bank-grade security for complete peace of mind.</p>"
       }
     ]
   },

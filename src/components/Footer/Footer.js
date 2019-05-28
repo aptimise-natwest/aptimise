@@ -208,21 +208,21 @@ class Footer extends Component {
                 <Col md={4} lg={6}>
                   <LinkWrap>
                     <LinkItem
-                      href="https://twitter.com/aptimise"
+                      href="https://twitter.com/NatWestBusiness"
                       target="_blank"
                       rel="noreferrer"
                     >
                       <FontAwesomeIcon icon={faTwitter} />
                     </LinkItem>
                     <LinkItem
-                      href="https://www.linkedin.com/company/aptimise-com/"
+                      href="https://www.linkedin.com/company/natwest-business"
                       target="_blank"
                       rel="noreferrer"
                     >
                       <FontAwesomeIcon icon={faLinkedin} />
                     </LinkItem>
                     <LinkItem
-                      href="https://en-gb.facebook.com/APtimise/"
+                      href="https://www.facebook.com/NatWestBusiness"
                       target="_blank"
                       rel="noreferrer"
                     >
