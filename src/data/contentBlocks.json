@@ -321,5 +321,11 @@
         "linkText": "Download our privacy policy"
       }
     ]
+  },
+  {
+    "id": "textBlockAbout",
+    "type": "TextBlockAbout",
+    "title": "About Us",
+    "textHTML": "<h1>About Us</h1><br><p>Founded 3 years ago, APtimise is the UK’s only end-to-end Accounts Payable solution, allowing customers, bookkeepers as well as accountants focus on what matters most. From invoice capture all the way through to payment execution via NatWest bank grade solution, APtimise offers businesses the ability to achieve a 50% efficiency gain over their existing AP processes.</p><p>We understand how frustrating manual processing of invoices is and we want to put our customers in the driver’s seat, ensuring they gain time, save money and allow their teams to focus on growing the business as well progressing within it.</p>"
   }
 ]

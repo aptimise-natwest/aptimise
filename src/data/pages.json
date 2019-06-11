@@ -56,5 +56,12 @@
     "title": "Privacy Policy",
     "metaDescription": "",
     "contentBlocks": ["textBlockTermsPrivacyNatwest"]
+  },
+  {
+    "id": "aboutus",
+    "path": "/about/",
+    "title": "About Us",
+    "metaDescription": "",
+    "contentBlocks": ["textBlockAbout"]
   }
 ]
