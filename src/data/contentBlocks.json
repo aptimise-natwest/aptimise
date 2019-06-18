@@ -349,31 +349,31 @@
     "separator": false,
     "gridBlocks": [
       {
-        "icon": "/images/product-overviews/svg/laptop.svg",
+        "icon": "../images/product-overviews/png/laptop.png",
         "displayIcon": true,
         "title": "Capture",
         "textHTML": "<p>Eliminate manual keying with automated capture of header and line detail.</p>"
       },
       {
-        "icon": "/images/product-overviews/svg/invoice.svg",
+        "icon": "../images/product-overviews/png/invoice.png",
         "displayIcon": true,
         "title": "Validate",
         "textHTML": "<p>Supplier data validation against information held in your accounting system. No more duplicated invoices."
       },
       {
-        "icon": "/images/product-overviews/svg/thumbs-up.svg",
+        "icon": "../images/product-overviews/png/thumbs-up.png",
         "displayIcon": true,
         "title": "Approve",
         "textHTML": "<p>Share invoices with the relevant people who can then digitally approve and add notes.</p>"
       },
       {
-        "icon": "/images/product-overviews/svg/clock.svg",
+        "icon": "../images/product-overviews/png/clock.png",
         "displayIcon": true,
         "title": "Schedule & Authorise",
         "textHTML": "<p>Post invoices into your accounting system and build a payment run at the click of a button. Decision makers can review the audit trail and securely authorise payment runs.</p>"
       },
       {
-        "icon": "/images/product-overviews/svg/rocket.svg",
+        "icon": "../images/product-overviews/png/rocket.png",
         "displayIcon": true,
         "title": "Pay",
         "textHTML": "<p>No need to transfer files or manually key payments in the Bank. APtimise will securely execute transactions on scheduled dates and send remittance emails to your suppliers.</p>"
