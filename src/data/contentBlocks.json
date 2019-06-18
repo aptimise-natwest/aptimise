@@ -466,13 +466,5 @@
         "textHTML": null
       }
     ]
-  },
-  {
-    "id": "productIntegration",
-    "type": "GridBlock",
-    "title": "Fully integrated with your workflow",
-    "desc": "Super fast implementation and seamless integration with all the main accounting platforms.",
-    "renderSingleRow": true,
-    "separator": false
   }
 ]
