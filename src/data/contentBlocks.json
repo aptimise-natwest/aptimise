@@ -51,7 +51,7 @@
       {
         "download": "true",
         "link": "/pdfs/Aptimise-how-it-works.pdf",
-        "linkText": "Download our “how it works” guide"
+        "linkText": "Download “how it works” guide"
       },
       {
         "link": "/faqs/",
@@ -466,5 +466,13 @@
         "textHTML": null
       }
     ]
+  },
+  {
+    "id": "productIntegration",
+    "type": "GridBlock",
+    "title": "Fully integrated with your workflow",
+    "desc": "Super fast implementation and seamless integration with all the main accounting platforms.",
+    "renderSingleRow": true,
+    "separator": false
   }
 ]

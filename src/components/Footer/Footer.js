@@ -61,7 +61,7 @@ const FooterContent = styled.div`
 `;
 
 const FooterTopBg = styled.div`
-  background-image: url(${footerTopBg});
+  /* background-image: url(${footerTopBg}); */
   background-repeat: no-repeat;
   background-size: cover;
   background-position: top center;

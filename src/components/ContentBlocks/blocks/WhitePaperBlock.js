@@ -93,6 +93,12 @@ const LinkItem = styled.a`
 const RowVerticalAlign = styled(Row)`
   display: flex;
   align-items: center;
+  box-shadow: 0px 0px 4px 2px rgba(171, 168, 171, 1);
+  background-color: ${props => props.theme.colors.white};
+`;
+
+const FullGrey = styled.div`
+  background-color: ${props => props.theme.colors.greyLight};
 `;
 
 const ThanksYou = props => {
@@ -186,9 +192,9 @@ class WhitePaper extends Component {
 
     const { title, textHTML, buttonText, image } = block.node;
     return (
-      <>
+      <FullGrey>
         <ContainerMaxWidth className="py-3 py-lg-4">
-          <RowVerticalAlign>
+          <RowVerticalAlign sasas>
             <Col lg={{ size: 6, order: 2 }}>
               <Img
                 fluid={image.childImageSharp.fluid}
@@ -241,7 +247,7 @@ class WhitePaper extends Component {
             </Container>
           </ModalBody>
         </ModalAngled>
-      </>
+      </FullGrey>
     );
   }
 }
