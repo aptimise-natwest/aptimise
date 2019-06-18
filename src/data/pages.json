@@ -63,5 +63,18 @@
     "title": "About Us",
     "metaDescription": "",
     "contentBlocks": ["textBlockAbout"]
+  },
+  {
+    "id": "product",
+    "path": "/product/",
+    "title": "Product",
+    "metaDescription": "Some product overview goes here",
+    "contentBlocks": [
+      "heroBlock",
+      "productOverview",
+      "caseStudyQoute",
+      "productFeatures",
+      "productIntegration"
+    ]
   }
 ]

@@ -13,7 +13,8 @@ import DeviceBlock from "./blocks/DeviceBlock";
 import CarouselBlock from "./blocks/CarouselBlock";
 import ImageTextBlock from "./blocks/ImageTextBlock";
 import FaqBlocks from "./blocks/FaqBlocks";
-
+import GridBlock from "./blocks/GridBlock";
+import CaseStudyQoute from "./blocks/CaseStudyQoute";
 const ContentBlocks = props => {
   const pageBlocks = props.data.pagesJson.contentBlocks;
 
@@ -63,15 +64,21 @@ const ContentBlocks = props => {
 
         case "TextBlockTerms":
           return <TextBlockTerms id={block.node.id} key={i} />;
-        
-          case "TextBlockAbout":
-            return <TextBlockAbout id={block.node.id} key={i} />;
+
+        case "TextBlockAbout":
+          return <TextBlockAbout id={block.node.id} key={i} />;
 
         case "InfoBlocks":
           return <InfoBlocks id={block.node.id} key={i} />;
 
         case "LinkBlock":
           return <LinkBlock id={block.node.id} key={i} />;
+
+        case "GridBlock":
+          return <GridBlock id={block.node.id} key={i} />;
+
+        case "CaseStudyQoute":
+          return <CaseStudyQoute id={block.node.id} key={i} />;
 
         case "InfoBlockFullWidth":
           return <InfoBlockFullWidth id={block.node.id} key={i} />;
@@ -80,7 +87,7 @@ const ContentBlocks = props => {
           return <CalculatorBlock id={block.node.id} key={i} />;
 
         case "WhitePaperBlock":
-        return <WhitePaperBlock id={block.node.id} key={i} />;
+          return <WhitePaperBlock id={block.node.id} key={i} />;
         //   return <WhitePaperBlock id={block.node.id} key={i} {...log} />;
 
         case "DeviceBlock":

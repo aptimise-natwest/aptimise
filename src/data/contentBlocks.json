@@ -5,6 +5,8 @@
     "imageDesktop": "../images/backgrounds/landing-home.jpg",
     "imageMobile": "../images/backgrounds/landing-home-mobile.jpg",
     "title": "Revolutionise your<br/> Accounts Payable<br/> with APtimise",
+    "headerTitle": null,
+    "pageType": null,
     "videoText": "Watch now",
     "youtubeVideoID": "5sFoqY8ZcBo",
     "text": "Reduce your invoice processing time by up to 50% with the UK’s only end-to-end Accounts Payable solution"
@@ -284,7 +286,6 @@
       }
     ]
   },
-
   {
     "id": "imageTextBlockXero",
     "type": "ImageTextBlock",
@@ -302,7 +303,6 @@
     "title": "Public Policy",
     "textHTML": "<h1>sdfsdfsdfs</h1>"
   },
-
   {
     "id": "textBlockTermsTerms",
     "type": "TextBlockTerms",
@@ -327,5 +327,144 @@
     "type": "TextBlockAbout",
     "title": "About Us",
     "textHTML": "<h1>About Us</h1><br><p>Founded 3 years ago, APtimise is the UK’s only end-to-end Accounts Payable solution, allowing customers, bookkeepers as well as accountants focus on what matters most. From invoice capture all the way through to payment execution via NatWest bank grade solution, APtimise offers businesses the ability to achieve a 50% efficiency gain over their existing AP processes.</p><p>We understand how frustrating manual processing of invoices is and we want to put our customers in the driver’s seat, ensuring they gain time, save money and allow their teams to focus on growing the business as well progressing within it.</p>"
+  },
+  {
+    "id": "heroBlock",
+    "type": "LandingBlock",
+    "imageDesktop": null,
+    "imageMobile": null,
+    "pageType": "product",
+    "title": "The UK’s only end-to-end AP solution",
+    "headerTitle": "PRODUCT OVERVIEW",
+    "videoText": "Watch now",
+    "youtubeVideoID": null,
+    "text": "Designed for Small Businesses and Accountants, APtimise is the UK’s only end-to-end invoices and payments solution, removing the frustration of the traditional Accounts Payable process and making it faster, more accurate and secure."
+  },
+  {
+    "id": "productOverview",
+    "type": "GridBlock",
+    "title": null,
+    "desc": null,
+    "renderSingleRow": false,
+    "separator": false,
+    "gridBlocks": [
+      {
+        "icon": "../images/product-overviews/png/laptop.png",
+        "displayIcon": true,
+        "title": "Capture",
+        "textHTML": "<p>Eliminate manual keying with automated capture of header and line detail.</p>"
+      },
+      {
+        "icon": "../images/product-overviews/png/invoice.png",
+        "displayIcon": true,
+        "title": "Validate",
+        "textHTML": "<p>Supplier data validation against information held in your accounting system. No more duplicated invoices."
+      },
+      {
+        "icon": "../images/product-overviews/png/thumbs-up.png",
+        "displayIcon": true,
+        "title": "Approve",
+        "textHTML": "<p>Share invoices with the relevant people who can then digitally approve and add notes.</p>"
+      },
+      {
+        "icon": "../images/product-overviews/png/clock.png",
+        "displayIcon": true,
+        "title": "Schedule & Authorise",
+        "textHTML": "<p>Post invoices into your accounting system and build a payment run at the click of a button. Decision makers can review the audit trail and securely authorise payment runs.</p>"
+      },
+      {
+        "icon": "../images/product-overviews/png/rocket.png",
+        "displayIcon": true,
+        "title": "Pay",
+        "textHTML": "<p>No need to transfer files or manually key payments in the Bank. APtimise will securely execute transactions on scheduled dates and send remittance emails to your suppliers.</p>"
+      }
+    ]
+  },
+  {
+    "id": "caseStudyQoute",
+    "type": "CaseStudyQoute",
+    "referenceBlock": "carouselBlockHome",
+    "dataFilter": "{'imageCopy': 'Spectrum Chemicals'}"
+  },
+  {
+    "id": "productFeatures",
+    "type": "GridBlock",
+    "title": "Features that will revolutionise your Accounts Payable",
+    "desc": null,
+    "renderSingleRow": false,
+    "separator": true,
+    "gridBlocks": [
+      {
+        "icon": "../images/product-overviews/png/rocket.png",
+        "displayIcon": false,
+        "title": "Invoice Capture",
+        "textHTML": "<p>Technology to capture supplier information, invoice totals and line item details (descriptions, net amounts, VAT and ross amounts).</p>"
+      },
+      {
+        "icon": "../images/product-overviews/png/rocket.png",
+        "displayIcon": false,
+        "title": "Purchase order matching",
+        "textHTML": "<p>Smart automated invoice and purchase order matching plus exception handling."
+      },
+      {
+        "icon": "../images/product-overviews/png/rocket.png",
+        "displayIcon": false,
+        "title": "Easy approvals",
+        "textHTML": "<p>Rule base workflow for digital invoice approvals eliminating need to chase for sign-offs.</p>"
+      },
+      {
+        "icon": "../images/product-overviews/png/rocket.png",
+        "displayIcon": false,
+        "title": "Seamless payments",
+        "desc": null,
+        "textHTML": "<p>Bank account integration enabling simple and secure payment scheduling and execution.</p>"
+      },
+      {
+        "icon": "../images/product-overviews/png/rocket.png",
+        "displayIcon": false,
+        "title": "Cashflow management",
+        "textHTML": "<p>Automated accounts payable enabling real-time cashflow management and reporting.</p>"
+      },
+      {
+        "icon": "../images/product-overviews/png/rocket.png",
+        "displayIcon": false,
+        "title": "Out of the box integrations",
+        "textHTML": "<p>No IT project required. Easily and securely connect with existing third-party accounting systems.</p>"
+      }
+    ]
+  },
+  {
+    "id": "productIntegration",
+    "type": "GridBlock",
+    "title": "Fully integrated with your workflow",
+    "desc": "Super fast implementation and seamless integration with all the main accounting platforms.",
+    "renderSingleRow": true,
+    "separator": false,
+    "gridBlocks": [
+      {
+        "icon": "../images/logos/logo-xero-blue.png",
+        "displayIcon": true,
+        "title": null,
+        "textHTML": null
+      },
+      {
+        "icon": "../images/logos/qbo-logo.png",
+        "displayIcon": true,
+        "title": null,
+        "textHTML": null
+      },
+      {
+        "icon": "../images/logos/sage50-logo.png",
+        "displayIcon": true,
+        "title": null,
+        "textHTML": null
+      },
+      {
+        "icon": "../images/logos/sage200-logo.png",
+        "displayIcon": true,
+        "title": null,
+        "textHTML": null
+      }
+    ]
   }
 ]
