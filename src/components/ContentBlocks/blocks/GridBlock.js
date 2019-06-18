@@ -29,13 +29,7 @@ const GridBlock = props => (
               renderSingleRow
               separator
               gridBlocks {
-                icon {
-                  childImageSharp {
-                    fluid {
-                      ...GatsbyImageSharpFluid
-                    }
-                  }
-                }
+                icon
                 displayIcon
                 title
                 textHTML
@@ -116,8 +110,8 @@ const Item = styled.div`
   margin: 20px 0px;
 `;
 
-const IconImg = styled(Img)`
-  width: ${props => (props.gradient === true ? "100%" : "50px")};
+const IconImg = styled.img`
+  width: ${props => (props.gradient === true ? "100%" : "54px")};
   &:after {
     content: "";
     position: absolute;
@@ -153,9 +147,10 @@ class Blocks extends Component {
           {props.block.displayIcon && (
             <Icon gradient={props.singlerow}>
               <IconImg
-                fluid={props.block.icon.childImageSharp.fluid}
+                src={props.block.icon}
                 gradient={props.singlerow}
               />
+              
             </Icon>
           )}
 
