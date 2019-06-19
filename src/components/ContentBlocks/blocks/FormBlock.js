@@ -17,7 +17,7 @@ import {
   faLinkedin
 } from "@fortawesome/free-brands-svg-icons";
 import { media } from "utils/Media";
-const WhitePaperBlock = props => (
+const FormBlock = props => (
   <StaticQuery
     query={graphql`
       query {
@@ -252,8 +252,8 @@ class WhitePaper extends Component {
   }
 }
 
-WhitePaperBlock.propTypes = {
+FormBlock.propTypes = {
   id: PropTypes.node.isRequired
 };
 
-export default WhitePaperBlock;
+export default FormBlock;

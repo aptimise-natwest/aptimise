@@ -81,9 +81,9 @@
   {
     "id": "whitePaperBlockHome",
     "type": "WhitePaperBlock",
-    "title": "Accounts Payable is Changing: Your Guide to an Automated Future",
-    "textHTML": "<p>Today’s Financial Directors are recognising that Accounts Payable is an untapped area that’s poised for transformation. By automating their invoices and payments solution, FDs can remove the need for repetitive, manual work, so staff can focus on strategic initiatives that help business growth.</p>",
-    "buttonText": "Download whitepaper",
+    "title": "Accounts Payable is automating: Download your FREE guide",
+    "textHTML": "<p>Automating Accounts Payable eliminates the need for repetitive, manual tasks, enabling tour team to focus on value adding activities that help your business grow.</p>",
+    "buttonText": "Download a free guide",
     "image": "../images/whitepaper.jpg"
   },
   {

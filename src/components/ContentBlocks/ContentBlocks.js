@@ -8,6 +8,8 @@ import InfoBlocks from "./blocks/InfoBlocks";
 import InfoBlockFullWidth from "./blocks/InfoBlockFullWidth";
 import CalculatorBlock from "./blocks/CalculatorBlock";
 import WhitePaperBlock from "./blocks/WhitePaperBlock";
+import FormBlock from "./blocks/FormBlock";
+
 import LinkBlock from "./blocks/LinkBlock";
 import DeviceBlock from "./blocks/DeviceBlock";
 import CarouselBlock from "./blocks/CarouselBlock";
@@ -89,6 +91,9 @@ const ContentBlocks = props => {
         case "WhitePaperBlock":
           return <WhitePaperBlock id={block.node.id} key={i} />;
         //   return <WhitePaperBlock id={block.node.id} key={i} {...log} />;
+
+        case "FormBlock":
+          return <FormBlock id={block.node.id} key={i} />;
 
         case "DeviceBlock":
           return <DeviceBlock id={block.node.id} key={i} />;
