@@ -194,7 +194,7 @@ class WhitePaper extends Component {
     return (
       <FullGrey>
         <ContainerMaxWidth className="py-3 py-lg-4">
-          <RowVerticalAlign sasas>
+          <RowVerticalAlign>
             <Col lg={{ size: 6, order: 2 }}>
               <Img
                 fluid={image.childImageSharp.fluid}

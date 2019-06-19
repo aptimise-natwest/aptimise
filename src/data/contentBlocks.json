@@ -63,8 +63,8 @@
     "id": "infoBlockFullWidthHome",
     "type": "InfoBlockFullWidth",
     "animation": "more",
-    "title": "Still with us? There’s more!",
-    "textIntroHTML": "<p>It sounds too good to be true, right? See how it could work for your business with an online demo.</p>",
+    "title": "There’s more",
+    "textIntroHTML": "<p>Our expert team is here to ensure you get the best out of APtimise.</p>",
     "textHTML": "<p>Get up-and-running quickly with the ‘APtimise hour’: set-up and training in 60 minutes </p><p> Our dedicated success managers will help you every step of the way </p><p> Out-of-the-box integration with Xero, Sage50 & 200, QuickBooks and NetSuite </p><p> Not a NatWest customer? No problem. You don’t need to switch your primary banking and our team will help you get going </p>"
   },
   {
@@ -90,7 +90,7 @@
     "id": "deviceBlockHome",
     "type": "DeviceBlock",
     "title": "Book a 20 minute online demo now",
-    "textHTML": "<p>It sounds too good to be true, right? See how it could work for your business with an online demo.</p>",
+    "textHTML": "<p>One of our expert accounts payable consultants will be able to show you in just a few minutes how APtimise can help streamline your accounts payable process.</p><p>The demo is fully personalised based on your process and to suit your needs. It’s delivered online via screen share technology and typically takes no more than 30 min.</p>",
     "buttonText": "Pick your demo slot"
   },
   {

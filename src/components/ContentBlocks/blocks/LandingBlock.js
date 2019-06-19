@@ -17,6 +17,7 @@ import landingProductBlockSVG from "images/backgrounds/landing-product-block.svg
 import landingTextMobileSVG from "images/backgrounds/landing-text-mobile.svg";
 import landingMobileTopSVG from "images/backgrounds/landing-mobile-top.svg";
 import landingMobileBottomSVG from "images/backgrounds/landing-mobile-bottom.svg";
+import Button from "components/shared/Button";
 
 const LandingWrapper = styled.div`
   max-width: 1500px;
@@ -210,22 +211,66 @@ const MobileImgSvgBottom = styled.img`
   }
 `;
 
-const WatchNowButton = styled.button`
+const WatchNowButton = styled(Button)`
   font-size: ${props => props.theme.font.size.xl};
-  background-color: transparent;
-  border: 0;
-  color: ${props => props.theme.colors.white};
-  position: absolute;
-  bottom: 3rem;
-  left: 2rem;
-  z-index: 2;
+  margin-bottom: 0.5rem;
+  position: relative;
+  z-index: 1;
+  width: 100%;
 
   @media ${media.md} {
-    position: relative;
-    left: auto;
-    bottom: auto;
+    width: auto;
+    margin-right: 0.5rem;
+  }
+
+  &.internalLink {
+    color: ${props => props.theme.colors.white};
+    background-color: ${props => props.theme.colors.purpleDark};
+    &:hover {
+      color: ${props => props.theme.colors.white};
+      background-color: ${props => props.theme.colors.purpleDark};
+    }
+  }
+
+  &.internalPageLink {
+    color: ${props => props.theme.colors.white};
+    background-color: ${props => props.theme.colors.turquoise};
+    &:hover {
+      color: ${props => props.theme.colors.white};
+      background-color: ${props => props.theme.colors.turquoise};
+    }
   }
 `;
+
+// const LinkButton = styled(Button)`
+//   margin-bottom: 0.5rem;
+//   position: relative;
+//   z-index: 1;
+//   width: 100%;
+
+//   @media ${media.md} {
+//     width: auto;
+//     margin-right: 0.5rem;
+//   }
+
+//   &.internalLink {
+//     color: ${props => props.theme.colors.white};
+//     background-color: ${props => props.theme.colors.purpleDark};
+//     &:hover {
+//       color: ${props => props.theme.colors.white};
+//       background-color: ${props => props.theme.colors.purpleDark};
+//     }
+//   }
+
+//   &.internalPageLink {
+//     color: ${props => props.theme.colors.white};
+//     background-color: ${props => props.theme.colors.turquoise};
+//     &:hover {
+//       color: ${props => props.theme.colors.white};
+//       background-color: ${props => props.theme.colors.turquoise};
+//     }
+//   }
+// `;
 
 const LandingBlock = props => (
   <StaticQuery
@@ -354,7 +399,7 @@ class Landing extends Component {
                   )}
 
                   {youtubeVideoID !== "" && youtubeVideoID !== null && (
-                    <WatchNowButton onClick={this.toggle}>
+                    <WatchNowButton onClick={this.toggle} >
                       <ButtonPlaySvg />
                       <span className="ml-3 video">{videoText}</span>
                     </WatchNowButton>

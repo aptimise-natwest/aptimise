@@ -163,7 +163,7 @@ class Device extends Component {
         return (
             <DeviceContainer className="py-3 py-lg-5">
                 <DeviceContent>
-                    <Col md={6}>
+                    <Col md={5}>
                         <h4>{title}</h4>
                         <Text dangerouslySetInnerHTML={{ __html: textHTML }} />
                         <Button yellow blockMobile className="trigger-bookdemo-modal">{buttonText}</Button>
