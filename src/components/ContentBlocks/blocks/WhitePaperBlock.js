@@ -93,8 +93,15 @@ const LinkItem = styled.a`
 const RowVerticalAlign = styled(Row)`
   display: flex;
   align-items: center;
-  box-shadow: 0px 0px 4px 2px rgba(171, 168, 171, 1);
+  
   background-color: ${props => props.theme.colors.white};
+
+  box-shadow: rgba(40, 41, 44, 0.12) 0px 1px 10px 1px;
+
+padding: 50px;
+
+margin: 75px 0px;
+
 `;
 
 const FullGrey = styled.div`
@@ -199,14 +206,14 @@ class WhitePaper extends Component {
       <FullGrey>
         <ContainerMaxWidth className="py-3 py-lg-4">
           <RowVerticalAlign>
-            <Col lg={{ size: 5, order: 2 }}>
+            <Col lg={{ size: 6, order: 2 }}>
               <Img
                 fluid={image.childImageSharp.fluid}
                 className="my-3"
                 alt={title}
               />
             </Col>
-            <Col lg={{ offset: 1, size: 5, order: 1 }}>
+            <Col lg={{ size: 6, order: 1 }}>
               <h4>{title}</h4>
               <Text
                 dangerouslySetInnerHTML={{ __html: textHTML }}

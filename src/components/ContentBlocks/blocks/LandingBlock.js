@@ -19,6 +19,8 @@ import landingMobileTopSVG from "images/backgrounds/landing-mobile-top.svg";
 import landingMobileBottomSVG from "images/backgrounds/landing-mobile-bottom.svg";
 import Button from "components/shared/Button";
 
+import landingProductTopSVG from "images/product-overviews/svg/rocket.svg";
+
 const LandingWrapper = styled.div`
   max-width: 1500px;
   width: 100%;
@@ -32,7 +34,8 @@ const LandingWrapper = styled.div`
 `;
 
 const LandingContent = styled(ContainerMaxWidth)`
-  padding-left: 0;
+  padding-left: ${props => (props.type === "product" ? "1px" : 0)};
+  padding-top: ${props => (props.type === "product" ? "20px" : 0)};
   padding-right: 0;
 
   @media ${media.md} {
@@ -127,7 +130,7 @@ const LandingH1 = styled.h1`
   padding: 1rem 2rem;
   @media ${media.md} {
     font-size: 2rem;
-    padding: 0 0 2rem 0;
+    padding: 0 0 0 0;
   }
   @media ${media.lg} {
     font-size: 3rem;
@@ -187,6 +190,7 @@ const LandingTextBgSvg = styled.img`
 
 const MobileImgWrap = styled.div`
   position: relative;
+  display: ${props => (props.hide ? "none" : "block")};
 `;
 
 const MobileImgSvgTop = styled.img`
@@ -197,6 +201,22 @@ const MobileImgSvgTop = styled.img`
 
   @media ${media.md} {
     display: none;
+  }
+`;
+
+const ProductImgSvgTop = styled.img`
+  position: absolute;
+  top: -3em;
+  left: 2em;
+  width: 100%;
+  max-width: 500px;
+  z-index: -8;
+  opacity: 0.4;
+  transform: rotate(-15deg);
+  display: none;
+
+  @media ${media.md} {
+    display: block;
   }
 `;
 
@@ -376,8 +396,8 @@ class Landing extends Component {
           <LandingContent type={imageDesktop === null ? "product" : "landing"}>
             <Row>
               <Col
-                md={imageDesktop === null ? 9 : 8}
-                xl={imageDesktop === null ? 7 : 5}
+                md={imageDesktop === null ? 6 : 8}
+                xl={imageDesktop === null ? 6 : 5}
               >
                 {imageDesktop === null ? (
                   <HeaderTitle
@@ -389,7 +409,7 @@ class Landing extends Component {
 
                 <LandingH1 dangerouslySetInnerHTML={{ __html: title }} />
 
-                <MobileImgWrap>
+                <MobileImgWrap hide={imageDesktop === null}>
                   <MobileImgSvgTop src={landingMobileTopSVG} alt="" />
                   {imageDesktop !== null && (
                     <MobileImg
@@ -399,7 +419,7 @@ class Landing extends Component {
                   )}
 
                   {youtubeVideoID !== "" && youtubeVideoID !== null && (
-                    <WatchNowButton onClick={this.toggle} >
+                    <WatchNowButton onClick={this.toggle}>
                       <ButtonPlaySvg />
                       <span className="ml-3 video">{videoText}</span>
                     </WatchNowButton>
@@ -417,8 +437,8 @@ class Landing extends Component {
               </Col>
 
               {imageDesktop === null ? (
-                <Col>
-                  <span>LOGO TO BE ADDED</span>
+                <Col xl={4} md={6}>
+                  <ProductImgSvgTop src={landingProductTopSVG} alt="" />
                 </Col>
               ) : (
                 <></>

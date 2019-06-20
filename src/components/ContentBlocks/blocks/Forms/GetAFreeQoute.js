@@ -11,6 +11,17 @@ const Gdpr = styled.span`
   text-align: center;
 `;
 
+const InputStyled = styled.select`
+  background-color: transparent;
+  position: relative;
+  z-index: 1;
+  border-radius: 0;
+  border-color: ${props => props.theme.colors.greyMedium};
+  height: 40px;
+  width: 100%;
+  margin-top: 1rem;
+`;
+
 const FormGrp = styled(FormGroup)`
   margin: 0px;
 `;
@@ -99,7 +110,11 @@ class GetAFreeQoute extends Component {
       data.gdprPhone,
       data.gdprText
     );
-    let validation = !(form.checkValidity() && !(errors.length > 0));
+    let validation = !(
+      form.checkValidity() &&
+      !(errors.length > 0) &&
+      form.AccountingPackage.value.length != 0
+    );
     this.setState({ errors: validation, messages: errors });
 
     if (validation) {
@@ -128,7 +143,8 @@ class GetAFreeQoute extends Component {
       formStatus: "Submitted"
     });
 
-    
+    //return false;
+
     // console.log(`GDPR Email : ${form.gdprEmail.value}`);
     // console.log(`GDPR Phone : ${form.gdprPhone.value}`);
     // console.log(`GDPR Text : ${form.gdprText.value}`);
@@ -218,11 +234,18 @@ class GetAFreeQoute extends Component {
           />
         </FormGrp>
         <FormGrp>
-          <FloatingLabelInput
-            label="Accounting package*"
-            type="text"
-            name="AccountingPackage"
-          />
+          <InputStyled name="AccountingPackage" id="AccountingPackage">
+            <option value="">Accounting package*</option>
+            <option value="Aqilla">Aqilla</option>
+            <option value="NetSuite">NetSuite</option>
+            <option value="QuickBooks Desktop">QuickBooks Desktop</option>
+            <option value="QuickBooks Online">QuickBooks Online</option>
+            <option value="Sage 200">Sage 200</option>
+            <option value="Sage 50 Cloud">Sage 50 Cloud</option>
+            <option value="Sage 50 Desktop">Sage 50 Desktop</option>
+            <option value="Xero">Xero</option>
+            <option value="Other">Other</option>
+          </InputStyled>
         </FormGrp>
         <FormGrp>
           <FloatingLabelInput

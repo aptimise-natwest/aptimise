@@ -23,7 +23,8 @@ import {
 import { faAngleRight, faAngleLeft } from "@fortawesome/free-solid-svg-icons";
 import shortid from "shortid";
 import CaseStudyProvider from "../../shared/provider/CaseStudyProvider";
-import greyAngleBg from "images/backgrounds/grey-angle-bg.svg";
+import greyAngleBg from "images/backgrounds/grey-angle-bg-flat.svg";
+import aptimiseBoxes from "images/product-overviews/png/aptimise-boxes.png";
 
 const CaseStudyQoute = props => (
   <StaticQuery
@@ -203,13 +204,22 @@ const CaseItemQoute = styled(Text)`
     line-height: 1.2;
     font-weight: bold;
   }
+  &:before {
+    content: "“";
+    position: absolute;
+    font-size: 20em;
+    z-index: 999;
+    top: -0.75em;
+    left: -0.12em;
+    transform: rotate(-10deg);
+    opacity: 0.1;
+  }
 `;
 
 const CaseItemQouteBy = styled.div`
   color: #1e1e1e;
   font-weight: 300;
   margin: 10px 0;
-  font-size: 1.1em;
 `;
 
 const DesktopSvg = styled.img`
@@ -223,6 +233,16 @@ const DesktopSvg = styled.img`
     left: 50%;
     transform: translateX(-50%);
     max-width: none;
+  }
+`;
+
+const AptimiseBox = styled.img`
+  display: none;
+
+  @media ${media.md} {
+    display: block;
+    max-width: 100%;
+    max-height: 300px;
   }
 `;
 
@@ -388,11 +408,9 @@ class Blocks extends Component {
   render() {
     const CaseItem = ({ imageCopy, textHTML, position, links }) => (
       <Row>
-        <Col md={9}>
+        <Col sm={9}>
           <CaseItemContainer>
-            <CaseItemQoute
-              dangerouslySetInnerHTML={{ __html: "<h5>" + textHTML + "</h5>" }}
-            />
+            <CaseItemQoute dangerouslySetInnerHTML={{ __html: textHTML }} />
             <CaseItemQouteBy>{position}</CaseItemQouteBy>
             <LinkButton
               className="internalLink download"
@@ -403,6 +421,9 @@ class Blocks extends Component {
               Read full case study
             </LinkButton>
           </CaseItemContainer>
+        </Col>
+        <Col sm={3}>
+          <AptimiseBox src={aptimiseBoxes} alt="" />
         </Col>
       </Row>
     );

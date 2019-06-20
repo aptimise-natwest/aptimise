@@ -92,7 +92,7 @@ const DesktopSvg = styled.img`
   display: none;
 
   @media ${media.md} {
-    display: block;
+    display: ${props => (props.hide ? "block" : "none")};
     bottom: 0px;
     position: relative;
     width: calc(100% + 6px);
@@ -147,7 +147,7 @@ class Blocks extends Component {
 
   render() {
     const contentBlock = this.getBlock();
-
+    console.log(contentBlock);
     const GridItems = props => {
       return (
         <Item key={shortid.generate()}>
@@ -171,7 +171,7 @@ class Blocks extends Component {
 
     const GridColumns = props => (
       <Col
-        xl={props.singlerow==='true' ? 2 : 4}
+        xl={props.singlerow === "true" ? 2 : 4}
         className={props.className}
         singlerow={props.singlerow}
       >
@@ -194,7 +194,7 @@ class Blocks extends Component {
                   key={shortid.generate()}
                   block={block}
                   i={i}
-                  singlerow={singlerow?'true':'false'}
+                  singlerow={singlerow ? "true" : "false"}
                 />
               ) : (
                 <GridColumns
@@ -212,7 +212,7 @@ class Blocks extends Component {
                       ? "offset-xl-2"
                       : ""
                   }
-                  singlerow={singlerow?'true':'false'}
+                  singlerow={singlerow ? "true" : "false"}
                 />
               )}
             </React.Fragment>
@@ -232,7 +232,7 @@ class Blocks extends Component {
         <GridSectionHeader>
           <GridHeader>
             <h5>{contentBlock.node.title}</h5>
-            <p>{contentBlock.node.desc}</p>
+            <p>{contentBlock.node.desc} </p>
           </GridHeader>
         </GridSectionHeader>
 
@@ -240,7 +240,11 @@ class Blocks extends Component {
           {/* {faqBlocks} */}
           <GridBlocks key={shortid.generate()} contentBlock={contentBlock} />
         </GridWrap>
-        <DesktopSvg src={greyAngleBg} alt="" />
+        <DesktopSvg
+          src={greyAngleBg}
+          alt={contentBlock.node.separator}
+          hide={contentBlock.node.separator}
+        />
       </ContainerMaxWidth>
     );
   }

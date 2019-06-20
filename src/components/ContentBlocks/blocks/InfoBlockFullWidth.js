@@ -31,8 +31,8 @@ const InfoBlocksFullWidth = props => (
 );
 
 const ContentWrap = styled.div`
-  box-shadow: 0px 0px 4px 2px rgba(232, 227, 236);
-  padding: 40px;
+  box-shadow: rgba(40, 41, 44, 0.12) 0px 1px 10px 1px;
+  padding: 30px 50px;
   p {
     list-style: disc outside none;
     display: list-item;

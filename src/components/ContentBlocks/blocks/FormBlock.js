@@ -45,6 +45,24 @@ const DownloadForm = styled.span`
   display: ${props => props.display};
 `;
 
+const FormHeaderSection = styled.div`
+  display: none;
+
+  @media ${media.md} {
+    display: block;
+  }
+`;
+
+const FluidContainer = styled.div`
+  background-color: #f9f9f9;
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 90px;
+`;
+
 const ThankYouContainer = styled.span`
   display: "block";
   text-align: center;
@@ -89,7 +107,7 @@ const LinkItem = styled.a`
 const RowVerticalAlign = styled(Row)`
   display: flex;
   align-items: center;
-  background-color: ${props => props.theme.colors.white};
+  background-color: #f9f9f9;
 `;
 
 const FullGrey = styled.div`
@@ -103,7 +121,7 @@ const ContentWrap = styled.div`
 
 const ThanksYou = props => {
   var thankYouBlock;
- 
+
   const {
     title,
     textHTML,
@@ -248,18 +266,20 @@ class Form extends Component {
     ));
 
     return (
-      <>
+      <FluidContainer>
         <ContainerMaxWidth className="py-3 py-lg-4">
           <RowVerticalAlign>
             <Col lg={{ size: 6, order: 2 }}>
               <ContentWrap>{componentsElements}</ContentWrap>
             </Col>
             <Col lg={{ size: 6, order: 1 }}>
-              <h4>{title}</h4>
-              <Text
-                dangerouslySetInnerHTML={{ __html: textHTML }}
-                className="py-2"
-              />
+              <FormHeaderSection className="d-sm-none d-md-block">
+                <h4>{title}</h4>
+                <Text
+                  dangerouslySetInnerHTML={{ __html: textHTML }}
+                  className="py-2"
+                />
+              </FormHeaderSection>
             </Col>
           </RowVerticalAlign>
         </ContainerMaxWidth>
@@ -283,7 +303,7 @@ class Form extends Component {
             </Container>
           </ModalBody>
         </ModalAngled>
-      </>
+      </FluidContainer>
     );
   }
 }

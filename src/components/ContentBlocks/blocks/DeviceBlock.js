@@ -22,10 +22,10 @@ const DeviceContent = styled(Row)`
     position: relative;
     z-index: 2;
     padding-top: 3rem;
-    padding-bottom: 15rem;
+    padding-bottom: 10rem;
 
     @media ${media.sm} {
-        padding-bottom: 15rem;
+        padding-bottom: 10rem;
     }
 
     @media ${media.md} {
@@ -34,7 +34,7 @@ const DeviceContent = styled(Row)`
     }
 
     @media ${media.lg} {
-        padding-bottom: 15rem;
+        padding-bottom: 10rem;
     }
 `
 
