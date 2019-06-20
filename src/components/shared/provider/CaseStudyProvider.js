@@ -14,7 +14,7 @@ const CaseStudyProvider = props => {
   };
 
   let caseItem = filterValues(props.filter);
-  console.log(caseItem);
+
   return props.children(caseItem);
 };
 

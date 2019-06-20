@@ -28,20 +28,16 @@ const FormBlock = props => (
               title
               textHTML
               buttonText
-              image {
-                childImageSharp {
-                  fluid(maxWidth: 865) {
-                    ...GatsbyImageSharpFluid
-                  }
-                }
-              }
+              form
+              thankYouTitle
+              thankYouMessage
             }
           }
         }
       }
     `}
     // render={data => <WhitePaper data={data} id={props.id} log={props.log} />}
-    render={data => <WhitePaper data={data} id={props.id} />}
+    render={data => <Form data={data} id={props.id} />}
   />
 );
 
@@ -93,7 +89,6 @@ const LinkItem = styled.a`
 const RowVerticalAlign = styled(Row)`
   display: flex;
   align-items: center;
-  box-shadow: 0px 0px 4px 2px rgba(171, 168, 171, 1);
   background-color: ${props => props.theme.colors.white};
 `;
 
@@ -101,20 +96,29 @@ const FullGrey = styled.div`
   background-color: ${props => props.theme.colors.greyLight};
 `;
 
+const ContentWrap = styled.div`
+  box-shadow: 0px 0px 4px 2px rgba(232, 227, 236);
+  padding: 40px;
+`;
+
 const ThanksYou = props => {
   var thankYouBlock;
+ 
+  const {
+    title,
+    textHTML,
+    buttonText,
+    form,
+    thankYouTitle,
+    thankYouMessage
+  } = props.block.node;
 
   if (props.downloaded) {
     thankYouBlock = (
       <ThankYouContainer>
-        <h2>Thank you!</h2>
+        <Text dangerouslySetInnerHTML={{ __html: thankYouTitle }} size="lg" />
+        <Text dangerouslySetInnerHTML={{ __html: thankYouMessage }} size="lg" />
 
-        <p>Your guide to an automated future is now in your downloads.</p>
-
-        <p>
-          If you want to know more about the specific benefits of AP automation
-          for your business, schedule a personalised AP consultation today.{" "}
-        </p>
         <p>
           <Button
             as="button"
@@ -156,12 +160,14 @@ const ThanksYou = props => {
   return <>{thankYouBlock}</>;
 };
 
-class WhitePaper extends Component {
+class Form extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      modal: false
+      modal: false,
+      block: null,
+      components: []
     };
 
     this.toggle = this.toggle.bind(this);
@@ -177,46 +183,83 @@ class WhitePaper extends Component {
     // console.log(this.state);
     // console.log(window.location);
     this.setState(prevState => ({
-      modal: window.location.search.includes("thankyou"),
-      downloaded: window.location.search.includes("thankyou")
+      modal:
+        window.location.search.includes("thankyou") &&
+        (window.location.search.includes("pricing") ||
+          window.location.search.includes("consultation")),
+      downloaded:
+        window.location.search.includes("thankyou") &&
+        (window.location.search.includes("pricing") ||
+          window.location.search.includes("consultation"))
     }));
-    // console.log("--------");
+    // console.log("---FORMSSSS-----");
     // console.log(this.props);
     // console.log("--------");
+
+    const block = this.props.data.allContentBlocksJson.edges.filter(
+      ({ node }) => this.props.id === node.id
+    )[0];
+
+    this.setState({
+      block: block
+    });
+
+    this.addComponent(block.node.form);
   }
+
+  addComponent = type => {
+    console.log(`Loading ${type} component...`);
+
+    try {
+      import(`./Forms/${type}.js`)
+        .then(component =>
+          this.setState({
+            components: this.state.components.concat(component.default)
+          })
+        )
+        .catch(error => {
+          console.error(`"${type}" not yet supported`);
+        });
+    } catch (error) {
+      console.error(`"${error}"`);
+    }
+  };
+
   render() {
     // Retrieve block
     const block = this.props.data.allContentBlocksJson.edges.filter(
       ({ node }) => this.props.id === node.id
     )[0];
+    const {
+      title,
+      textHTML,
+      buttonText,
+      form,
+      thankYouTitle,
+      thankYouMessage
+    } = block.node;
 
-    const { title, textHTML, buttonText, image } = block.node;
+    const { components } = this.state;
+
+    if (components.length === 0) return <div>Loading...</div>;
+
+    const componentsElements = components.map(Component => (
+      <Component key="sfsfsdfsdre" />
+    ));
+
     return (
-      <FullGrey>
+      <>
         <ContainerMaxWidth className="py-3 py-lg-4">
           <RowVerticalAlign>
-            <Col lg={{ size: 5, order: 2 }}>
-              <Img
-                fluid={image.childImageSharp.fluid}
-                className="my-3"
-                alt={title}
-              />
+            <Col lg={{ size: 6, order: 2 }}>
+              <ContentWrap>{componentsElements}</ContentWrap>
             </Col>
-            <Col lg={{ offset:1, size: 5, order: 1 }}>
+            <Col lg={{ size: 6, order: 1 }}>
               <h4>{title}</h4>
               <Text
                 dangerouslySetInnerHTML={{ __html: textHTML }}
                 className="py-2"
               />
-              <Button
-                onClick={this.toggle}
-                as="button"
-                purple
-                blockMobile
-                id="whitepaper-download-button"
-              >
-                {buttonText}
-              </Button>
             </Col>
           </RowVerticalAlign>
         </ContainerMaxWidth>
@@ -233,21 +276,14 @@ class WhitePaper extends Component {
                   <ThanksYou
                     downloaded={this.state.downloaded}
                     toggleModal={this.toggle}
+                    {...this.state}
                   />
-                  <DownloadForm
-                    display={this.state.downloaded ? "none" : "block"}
-                  >
-                    <h4 className="text-center pb-3 pb-md-4">
-                      Download Whitepaper
-                    </h4>
-                    <WhitePaperForm downloaded={this.state.downloaded} />
-                  </DownloadForm>
                 </Col>
               </Row>
             </Container>
           </ModalBody>
         </ModalAngled>
-      </FullGrey>
+      </>
     );
   }
 }

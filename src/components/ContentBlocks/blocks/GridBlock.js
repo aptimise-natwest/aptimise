@@ -15,6 +15,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleDown } from "@fortawesome/free-solid-svg-icons";
 import Img from "gatsby-image";
 import greyAngleBg from "images/backgrounds/grey-angle-bg.svg";
+import shortid from "shortid";
 
 const GridBlock = props => (
   <StaticQuery
@@ -29,12 +30,12 @@ const GridBlock = props => (
               renderSingleRow
               separator
               gridBlocks {
-                icon{
-                  childImageSharp {	
-                    fluid (quality:100) {	
-                      ...GatsbyImageSharpFluid	
-                    }	
-                  }	
+                icon {
+                  childImageSharp {
+                    fluid(quality: 100) {
+                      ...GatsbyImageSharpFluid
+                    }
+                  }
                 }
                 displayIcon
                 title
@@ -149,14 +150,13 @@ class Blocks extends Component {
 
     const GridItems = props => {
       return (
-        <Item>
+        <Item key={shortid.generate()}>
           {props.block.displayIcon && (
             <Icon gradient={props.singlerow}>
               <IconImg
-                 fluid={props.block.icon.childImageSharp.fluid}
+                fluid={props.block.icon.childImageSharp.fluid}
                 gradient={props.singlerow}
               />
-              
             </Icon>
           )}
 
@@ -171,7 +171,7 @@ class Blocks extends Component {
 
     const GridColumns = props => (
       <Col
-        xl={props.singlerow ? 2 : 4}
+        xl={props.singlerow==='true' ? 2 : 4}
         className={props.className}
         singlerow={props.singlerow}
       >
@@ -188,11 +188,17 @@ class Blocks extends Component {
       function renderBlocks(singlerow) {
         return function(block, i, arr) {
           return (
-            <>
+            <React.Fragment key={shortid.generate()}>
               {(i + 1) % 3 === 0 ? (
-                <GridColumns block={block} i={i} singlerow={singlerow} />
+                <GridColumns
+                  key={shortid.generate()}
+                  block={block}
+                  i={i}
+                  singlerow={singlerow?'true':'false'}
+                />
               ) : (
                 <GridColumns
+                  key={shortid.generate()}
                   block={block}
                   i={i}
                   className={
@@ -206,10 +212,10 @@ class Blocks extends Component {
                       ? "offset-xl-2"
                       : ""
                   }
-                  singlerow={singlerow}
+                  singlerow={singlerow?'true':'false'}
                 />
               )}
-            </>
+            </React.Fragment>
           );
         };
       }
@@ -232,7 +238,7 @@ class Blocks extends Component {
 
         <GridWrap>
           {/* {faqBlocks} */}
-          <GridBlocks contentBlock={contentBlock} />
+          <GridBlocks key={shortid.generate()} contentBlock={contentBlock} />
         </GridWrap>
         <DesktopSvg src={greyAngleBg} alt="" />
       </ContainerMaxWidth>

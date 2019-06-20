@@ -21,45 +21,44 @@ import {
 } from "@fortawesome/free-brands-svg-icons";
 
 import { faAngleRight, faAngleLeft } from "@fortawesome/free-solid-svg-icons";
-
+import shortid from "shortid";
 import CaseStudyProvider from "../../shared/provider/CaseStudyProvider";
 import greyAngleBg from "images/backgrounds/grey-angle-bg.svg";
 
-const CaseStudyQoute = props =>
-  console.log(props) || (
-    <StaticQuery
-      query={graphql`
-        query {
-          allContentBlocksJson {
-            edges {
-              node {
-                id
-                type
-                referenceBlock
-                dataFilter
-                carouselBlocks {
-                  imageCopy
-                  name
-                  position
-                  textHTML
-                  twitter
-                  linkedIn
-                  facebook
-                  youtubeVideoId
-                  links {
-                    link
-                    linkText
-                    download
-                  }
+const CaseStudyQoute = props => (
+  <StaticQuery
+    query={graphql`
+      query {
+        allContentBlocksJson {
+          edges {
+            node {
+              id
+              type
+              referenceBlock
+              dataFilter
+              carouselBlocks {
+                imageCopy
+                name
+                position
+                textHTML
+                twitter
+                linkedIn
+                facebook
+                youtubeVideoId
+                links {
+                  link
+                  linkText
+                  download
                 }
               }
             }
           }
         }
-      `}
-      render={data => <Blocks data={data} id={props.id} />}
-    />
-  );
+      }
+    `}
+    render={data => <Blocks data={data} id={props.id} />}
+  />
+);
 
 const CarouselWrap = styled.div`
   padding-top: 1.5rem;
@@ -434,6 +433,7 @@ class Blocks extends Component {
                     textHTML={textHTML}
                     position={position}
                     links={links}
+                    key={shortid.generate()}
                   />
                 ))
               }

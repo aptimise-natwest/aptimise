@@ -12,6 +12,7 @@
       "whitePaperBlockHome",
       "deviceBlockHome",
       "carouselBlockHome",
+      "getAFreeQoute",
       "infoBlockFullWidthHome"
     ]
   },
@@ -72,7 +73,8 @@
       "productOverview",
       "caseStudyQoute",
       "productFeatures",
-      "productIntegration"
+      "productIntegration",
+      "bookAfreeConsultation"
     ]
   }
 ]

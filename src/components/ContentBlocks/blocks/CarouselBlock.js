@@ -389,9 +389,8 @@ class Blocks extends Component {
 
     const { title, textHTML } = block.node;
 
-    console.log(block);
     const carouselBottom = block.node.carouselBlocks.map((block, i) => {
-      console.log(block.links);
+
       const youtubeSrc = `https://www.youtube.com/embed/${
         block.youtubeVideoId
       }?rel=0`;

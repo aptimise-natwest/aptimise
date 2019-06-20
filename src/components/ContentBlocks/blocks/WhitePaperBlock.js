@@ -177,8 +177,12 @@ class WhitePaper extends Component {
     // console.log(this.state);
     // console.log(window.location);
     this.setState(prevState => ({
-      modal: window.location.search.includes("thankyou"),
-      downloaded: window.location.search.includes("thankyou")
+      modal:
+        window.location.search.includes("thankyou") &&
+        window.location.search.includes("whitepaper"),
+      downloaded:
+        window.location.search.includes("thankyou") &&
+        window.location.search.includes("whitepaper")
     }));
     // console.log("--------");
     // console.log(this.props);
@@ -202,7 +206,7 @@ class WhitePaper extends Component {
                 alt={title}
               />
             </Col>
-            <Col lg={{ offset:1, size: 5, order: 1 }}>
+            <Col lg={{ offset: 1, size: 5, order: 1 }}>
               <h4>{title}</h4>
               <Text
                 dangerouslySetInnerHTML={{ __html: textHTML }}
