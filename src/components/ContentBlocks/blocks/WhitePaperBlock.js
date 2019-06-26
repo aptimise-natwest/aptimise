@@ -93,19 +93,22 @@ const LinkItem = styled.a`
 const RowVerticalAlign = styled(Row)`
   display: flex;
   align-items: center;
-  
+
   background-color: ${props => props.theme.colors.white};
 
   box-shadow: rgba(40, 41, 44, 0.12) 0px 1px 10px 1px;
 
-padding: 50px;
+  padding: 50px;
 
-margin: 75px 0px;
-
+  margin: 75px 0px;
 `;
 
 const FullGrey = styled.div`
   background-color: ${props => props.theme.colors.greyLight};
+
+  h4 {
+    font-size: 2rem;
+  }
 `;
 
 const ThanksYou = props => {

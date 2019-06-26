@@ -29,6 +29,11 @@ const InfoBlocksFullWidth = props => (
     render={data => <Blocks data={data} id={props.id} theme={props.theme} />}
   />
 );
+const Content = styled.span`
+  h4 {
+    font-size: 2rem;
+  }
+`;
 
 const ContentWrap = styled.div`
   box-shadow: rgba(40, 41, 44, 0.12) 0px 1px 10px 1px;
@@ -99,15 +104,17 @@ class Blocks extends Component {
                   <Animation type={animation} play={this.state.animation} />
                 </Col>
                 <Col xs={9} sm={{ offset: 1, size: 8 }} lg={7} xl={8}>
-                  <h4 className="pb-3">{title}</h4>
+                  <Content>
+                    <h4 className="pb-3">{title}</h4>
 
-                  <Text
-                    dangerouslySetInnerHTML={{ __html: textIntroHTML }}
-                    size="lg"
-                  />
-                  <ContentWrap>
-                    <Text dangerouslySetInnerHTML={{ __html: textHTML }} />
-                  </ContentWrap>
+                    <Text
+                      dangerouslySetInnerHTML={{ __html: textIntroHTML }}
+                      size="lg"
+                    />
+                    <ContentWrap>
+                      <Text dangerouslySetInnerHTML={{ __html: textHTML }} />
+                    </ContentWrap>
+                  </Content>
                 </Col>
               </Row>
             </Col>

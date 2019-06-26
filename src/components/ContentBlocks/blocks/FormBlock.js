@@ -47,7 +47,9 @@ const DownloadForm = styled.span`
 
 const FormHeaderSection = styled.div`
   display: none;
-
+  h4 {
+    font-size: 2rem;
+  }
   @media ${media.md} {
     display: block;
   }

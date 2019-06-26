@@ -77,10 +77,11 @@ const GridSectionHeader = styled(Row)`
 const GridHeader = styled.div`
   text-align: center;
   width: 100%;
-  h5 {
+  h4 {
     font-size: 1.8em;
     line-height: 1.2;
     font-weight: bold;
+    padding-bottom: 20px;
   }
 
   p {
@@ -231,7 +232,7 @@ class Blocks extends Component {
       <ContainerMaxWidth className="pt-3 pt-lg-4">
         <GridSectionHeader>
           <GridHeader>
-            <h5>{contentBlock.node.title}</h5>
+            <h4>{contentBlock.node.title}</h4>
             <p>{contentBlock.node.desc} </p>
           </GridHeader>
         </GridSectionHeader>

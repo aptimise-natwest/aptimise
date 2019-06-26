@@ -156,12 +156,45 @@ const LandingText = styled(Text)`
       props.type === "product"
         ? props.theme.colors.black
         : props.theme.colors.white};
+    padding: 0;
+    font-size: 1.15rem;
+    position: relative;
+    top: -5px;
+  }
+
+  @media ${media.lg} {
     padding: 1rem 0;
     font-size: 1.15rem;
   }
 
+  #fineprint {
+    font-size: 0.7em;
+    padding-top: 10px;
+    font-weight: bold;
+  }
+  @media ${media.md} {
+    #fineprint {
+      display: block;
+      text-align: right;
+      position: relative;
+      top: -34px;
+    }
+  }
+
   @media ${media.lg} {
-    font-size: ${props => props.theme.font.size.lg};
+    #fineprint {
+      /* text-align: right; */
+      text-align: right;
+      position: unset;
+    }
+  }
+
+  @media ${media.xl} {
+    #fineprint {
+      /* text-align: right; */
+      text-align: left;
+      position: unset;
+    }
   }
 `;
 
