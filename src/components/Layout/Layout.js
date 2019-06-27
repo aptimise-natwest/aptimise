@@ -31,7 +31,6 @@ class Layout extends Component {
                     {SEOMarkup}
                     <GlobalStyles />
                     <Header data={this.props.data} />
-                    TESTING
                     <main>{this.props.children}</main>
                     <Footer />
                     <ModalBookDemo />

@@ -261,7 +261,7 @@ class Landing extends Component {
         return (
             <>
                 <LandingWrapper>
-                    <DesktopImg fluid={imageDesktop.childImageSharp.fluid} alt={title} />
+                    <DesktopImg fluid={imageDesktop.childImageSharp.fluid} alt={title} critical={true} />
                     <DesktopSvg src={landingBlockSVG} alt="" />
 
                     <LandingContent>
