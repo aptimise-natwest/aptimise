@@ -8,6 +8,7 @@ module.exports = {
   plugins: [
     `gatsby-plugin-react-helmet`,
     "gatsby-plugin-resolve-src",
+    "gatsby-plugin-remove-serviceworker",
     `gatsby-plugin-styled-components`,
     {
       resolve: `gatsby-plugin-sass`,
