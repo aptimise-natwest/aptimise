@@ -69,22 +69,22 @@ module.exports = {
 				icon: `src/images/favicon.png`, // This path is relative to the root of the site.
 			},
 		},
-		// {
-		// 	resolve: `gatsby-plugin-google-tagmanager`,
-		// 	options: {
-        //         id: "GTM-5Z9DS9R",
+		{
+			resolve: `gatsby-plugin-google-tagmanager`,
+			options: {
+                id: "GTM-5Z9DS9R",
 
-		// 		// Include GTM in development.
-		// 		// Defaults to false meaning GTM will only be loaded in production.
-		// 		includeInDevelopment: false,
+				// Include GTM in development.
+				// Defaults to false meaning GTM will only be loaded in production.
+				includeInDevelopment: false,
 
-		// 		// Specify optional GTM environment details.
-		// 		// gtmAuth: "YOUR_GOOGLE_TAGMANAGER_ENVIROMENT_AUTH_STRING",
-		// 		// gtmPreview: "YOUR_GOOGLE_TAGMANAGER_ENVIROMENT_PREVIEW_NAME",
-		// 	},
-		// },
+				// Specify optional GTM environment details.
+				// gtmAuth: "YOUR_GOOGLE_TAGMANAGER_ENVIROMENT_AUTH_STRING",
+				// gtmPreview: "YOUR_GOOGLE_TAGMANAGER_ENVIROMENT_PREVIEW_NAME",
+			},
+		},
 		// this (optional) plugin enables Progressive Web App + Offline functionality
 		// To learn more, visit: https://gatsby.app/offline
-		// 'gatsby-plugin-offline',
+		'gatsby-plugin-offline',
 	],
 }
