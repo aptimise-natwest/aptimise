@@ -474,8 +474,8 @@
     "textHTML": "<p>Our fees are based on the volume of supplier invoices you and your team process per month. Our web-based solution helps you streamline your accounts payable process, allowing you to save time, reduce errors and improve visibility of your cash flow.</p>",
     "buttonText": null,
     "form": "GetAFreeQoute",
-    "thankYouTitle": "<h2>Thank you! - GetAFreeQoute</h2>",
-    "thankYouMessage": "<p>Your guide to an automated future is now in your downloads.</p><p>If you want to know more about the specific benefits of AP automation for your business, schedule a personalised AP consultation today.</p>"
+    "thankYouTitle": "<h2>Thank you!</h2>",
+    "thankYouMessage": "<p>If you want to know more about the specific benefits of AP automation for your business, schedule a personalised AP consultation today.</p>"
   },
   {
     "id": "bookAfreeConsultation",
@@ -484,7 +484,7 @@
     "textHTML": "<p>Accounts Payable Automation replaces manual, paper-based processes and spreadsheets, and removes time-consuming and costly tasks, allowing you to focus on growing your business.</p><p>Get in touch with one of our Accounts Payable experts to discuss your pain points associated with traditional AP processes and see how quickly these can be automated from submission of the invoices, right through to the payment stage.</p>",
     "buttonText": null,
     "form": "BookAfreeConsultation",
-    "thankYouTitle": "<h2>Thank you! - BookAfreeConsultation</h2>",
-    "thankYouMessage": "<p>Your guide to an automated future is now in your downloads.</p><p>If you want to know more about the specific benefits of AP automation for your business, schedule a personalised AP consultation today.</p>"
+    "thankYouTitle": "<h2>Thank you!</h2>",
+    "thankYouMessage": "<p>If you want to know more about the specific benefits of AP automation for your business, schedule a personalised AP consultation today.</p>"
   }
 ]
