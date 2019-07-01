@@ -486,5 +486,12 @@
     "form": "BookAfreeConsultation",
     "thankYouTitle": "<h2>Thank you!</h2>",
     "thankYouMessage": "<p>If you want to know more about the specific benefits of AP automation for your business, schedule a personalised AP consultation today.</p>"
+  },
+  {
+    "id": "textThankYouBlock",
+    "type": "SocialBlock",
+    "size": "l",
+    "weight": "regular",
+    "textHTML": "<center><h4>Thank you!</h4><h5>If you want to know more about the specific benefits of AP automation for your business, schedule a personalised AP consultation today.</h5></center>"
   }
 ]
