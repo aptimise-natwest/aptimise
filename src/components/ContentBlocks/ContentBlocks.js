@@ -17,6 +17,7 @@ import ImageTextBlock from "./blocks/ImageTextBlock";
 import FaqBlocks from "./blocks/FaqBlocks";
 import GridBlock from "./blocks/GridBlock";
 import CaseStudyQoute from "./blocks/CaseStudyQoute";
+import SocialBlock from "./blocks/SocialBlock";
 const ContentBlocks = props => {
   const pageBlocks = props.data.pagesJson.contentBlocks;
 
@@ -63,6 +64,9 @@ const ContentBlocks = props => {
 
         case "TextBlock":
           return <TextBlock id={block.node.id} key={i} />;
+
+        case "SocialBlock":
+          return <SocialBlock id={block.node.id} key={i} />;
 
         case "TextBlockTerms":
           return <TextBlockTerms id={block.node.id} key={i} />;
