@@ -17,6 +17,8 @@ import {
   faLinkedin
 } from "@fortawesome/free-brands-svg-icons";
 import { media } from "utils/Media";
+import LinkBlock from "./LinkBlock";
+
 const FormBlock = props => (
   <StaticQuery
     query={graphql`
@@ -31,6 +33,11 @@ const FormBlock = props => (
               form
               thankYouTitle
               thankYouMessage
+              links {
+                link
+                linkText
+                download
+              }
             }
           }
         }
@@ -125,12 +132,14 @@ const ThanksYou = props => {
   var thankYouBlock;
 
   const {
+    id,
     title,
     textHTML,
     buttonText,
     form,
     thankYouTitle,
-    thankYouMessage
+    thankYouMessage,
+    links
   } = props.block.node;
 
   if (props.downloaded) {
@@ -140,13 +149,16 @@ const ThanksYou = props => {
         <Text dangerouslySetInnerHTML={{ __html: thankYouMessage }} size="lg" />
 
         <p>
+          
           <Button
             as="button"
             className="trigger-bookdemo-modal"
             onClick={props.toggleModal}
+            display={links.length===0?'true':'false'}
           >
             Schedule now
           </Button>
+          <LinkBlock id={id} />
           <p>
             <LinkWrap>
               <LinkItem

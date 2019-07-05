@@ -3,7 +3,7 @@ import { media } from "utils/Media"
 
 const Button = styled.a`
     cursor: pointer;
-    display: inline-block;
+    display: ${props => (props.display==='false')?'none':'inline-block'}; 
     text-align: center;
     font-family: ${props => props.theme.font.family.base};
     font-size: ${props => props.theme.font.size.md};

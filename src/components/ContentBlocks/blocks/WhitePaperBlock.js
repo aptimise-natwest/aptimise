@@ -119,11 +119,11 @@ const ThanksYou = props => {
       <ThankYouContainer>
         <h2>Thank you!</h2>
 
-        <p>Your guide to an automated future is now in your downloads.</p>
+        <p>Your Whitepaper is on its way to you!.</p>
 
         <p>
-          If you want to know more about the specific benefits of AP automation
-          for your business, schedule a personalised AP consultation today.{" "}
+          In the meantime, if you are interested in finding out how APtimise can
+          help with your AP processes, book a FREE demo with one of our experts!
         </p>
         <p>
           <Button
@@ -131,7 +131,7 @@ const ThanksYou = props => {
             className="trigger-bookdemo-modal"
             onClick={props.toggleModal}
           >
-            Schedule now
+            Book a FREE demo
           </Button>
           <p>
             <LinkWrap>
