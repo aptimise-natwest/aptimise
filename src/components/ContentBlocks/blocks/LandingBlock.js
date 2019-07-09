@@ -13,9 +13,13 @@ import ModalVideo from "components/shared/ModalVideo";
 import ModalVideoClose from "components/shared/ModalVideoClose";
 
 import landingBlockSVG from "images/backgrounds/landing-block.svg";
+import landingProductBlockSVG from "images/backgrounds/landing-product-block.svg";
 import landingTextMobileSVG from "images/backgrounds/landing-text-mobile.svg";
 import landingMobileTopSVG from "images/backgrounds/landing-mobile-top.svg";
 import landingMobileBottomSVG from "images/backgrounds/landing-mobile-bottom.svg";
+import Button from "components/shared/Button";
+
+import landingProductTopSVG from "images/product-overviews/svg/rocket.svg";
 
 const LandingWrapper = styled.div`
   max-width: 1500px;
@@ -30,20 +34,33 @@ const LandingWrapper = styled.div`
 `;
 
 const LandingContent = styled(ContainerMaxWidth)`
-  padding-left: 0;
+  padding-left: ${props => (props.type === "product" ? "1px" : 0)};
+  padding-top: ${props => (props.type === "product" ? "20px" : 0)};
   padding-right: 0;
+
   @media ${media.md} {
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
     top: 3rem;
-    color: ${props => props.theme.colors.white};
+    color: ${props =>
+      props.type === "product"
+        ? props.theme.colors.black
+        : props.theme.colors.white};
   }
   @media ${media.xl} {
     top: 4rem;
+    color: ${props =>
+      props.type === "product"
+        ? props.theme.colors.black
+        : props.theme.colors.white};
   }
   @media ${media.xl} {
     top: 8rem;
+    color: ${props =>
+      props.type === "product"
+        ? props.theme.colors.black
+        : props.theme.colors.white};
   }
 `;
 
@@ -63,6 +80,26 @@ const DesktopImg = styled(Img)`
 
   @media ${media.md} {
     display: block;
+  }
+`;
+
+const DesktopHero = styled.div`
+  display: none;
+
+  &:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: ${props => props.theme.colors.greyLight};
+    opacity: 0.2;
+  }
+
+  @media ${media.md} {
+    display: block;
+    height: ${media.md.replace("(min-width:", "").replace(")", "")};
   }
 `;
 
@@ -93,26 +130,71 @@ const LandingH1 = styled.h1`
   padding: 1rem 2rem;
   @media ${media.md} {
     font-size: 2rem;
-    padding: 0 0 2rem 0;
+    padding: 0 0 0 0;
   }
   @media ${media.lg} {
     font-size: 3rem;
   }
 `;
 
+const HeaderTitle = styled(Text)`
+  color: ${props => props.theme.colors.turquoise};
+  font-family: ${props => props.theme.font.family.bold};
+  letter-spacing: 3px;
+`;
+
 const LandingText = styled(Text)`
   font-size: 1rem;
   padding: 1rem 2rem;
-  color: ${props => props.theme.colors.backOff};
+  color: ${props =>
+    props.type === "product"
+      ? props.theme.colors.black
+      : props.theme.colors.backOff};
 
   @media ${media.md} {
-    color: ${props => props.theme.colors.white};
+    color: ${props =>
+      props.type === "product"
+        ? props.theme.colors.black
+        : props.theme.colors.white};
+    padding: 0;
+    font-size: 1.15rem;
+    position: relative;
+    top: -5px;
+  }
+
+  @media ${media.lg} {
     padding: 1rem 0;
     font-size: 1.15rem;
   }
 
+  #fineprint {
+    font-size: 0.7em;
+    padding-top: 10px;
+    font-weight: bold;
+  }
+  @media ${media.md} {
+    #fineprint {
+      display: block;
+      text-align: right;
+      position: relative;
+      top: -34px;
+    }
+  }
+
   @media ${media.lg} {
-    font-size: ${props => props.theme.font.size.lg};
+    #fineprint {
+      /* text-align: right; */
+      text-align: right;
+      position: unset;
+    }
+  }
+
+  @media ${media.xl} {
+    #fineprint {
+      /* text-align: right; */
+      text-align: left;
+      position: unset;
+    }
   }
 `;
 
@@ -141,6 +223,7 @@ const LandingTextBgSvg = styled.img`
 
 const MobileImgWrap = styled.div`
   position: relative;
+  display: ${props => (props.hide ? "none" : "block")};
 `;
 
 const MobileImgSvgTop = styled.img`
@@ -151,6 +234,22 @@ const MobileImgSvgTop = styled.img`
 
   @media ${media.md} {
     display: none;
+  }
+`;
+
+const ProductImgSvgTop = styled.img`
+  position: absolute;
+  top: -3em;
+  left: 2em;
+  width: 100%;
+  max-width: 500px;
+  z-index: -8;
+  opacity: 0.4;
+  transform: rotate(-15deg);
+  display: none;
+
+  @media ${media.md} {
+    display: block;
   }
 `;
 
@@ -165,22 +264,66 @@ const MobileImgSvgBottom = styled.img`
   }
 `;
 
-const WatchNowButton = styled.button`
+const WatchNowButton = styled(Button)`
   font-size: ${props => props.theme.font.size.xl};
-  background-color: transparent;
-  border: 0;
-  color: ${props => props.theme.colors.white};
-  position: absolute;
-  bottom: 3rem;
-  left: 2rem;
-  z-index: 2;
+  margin-bottom: 0.5rem;
+  position: relative;
+  z-index: 1;
+  width: 100%;
 
   @media ${media.md} {
-    position: relative;
-    left: auto;
-    bottom: auto;
+    width: auto;
+    margin-right: 0.5rem;
+  }
+
+  &.internalLink {
+    color: ${props => props.theme.colors.white};
+    background-color: ${props => props.theme.colors.purpleDark};
+    &:hover {
+      color: ${props => props.theme.colors.white};
+      background-color: ${props => props.theme.colors.purpleDark};
+    }
+  }
+
+  &.internalPageLink {
+    color: ${props => props.theme.colors.white};
+    background-color: ${props => props.theme.colors.turquoise};
+    &:hover {
+      color: ${props => props.theme.colors.white};
+      background-color: ${props => props.theme.colors.turquoise};
+    }
   }
 `;
+
+// const LinkButton = styled(Button)`
+//   margin-bottom: 0.5rem;
+//   position: relative;
+//   z-index: 1;
+//   width: 100%;
+
+//   @media ${media.md} {
+//     width: auto;
+//     margin-right: 0.5rem;
+//   }
+
+//   &.internalLink {
+//     color: ${props => props.theme.colors.white};
+//     background-color: ${props => props.theme.colors.purpleDark};
+//     &:hover {
+//       color: ${props => props.theme.colors.white};
+//       background-color: ${props => props.theme.colors.purpleDark};
+//     }
+//   }
+
+//   &.internalPageLink {
+//     color: ${props => props.theme.colors.white};
+//     background-color: ${props => props.theme.colors.turquoise};
+//     &:hover {
+//       color: ${props => props.theme.colors.white};
+//       background-color: ${props => props.theme.colors.turquoise};
+//     }
+//   }
+// `;
 
 const LandingBlock = props => (
   <StaticQuery
@@ -205,6 +348,8 @@ const LandingBlock = props => (
                 }
               }
               title
+              headerTitle
+              pageType
               videoText
               youtubeVideoID
               text
@@ -247,7 +392,9 @@ class Landing extends Component {
 
     const {
       title,
+      headerTitle,
       text,
+      pageType,
       imageDesktop,
       imageMobile,
       videoText,
@@ -264,17 +411,46 @@ class Landing extends Component {
     return (
       <>
         <LandingWrapper>
-          <DesktopImg fluid={imageDesktop.childImageSharp.fluid} alt={title} />
-          <DesktopSvg src={landingBlockSVG} alt="" />
+          {imageDesktop != null ? (
+            <>
+              <DesktopImg
+                fluid={imageDesktop.childImageSharp.fluid}
+                alt={title}
+              />
+              <DesktopSvg src={landingBlockSVG} alt="" />{" "}
+            </>
+          ) : (
+            <>
+              <DesktopHero />
+              <DesktopSvg src={landingProductBlockSVG} alt="" />
+            </>
+          )}
 
-          <LandingContent>
+          <LandingContent type={imageDesktop === null ? "product" : "landing"}>
             <Row>
-              <Col md={8} xl={5}>
+              <Col
+                md={imageDesktop === null ? 6 : 8}
+                xl={imageDesktop === null ? 6 : 5}
+              >
+                {imageDesktop === null ? (
+                  <HeaderTitle
+                    dangerouslySetInnerHTML={{ __html: headerTitle }}
+                  />
+                ) : (
+                  <></>
+                )}
+
                 <LandingH1 dangerouslySetInnerHTML={{ __html: title }} />
 
-                <MobileImgWrap>
+                <MobileImgWrap hide={imageDesktop === null}>
                   <MobileImgSvgTop src={landingMobileTopSVG} alt="" />
-                  <MobileImg fluid={imageMobile.childImageSharp.fluid} alt="" />
+                  {imageDesktop !== null && (
+                    <MobileImg
+                      fluid={imageMobile.childImageSharp.fluid}
+                      alt=""
+                    />
+                  )}
+
                   {youtubeVideoID !== "" && youtubeVideoID !== null && (
                     <WatchNowButton onClick={this.toggle}>
                       <ButtonPlaySvg />
@@ -285,10 +461,21 @@ class Landing extends Component {
                 </MobileImgWrap>
 
                 <LandingTextWrap>
-                  <LandingText dangerouslySetInnerHTML={{ __html: text }} />
+                  <LandingText
+                    dangerouslySetInnerHTML={{ __html: text }}
+                    type={imageDesktop === null ? "product" : "landing"}
+                  />
                   <LandingTextBgSvg src={landingTextMobileSVG} alt="" />
                 </LandingTextWrap>
               </Col>
+
+              {imageDesktop === null ? (
+                <Col xl={4} md={6}>
+                  <ProductImgSvgTop src={landingProductTopSVG} alt="" />
+                </Col>
+              ) : (
+                <></>
+              )}
             </Row>
           </LandingContent>
         </LandingWrapper>

@@ -93,6 +93,22 @@ const LinkItem = styled.a`
 const RowVerticalAlign = styled(Row)`
   display: flex;
   align-items: center;
+
+  background-color: ${props => props.theme.colors.white};
+
+  box-shadow: rgba(40, 41, 44, 0.12) 0px 1px 10px 1px;
+
+  padding: 50px;
+
+  margin: 75px 0px;
+`;
+
+const FullGrey = styled.div`
+  background-color: ${props => props.theme.colors.greyLight};
+
+  h4 {
+    font-size: 2rem;
+  }
 `;
 
 const ThanksYou = props => {
@@ -103,11 +119,11 @@ const ThanksYou = props => {
       <ThankYouContainer>
         <h2>Thank you!</h2>
 
-        <p>Your guide to an automated future is now in your downloads.</p>
+        <p>Your Whitepaper is on its way to you!.</p>
 
         <p>
-          If you want to know more about the specific benefits of AP automation
-          for your business, schedule a personalised AP consultation today.{" "}
+          In the meantime, if you are interested in finding out how APtimise can
+          help with your AP processes, book a FREE demo with one of our experts!
         </p>
         <p>
           <Button
@@ -115,7 +131,7 @@ const ThanksYou = props => {
             className="trigger-bookdemo-modal"
             onClick={props.toggleModal}
           >
-            Schedule now
+            Book a FREE demo
           </Button>
           <p>
             <LinkWrap>
@@ -171,8 +187,12 @@ class WhitePaper extends Component {
     // console.log(this.state);
     // console.log(window.location);
     this.setState(prevState => ({
-      modal: window.location.search.includes("thankyou"),
-      downloaded: window.location.search.includes("thankyou")
+      modal:
+        window.location.search.includes("thankyou") &&
+        window.location.search.includes("whitepaper"),
+      downloaded:
+        window.location.search.includes("thankyou") &&
+        window.location.search.includes("whitepaper")
     }));
     // console.log("--------");
     // console.log(this.props);
@@ -186,7 +206,7 @@ class WhitePaper extends Component {
 
     const { title, textHTML, buttonText, image } = block.node;
     return (
-      <>
+      <FullGrey>
         <ContainerMaxWidth className="py-3 py-lg-4">
           <RowVerticalAlign>
             <Col lg={{ size: 6, order: 2 }}>
@@ -241,7 +261,7 @@ class WhitePaper extends Component {
             </Container>
           </ModalBody>
         </ModalAngled>
-      </>
+      </FullGrey>
     );
   }
 }

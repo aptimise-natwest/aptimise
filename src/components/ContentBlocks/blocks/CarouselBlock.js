@@ -95,6 +95,17 @@ const HexagonCarouselContainer = styled(ContainerMaxWidth)`
   overflow-x: hidden;
 `;
 
+const QouteText = styled(Text)`
+  padding-top: 17%;
+  font-size: x-large;
+  font-weight: bold;
+`;
+
+const QouteBy = styled.div`
+  font-weight: bold;
+  padding-bottom: 10px;
+`;
+
 const HexagonCarousel = styled.div`
   overflow: hidden;
   width: 100%;
@@ -389,9 +400,7 @@ class Blocks extends Component {
 
     const { title, textHTML } = block.node;
 
-    console.log(block);
     const carouselBottom = block.node.carouselBlocks.map((block, i) => {
-      console.log(block.links);
       const youtubeSrc = `https://www.youtube.com/embed/${
         block.youtubeVideoId
       }?rel=0`;
@@ -399,14 +408,17 @@ class Blocks extends Component {
         <div key={i}>
           <Row>
             <Col md={6}>
-              <Text size="lg" className="pb-3">
+              {/* <Text size="lg" className="pb-3">
                 {block.name}
               </Text>
               <Text
                 className="pb-3"
                 dangerouslySetInnerHTML={{ __html: block.position }}
-              />
-              <Text dangerouslySetInnerHTML={{ __html: block.textHTML }} />
+              /> */}
+              <QouteText dangerouslySetInnerHTML={{ __html: block.textHTML }} />
+              <QouteBy>
+                {block.name}, {block.position}
+              </QouteBy>
               {block.links !== null && (
                 <LinkButton
                   key={i}

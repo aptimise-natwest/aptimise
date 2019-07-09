@@ -80,7 +80,7 @@ const BreadCrumbs = props => {
   let title = props.data.title;
   let jsonPath = path;
   let breadCrumb = jsonPath.split("/");
-
+  console.log(props.data);
   if (breadCrumb[1].length > 0) {
     return breadCrumb.map((p, index, array) => {
       if (index === array.length - 1) return true;

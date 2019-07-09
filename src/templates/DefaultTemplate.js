@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import Layout from "components/Layout/Layout";
 import ContentBlocks from "components/ContentBlocks/ContentBlocks";
 import ContainerMaxWidth from "components/shared/ContainerMaxWidth";
+import shortid from "shortid";
 
 class DefaultTemplate extends Component {
   constructor(props) {
@@ -11,7 +12,7 @@ class DefaultTemplate extends Component {
   }
 
   createChat() {
-    const src = "https://embed.small.chat/TENLCNU93GHCB0RK08.js";
+    const src = `https://embed.small.chat/TENLCNU93GHCB0RK08.js?rndstr=${shortid.generate()}`;
     const s = document.createElement("script");
     s.setAttribute("src", src);
     s.setAttribute("async", true);

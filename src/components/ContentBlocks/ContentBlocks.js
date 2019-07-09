@@ -3,16 +3,21 @@ import { useStaticQuery, graphql } from "gatsby";
 import LandingBlock from "./blocks/LandingBlock";
 import TextBlock from "./blocks/TextBlock";
 import TextBlockTerms from "./blocks/TextBlockTerms";
+import TextBlockAbout from "./blocks/TextBlockAbout";
 import InfoBlocks from "./blocks/InfoBlocks";
 import InfoBlockFullWidth from "./blocks/InfoBlockFullWidth";
 import CalculatorBlock from "./blocks/CalculatorBlock";
 import WhitePaperBlock from "./blocks/WhitePaperBlock";
+import FormBlock from "./blocks/FormBlock";
+
 import LinkBlock from "./blocks/LinkBlock";
 import DeviceBlock from "./blocks/DeviceBlock";
 import CarouselBlock from "./blocks/CarouselBlock";
 import ImageTextBlock from "./blocks/ImageTextBlock";
 import FaqBlocks from "./blocks/FaqBlocks";
-
+import GridBlock from "./blocks/GridBlock";
+import CaseStudyQoute from "./blocks/CaseStudyQoute";
+import SocialBlock from "./blocks/SocialBlock";
 const ContentBlocks = props => {
   const pageBlocks = props.data.pagesJson.contentBlocks;
 
@@ -60,14 +65,26 @@ const ContentBlocks = props => {
         case "TextBlock":
           return <TextBlock id={block.node.id} key={i} />;
 
+        case "SocialBlock":
+          return <SocialBlock id={block.node.id} key={i} />;
+
         case "TextBlockTerms":
           return <TextBlockTerms id={block.node.id} key={i} />;
+
+        case "TextBlockAbout":
+          return <TextBlockAbout id={block.node.id} key={i} />;
 
         case "InfoBlocks":
           return <InfoBlocks id={block.node.id} key={i} />;
 
         case "LinkBlock":
           return <LinkBlock id={block.node.id} key={i} />;
+
+        case "GridBlock":
+          return <GridBlock id={block.node.id} key={i} />;
+
+        case "CaseStudyQoute":
+          return <CaseStudyQoute id={block.node.id} key={i} />;
 
         case "InfoBlockFullWidth":
           return <InfoBlockFullWidth id={block.node.id} key={i} />;
@@ -76,8 +93,11 @@ const ContentBlocks = props => {
           return <CalculatorBlock id={block.node.id} key={i} />;
 
         case "WhitePaperBlock":
-        return <WhitePaperBlock id={block.node.id} key={i} />;
+          return <WhitePaperBlock id={block.node.id} key={i} />;
         //   return <WhitePaperBlock id={block.node.id} key={i} {...log} />;
+
+        case "FormBlock":
+          return <FormBlock id={block.node.id} key={i} />;
 
         case "DeviceBlock":
           return <DeviceBlock id={block.node.id} key={i} />;
