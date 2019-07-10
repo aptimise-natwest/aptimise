@@ -30,6 +30,7 @@ export default function HTML(props) {
 	  `}
           </script>
         </Helmet> */}
+        <script src="https://embed.small.chat/TENLCNU93GHCB0RK08.js" async />
       </head>
       <body {...props.bodyAttributes}>
         {props.preBodyComponents}
