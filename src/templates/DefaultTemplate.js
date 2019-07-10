@@ -22,7 +22,7 @@ class DefaultTemplate extends Component {
   }
 
   componentDidMount() {
-    this.createChat();
+    // this.createChat();
   }
 
   // logGa() {
