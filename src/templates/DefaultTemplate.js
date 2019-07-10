@@ -19,6 +19,7 @@ class DefaultTemplate extends Component {
     s.setAttribute("id", "chatScript");
     document.body.appendChild(s);
     window.disableSmallchatGoogleAnalytics = true;
+    window.dispatchEvent(new Event("load"));
   }
 
   componentDidMount() {
