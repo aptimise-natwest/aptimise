@@ -42,6 +42,7 @@ export default function HTML(props) {
           dangerouslySetInnerHTML={{ __html: props.body }}
         />
         {props.postBodyComponents}
+        <script>window.dispatchEvent(new Event("load"));</script>
       </body>
     </html>
   );
