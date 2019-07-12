@@ -5,16 +5,18 @@
     "imageDesktop": "../images/backgrounds/landing-home.jpg",
     "imageMobile": "../images/backgrounds/landing-home-mobile.jpg",
     "title": "Revolutionise your<br/> Accounts Payable<br/> with APtimise",
+    "headerTitle": null,
+    "pageType": null,
     "videoText": "Watch now",
     "youtubeVideoID": "5sFoqY8ZcBo",
-    "text": "Reduce your invoice processing time by up to 50% with the UK’s only end-to-end Accounts Payable solution"
+    "text": "Reduce your invoice processing time by up to 50% with the UK’s only end-to-end Accounts Payable solution <p id='fineprint'>Natwest business or commercial account required.<br/>A monthly fee may apply.<p/>"
   },
   {
     "id": "textBlockHome",
     "type": "TextBlock",
     "size": "xl",
     "weight": "regular",
-    "textHTML": "<p>Designed for small businesses, APtimise is the UK’s only end-to-end invoices and payments solution, removing the frustration of the traditional Accounts Payable process and making it faster, more accurate, simpler and secure.</p>"
+    "textHTML": "<center><h4>The UK’s only end-to-end AP solution</h4></br><p>Designed for small businesses, APtimise is the UK’s only end-to-end invoices and payments solution, removing the frustration of the traditional Accounts Payable process and making it faster, more accurate, simpler and secure.</p>"
   },
   {
     "id": "infoBlocksHome",
@@ -23,22 +25,22 @@
       {
         "animation": "fast",
         "title": "Fast",
-        "textHTML": "<p>APtimise automatically reads and validates your invoices, removing the need for manual keying.</p><p>It's proven to reduce the time spent on Accounts Payable by 50%, freeing up staff to focus on growing the business. And it's compatible with most leading accounting software.</p>"
+        "textHTML": "<p>Remove the need for manual keying by automating your invoice processing. It’s proven to reduce the time spent on Accounts Payable by 50%.</p>"
       },
       {
         "animation": "simple",
         "title": "Simple",
-        "textHTML": "<p>Using APtimise is easy – you simply log on to our web-based solution from anywhere and get going.</p><p>Digitised approvals, intelligent payments and instant notifications will take the hassle out of your Accounts Payable process.</p>"
+        "textHTML": "<p>Digitised approvals, pay    ments and instant notifications made simple. Easily log in to our web-based solution from any device with internet.</p>"
       },
       {
         "animation": "accurate",
         "title": "Accurate",
-        "textHTML": "<p>With a 99.5% accuracy read rate at line item level, APtimise is a unique Accounts Payable solution.</p><p>It radically reduces the chance of human error with further smart automations such as invoice-to-PO matching, automated coding and exception flagging.</p>"
+        "textHTML": "<p>Reduce the chance of human error with smart automation such as invoice-to-PO matching as well as 99,5% accuracy read rate at line item level.</p>"
       },
       {
         "animation": "secure",
         "title": "Secure",
-        "textHTML": "<p>APtimise actively monitors for signs of fraud – 47% of small businesses received a suspicious or fraudulent invoice in 2017 – so it might come in handy. You’ll have full visibility of audit trails too.</p><p>And because it’s backed by NatWest, it comes with bank-grade security for complete peace of mind.</p>"
+        "textHTML": "<p>Active monitoring for signs of fraud and full visibility of audit trails. Backed by NatWest, it comes with bank-grade security.</p>"
       }
     ]
   },
@@ -49,7 +51,7 @@
       {
         "download": "true",
         "link": "/pdfs/Aptimise-how-it-works.pdf",
-        "linkText": "Download our “how it works” guide"
+        "linkText": "Download “how it works” guide"
       },
       {
         "link": "/faqs/",
@@ -61,9 +63,9 @@
     "id": "infoBlockFullWidthHome",
     "type": "InfoBlockFullWidth",
     "animation": "more",
-    "title": "Still with us? There’s more!",
-    "textIntroHTML": "<p>It sounds too good to be true, right? See how it could work for your business with an online demo.</p>",
-    "textHTML": "<p>Get up-and-running quickly with the ‘APtimise hour’: set-up and training in 60 minutes </p><p> Our dedicated success managers will help you every step of the way </p><p> Out-of-the-box integration with Xero, Sage50 & 200, QuickBooks and NetSuite </p><p> Not a NatWest customer? No problem. You don’t need to switch your primary banking and our team will help you get going </p>"
+    "title": "There’s more",
+    "textIntroHTML": "<p>Our expert team is here to ensure you get the best out of APtimise.</p>",
+    "textHTML": "<p>You’ll have a dedicated success manager at no extra cost.</p><p>Get up and running with our 60 min set-up.</p><p>We integrate with Xero, Sage 50 & 200 and QuickBooks.</p><p>Not a NatWest customer? No problem. You don’t need to switch your primary banking.</p>"
   },
   {
     "id": "calculatorBlockHome",
@@ -79,28 +81,28 @@
   {
     "id": "whitePaperBlockHome",
     "type": "WhitePaperBlock",
-    "title": "Accounts Payable is Changing: Your Guide to an Automated Future",
-    "textHTML": "<p>Today’s Financial Directors are recognising that Accounts Payable is an untapped area that’s poised for transformation. By automating their invoices and payments solution, FDs can remove the need for repetitive, manual work, so staff can focus on strategic initiatives that help business growth.</p>",
-    "buttonText": "Download whitepaper",
+    "title": "Accounts Payable is automating: Download your FREE guide",
+    "textHTML": "<p>Automating Accounts Payable eliminates the need for repetitive, manual tasks, enabling tour team to focus on value adding activities that help your business grow.</p>",
+    "buttonText": "Download a free guide",
     "image": "../images/whitepaper.jpg"
   },
   {
     "id": "deviceBlockHome",
     "type": "DeviceBlock",
     "title": "Book a 20 minute online demo now",
-    "textHTML": "<p>It sounds too good to be true, right? See how it could work for your business with an online demo.</p>",
+    "textHTML": "<p>One of our expert accounts payable consultants will be able to show you in just a few minutes how APtimise can help streamline your accounts payable process.</p><p>The demo is fully personalised based on your process and to suit your needs. It’s delivered online via screen share technology and typically takes no more than 20 min.</p>",
     "buttonText": "Pick your demo slot"
   },
   {
     "id": "carouselBlockHome",
     "type": "CarouselBlock",
-    "title": "Don’t just take our word for it",
+    "title": null,
     "carouselBlocks": [
       {
         "imageCopy": "LEAP",
         "name": "Raj Ahluwalia",
         "position": "UK Finance Director, LEAP Legal",
-        "textHTML": "<p>“By reducing our processing time by 50%, APtimise has allowed my team to shift from data entry to value-add.” </br></br> Watch to find out how APtimise has helped software company LEAP Legal to improve their processes, save time and grow.</p>",
+        "textHTML": "<p>“By reducing our processing time by 50%, APtimise has allowed my team to shift from data entry to value-add.”</p>",
         "twitter": "",
         "linkedIn": "",
         "facebook": "",
@@ -301,7 +303,6 @@
     "title": "Public Policy",
     "textHTML": "<h1>sdfsdfsdfs</h1>"
   },
-
   {
     "id": "textBlockTermsTerms",
     "type": "TextBlockTerms",
@@ -320,5 +321,191 @@
         "linkText": "Download our privacy policy"
       }
     ]
+  },
+  {
+    "id": "textBlockAbout",
+    "type": "TextBlockAbout",
+    "title": "About Us",
+    "textHTML": "<h1>About Us</h1><br><p>Founded 3 years ago, APtimise is the UK’s only end-to-end Accounts Payable solution, allowing customers, bookkeepers as well as accountants focus on what matters most. From invoice capture all the way through to payment execution via NatWest bank grade solution, APtimise offers businesses the ability to achieve a 50% efficiency gain over their existing AP processes.</p><p>We understand how frustrating manual processing of invoices is and we want to put our customers in the driver’s seat, ensuring they gain time, save money and allow their teams to focus on growing the business as well progressing within it.</p>"
+  },
+  {
+    "id": "heroBlock",
+    "type": "LandingBlock",
+    "imageDesktop": null,
+    "imageMobile": null,
+    "pageType": "product",
+    "title": "The UK’s only end-to-end AP solution",
+    "headerTitle": "PRODUCT OVERVIEW",
+    "videoText": "Watch now",
+    "youtubeVideoID": null,
+    "text": "Designed for Small Businesses and Accountants, APtimise is the UK’s only end-to-end invoices and payments solution, removing the frustration of the traditional Accounts Payable process and making it faster, more accurate and secure."
+  },
+  {
+    "id": "productOverview",
+    "type": "GridBlock",
+    "title": null,
+    "desc": null,
+    "renderSingleRow": false,
+    "separator": false,
+    "gridBlocks": [
+      {
+        "icon": "../images/product-overviews/png/laptop.png",
+        "displayIcon": true,
+        "title": "Capture",
+        "textHTML": "<p>Eliminate manual keying with automated capture of header and line detail.</p>"
+      },
+      {
+        "icon": "../images/product-overviews/png/invoice.png",
+        "displayIcon": true,
+        "title": "Validate",
+        "textHTML": "<p>Supplier data validation against information held in your accounting system. No more duplicated invoices."
+      },
+      {
+        "icon": "../images/product-overviews/png/thumbs-up.png",
+        "displayIcon": true,
+        "title": "Approve",
+        "textHTML": "<p>Share invoices with the relevant people who can then digitally approve and add notes.</p>"
+      },
+      {
+        "icon": "../images/product-overviews/png/clock.png",
+        "displayIcon": true,
+        "title": "Schedule & Authorise",
+        "textHTML": "<p>Post invoices into your accounting system and build a payment run at the click of a button. Decision makers can review the audit trail and securely authorise payment runs.</p>"
+      },
+      {
+        "icon": "../images/product-overviews/png/rocket.png",
+        "displayIcon": true,
+        "title": "Pay",
+        "textHTML": "<p>No need to transfer files or manually key payments in the Bank. APtimise will securely execute transactions on scheduled dates and send remittance emails to your suppliers.</p>"
+      }
+    ]
+  },
+  {
+    "id": "caseStudyQoute",
+    "type": "CaseStudyQoute",
+    "referenceBlock": "carouselBlockHome",
+    "dataFilter": "{'imageCopy': 'Spectrum Chemicals'}"
+  },
+  {
+    "id": "productFeatures",
+    "type": "GridBlock",
+    "title": "Features that will revolutionise your Accounts Payable",
+    "desc": null,
+    "renderSingleRow": false,
+    "separator": true,
+    "gridBlocks": [
+      {
+        "icon": "../images/product-overviews/png/rocket.png",
+        "displayIcon": false,
+        "title": "Invoice Capture",
+        "textHTML": "<p>Technology to capture supplier information, invoice totals and line item details (descriptions, net amounts, VAT and ross amounts).</p>"
+      },
+      {
+        "icon": "../images/product-overviews/png/rocket.png",
+        "displayIcon": false,
+        "title": "Purchase order matching",
+        "textHTML": "<p>Smart automated invoice and purchase order matching plus exception handling."
+      },
+      {
+        "icon": "../images/product-overviews/png/rocket.png",
+        "displayIcon": false,
+        "title": "Easy approvals",
+        "textHTML": "<p>Rule base workflow for digital invoice approvals eliminating need to chase for sign-offs.</p>"
+      },
+      {
+        "icon": "../images/product-overviews/png/rocket.png",
+        "displayIcon": false,
+        "title": "Seamless payments",
+        "desc": null,
+        "textHTML": "<p>Bank account integration enabling simple and secure payment scheduling and execution.</p>"
+      },
+      {
+        "icon": "../images/product-overviews/png/rocket.png",
+        "displayIcon": false,
+        "title": "Cashflow management",
+        "textHTML": "<p>Automated accounts payable enabling real-time cashflow management and reporting.</p>"
+      },
+      {
+        "icon": "../images/product-overviews/png/rocket.png",
+        "displayIcon": false,
+        "title": "Out of the box integrations",
+        "textHTML": "<p>No IT project required. Easily and securely connect with existing third-party accounting systems.</p>"
+      }
+    ]
+  },
+  {
+    "id": "productIntegration",
+    "type": "GridBlock",
+    "title": "Fully integrated with your workflow",
+    "desc": "Super fast implementation and seamless integration with all the main accounting platforms.",
+    "renderSingleRow": true,
+    "separator": false,
+    "gridBlocks": [
+      {
+        "icon": "../images/logos/logo-xero-blue.png",
+        "displayIcon": true,
+        "title": null,
+        "textHTML": null
+      },
+      {
+        "icon": "../images/logos/qbo-logo.png",
+        "displayIcon": true,
+        "title": null,
+        "textHTML": null
+      },
+      {
+        "icon": "../images/logos/sage50-logo.png",
+        "displayIcon": true,
+        "title": null,
+        "textHTML": null
+      },
+      {
+        "icon": "../images/logos/sage200-logo.png",
+        "displayIcon": true,
+        "title": null,
+        "textHTML": null
+      }
+    ]
+  },
+  {
+    "id": "getAFreeQoute",
+    "type": "FormBlock",
+    "title": "APtimise is designed to scale with your business",
+    "textHTML": "<p>Our fees are based on the volume of supplier invoices you and your team process per month. Our web-based solution helps you streamline your accounts payable process, allowing you to save time, reduce errors and improve visibility of your cash flow.</p>",
+    "buttonText": null,
+    "form": "GetAFreeQoute",
+    "thankYouTitle": "<h2>Thank you for requesting a free quote!</h2>",
+    "thankYouMessage": "<p>We are looking forward to learning more about your business and how APtimise can help simplify your Accounts Payable process.</p><p>In the meantime, download our ‘How it works’ guide to find out more.</p>",
+    "links": [
+      {
+        "download": "true",
+        "link": "/pdfs/Aptimise-how-it-works.pdf",
+        "linkText": "Download “How it works” guide"
+      }
+    ]
+  },
+  {
+    "id": "bookAfreeConsultation",
+    "type": "FormBlock",
+    "title": "Speak with an expert",
+    "textHTML": "<p>Accounts Payable Automation replaces manual, paper-based processes and spreadsheets, and removes time-consuming and costly tasks, allowing you to focus on growing your business.</p><p>Get in touch with one of our Accounts Payable experts to discuss your pain points associated with traditional AP processes and see how quickly these can be automated from submission of the invoices, right through to the payment stage.</p>",
+    "buttonText": null,
+    "form": "BookAfreeConsultation",
+    "thankYouTitle": "<h2>Thank you! <p>Your FREE consultation is booked!</p></h2>",
+    "thankYouMessage": "<p>We are looking forward to learning more about your business and how APtimise can help simplify your Accounts Payable process.</p> <p>In the meantime, download our ‘How it works’ guide to find out more.</p>",
+    "links": [
+      {
+        "download": "true",
+        "link": "/pdfs/Aptimise-how-it-works.pdf",
+        "linkText": "Download “How it works” guide"
+      }
+    ]
+  },
+  {
+    "id": "textThankYouBlock",
+    "type": "SocialBlock",
+    "size": "l",
+    "weight": "regular",
+    "textHTML": "<center><h4>Thank you!</h4><h5>If you want to know more about the specific benefits of AP automation for your business, schedule a personalised AP consultation today.</h5></center>"
   }
 ]

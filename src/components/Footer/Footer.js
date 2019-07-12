@@ -61,7 +61,7 @@ const FooterContent = styled.div`
 `;
 
 const FooterTopBg = styled.div`
-  background-image: url(${footerTopBg});
+  /* background-image: url(${footerTopBg}); */
   background-repeat: no-repeat;
   background-size: cover;
   background-position: top center;
@@ -233,6 +233,20 @@ class Footer extends Component {
                     WeWork building 8, Devonshire Square, London, EC2M 4PL
                   </Text>
                   <UsefulLinks>
+                  <li>
+                      <Link to="/about/">
+                        <Text size="md" color="white">
+                          About us
+                        </Text>
+                      </Link>
+                    </li>
+                    <li>
+                      <Link to="/product/">
+                        <Text size="md" color="white">
+                          Product overview
+                        </Text>
+                      </Link>
+                    </li>
                     <li>
                       <a href="mailto:aptimise@natwest.com?subject=Let's talk about Accounts Payable automation">
                         <Text size="md" color="white">
@@ -289,7 +303,7 @@ class Footer extends Component {
                         style={{ maxWidth: "56px" }}
                       />
                     </CompanyLinkItem>
-                    <CompanyLinkItem>
+                    <CompanyLinkItem style={{display:'none'}}>
                       <img
                         src={netsuiteLogo}
                         alt="Netsuite"

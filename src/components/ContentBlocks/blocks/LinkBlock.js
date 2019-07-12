@@ -18,13 +18,25 @@ const LinkButton = styled(Button)`
   }
 
   &.internalLink {
-    color: ${props => props.theme.colors.blackOff};
-    background-color: ${props => props.theme.colors.grey};
+    color: ${props => props.theme.colors.white};
+    background-color: ${props => props.theme.colors.purpleDark};
     &:hover {
       color: ${props => props.theme.colors.white};
       background-color: ${props => props.theme.colors.purpleDark};
     }
   }
+
+  &.internalPageLink {
+    color: ${props => props.theme.colors.white};
+    background-color: ${props => props.theme.colors.turquoise};
+    &:hover {
+      color: ${props => props.theme.colors.white};
+      background-color: ${props => props.theme.colors.turquoise};
+    }
+  }
+`;
+const Padded = styled(ContainerMaxWidth)`
+  text-align: center;
 `;
 
 const UnPadded = styled(ContainerMaxWidth)`
@@ -60,7 +72,12 @@ const LinkBlock = props => {
       let linkButton;
       if (!link.download) {
         linkButton = (
-          <LinkButton key={i} as={Link} className="internalLink" to={link.link}>
+          <LinkButton
+            key={i}
+            as={Link}
+            className="internalLink internalPageLink"
+            to={link.link}
+          >
             {link.linkText}
           </LinkButton>
         );
@@ -93,7 +110,7 @@ const LinkBlock = props => {
   });
 
   return props.padding || props.padding === undefined ? (
-    <ContainerMaxWidth className="py-3 py-lg-4">{links}</ContainerMaxWidth>
+    <Padded className="py-3 py-lg-4">{links}</Padded>
   ) : (
     <UnPadded className="py-3 py-lg-4">{links}</UnPadded>
   );

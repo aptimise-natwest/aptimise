@@ -2,18 +2,17 @@
   {
     "id": "home",
     "path": "/",
-    "title": "Home",
-    "metaDescription": "APtimise is the UK's only accounts payable software with invoice automation & intelligent payments in one cloud solution",
+    "title": "Accounts Payable Software UK",
+    "metaDescription": "Accounts payable software for small businesses and accountants. Fast, simple, accurate and secure, try APtimise.  See how many hours a month you can save.",
     "contentBlocks": [
       "landingBlockHome",
       "textBlockHome",
       "infoBlocksHome",
-
       "linkBlockHome",
       "whitePaperBlockHome",
       "deviceBlockHome",
-      "calculatorBlockHome",
       "carouselBlockHome",
+      "getAFreeQoute",
       "infoBlockFullWidthHome"
     ]
   },
@@ -39,7 +38,7 @@
     "id": "help",
     "path": "/faqs/",
     "title": "Frequently Asked Questions",
-    "metaDescription": "",
+    "metaDescription": "How to use APtimise accounts payable software.  Frequently asked questions and live chat so you can get the most from your APtimise experience.",
     "h1": "Frequently Asked Questions",
     "contentBlocks": ["TextBlockHelp", "FaqBlockFullWidth"]
   },
@@ -47,14 +46,56 @@
     "id": "terms",
     "path": "/terms-conditions/",
     "title": "Terms & Conditions",
-    "metaDescription": "",
+    "metaDescription": "Terms and conditions for APtimise.  Includes use of the website and copyright.",
     "contentBlocks": ["textBlockTermsTerms"]
   },
   {
     "id": "privacyNatwest",
     "path": "/privacy-policy/",
     "title": "Privacy Policy",
-    "metaDescription": "",
+    "metaDescription": "View the privacy policy for APtimise, UK accounts payable software.  This includes how we handle your data and what information is held.",
     "contentBlocks": ["textBlockTermsPrivacyNatwest"]
+  },
+  {
+    "id": "aboutus",
+    "path": "/about/",
+    "title": "About Us",
+    "metaDescription": "APtimise, brought to you by Natwest, is providing a new way to deal with accounts payable and saving businesses time, so they can focus on growing. Find out more.",
+    "contentBlocks": ["textBlockAbout"]
+  },
+  {
+    "id": "product",
+    "path": "/product/",
+    "title": "Find out more about our AP Solution",
+    "metaDescription": "Come and see the end to end accounts payable solution which is transforming the way people are tackling their accounts payable needs.  Find out more.",
+    "contentBlocks": [
+      "heroBlock",
+      "productOverview",
+      "caseStudyQoute",
+      "productFeatures",
+      "productIntegration",
+      "bookAfreeConsultation"
+    ]
+  },
+  {
+    "id": "thankyouwhitepaper",
+    "path": "/thankyou-whitepaper/",
+    "title": "Thank You",
+    "metaDescription": "APtimise, brought to you by Natwest, is providing a new way to deal with accounts payable and saving businesses time, so they can focus on growing. Find out more.",
+    "contentBlocks": ["textThankYouBlock"]
+  },
+  {
+    "id": "thankyoupricing",
+    "path": "/thankyou-pricing/",
+    "title": "Thank You",
+    "metaDescription": "APtimise, brought to you by Natwest, is providing a new way to deal with accounts payable and saving businesses time, so they can focus on growing. Find out more.",
+    "contentBlocks": ["textThankYouBlock"]
+  },
+  {
+    "id": "thankyouconsultation",
+    "path": "/thankyou-consultation/",
+    "title": "Thank You",
+    "metaDescription": "APtimise, brought to you by Natwest, is providing a new way to deal with accounts payable and saving businesses time, so they can focus on growing. Find out more.",
+    "contentBlocks": ["textThankYouBlock"]
   }
 ]
