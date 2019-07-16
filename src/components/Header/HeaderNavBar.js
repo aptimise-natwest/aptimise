@@ -8,6 +8,7 @@ import XeroLogo from "components/shared/XeroLogo";
 import Button from "components/shared/Button";
 import ContainerMaxWidth from "components/shared/ContainerMaxWidth";
 import Text from "components/shared/Text";
+import Menu from "./Menu";
 
 const NavBar = styled.div`
   width: 100%;
@@ -126,9 +127,21 @@ const HeaderNavBar = props => {
               </BreadCrumb>
             )}
           <Col xs="auto">
-            <BookADemo as="button" className="trigger-bookdemo-modal">
-              Book a demo
-            </BookADemo>
+            <Menu
+              id="main-menu"
+              menuItems={[
+                "home",
+                "product",
+                "forsmallbusiness",
+                "Foraccountants",
+                "help",
+                "aboutus"
+              ]}
+            >
+              <BookADemo as="button" className="trigger-bookdemo-modal">
+                Book a demo
+              </BookADemo>
+            </Menu>
           </Col>
         </Row>
       </NavBarContainer>
