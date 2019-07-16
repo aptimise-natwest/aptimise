@@ -4,8 +4,20 @@ import { useStaticQuery, graphql, Link } from "gatsby";
 import styled from "styled-components";
 import { media } from "utils/Media";
 import ContainerMaxWidth from "components/shared/ContainerMaxWidth";
-
-const UsefulLinks = styled.ul`
+import {
+  Collapse,
+  Navbar,
+  NavbarToggler,
+  NavbarBrand,
+  Nav,
+  NavItem,
+  NavLink,
+  UncontrolledDropdown,
+  DropdownToggle,
+  DropdownMenu,
+  DropdownItem
+} from "reactstrap";
+const UsefulLinks = styled(Nav)`
   padding: 0;
   margin: 0;
   list-style: none;
@@ -16,13 +28,66 @@ const UsefulLinks = styled.ul`
 
   li {
     display: inline;
-    padding-left: 35px;
+    padding-left: 15px;
+  }
+
+  @media ${media.sm} {
+    li {
+      display: inline;
+      padding-left: 35px;
+    }
   }
 `;
 
 const Text = styled.span`
   color: ${props => props.theme.colors.purpleDark};
+  font-size: 0.9em;
+  font-family: ${props => props.theme.font.family.thin};
 `;
+
+export default class HamMenu extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.toggle = this.toggle.bind(this);
+    this.state = {
+      isOpen: false
+    };
+  }
+  toggle() {
+    this.setState({
+      isOpen: !this.state.isOpen
+    });
+  }
+  render() {
+    console.log(this.props.children);
+    return (
+      <div>
+        <Navbar light expand="md">
+          <NavbarBrand href="/">
+            {this.props.children.filter(r => r.key === "logo_wrap")}
+          </NavbarBrand>
+          <NavbarToggler onClick={this.toggle} />
+          <Collapse isOpen={this.state.isOpen} navbar>
+            {/* <Nav className="ml-auto" navbar>
+              <NavItem>
+                <NavLink href="/components/">Components</NavLink>
+              </NavItem>
+              <NavItem>
+                <NavLink href="https://github.com/reactstrap/reactstrap">
+                  GitHub
+                </NavLink>
+              </NavItem>
+            </Nav> */}
+            <Menu menuItems={this.props.menuItems}>
+              {this.props.children.filter(r => r.key === "bookdemo_button")}
+            </Menu>
+          </Collapse>
+        </Navbar>
+      </div>
+    );
+  }
+}
 
 const Menu = props => {
   const data = useStaticQuery(graphql`
@@ -68,27 +133,25 @@ const Menu = props => {
   console.log(menuLinks);
   const links = menuLinks.map((link, i) => {
     let linkButton = (
-      <li key={i}>
-        <Link to={link.node.path} key={i}>
+      <NavItem key={i}>
+        <NavLink href={link.node.path} key={i}>
           <Text> {link.node.menuTitle}</Text>
-        </Link>
-      </li>
+        </NavLink>
+      </NavItem>
     );
 
     return linkButton;
   });
 
   return (
-    <UsefulLinks>
+    <UsefulLinks className="ml-auto" navbar>
       {links}
-      <li>{props.children}</li>
+      <NavItem>{props.children}</NavItem>
     </UsefulLinks>
   );
 };
 
-Menu.propTypes = {
+HamMenu.propTypes = {
   id: PropTypes.node.isRequired,
   menuItems: PropTypes.node.isRequired
 };
-
-export default Menu;
