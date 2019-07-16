@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Children } from "react";
 import PropTypes from "prop-types";
 import { useStaticQuery, graphql, Link } from "gatsby";
 import styled from "styled-components";
@@ -65,22 +65,12 @@ export default class HamMenu extends React.Component {
       <div>
         <Navbar light expand="md">
           <NavbarBrand href="/">
-            {this.props.children.filter(r => r.key === "logo_wrap")}
+            <ChildMenu filter="logo_wrap" {...this.props} />
           </NavbarBrand>
           <NavbarToggler onClick={this.toggle} />
           <Collapse isOpen={this.state.isOpen} navbar>
-            {/* <Nav className="ml-auto" navbar>
-              <NavItem>
-                <NavLink href="/components/">Components</NavLink>
-              </NavItem>
-              <NavItem>
-                <NavLink href="https://github.com/reactstrap/reactstrap">
-                  GitHub
-                </NavLink>
-              </NavItem>
-            </Nav> */}
-            <Menu menuItems={this.props.menuItems}>
-              {this.props.children.filter(r => r.key === "bookdemo_button")}
+            <Menu {...this.props}>
+              <ChildMenu filter="bookdemo_button" {...this.props} />
             </Menu>
           </Collapse>
         </Navbar>
@@ -88,6 +78,10 @@ export default class HamMenu extends React.Component {
     );
   }
 }
+
+const ChildMenu = props => {
+  return props.children.filter(r => r.key === props.filter);
+};
 
 const Menu = props => {
   const data = useStaticQuery(graphql`
