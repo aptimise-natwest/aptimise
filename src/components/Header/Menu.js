@@ -21,6 +21,7 @@ const UsefulLinks = styled(Nav)`
   padding: 0;
   margin: 0;
   list-style: none;
+  text-align: center;
 
   a {
     color: ${props => props.theme.colors.white};
@@ -29,6 +30,9 @@ const UsefulLinks = styled(Nav)`
   li {
     display: inline;
     padding-left: 15px;
+    .trigger-bookdemo-modal {
+      width: 100%;
+    }
   }
 
   @media ${media.sm} {
@@ -42,7 +46,7 @@ const UsefulLinks = styled(Nav)`
 const Text = styled.span`
   color: ${props => props.theme.colors.purpleDark};
   font-size: 0.9em;
-  font-family: ${props => props.theme.font.family.thin};
+  font-family: ${props => props.theme.font.family.base};
 `;
 
 export default class HamMenu extends React.Component {
