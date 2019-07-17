@@ -82,7 +82,7 @@
     "id": "whitePaperBlockHome",
     "type": "WhitePaperBlock",
     "title": "Accounts Payable is automating: Download your FREE guide",
-    "textHTML": "<p>Automating Accounts Payable eliminates the need for repetitive, manual tasks, enabling tour team to focus on value adding activities that help your business grow.</p>",
+    "textHTML": "<p>Automating Accounts Payable eliminates the need for repetitive, manual tasks, enabling our team to focus on value adding activities that help your business grow.</p>",
     "buttonText": "Download a free guide",
     "image": "../images/whitepaper.jpg"
   },
@@ -398,7 +398,7 @@
         "icon": "../images/product-overviews/png/rocket.png",
         "displayIcon": false,
         "title": "Invoice Capture",
-        "textHTML": "<p>Technology to capture supplier information, invoice totals and line item details (descriptions, net amounts, VAT and ross amounts).</p>"
+        "textHTML": "<p>Technology to capture supplier information, invoice totals and line item details (descriptions, net amounts, VAT and gross amounts).</p>"
       },
       {
         "icon": "../images/product-overviews/png/rocket.png",
