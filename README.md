@@ -1,4 +1,4 @@
-## APtimise website
+## APtimise website.
 
 ### Quick start
 
