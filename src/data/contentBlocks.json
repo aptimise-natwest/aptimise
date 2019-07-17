@@ -398,7 +398,7 @@
         "icon": "../images/product-overviews/png/rocket.png",
         "displayIcon": false,
         "title": "Invoice Capture",
-        "textHTML": "<p>Technology to capture supplier information, invoice totals and line item details (descriptions, net amounts, VAT and ross amounts).</p>"
+        "textHTML": "<p>Technology to capture supplier information, invoice totals and line item details (descriptions, net amounts, VAT and gross amounts).</p>"
       },
       {
         "icon": "../images/product-overviews/png/rocket.png",
