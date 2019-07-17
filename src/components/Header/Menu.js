@@ -17,8 +17,20 @@ import {
   DropdownMenu,
   DropdownItem
 } from "reactstrap";
+
+const NavBar = styled(Navbar)`
+  padding: 0px;
+`;
+
+const Navbartoggler = styled(NavbarToggler)`
+  border: 0px;
+  .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgb(66, 20, 95)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+  }
+`;
+
 const UsefulLinks = styled(Nav)`
-  padding: 0;
+  padding: 0px;
   margin: 0;
   list-style: none;
   text-align: center;
@@ -67,17 +79,17 @@ export default class HamMenu extends React.Component {
     console.log(this.props.children);
     return (
       <div>
-        <Navbar light expand="md">
+        <NavBar light expand="md">
           <NavbarBrand href="/">
             <ChildMenu filter="logo_wrap" {...this.props} />
           </NavbarBrand>
-          <NavbarToggler onClick={this.toggle} />
+          <Navbartoggler onClick={this.toggle} />
           <Collapse isOpen={this.state.isOpen} navbar>
             <Menu {...this.props}>
               <ChildMenu filter="bookdemo_button" {...this.props} />
             </Menu>
           </Collapse>
-        </Navbar>
+        </NavBar>
       </div>
     );
   }
