@@ -341,6 +341,18 @@
     "text": "Designed for Small Businesses and Accountants, APtimise is the UK’s only end-to-end invoices and payments solution, removing the frustration of the traditional Accounts Payable process and making it faster, more accurate and secure."
   },
   {
+    "id": "heroBlockSME",
+    "type": "LandingBlock",
+    "imageDesktop": null,
+    "imageMobile": null,
+    "pageType": "sme",
+    "title": "Accounts Payable for Small Businesses – change the number crunching culture",
+    "headerTitle": "APTIMISE ACCOUNTS PAYABLE FOR SMALL BUSINESSES",
+    "videoText": "Watch now",
+    "youtubeVideoID": null,
+    "text": "Remove all the paper from the process and focus on growing your business. The manual entry of data is inefficient, time-consuming and prone to errors."
+  },
+  {
     "id": "productOverview",
     "type": "GridBlock",
     "title": null,
@@ -377,6 +389,50 @@
         "displayIcon": true,
         "title": "Pay",
         "textHTML": "<p>No need to transfer files or manually key payments in the Bank. APtimise will securely execute transactions on scheduled dates and send remittance emails to your suppliers.</p>"
+      }
+    ]
+  },
+  {
+    "id": "smeChallengeSolution",
+    "type": "ChallengeSolutionBlock",
+    "title": null,
+    "desc": null,
+    "gridBlocks": [
+      {
+        "challenge": {
+          "title": "Manual data entry",
+          "textHTML": "<p>Are you manually entering invoice data into a finance or ERP system? If so, you will well know that the process can be inefficient, time-consuming and prone to errors. It not only consumes a lot of valuable resources, it can also open the doors to mistakes. Also, any mismanagement of physical AP papers like invoices can lead to damage and loss.</p>",
+          "tileColor": null
+        },
+        "solution": {
+          "title": "Automation",
+          "textHTML": "<p>By using the UK’s only end to end accounts payable software, you regain control and unrivalled visibility at every stage of invoice processing – from invoice capture all the way through to payment execution.</p>",
+          "tileColor": "#00ADB9"
+        }
+      },
+      {
+        "challenge": {
+          "title": "Inefficient process",
+          "textHTML": "<p>Manual entry can result in late payments and unhappy suppliers. You are running a risk of your account being suspended or charged a significant interest fee. An inefficient manual process can put a lot of stress on the members of the accounts payable team –they have to be extra careful when entering data into the system. </p>",
+          "tileColor": "#FBBA20"
+        },
+        "solution": {
+          "title": "Happy suppliers and AP team",
+          "textHTML": "<p>By introducing an automated solution, you allow your team to focus on more strategic tasks, so important to future success of your business as well as the progression of their careers. It will also help with removing the amount of errors due to manual data entry. </p>",
+          "tileColor": null
+        }
+      },
+      {
+        "challenge": {
+          "title": "Storing papers and other physical documents",
+          "textHTML": "<p>Manually filing and storing papers and other physical documents can take up a lot of space and add ongoing storage costs. </p>",
+          "tileColor": null
+        },
+        "solution": {
+          "title": "Easy management of information through digital filing and storage",
+          "textHTML": "<p>Having everything organised for easy access and tracking will not only give you a peace of mind, but will ensure you’re always prepared for an audit.</p>",
+          "tileColor": "#6F2C91"
+        }
       }
     ]
   },

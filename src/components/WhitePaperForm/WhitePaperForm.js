@@ -113,6 +113,10 @@ class WhitePaperForm extends Component {
     window.dataLayer.push({
       event: "whitepaperFormSubmitted",
       formName: "Download Whitepaper",
+      formLocation:
+        document.location.pathname === "/"
+          ? "Home Page"
+          : document.location.pathname.replace(new RegExp("/", "g"), ""),
       formStatus: "Successful"
     });
 
