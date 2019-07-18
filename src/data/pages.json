@@ -89,6 +89,23 @@
     ]
   },
   {
+    "id": "forsmallbusiness",
+    "path": "/sme/",
+    "menuOrder": 3,
+    "title": "Find out more about our AP Solution",
+    "menuTitle": "Small businesses",
+    "metaDescription": "Come and see the end to end accounts payable solution which is transforming the way people are tackling their accounts payable needs.  Find out more.",
+    "contentBlocks": [
+      "heroBlockSME",
+      "textBlockHome",
+      "infoBlocksHome",
+      "smeChallengeSolution",
+      "calculatorBlockHome",
+      "caseStudyQoute",
+      "bookAfreeConsultation"
+    ]
+  },
+  {
     "id": "thankyouwhitepaper",
     "path": "/thankyou-whitepaper/",
     "title": "Thank You",

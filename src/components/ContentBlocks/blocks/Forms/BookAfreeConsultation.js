@@ -138,6 +138,10 @@ class BookAfreeConsultation extends Component {
     window.dataLayer.push({
       event: "FormSubmission",
       formName: "Book_A_free_Consultation",
+      formLocation:
+        document.location.pathname === "/"
+          ? "Home Page"
+          : document.location.pathname.replace(new RegExp("/", 'g'), ""),
       formStatus: "Submitted"
     });
 

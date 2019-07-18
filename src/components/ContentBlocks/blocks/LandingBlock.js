@@ -20,6 +20,7 @@ import landingMobileBottomSVG from "images/backgrounds/landing-mobile-bottom.svg
 import Button from "components/shared/Button";
 
 import landingProductTopSVG from "images/product-overviews/svg/rocket.svg";
+import landingSMETopSVG from "images/product-overviews/svg/laptop.svg";
 
 const LandingWrapper = styled.div`
   max-width: 1500px;
@@ -295,36 +296,6 @@ const WatchNowButton = styled(Button)`
   }
 `;
 
-// const LinkButton = styled(Button)`
-//   margin-bottom: 0.5rem;
-//   position: relative;
-//   z-index: 1;
-//   width: 100%;
-
-//   @media ${media.md} {
-//     width: auto;
-//     margin-right: 0.5rem;
-//   }
-
-//   &.internalLink {
-//     color: ${props => props.theme.colors.white};
-//     background-color: ${props => props.theme.colors.purpleDark};
-//     &:hover {
-//       color: ${props => props.theme.colors.white};
-//       background-color: ${props => props.theme.colors.purpleDark};
-//     }
-//   }
-
-//   &.internalPageLink {
-//     color: ${props => props.theme.colors.white};
-//     background-color: ${props => props.theme.colors.turquoise};
-//     &:hover {
-//       color: ${props => props.theme.colors.white};
-//       background-color: ${props => props.theme.colors.turquoise};
-//     }
-//   }
-// `;
-
 const LandingBlock = props => (
   <StaticQuery
     query={graphql`
@@ -408,6 +379,21 @@ class Landing extends Component {
       }
     };
 
+    //const getImage => type
+
+    let getHeroImage = type => {
+      switch (type) {
+        case "product":
+          return landingProductTopSVG;
+          break;
+        case "sme":
+          return landingSMETopSVG;
+          break;
+        default:
+          return "";
+      }
+    };
+
     return (
       <>
         <LandingWrapper>
@@ -471,7 +457,7 @@ class Landing extends Component {
 
               {imageDesktop === null ? (
                 <Col xl={4} md={6}>
-                  <ProductImgSvgTop src={landingProductTopSVG} alt="" />
+                  <ProductImgSvgTop src={getHeroImage(pageType)} alt="" />
                 </Col>
               ) : (
                 <></>

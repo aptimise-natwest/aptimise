@@ -140,6 +140,10 @@ class GetAFreeQoute extends Component {
     window.dataLayer.push({
       event: "FormSubmission",
       formName: "Get_A_Free_Qouted",
+      formLocation:
+        document.location.pathname === "/"
+          ? "Home Page"
+          : document.location.pathname.replace(new RegExp("/", 'g'), ""),
       formStatus: "Submitted"
     });
 
