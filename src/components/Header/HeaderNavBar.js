@@ -114,7 +114,7 @@ const HeaderNavBar = props => {
                 "home",
                 "product",
                 "forsmallbusiness",
-                "Foraccountants",
+                "foraccountants",
                 "help",
                 "aboutus"
               ]}

@@ -63,7 +63,7 @@ const FormHeaderSection = styled.div`
 `;
 
 const FluidContainer = styled.div`
-  background-color: #f9f9f9;
+  background-image: linear-gradient(#f5f8fa, white);
   width: 100%;
   padding-right: 15px;
   padding-left: 15px;
@@ -116,7 +116,6 @@ const LinkItem = styled.a`
 const RowVerticalAlign = styled(Row)`
   display: flex;
   align-items: center;
-  background-color: #f9f9f9;
 `;
 
 const FullGrey = styled.div`
@@ -126,6 +125,7 @@ const FullGrey = styled.div`
 const ContentWrap = styled.div`
   box-shadow: 0px 0px 4px 2px rgba(232, 227, 236);
   padding: 40px;
+  background-color: white;
 `;
 
 const ThanksYou = props => {
@@ -149,12 +149,11 @@ const ThanksYou = props => {
         <Text dangerouslySetInnerHTML={{ __html: thankYouMessage }} size="lg" />
 
         <p>
-          
           <Button
             as="button"
             className="trigger-bookdemo-modal"
             onClick={props.toggleModal}
-            display={links.length===0?'true':'false'}
+            display={links.length === 0 ? "true" : "false"}
           >
             Schedule now
           </Button>

@@ -61,7 +61,7 @@ const Icon = styled.div`
     props.gradient === true ? "" : "0 1px 24px 1px rgba(204, 125, 247, 0.18)"};
 `;
 
-const GridWrap = styled(Row)`
+const GridWrap = styled.div`
   padding-bottom: 0rem;
   text-align: left;
 `;
@@ -113,80 +113,92 @@ const ItemTitle = styled.div`
   position: relative;
 `;
 
-const Item = styled(Row)`
-  margin: 20px 0px;
-  box-shadow: rgb(232, 227, 236) 0px 0px 4px 2px;
-  border-radius: 10px;
-
-  .solution {
-    padding-top: 40px;
-    padding-bottom: 20px;
-    h6,
-    div {
-      padding-left: 30px;
-    }
-
-    border-top-right-radius: 10px;
-    border-bottom-right-radius: 10px;
+const Item = styled.div`
+  background-image: none;
+  display: block;
+  padding-bottom: 2rem;
+  margin: 50px auto;
+  box-shadow: rgba(40, 41, 44, 0.12) 0px 1px 10px 1px;
+  &:before {
+    content: unset;
   }
 
-  .challenge {
-    padding-top: 40px;
-    padding-bottom: 20px;
-    padding-left: 40px;
-    padding-right: 35px;
-    border-top-left-radius: 10px;
-    border-bottom-left-radius: 10px;
+  @media ${media.sm} {
+    margin: 20px 0px;
+    box-shadow: rgb(232, 227, 236) 0px 0px 4px 2px;
+    border-radius: 10px;
+
+    margin: 50px auto;
+    display: table;
+
+    background-image: linear-gradient(
+      ${props => (props.filled === "solution" ? "280deg" : "100deg")},
+      ${props => props.tileColor} calc(50% - 1px),
+      transparent 50%
+    );
+    border-radius: 6px;
+    box-shadow: rgba(40, 41, 44, 0.12) 0px 1px 10px 1px;
+
+    &:before,
+    &:after {
+      content: ‘’;
+      display: table;
+    }
+
+    .solution {
+      padding-top: 40px;
+      padding-bottom: 20px;
+      h6,
+      div {
+        padding-left: 30px;
+      }
+
+      border-top-right-radius: 10px;
+      border-bottom-right-radius: 10px;
+    }
+
+    .challenge {
+      padding-top: 40px;
+      padding-bottom: 20px;
+      padding-left: 40px;
+      padding-right: 35px;
+      border-top-left-radius: 10px;
+      border-bottom-left-radius: 10px;
+    }
   }
 `;
 
-const Tile = styled(Col)`
-  padding: 20px;
-  overflow: hidden;
-  background-color: ${props => (props.tileColor === null ? "white" : "white")};
-
-  color: ${props => (props.tileColor === null ? "black" : "white")};
-
-  p {
-    color: ${props => (props.tileColor === null ? "black" : "white")};
-    position: relative;
-  }
+const Tile = styled.div`
+  width: 100%;
+  color: black;
+  display: block;
+  padding: 2rem 2rem 0rem;
 
   h6 {
-    color: ${props => (props.tileColor === null ? "#B60F7F" : "white")};
+    color: ${props => (props.tileColor === null ? "#B60F7F" : "#00adb9")};
     position: relative;
   }
 
-  .solutionAngle {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: linear-gradient(
-      ${props => (props.tileColor === null ? "white" : props.tileColor)},
-      ${props => (props.tileColor === null ? "white" : props.tileColor)}
-    );
-    transform: skewX(-8deg);
-    transform-origin: bottom left;
-  }
+  @media ${media.sm} {
+    padding: 20px;
+    overflow: hidden;
 
-  .challengeAngle {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: linear-gradient(
-      ${props => (props.tileColor === null ? "white" : props.tileColor)},
-      ${props => (props.tileColor === null ? "white" : props.tileColor)}
-    );
-    transform: skewX(-8deg);
-    transform-origin: top left;
+    color: ${props => (props.tileColor === null ? "black" : "white")};
+
+    p {
+      color: ${props => (props.tileColor === null ? "black" : "white")};
+      position: relative;
+    }
+
+    h6 {
+      color: ${props => (props.tileColor === null ? "#B60F7F" : "white")};
+      position: relative;
+    }
+
+    width: 50%;
+    display: table-cell;
+    padding: 3rem;
+    line-height: 1.7;
   }
 `;
 
@@ -224,7 +236,17 @@ class Blocks extends Component {
     const GridItems = props => {
       console.log(props.block.challenge);
       return (
-        <Item key={shortid.generate()}>
+        <Item
+          key={shortid.generate()}
+          tileColor={
+            props.block.challenge.tileColor === null
+              ? props.block.solution.tileColor
+              : props.block.challenge.tileColor
+          }
+          filled={
+            props.block.challenge.tileColor === null ? "solution" : "challenge"
+          }
+        >
           <Tile
             xl="6"
             tileColor={props.block.challenge.tileColor}
@@ -259,9 +281,7 @@ class Blocks extends Component {
     };
 
     const GridColumns = props => (
-      <Row>
-        <GridItems block={props.block} i={props.i} key={props.i} />
-      </Row>
+      <GridItems block={props.block} i={props.i} key={props.i} />
     );
 
     const GridBlocks = props => {
@@ -284,13 +304,6 @@ class Blocks extends Component {
 
     return (
       <ContainerMaxWidth className="pt-3 pt-lg-4">
-        <GridSectionHeader>
-          <GridHeader>
-            <h4>{contentBlock.node.title}</h4>
-            <p>{contentBlock.node.desc} </p>
-          </GridHeader>
-        </GridSectionHeader>
-
         <GridWrap>
           <GridBlocks key={shortid.generate()} contentBlock={contentBlock} />
         </GridWrap>

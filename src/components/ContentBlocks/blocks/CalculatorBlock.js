@@ -27,6 +27,8 @@ const CalculatorContainer = styled(ContainerMaxWidth)`
 
 const Container = styled.div`
   background-color: #f9f9f9;
+  margin: 150px auto;
+  padding: 50px;
 `;
 
 const CalculatorBgSvg = styled.img`

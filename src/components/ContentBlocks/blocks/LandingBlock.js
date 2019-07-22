@@ -243,7 +243,7 @@ const ProductImgSvgTop = styled.img`
   top: -3em;
   left: 2em;
   width: 100%;
-  max-width: 500px;
+  max-width: ${props => (props.pageType === "product" ? "500px" : "400px")};
   z-index: -8;
   opacity: 0.4;
   transform: rotate(-15deg);
@@ -414,10 +414,7 @@ class Landing extends Component {
 
           <LandingContent type={imageDesktop === null ? "product" : "landing"}>
             <Row>
-              <Col
-                md={imageDesktop === null ? 6 : 8}
-                xl={imageDesktop === null ? 6 : 5}
-              >
+              <Col md={imageDesktop === null ? 7 : 8}>
                 {imageDesktop === null ? (
                   <HeaderTitle
                     dangerouslySetInnerHTML={{ __html: headerTitle }}
@@ -456,8 +453,12 @@ class Landing extends Component {
               </Col>
 
               {imageDesktop === null ? (
-                <Col xl={4} md={6}>
-                  <ProductImgSvgTop src={getHeroImage(pageType)} alt="" />
+                <Col md={5}>
+                  <ProductImgSvgTop
+                    src={getHeroImage(pageType)}
+                    alt=""
+                    pageType={pageType}
+                  />
                 </Col>
               ) : (
                 <></>

@@ -443,6 +443,12 @@
     "dataFilter": "{'imageCopy': 'Spectrum Chemicals'}"
   },
   {
+    "id": "caseStudyQouteAccountants",
+    "type": "CaseStudyQoute",
+    "referenceBlock": "carouselBlockHome",
+    "dataFilter": "{'imageCopy': 'LEAP'}"
+  },
+  {
     "id": "productFeatures",
     "type": "GridBlock",
     "title": "Features that will revolutionise your Accounts Payable",

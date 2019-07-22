@@ -143,7 +143,7 @@ class GetAFreeQoute extends Component {
       formLocation:
         document.location.pathname === "/"
           ? "Home Page"
-          : document.location.pathname.replace(new RegExp("/", 'g'), ""),
+          : document.location.pathname.replace(new RegExp("/", "g"), ""),
       formStatus: "Submitted"
     });
 
