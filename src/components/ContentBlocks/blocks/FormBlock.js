@@ -44,7 +44,7 @@ const FormBlock = props => (
       }
     `}
     // render={data => <WhitePaper data={data} id={props.id} log={props.log} />}
-    render={data => <Form data={data} id={props.id} />}
+    render={data => <Form data={data} id={props.id} {...props} />}
   />
 );
 
@@ -62,14 +62,31 @@ const FormHeaderSection = styled.div`
   }
 `;
 
+const ContainerMW = styled(ContainerMaxWidth)``;
+
 const FluidContainer = styled.div`
-  background-image: linear-gradient(#f5f8fa, white);
+  background-image: ${props =>
+    props.disableSideContent === true
+      ? "none"
+      : "linear-gradient(#f5f8fa, white)"};
   width: 100%;
-  padding-right: 15px;
-  padding-left: 15px;
+  padding-right: ${props =>
+    props.disableSideContent === true ? "0px" : "15px"};
+  padding-left: ${props =>
+    props.disableSideContent === true ? "0px" : "15px"};
   margin-right: auto;
   margin-left: auto;
-  margin-top: 90px;
+  margin-top: ${props => (props.disableSideContent === true ? "0px" : "90px")};
+
+  .container {
+    padding: ${props =>
+      props.disableSideContent === true ? "0px" : "inherit"};
+  }
+
+  @media ${media.md} {
+    position: relative;
+    ${props => (props.disableSideContent === true ? "top:-141px" : "")};
+  }
 `;
 
 const ThankYouContainer = styled.span`
@@ -223,8 +240,8 @@ class Form extends Component {
         (window.location.search.includes("pricing") ||
           window.location.search.includes("consultation"))
     }));
-    // console.log("---FORMSSSS-----");
-    // console.log(this.props);
+    //console.log("---FORMSSSS-----");
+    //console.log(this.props);
     // console.log("--------");
 
     const block = this.props.data.allContentBlocksJson.edges.filter(
@@ -277,15 +294,25 @@ class Form extends Component {
     const componentsElements = components.map(Component => (
       <Component key="sfsfsdfsdre" />
     ));
-
+    // console.log("this.props");
+    // console.log(this.props);
+    // console.log(this.props.disableSideContent);
     return (
-      <FluidContainer>
+      <FluidContainer disableSideContent={this.props.disableSideContent}>
         <ContainerMaxWidth className="py-3 py-lg-4">
           <RowVerticalAlign>
-            <Col lg={{ size: 6, order: 2 }}>
+            <Col
+              lg={{
+                size: this.props.disableSideContent === true ? "" : "6",
+                order: 2
+              }}
+            >
               <ContentWrap>{componentsElements}</ContentWrap>
             </Col>
-            <Col lg={{ size: 6, order: 1 }}>
+            <Col
+              lg={{ size: 6, order: 1 }}
+              className={this.props.disableSideContent === true ? "d-none" : ""}
+            >
               <FormHeaderSection className="d-sm-none d-md-block">
                 <h4>{title}</h4>
                 <Text

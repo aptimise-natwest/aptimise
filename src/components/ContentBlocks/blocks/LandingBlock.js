@@ -21,6 +21,7 @@ import Button from "components/shared/Button";
 
 import landingProductTopSVG from "images/product-overviews/svg/rocket.svg";
 import landingSMETopSVG from "images/product-overviews/svg/laptop.svg";
+import FormBlock from "./FormBlock";
 
 const LandingWrapper = styled.div`
   max-width: 1500px;
@@ -324,6 +325,17 @@ const LandingBlock = props => (
               videoText
               youtubeVideoID
               text
+              heroForm
+              textHTML
+              buttonText
+              form
+              thankYouTitle
+              thankYouMessage
+              links {
+                link
+                linkText
+                download
+              }
             }
           }
         }
@@ -369,7 +381,8 @@ class Landing extends Component {
       imageDesktop,
       imageMobile,
       videoText,
-      youtubeVideoID
+      youtubeVideoID,
+      heroForm
     } = block.node;
 
     const opts = {
@@ -378,8 +391,6 @@ class Landing extends Component {
         rel: 0
       }
     };
-
-    //const getImage => type
 
     let getHeroImage = type => {
       switch (type) {
@@ -392,6 +403,18 @@ class Landing extends Component {
         default:
           return "";
       }
+    };
+
+    const FormProvider = props => {
+      let getBlock = props => {
+        return props.data.allContentBlocksJson.edges.filter(
+          ({ node }) => props.id === node.id
+        )[0];
+      };
+
+      const form = getBlock(props) === undefined ? null : getBlock(props).node;
+
+      return props.children(form);
     };
 
     return (
@@ -454,11 +477,23 @@ class Landing extends Component {
 
               {imageDesktop === null ? (
                 <Col md={5}>
-                  <ProductImgSvgTop
-                    src={getHeroImage(pageType)}
-                    alt=""
-                    pageType={pageType}
-                  />
+                  {pageType === "acc" ? (
+                    <FormProvider data={this.props.data} id={heroForm}>
+                      {form => (
+                        <FormBlock
+                          id={form.id}
+                          key=""
+                          disableSideContent={true}
+                        />
+                      )}
+                    </FormProvider>
+                  ) : (
+                    <ProductImgSvgTop
+                      src={getHeroImage(pageType)}
+                      alt=""
+                      pageType={pageType}
+                    />
+                  )}
                 </Col>
               ) : (
                 <></>

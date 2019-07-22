@@ -113,13 +113,12 @@
     "menuTitle": "Accountants",
     "metaDescription": "Come and see the end to end accounts payable solution which is transforming the way people are tackling their accounts payable needs.  Find out more.",
     "contentBlocks": [
-      "heroBlockSME",
+      "heroBlockAcc",
       "textBlockHome",
       "infoBlocksHome",
       "smeChallengeSolution",
       "calculatorBlockHome",
-      "caseStudyQouteAccountants",
-      "bookAfreeConsultation"
+      "caseStudyQouteAccountants"
     ]
   },
   {

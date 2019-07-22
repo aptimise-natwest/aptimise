@@ -76,7 +76,6 @@ export default class HamMenu extends React.Component {
     });
   }
   render() {
-    console.log(this.props.children);
     return (
       <div>
         <NavBar light expand="md">
@@ -140,7 +139,6 @@ const Menu = props => {
 
   var menuLinks = multiFilter(block, filters);
 
-  console.log(menuLinks);
   const links = menuLinks.map((link, i) => {
     let linkButton = (
       <NavItem key={i}>

@@ -148,7 +148,6 @@ class Blocks extends Component {
 
   render() {
     const contentBlock = this.getBlock();
-    console.log(contentBlock);
     const GridItems = props => {
       return (
         <Item key={shortid.generate()}>

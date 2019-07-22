@@ -232,9 +232,8 @@ class Blocks extends Component {
 
   render() {
     const contentBlock = this.getBlock();
-    console.log(contentBlock);
+
     const GridItems = props => {
-      console.log(props.block.challenge);
       return (
         <Item
           key={shortid.generate()}
@@ -252,7 +251,7 @@ class Blocks extends Component {
             tileColor={props.block.challenge.tileColor}
             className="challenge"
           >
-            <div class="challengeAngle" />
+            <div className="challengeAngle" />
             <h6>CHALLENGE</h6>
             <ItemTitle>{props.block.challenge.title}</ItemTitle>
 
@@ -267,7 +266,7 @@ class Blocks extends Component {
             tileColor={props.block.solution.tileColor}
             className="solution"
           >
-            <div class="solutionAngle" />
+            <div className="solutionAngle" />
             <h6>SOLUTION</h6>
             <ItemTitle>{props.block.solution.title}</ItemTitle>
             <ItemDesc
