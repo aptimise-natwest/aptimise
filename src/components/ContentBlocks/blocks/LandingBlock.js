@@ -294,10 +294,8 @@ const MobileImgSvgBottom = styled.img`
 const WatchNowButton = styled(Button)`
   font-size: ${props => props.theme.font.size.xl};
   margin-bottom: 0.5rem;
-  /* position: relative; */
   z-index: 1;
   width: 100%;
-
   padding: 5px 40px;
   background-color: ${props => props.theme.colors.turquoise};
 

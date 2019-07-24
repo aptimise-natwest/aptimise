@@ -80,7 +80,7 @@ const FluidContainer = styled.div`
 
   .container {
     padding: ${props =>
-      props.disableSideContent === true ? "0px" : "inherit"};
+      props.disableSideContent === true ? "0 2rem" : "inherit"}; 
   }
 
   @media ${media.md} {
@@ -142,7 +142,7 @@ const FullGrey = styled.div`
 const ContentWrap = styled.div`
   box-shadow: 0px 0px 4px 2px rgba(232, 227, 236, 0.417647);
   padding: 20px;
-  margin: 30px;
+  margin: 15px 0;
   background-color: white;
 
   @media ${media.sm} {
@@ -303,6 +303,8 @@ class Form extends Component {
     // console.log("this.props");
     // console.log(this.props);
     // console.log(this.props.disableSideContent);
+    const ContainerSwitch = (flag) => {}
+
     return (
       <FluidContainer disableSideContent={this.props.disableSideContent}>
         <ContainerMaxWidth className="py-3 py-lg-4">
@@ -313,7 +315,9 @@ class Form extends Component {
                 order: 2
               }}
             >
-              <ContentWrap>{componentsElements}</ContentWrap>
+              <ContentWrap>
+                {componentsElements}
+              </ContentWrap>
             </Col>
             <Col
               lg={{ size: 6, order: 1 }}
