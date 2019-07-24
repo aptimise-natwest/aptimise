@@ -9,6 +9,18 @@ const Gdpr = styled.span`
   font-weight: 600;
   display: block;
   text-align: center;
+
+  .form-check-label {
+    margin-bottom: 0;
+    font-size: 0.65em;
+    color: #787878;
+  }
+`;
+
+const GdprText = styled.p`
+  font-size: 0.75em;
+  color: #787878;
+  margin-bottom: 0;
 `;
 
 const InputStyled = styled.select`
@@ -28,6 +40,7 @@ const FormGrp = styled(FormGroup)`
 
 const FormTitle = styled.h2`
   text-align: center;
+  font-size: 1.7rem;
 `;
 
 class GetAFreeQoute extends Component {
@@ -152,6 +165,7 @@ class GetAFreeQoute extends Component {
     // console.log(`GDPR Email : ${form.gdprEmail.value}`);
     // console.log(`GDPR Phone : ${form.gdprPhone.value}`);
     // console.log(`GDPR Text : ${form.gdprText.value}`);
+    window.history.replaceState(null, null, "?thankyou&form=pricing");
     form.submit();
   };
 
@@ -273,12 +287,12 @@ class GetAFreeQoute extends Component {
         </Button>
         <div />
         <br />
-        <p>
+        <GdprText>
           APtimise would like to keep you informed by phone, email and text
           message about other evolving innovative products, services and offers
           that we believe will be of value to you. If you do not wish us to
           contact you for these purposes, please tick the relevant boxes:
-        </p>
+        </GdprText>
 
         <Gdpr>
           <FormGroup check inline={true}>

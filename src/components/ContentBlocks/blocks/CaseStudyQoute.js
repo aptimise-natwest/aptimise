@@ -236,6 +236,10 @@ const DesktopSvg = styled.img`
   }
 `;
 
+const QouteRow = styled(Row)`
+  align-items: center;
+`;
+
 const AptimiseBox = styled.img`
   display: none;
 
@@ -406,7 +410,6 @@ class Blocks extends Component {
   }
 
   render() {
-
     const CaseItem = ({
       imageCopy,
       textHTML,
@@ -414,8 +417,8 @@ class Blocks extends Component {
       links,
       youtubeVideoId
     }) => (
-      <Row>
-        <Col sm={links != null ?9:6}>
+      <QouteRow>
+        <Col sm={links != null ? 9 : 6}>
           <CaseItemContainer>
             <CaseItemQoute dangerouslySetInnerHTML={{ __html: textHTML }} />
             <CaseItemQouteBy>{position}</CaseItemQouteBy>
@@ -433,26 +436,27 @@ class Blocks extends Component {
             )}
           </CaseItemContainer>
         </Col>
-        <Col sm={links != null ?3:6}>
-          
+        <Col sm={links != null ? 3 : 6}>
           {links != null ? (
             <AptimiseBox src={aptimiseBoxes} alt="" />
-            ) : (
-              <div className="embed-responsive embed-responsive-16by9">
-                <iframe
-                  width="560"
-                  height="315"
-                  className="embed-responsive-item"
-                  src={"https://www.youtube.com/embed/"+youtubeVideoId+"?rel=0"}
-                  frameBorder="0"
-                  allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                  title="APtimise video"
-                />
-              </div>
-            )}
+          ) : (
+            <div className="embed-responsive embed-responsive-16by9">
+              <iframe
+                width="560"
+                height="315"
+                className="embed-responsive-item"
+                src={
+                  "https://www.youtube.com/embed/" + youtubeVideoId + "?rel=0"
+                }
+                frameBorder="0"
+                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+                title="APtimise video"
+              />
+            </div>
+          )}
         </Col>
-      </Row>
+      </QouteRow>
     );
 
     const sliderCommonSettings = {

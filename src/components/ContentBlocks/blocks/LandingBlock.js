@@ -39,7 +39,9 @@ const LandingContent = styled(ContainerMaxWidth)`
   padding-left: ${props => (props.type === "product" ? "1px" : 0)};
   padding-top: ${props => (props.type === "product" ? "20px" : 0)};
   padding-right: 0;
-
+  .subTitle {
+    padding-left: 2rem;
+  }
   @media ${media.md} {
     position: absolute;
     left: 50%;
@@ -63,6 +65,11 @@ const LandingContent = styled(ContainerMaxWidth)`
       props.type === "product"
         ? props.theme.colors.black
         : props.theme.colors.white};
+  }
+  @media ${media.sm} {
+  .subTitle {
+    padding-left: 0rem;
+  }
   }
 `;
 
@@ -440,6 +447,7 @@ class Landing extends Component {
               <Col md={imageDesktop === null ? 7 : 8}>
                 {imageDesktop === null ? (
                   <HeaderTitle
+                    className="subTitle"
                     dangerouslySetInnerHTML={{ __html: headerTitle }}
                   />
                 ) : (

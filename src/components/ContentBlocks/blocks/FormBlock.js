@@ -141,8 +141,14 @@ const FullGrey = styled.div`
 
 const ContentWrap = styled.div`
   box-shadow: 0px 0px 4px 2px rgba(232, 227, 236);
-  padding: 40px;
+  padding: 20px;
+  margin: 30px;
   background-color: white;
+
+  @media ${media.sm} {
+    padding: 40px;
+    margin: 0px;
+  }
 `;
 
 const ThanksYou = props => {
