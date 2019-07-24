@@ -4,13 +4,14 @@
     "type": "LandingBlock",
     "imageDesktop": "../images/backgrounds/landing-home.jpg",
     "imageMobile": "../images/backgrounds/landing-home-mobile.jpg",
-    "title": "Revolutionise your<br/> Accounts Payable<br/> with APtimise",
+    "title": "Revolutionise your Accounts Payable with APtimise",
     "headerTitle": null,
     "pageType": null,
     "videoText": "Watch now",
     "youtubeVideoID": "5sFoqY8ZcBo",
     "heroForm": null,
-    "text": "Reduce your invoice processing time by up to 50% with the UK’s only end-to-end Accounts Payable solution <p id='fineprint'>Natwest business or commercial account required.<br/>A monthly fee may apply.<p/>"
+    "text": "Reduce your invoice processing time by up to 50% with the UK’s only end-to-end Accounts Payable solution",
+    "finePrint" : "<p id='fineprint'>Natwest business or commercial account required.<br/>A monthly fee may apply.<p/>"
   },
   {
     "id": "textBlockHome",
@@ -340,7 +341,8 @@
     "videoText": "Watch now",
     "youtubeVideoID": null,
     "heroForm": null,
-    "text": "Designed for Small Businesses and Accountants, APtimise is the UK’s only end-to-end invoices and payments solution, removing the frustration of the traditional Accounts Payable process and making it faster, more accurate and secure."
+    "text": "Designed for Small Businesses and Accountants, APtimise is the UK’s only end-to-end invoices and payments solution, removing the frustration of the traditional Accounts Payable process and making it faster, more accurate and secure.",
+    "finePrint" : null
   },
   {
     "id": "heroBlockSME",
@@ -353,7 +355,8 @@
     "videoText": "Watch now",
     "youtubeVideoID": null,
     "heroForm": null,
-    "text": "Remove all the paper from the process and focus on growing your business. The manual entry of data is inefficient, time-consuming and prone to errors."
+    "text": "Remove all the paper from the process and focus on growing your business. The manual entry of data is inefficient, time-consuming and prone to errors.",
+    "finePrint" : null
   },
   {
     "id": "heroBlockAcc",
@@ -366,7 +369,8 @@
     "videoText": "Watch now",
     "youtubeVideoID": null,
     "text": "Ever thought about offering Accounts Payable service to your customers? Our UK only end-to-end Accounts Payable solution could open up revenue opportunities for you and your business.",
-    "heroForm": "bookAfreeConsultation"
+    "heroForm": "bookAfreeConsultation",
+    "finePrint" : null
   },
   {
     "id": "productOverview",
