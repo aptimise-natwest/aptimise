@@ -140,7 +140,7 @@ const FullGrey = styled.div`
 `;
 
 const ContentWrap = styled.div`
-  box-shadow: 0px 0px 4px 2px rgba(232, 227, 236);
+  box-shadow: 0px 0px 4px 2px rgba(232, 227, 236, 0.417647);
   padding: 20px;
   margin: 30px;
   background-color: white;

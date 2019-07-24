@@ -14,6 +14,7 @@ import ModalVideoClose from "components/shared/ModalVideoClose";
 
 import landingBlockSVG from "images/backgrounds/landing-block.svg";
 import landingBlockVideo from "video/final-loop.mp4";
+import landingBlockVideoPlaceholder from "video/final-loop-placeholder.jpg";
 import landingProductBlockSVG from "images/backgrounds/landing-product-block.svg";
 import landingTextMobileSVG from "images/backgrounds/landing-text-mobile.svg";
 import landingMobileTopSVG from "images/backgrounds/landing-mobile-top.svg";
@@ -458,13 +459,14 @@ class Landing extends Component {
             <>
               <VideoWrap>
                 <MP4Video
+                  poster={landingBlockVideoPlaceholder}
                   id="vid"
                   width="100%"
                   height="100%"
                   autoPlay="autoplay"
                   loop="loop"
                   muted
-                  playsInline=""
+                  playsinline
                   preload="preload"
                   onStart="this.play();"
                   onEnded="this.play();"
@@ -521,7 +523,6 @@ class Landing extends Component {
                     dangerouslySetInnerHTML={{ __html: finePrint }}
                     type={imageDesktop === null ? "product" : "landing"}
                   />
-                  <LandingTextBgSvg src={landingTextMobileSVG} alt="" />
                 </LandingTextWrap>
               </Col>
 
