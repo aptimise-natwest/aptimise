@@ -245,6 +245,11 @@ const VideoWrap = styled.div`
 
 const MP4Video = styled.video`
   opacity: 0.55;
+  display: block;
+  object-fit: cover;
+  width: 100%;
+  min-height: 100vh;
+  height: auto;
 `;
 
 const MobileImgSvgTop = styled.img`
@@ -292,6 +297,14 @@ const WatchNowButton = styled(Button)`
   z-index: 1;
   width: 100%;
 
+  padding: 5px 40px;
+  background-color: ${props => props.theme.colors.turquoise};
+
+  &:hover {
+    color: ${props => props.theme.colors.white};
+    background-color: ${props => props.theme.colors.turquoise};
+  }
+
   @media ${media.md} {
     width: auto;
     margin-right: 0.5rem;
@@ -299,10 +312,10 @@ const WatchNowButton = styled(Button)`
 
   &.internalLink {
     color: ${props => props.theme.colors.white};
-    background-color: ${props => props.theme.colors.purpleDark};
+    background-color: ${props => props.theme.colors.turquoise};
     &:hover {
       color: ${props => props.theme.colors.white};
-      background-color: ${props => props.theme.colors.purpleDark};
+      background-color: ${props => props.theme.colors.turquoise};
     }
   }
 
