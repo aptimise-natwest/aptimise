@@ -465,6 +465,7 @@ class Landing extends Component {
                   loop="loop"
                   muted
                   playsinline
+                  async
                   preload="preload"
                   onStart="this.play();"
                   onEnded="this.play();"
