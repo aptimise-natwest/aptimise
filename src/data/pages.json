@@ -92,9 +92,9 @@
     "id": "forsmallbusiness",
     "path": "/sme/",
     "menuOrder": 3,
-    "title": "Find out more about our AP Solution",
+    "title": "Small Business Accounts Payable Software",
     "menuTitle": "Small businesses",
-    "metaDescription": "Come and see the end to end accounts payable solution which is transforming the way people are tackling their accounts payable needs.  Find out more.",
+    "metaDescription": "APtimise accounts payable software for Small Businesses. Move on from time consuming and manual data entry. Fast, accurate, simple and secure. Find out more.",
     "contentBlocks": [
       "heroBlockSME",
       "textBlockHome",
@@ -109,9 +109,9 @@
     "id": "foraccountants",
     "path": "/accountants/",
     "menuOrder": 3,
-    "title": "Find out more about our AP Solution",
+    "title": "Accounts Payable Software for Accountants",
     "menuTitle": "Accountants",
-    "metaDescription": "Come and see the end to end accounts payable solution which is transforming the way people are tackling their accounts payable needs.  Find out more.",
+    "metaDescription": "Accounts Payable Software available for Accountants - Discover new revenue streams with this new end-to-end accounts payable solution. UK Based - Find Out More.",
     "contentBlocks": [
       "heroBlockAcc",
       "smeChallengeSolution",
