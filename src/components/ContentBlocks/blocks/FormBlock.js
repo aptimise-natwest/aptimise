@@ -53,7 +53,7 @@ const DownloadForm = styled.span`
 `;
 
 const FormHeaderSection = styled.div`
-  display: none;
+  /* display: none; */
   h4 {
     font-size: 2rem;
   }
@@ -79,8 +79,14 @@ const FluidContainer = styled.div`
   margin-top: ${props => (props.disableSideContent === true ? "0px" : "90px")};
 
   .container {
-    padding: ${props =>
-      props.disableSideContent === true ? "0 2rem" : "inherit"}; 
+    padding: ${props => (props.disableSideContent === true ? "0 2rem" : "rem")};
+  }
+
+  @media ${media.sm} {
+    .container {
+      padding: ${props =>
+        props.disableSideContent === true ? "0 0rem" : "4rem"};
+    }
   }
 
   @media ${media.md} {
@@ -303,7 +309,7 @@ class Form extends Component {
     // console.log("this.props");
     // console.log(this.props);
     // console.log(this.props.disableSideContent);
-    const ContainerSwitch = (flag) => {}
+    const ContainerSwitch = flag => {};
 
     return (
       <FluidContainer disableSideContent={this.props.disableSideContent}>
@@ -314,16 +320,20 @@ class Form extends Component {
                 size: this.props.disableSideContent === true ? "" : "6",
                 order: 2
               }}
+              xs={{
+                order: 2
+              }}
             >
-              <ContentWrap>
-                {componentsElements}
-              </ContentWrap>
+              <ContentWrap>{componentsElements}</ContentWrap>
             </Col>
             <Col
               lg={{ size: 6, order: 1 }}
+              xs={{
+                order: 1
+              }}
               className={this.props.disableSideContent === true ? "d-none" : ""}
             >
-              <FormHeaderSection className="d-sm-none d-md-block">
+              <FormHeaderSection>
                 <h4>{title}</h4>
                 <Text
                   dangerouslySetInnerHTML={{ __html: textHTML }}
