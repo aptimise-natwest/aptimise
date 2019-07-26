@@ -18,6 +18,8 @@ import FaqBlocks from "./blocks/FaqBlocks";
 import GridBlock from "./blocks/GridBlock";
 import CaseStudyQoute from "./blocks/CaseStudyQoute";
 import SocialBlock from "./blocks/SocialBlock";
+import ChallengeSolutionBlock from "./blocks/ChallengeSolutionBlock";
+
 const ContentBlocks = props => {
   const pageBlocks = props.data.pagesJson.contentBlocks;
 
@@ -82,6 +84,9 @@ const ContentBlocks = props => {
 
         case "GridBlock":
           return <GridBlock id={block.node.id} key={i} />;
+
+        case "ChallengeSolutionBlock":
+          return <ChallengeSolutionBlock id={block.node.id} key={i} />;
 
         case "CaseStudyQoute":
           return <CaseStudyQoute id={block.node.id} key={i} />;

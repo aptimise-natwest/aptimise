@@ -44,7 +44,7 @@ const FormBlock = props => (
       }
     `}
     // render={data => <WhitePaper data={data} id={props.id} log={props.log} />}
-    render={data => <Form data={data} id={props.id} />}
+    render={data => <Form data={data} id={props.id} {...props} />}
   />
 );
 
@@ -53,7 +53,7 @@ const DownloadForm = styled.span`
 `;
 
 const FormHeaderSection = styled.div`
-  display: none;
+  /* display: none; */
   h4 {
     font-size: 2rem;
   }
@@ -62,14 +62,37 @@ const FormHeaderSection = styled.div`
   }
 `;
 
+const ContainerMW = styled(ContainerMaxWidth)``;
+
 const FluidContainer = styled.div`
-  background-color: #f9f9f9;
+  background-image: ${props =>
+    props.disableSideContent === true
+      ? "none"
+      : "linear-gradient(#f5f8fa, white)"};
   width: 100%;
-  padding-right: 15px;
-  padding-left: 15px;
+  padding-right: ${props =>
+    props.disableSideContent === true ? "0px" : "15px"};
+  padding-left: ${props =>
+    props.disableSideContent === true ? "0px" : "15px"};
   margin-right: auto;
   margin-left: auto;
-  margin-top: 90px;
+  margin-top: ${props => (props.disableSideContent === true ? "0px" : "90px")};
+
+  .container {
+    padding: ${props => (props.disableSideContent === true ? "0 2rem" : "rem")};
+  }
+
+  @media ${media.sm} {
+    .container {
+      padding: ${props =>
+        props.disableSideContent === true ? "0 0rem" : "4rem"};
+    }
+  }
+
+  @media ${media.md} {
+    position: relative;
+    ${props => (props.disableSideContent === true ? "top:-141px" : "")};
+  }
 `;
 
 const ThankYouContainer = styled.span`
@@ -116,7 +139,6 @@ const LinkItem = styled.a`
 const RowVerticalAlign = styled(Row)`
   display: flex;
   align-items: center;
-  background-color: #f9f9f9;
 `;
 
 const FullGrey = styled.div`
@@ -124,8 +146,15 @@ const FullGrey = styled.div`
 `;
 
 const ContentWrap = styled.div`
-  box-shadow: 0px 0px 4px 2px rgba(232, 227, 236);
-  padding: 40px;
+  box-shadow: 0px 0px 4px 2px rgba(232, 227, 236, 0.417647);
+  padding: 20px;
+  margin: 15px 0;
+  background-color: white;
+
+  @media ${media.sm} {
+    padding: 40px;
+    margin: 0px;
+  }
 `;
 
 const ThanksYou = props => {
@@ -149,12 +178,11 @@ const ThanksYou = props => {
         <Text dangerouslySetInnerHTML={{ __html: thankYouMessage }} size="lg" />
 
         <p>
-          
           <Button
             as="button"
             className="trigger-bookdemo-modal"
             onClick={props.toggleModal}
-            display={links.length===0?'true':'false'}
+            display={links.length === 0 ? "true" : "false"}
           >
             Schedule now
           </Button>
@@ -224,8 +252,8 @@ class Form extends Component {
         (window.location.search.includes("pricing") ||
           window.location.search.includes("consultation"))
     }));
-    // console.log("---FORMSSSS-----");
-    // console.log(this.props);
+    //console.log("---FORMSSSS-----");
+    //console.log(this.props);
     // console.log("--------");
 
     const block = this.props.data.allContentBlocksJson.edges.filter(
@@ -278,16 +306,34 @@ class Form extends Component {
     const componentsElements = components.map(Component => (
       <Component key="sfsfsdfsdre" />
     ));
+    // console.log("this.props");
+    // console.log(this.props);
+    // console.log(this.props.disableSideContent);
+    const ContainerSwitch = flag => {};
 
     return (
-      <FluidContainer>
+      <FluidContainer disableSideContent={this.props.disableSideContent}>
         <ContainerMaxWidth className="py-3 py-lg-4">
           <RowVerticalAlign>
-            <Col lg={{ size: 6, order: 2 }}>
+            <Col
+              lg={{
+                size: this.props.disableSideContent === true ? "" : "6",
+                order: 2
+              }}
+              xs={{
+                order: 2
+              }}
+            >
               <ContentWrap>{componentsElements}</ContentWrap>
             </Col>
-            <Col lg={{ size: 6, order: 1 }}>
-              <FormHeaderSection className="d-sm-none d-md-block">
+            <Col
+              lg={{ size: 6, order: 1 }}
+              xs={{
+                order: 1
+              }}
+              className={this.props.disableSideContent === true ? "d-none" : ""}
+            >
+              <FormHeaderSection>
                 <h4>{title}</h4>
                 <Text
                   dangerouslySetInnerHTML={{ __html: textHTML }}

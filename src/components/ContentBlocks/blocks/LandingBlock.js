@@ -13,6 +13,8 @@ import ModalVideo from "components/shared/ModalVideo";
 import ModalVideoClose from "components/shared/ModalVideoClose";
 
 import landingBlockSVG from "images/backgrounds/landing-block.svg";
+import landingBlockVideo from "video/final-loop.mp4";
+import landingBlockVideoPlaceholder from "video/final-loop-placeholder.jpg";
 import landingProductBlockSVG from "images/backgrounds/landing-product-block.svg";
 import landingTextMobileSVG from "images/backgrounds/landing-text-mobile.svg";
 import landingMobileTopSVG from "images/backgrounds/landing-mobile-top.svg";
@@ -20,9 +22,11 @@ import landingMobileBottomSVG from "images/backgrounds/landing-mobile-bottom.svg
 import Button from "components/shared/Button";
 
 import landingProductTopSVG from "images/product-overviews/svg/rocket.svg";
+import landingSMETopSVG from "images/product-overviews/svg/laptop.svg";
+import FormBlock from "./FormBlock";
 
 const LandingWrapper = styled.div`
-  max-width: 1500px;
+  max-width: ${props => (props.type === "product" ? "1500px" : "unset")};
   width: 100%;
   padding: 0;
   margin: 0 auto 2rem;
@@ -37,6 +41,15 @@ const LandingContent = styled(ContainerMaxWidth)`
   padding-left: ${props => (props.type === "product" ? "1px" : 0)};
   padding-top: ${props => (props.type === "product" ? "20px" : 0)};
   padding-right: 0;
+  .subTitle {
+    padding-left: 2rem;
+  }
+  ${props =>
+    props.type === "product" ? "" : "position: absolute; top: 3rem;"};
+  color: ${props =>
+    props.type === "product"
+      ? props.theme.colors.black
+      : props.theme.colors.white};
 
   @media ${media.md} {
     position: absolute;
@@ -61,6 +74,11 @@ const LandingContent = styled(ContainerMaxWidth)`
       props.type === "product"
         ? props.theme.colors.black
         : props.theme.colors.white};
+  }
+  @media ${media.sm} {
+    .subTitle {
+      padding-left: 0rem;
+    }
   }
 `;
 
@@ -149,7 +167,7 @@ const LandingText = styled(Text)`
   color: ${props =>
     props.type === "product"
       ? props.theme.colors.black
-      : props.theme.colors.backOff};
+      : props.theme.colors.white};
 
   @media ${media.md} {
     color: ${props =>
@@ -200,11 +218,7 @@ const LandingText = styled(Text)`
 
 const LandingTextWrap = styled.div`
   position: relative;
-  padding: 1rem 0 4rem;
-
-  @media ${media.sm} {
-    padding: 1rem 0 8rem;
-  }
+  padding: 1rem 0 2rem;
 
   @media ${media.md} {
     padding: 0;
@@ -226,6 +240,19 @@ const MobileImgWrap = styled.div`
   display: ${props => (props.hide ? "none" : "block")};
 `;
 
+const VideoWrap = styled.div`
+  background-color: black;
+`;
+
+const MP4Video = styled.video`
+  opacity: 0.55;
+  display: block;
+  object-fit: cover;
+  width: 100%;
+  min-height: 100vh;
+  height: auto;
+`;
+
 const MobileImgSvgTop = styled.img`
   position: absolute;
   z-index: 1;
@@ -242,7 +269,7 @@ const ProductImgSvgTop = styled.img`
   top: -3em;
   left: 2em;
   width: 100%;
-  max-width: 500px;
+  max-width: ${props => (props.pageType === "product" ? "500px" : "400px")};
   z-index: -8;
   opacity: 0.4;
   transform: rotate(-15deg);
@@ -267,9 +294,15 @@ const MobileImgSvgBottom = styled.img`
 const WatchNowButton = styled(Button)`
   font-size: ${props => props.theme.font.size.xl};
   margin-bottom: 0.5rem;
-  position: relative;
   z-index: 1;
   width: 100%;
+  padding: 5px 40px;
+  background-color: ${props => props.theme.colors.turquoise};
+
+  &:hover {
+    color: ${props => props.theme.colors.white};
+    background-color: ${props => props.theme.colors.turquoise};
+  }
 
   @media ${media.md} {
     width: auto;
@@ -278,10 +311,10 @@ const WatchNowButton = styled(Button)`
 
   &.internalLink {
     color: ${props => props.theme.colors.white};
-    background-color: ${props => props.theme.colors.purpleDark};
+    background-color: ${props => props.theme.colors.turquoise};
     &:hover {
       color: ${props => props.theme.colors.white};
-      background-color: ${props => props.theme.colors.purpleDark};
+      background-color: ${props => props.theme.colors.turquoise};
     }
   }
 
@@ -294,36 +327,6 @@ const WatchNowButton = styled(Button)`
     }
   }
 `;
-
-// const LinkButton = styled(Button)`
-//   margin-bottom: 0.5rem;
-//   position: relative;
-//   z-index: 1;
-//   width: 100%;
-
-//   @media ${media.md} {
-//     width: auto;
-//     margin-right: 0.5rem;
-//   }
-
-//   &.internalLink {
-//     color: ${props => props.theme.colors.white};
-//     background-color: ${props => props.theme.colors.purpleDark};
-//     &:hover {
-//       color: ${props => props.theme.colors.white};
-//       background-color: ${props => props.theme.colors.purpleDark};
-//     }
-//   }
-
-//   &.internalPageLink {
-//     color: ${props => props.theme.colors.white};
-//     background-color: ${props => props.theme.colors.turquoise};
-//     &:hover {
-//       color: ${props => props.theme.colors.white};
-//       background-color: ${props => props.theme.colors.turquoise};
-//     }
-//   }
-// `;
 
 const LandingBlock = props => (
   <StaticQuery
@@ -353,6 +356,18 @@ const LandingBlock = props => (
               videoText
               youtubeVideoID
               text
+              finePrint
+              heroForm
+              textHTML
+              buttonText
+              form
+              thankYouTitle
+              thankYouMessage
+              links {
+                link
+                linkText
+                download
+              }
             }
           }
         }
@@ -394,11 +409,13 @@ class Landing extends Component {
       title,
       headerTitle,
       text,
+      finePrint,
       pageType,
       imageDesktop,
       imageMobile,
       videoText,
-      youtubeVideoID
+      youtubeVideoID,
+      heroForm
     } = block.node;
 
     const opts = {
@@ -408,16 +425,58 @@ class Landing extends Component {
       }
     };
 
+    let getHeroImage = type => {
+      switch (type) {
+        case "product":
+          return landingProductTopSVG;
+          break;
+        case "sme":
+          return landingSMETopSVG;
+          break;
+        default:
+          return "";
+      }
+    };
+
+    const FormProvider = props => {
+      let getBlock = props => {
+        return props.data.allContentBlocksJson.edges.filter(
+          ({ node }) => props.id === node.id
+        )[0];
+      };
+
+      const form = getBlock(props) === undefined ? null : getBlock(props).node;
+
+      return props.children(form);
+    };
+
     return (
       <>
-        <LandingWrapper>
+        <LandingWrapper type={imageDesktop === null ? "product" : "landing"}>
           {imageDesktop != null ? (
             <>
-              <DesktopImg
-                fluid={imageDesktop.childImageSharp.fluid}
-                alt={title}
-              />
-              <DesktopSvg src={landingBlockSVG} alt="" />{" "}
+              <VideoWrap>
+                <MP4Video
+                  poster={landingBlockVideoPlaceholder}
+                  id="vid"
+                  width="100%"
+                  height="100%"
+                  autoPlay="autoplay"
+                  loop="loop"
+                  muted
+                  playsinline
+                  async
+                  preload="preload"
+                  onStart="this.play();"
+                  onEnded="this.play();"
+                >
+                  <source src={landingBlockVideo} type="video/mp4" />
+                  {/* <source
+                    src="//s3.amazonaws.com/www-assets.invisionapp.com/Homepage/enterprise-loop.mp4?versionid=null"
+                    type="video/mp4"
+                  /> */}
+                </MP4Video>
+              </VideoWrap>
             </>
           ) : (
             <>
@@ -428,12 +487,10 @@ class Landing extends Component {
 
           <LandingContent type={imageDesktop === null ? "product" : "landing"}>
             <Row>
-              <Col
-                md={imageDesktop === null ? 6 : 8}
-                xl={imageDesktop === null ? 6 : 5}
-              >
+              <Col md={imageDesktop === null ? 7 : 8}>
                 {imageDesktop === null ? (
                   <HeaderTitle
+                    className="subTitle"
                     dangerouslySetInnerHTML={{ __html: headerTitle }}
                   />
                 ) : (
@@ -442,14 +499,15 @@ class Landing extends Component {
 
                 <LandingH1 dangerouslySetInnerHTML={{ __html: title }} />
 
+                <LandingTextWrap>
+                  <LandingText
+                    dangerouslySetInnerHTML={{ __html: text }}
+                    type={imageDesktop === null ? "product" : "landing"}
+                  />
+                </LandingTextWrap>
+
                 <MobileImgWrap hide={imageDesktop === null}>
-                  <MobileImgSvgTop src={landingMobileTopSVG} alt="" />
-                  {imageDesktop !== null && (
-                    <MobileImg
-                      fluid={imageMobile.childImageSharp.fluid}
-                      alt=""
-                    />
-                  )}
+                  {imageDesktop !== null && <></>}
 
                   {youtubeVideoID !== "" && youtubeVideoID !== null && (
                     <WatchNowButton onClick={this.toggle}>
@@ -457,21 +515,35 @@ class Landing extends Component {
                       <span className="ml-3 video">{videoText}</span>
                     </WatchNowButton>
                   )}
-                  <MobileImgSvgBottom src={landingMobileBottomSVG} alt="" />
                 </MobileImgWrap>
 
                 <LandingTextWrap>
                   <LandingText
-                    dangerouslySetInnerHTML={{ __html: text }}
+                    dangerouslySetInnerHTML={{ __html: finePrint }}
                     type={imageDesktop === null ? "product" : "landing"}
                   />
-                  <LandingTextBgSvg src={landingTextMobileSVG} alt="" />
                 </LandingTextWrap>
               </Col>
 
               {imageDesktop === null ? (
-                <Col xl={4} md={6}>
-                  <ProductImgSvgTop src={landingProductTopSVG} alt="" />
+                <Col md={5}>
+                  {pageType === "acc" ? (
+                    <FormProvider data={this.props.data} id={heroForm}>
+                      {form => (
+                        <FormBlock
+                          id={form.id}
+                          key=""
+                          disableSideContent={true}
+                        />
+                      )}
+                    </FormProvider>
+                  ) : (
+                    <ProductImgSvgTop
+                      src={getHeroImage(pageType)}
+                      alt=""
+                      pageType={pageType}
+                    />
+                  )}
                 </Col>
               ) : (
                 <></>

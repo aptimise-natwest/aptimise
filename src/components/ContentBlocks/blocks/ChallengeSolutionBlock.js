@@ -17,7 +17,7 @@ import Img from "gatsby-image";
 import greyAngleBg from "images/backgrounds/grey-angle-bg.svg";
 import shortid from "shortid";
 
-const GridBlock = props => (
+const ChallengeSolutionBlock = props => (
   <StaticQuery
     query={graphql`
       query {
@@ -27,19 +27,17 @@ const GridBlock = props => (
               id
               title
               desc
-              renderSingleRow
-              separator
               gridBlocks {
-                icon {
-                  childImageSharp {
-                    fluid(quality: 100) {
-                      ...GatsbyImageSharpFluid
-                    }
-                  }
+                challenge {
+                  title
+                  textHTML
+                  tileColor
                 }
-                displayIcon
-                title
-                textHTML
+                solution {
+                  title
+                  textHTML
+                  tileColor
+                }
               }
             }
           }
@@ -63,9 +61,9 @@ const Icon = styled.div`
     props.gradient === true ? "" : "0 1px 24px 1px rgba(204, 125, 247, 0.18)"};
 `;
 
-const GridWrap = styled(Row)`
+const GridWrap = styled.div`
   padding-bottom: 0rem;
-  text-align: center;
+  text-align: left;
 `;
 const GridSectionHeader = styled(Row)`
   padding-top: 5rem;
@@ -75,7 +73,7 @@ const GridSectionHeader = styled(Row)`
 `;
 
 const GridHeader = styled.div`
-  text-align: center;
+  text-align: left;
   width: 100%;
   h4 {
     font-size: 1.8em;
@@ -104,18 +102,104 @@ const DesktopSvg = styled.img`
 `;
 
 const ItemDesc = styled(Text)`
-  text-align: center;
+  text-align: left;
   font-size: 1.25em;
 `;
 
 const ItemTitle = styled.div`
   font-weight: 800;
   font-size: 1.5rem;
-  line-height: 3;
+  line-height: 1.5;
+  position: relative;
 `;
 
 const Item = styled.div`
-  margin: 20px 0px;
+  background-image: none;
+  display: block;
+  padding-bottom: 2rem;
+  margin: 50px auto;
+  box-shadow: rgba(40, 41, 44, 0.12) 0px 1px 10px 1px;
+  &:before {
+    content: unset;
+  }
+
+  @media ${media.sm} {
+    margin: 20px 0px;
+    box-shadow: rgb(232, 227, 236) 0px 0px 4px 2px;
+    border-radius: 10px;
+
+    margin: 50px auto;
+    display: table;
+
+    background-image: linear-gradient(
+      ${props => (props.filled === "solution" ? "280deg" : "100deg")},
+      ${props => props.tileColor} calc(50% - 1px),
+      transparent 50%
+    );
+    border-radius: 6px;
+    box-shadow: rgba(40, 41, 44, 0.12) 0px 1px 10px 1px;
+
+    &:before,
+    &:after {
+      content: ‘’;
+      display: table;
+    }
+
+    .solution {
+      padding-top: 40px;
+      padding-bottom: 20px;
+      h6,
+      div {
+        padding-left: 30px;
+      }
+
+      border-top-right-radius: 10px;
+      border-bottom-right-radius: 10px;
+    }
+
+    .challenge {
+      padding-top: 40px;
+      padding-bottom: 20px;
+      padding-left: 40px;
+      padding-right: 35px;
+      border-top-left-radius: 10px;
+      border-bottom-left-radius: 10px;
+    }
+  }
+`;
+
+const Tile = styled.div`
+  width: 100%;
+  color: black;
+  display: block;
+  padding: 2rem 2rem 0rem;
+
+  h6 {
+    color: ${props => (props.tileColor === null ? "#B60F7F" : "#00adb9")};
+    position: relative;
+  }
+
+  @media ${media.sm} {
+    padding: 20px;
+    overflow: hidden;
+
+    color: ${props => (props.tileColor === null ? "black" : "white")};
+
+    p {
+      color: ${props => (props.tileColor === null ? "black" : "white")};
+      position: relative;
+    }
+
+    h6 {
+      color: ${props => (props.tileColor === null ? "#B60F7F" : "white")};
+      position: relative;
+    }
+
+    width: 50%;
+    display: table-cell;
+    padding: 3rem;
+    line-height: 1.7;
+  }
 `;
 
 const IconImg = styled(Img)`
@@ -148,40 +232,55 @@ class Blocks extends Component {
 
   render() {
     const contentBlock = this.getBlock();
+
     const GridItems = props => {
       return (
-        <Item key={shortid.generate()}>
-          {props.block.displayIcon && (
-            <Icon gradient={props.singlerow}>
-              <IconImg
-                fluid={props.block.icon.childImageSharp.fluid}
-                gradient={props.singlerow}
-              />
-            </Icon>
-          )}
+        <Item
+          key={shortid.generate()}
+          tileColor={
+            props.block.challenge.tileColor === null
+              ? props.block.solution.tileColor
+              : props.block.challenge.tileColor
+          }
+          filled={
+            props.block.challenge.tileColor === null ? "solution" : "challenge"
+          }
+        >
+          <Tile
+            xl="6"
+            tileColor={props.block.challenge.tileColor}
+            className="challenge"
+          >
+            <div className="challengeAngle" />
+            <h6>CHALLENGE</h6>
+            <ItemTitle>{props.block.challenge.title}</ItemTitle>
 
-          <ItemTitle>{props.block.title}</ItemTitle>
-
-          <ItemDesc
-            dangerouslySetInnerHTML={{ __html: props.block.textHTML }}
-          />
+            <ItemDesc
+              dangerouslySetInnerHTML={{
+                __html: props.block.challenge.textHTML
+              }}
+            />
+          </Tile>
+          <Tile
+            xl="6"
+            tileColor={props.block.solution.tileColor}
+            className="solution"
+          >
+            <div className="solutionAngle" />
+            <h6>SOLUTION</h6>
+            <ItemTitle>{props.block.solution.title}</ItemTitle>
+            <ItemDesc
+              dangerouslySetInnerHTML={{
+                __html: props.block.solution.textHTML
+              }}
+            />
+          </Tile>
         </Item>
       );
     };
 
     const GridColumns = props => (
-      <Col
-        xl={props.singlerow === "true" ? 2 : 4}
-        className={props.className}
-        singlerow={props.singlerow}
-      >
-        <GridItems
-          block={props.block}
-          i={props.i}
-          key={props.i}
-          singlerow={props.singlerow}
-        />
-      </Col>
+      <GridItems block={props.block} i={props.i} key={props.i} />
     );
 
     const GridBlocks = props => {
@@ -189,32 +288,7 @@ class Blocks extends Component {
         return function(block, i, arr) {
           return (
             <React.Fragment key={shortid.generate()}>
-              {(i + 1) % 3 === 0 ? (
-                <GridColumns
-                  key={shortid.generate()}
-                  block={block}
-                  i={i}
-                  singlerow={singlerow ? "true" : "false"}
-                />
-              ) : (
-                <GridColumns
-                  key={shortid.generate()}
-                  block={block}
-                  i={i}
-                  className={
-                    singlerow
-                      ? i === 0
-                        ? "offset-xl-2"
-                        : ""
-                      : arr.length % 3 === 0
-                      ? ""
-                      : i > 0 && i % 3 === 0
-                      ? "offset-xl-2"
-                      : ""
-                  }
-                  singlerow={singlerow ? "true" : "false"}
-                />
-              )}
+              <GridColumns key={shortid.generate()} block={block} i={i} />
             </React.Fragment>
           );
         };
@@ -229,15 +303,7 @@ class Blocks extends Component {
 
     return (
       <ContainerMaxWidth className="pt-3 pt-lg-4">
-        <GridSectionHeader>
-          <GridHeader>
-            <h4>{contentBlock.node.title}</h4>
-            <p>{contentBlock.node.desc} </p>
-          </GridHeader>
-        </GridSectionHeader>
-
         <GridWrap>
-          {/* {faqBlocks} */}
           <GridBlocks key={shortid.generate()} contentBlock={contentBlock} />
         </GridWrap>
         <DesktopSvg
@@ -250,7 +316,7 @@ class Blocks extends Component {
   }
 }
 
-GridBlock.propTypes = {
+ChallengeSolutionBlock.propTypes = {
   id: PropTypes.node.isRequired
 };
 
@@ -258,4 +324,4 @@ Blocks.propTypes = {
   data: PropTypes.any.isRequired
 };
 
-export default withTheme(GridBlock);
+export default withTheme(ChallengeSolutionBlock);
