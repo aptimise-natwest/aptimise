@@ -60,7 +60,7 @@ const Icon = styled.div`
   align-items: center;
   justify-content: center;
   box-shadow: ${props =>
-    props.gradient === true ? "" : "0 1px 24px 1px rgba(204, 125, 247, 0.18)"};
+    props.gradient === 'true' ? "" : "0 1px 24px 1px rgba(204, 125, 247, 0.18)"};
 `;
 
 const GridWrap = styled(Row)`
@@ -119,7 +119,7 @@ const Item = styled.div`
 `;
 
 const IconImg = styled(Img)`
-  width: ${props => (props.gradient === true ? "100%" : "54px")};
+  width: ${props => (props.gradient === 'true' ? "100%" : "54px")};
   &:after {
     content: "";
     position: absolute;

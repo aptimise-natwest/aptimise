@@ -12,6 +12,11 @@ const LinkButton = styled(Button)`
   z-index: 1;
   width: 100%;
 
+  background-color: ${props =>
+    props.bgcolor == null
+      ? props.theme.colors.turquoise
+      : props.theme.colors[props.bgcolor]};
+
   @media ${media.md} {
     width: auto;
     margin-right: 0.5rem;
@@ -28,10 +33,17 @@ const LinkButton = styled(Button)`
 
   &.internalPageLink {
     color: ${props => props.theme.colors.white};
-    background-color: ${props => props.theme.colors.turquoise};
+    background-color: ${props =>
+      props.bgcolor == null
+        ? props.theme.colors.turquoise
+        : props.theme.colors[props.bgcolor]};
+
     &:hover {
       color: ${props => props.theme.colors.white};
-      background-color: ${props => props.theme.colors.turquoise};
+      background-color: ${props =>
+        props.bgcolor == null
+          ? props.theme.colors.turquoise
+          : props.theme.colors[props.bgcolor]};
     }
   }
 `;
@@ -54,6 +66,7 @@ const LinkBlock = props => {
               link
               linkText
               download
+              bgColor
             }
           }
         }
@@ -66,48 +79,52 @@ const LinkBlock = props => {
     ({ node }) => props.id === node.id
   )[0];
 
-  const links = block.node.links.map((link, i) => {
-    if (link.link.charAt(0) === "/") {
-      // Switch to gatsby Link if internal
-      let linkButton;
-      if (!link.download) {
-        linkButton = (
-          <LinkButton
-            key={i}
-            as={Link}
-            className="internalLink internalPageLink"
-            to={link.link}
-          >
-            {link.linkText}
-          </LinkButton>
-        );
-      } else {
-        linkButton = (
-          <LinkButton
-            key={i}
-            className="internalLink download"
-            as="a"
-            href={link.link}
-            download
-          >
-            {link.linkText}
-          </LinkButton>
-        );
-      }
-      return linkButton;
-    } else {
-      return (
-        <LinkButton
-          key={i}
-          href={link.link}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          {link.linkText}
-        </LinkButton>
-      );
-    }
-  });
+  const links =
+    block.node.links === null
+      ? ""
+      : block.node.links.map((link, i) => {
+          if (link.link.charAt(0) === "/") {
+            // Switch to gatsby Link if internal
+            let linkButton;
+            if (!link.download) {
+              linkButton = (
+                <LinkButton
+                  key={i}
+                  as={Link}
+                  className="internalLink internalPageLink"
+                  bgcolor={link.bgColor}
+                  to={link.link}
+                >
+                  {link.linkText}
+                </LinkButton>
+              );
+            } else {
+              linkButton = (
+                <LinkButton
+                  key={i}
+                  className="internalLink download"
+                  as="a"
+                  href={link.link}
+                  download
+                >
+                  {link.linkText}
+                </LinkButton>
+              );
+            }
+            return linkButton;
+          } else {
+            return (
+              <LinkButton
+                key={i}
+                href={link.link}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {link.linkText}
+              </LinkButton>
+            );
+          }
+        });
 
   return props.padding || props.padding === undefined ? (
     <Padded className="py-3 py-lg-4">{links}</Padded>
