@@ -208,11 +208,11 @@ const CaseItemQoute = styled(Text)`
     content: "“";
     position: absolute;
     font-size: 20em;
-    z-index: 999;
-    top: -0.75em;
+    z-index: 99;
+    top: -0.55em;
     left: -0.12em;
     transform: rotate(-10deg);
-    opacity: 0.1;
+    opacity: 0.05;
   }
 `;
 

@@ -292,12 +292,13 @@ const MobileImgSvgBottom = styled.img`
 `;
 
 const WatchNowButton = styled(Button)`
-  font-size: ${props => props.theme.font.size.xl};
+  font-size: ${props => props.theme.font.size.lgr};
   margin-bottom: 0.5rem;
   z-index: 1;
   width: 100%;
   padding: 5px 40px;
   background-color: ${props => props.theme.colors.turquoise};
+  padding: 5px 30px 2px 10px;
 
   &:hover {
     color: ${props => props.theme.colors.white};
