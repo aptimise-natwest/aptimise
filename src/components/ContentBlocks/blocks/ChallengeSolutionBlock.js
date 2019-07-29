@@ -148,7 +148,7 @@ const Item = styled.div`
       );
     }
 
-    @supports (-ms-high-contrast: active), (-ms-high-contrast: none) {
+    @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
       background-image: linear-gradient(
         ${props => (props.filled === "solution" ? "280deg" : "100deg")},
         ${props => props.tileColor} 0%,
