@@ -60,18 +60,21 @@ const Icon = styled.div`
   align-items: center;
   justify-content: center;
   box-shadow: ${props =>
-    props.gradient === 'true' ? "" : "0 1px 24px 1px rgba(204, 125, 247, 0.18)"};
+    props.gradient === "true"
+      ? ""
+      : "0 1px 24px 1px rgba(204, 125, 247, 0.18)"};
 `;
 
 const GridWrap = styled(Row)`
   padding-bottom: 0rem;
   text-align: center;
 `;
-const GridSectionHeader = styled(Row)`
+const GridSectionHeader = styled.div`
   padding-top: 5rem;
   padding-bottom: 0rem;
   text-align: center;
   width: 100%;
+  display: ${props => props.hide};
 `;
 
 const GridHeader = styled.div`
@@ -119,7 +122,7 @@ const Item = styled.div`
 `;
 
 const IconImg = styled(Img)`
-  width: ${props => (props.gradient === 'true' ? "100%" : "54px")};
+  width: ${props => (props.gradient === "true" ? "100%" : "54px")};
   &:after {
     content: "";
     position: absolute;
@@ -229,7 +232,9 @@ class Blocks extends Component {
 
     return (
       <ContainerMaxWidth className="pt-3 pt-lg-4">
-        <GridSectionHeader>
+        <GridSectionHeader
+          hide={contentBlock.node.title === null ? "none" : "block"}
+        >
           <GridHeader>
             <h4>{contentBlock.node.title}</h4>
             <p>{contentBlock.node.desc} </p>

@@ -148,6 +148,17 @@ const Item = styled.div`
       );
     }
 
+    @supports (-ms-high-contrast: active), (-ms-high-contrast: none) {
+      background-image: linear-gradient(
+        ${props => (props.filled === "solution" ? "280deg" : "100deg")},
+        ${props => props.tileColor} 0%,
+        ${props => props.tileColor} 0%,
+        ${props => props.tileColor} 51%,
+        #ffffff 51%,
+        #ffffff 51%
+      );
+    }
+
     border-radius: 6px;
     box-shadow: rgba(40, 41, 44, 0.12) 0px 1px 10px 1px;
 
