@@ -140,7 +140,12 @@ const Item = styled.div`
     background-image: linear-gradient(${props =>
       props.filled === "solution" ? "280deg" : "100deg"}, ${props =>
   props.tileColor} 0%,${props => props.tileColor} 0%,${props =>
-  props.tileColor} calc(50% - -11px),#ffffff 51%,#ffffff 51%);
+  props.tileColor} 51%,#ffffff 51%,#ffffff 51%);
+ 
+  background: linear-gradient(${props =>
+      props.filled === "solution" ? "280deg" : "100deg"}, ${props =>
+  props.tileColor} 0%,${props => props.tileColor} 0%,${props =>
+  props.tileColor} 51%,#ffffff 51%,#ffffff 51%);
  
 
     /* background: linear-gradient(280deg, #00adb9 0%,#00adb9 0%,#00adb9 calc(50% - -11px),#ffffff 51%,#ffffff 51%); */
