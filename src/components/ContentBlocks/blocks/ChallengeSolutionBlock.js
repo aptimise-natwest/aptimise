@@ -136,6 +136,13 @@ const Item = styled.div`
       ${props => props.tileColor} calc(50% - 1px),
       transparent 50%
     );
+
+    background: linear-gradient(
+      ${props => (props.filled === "solution" ? "280deg" : "100deg")},
+      ${props => props.tileColor} calc(50% - 1px),
+      transparent 50%
+    );
+
     border-radius: 6px;
     box-shadow: rgba(40, 41, 44, 0.12) 0px 1px 10px 1px;
 
