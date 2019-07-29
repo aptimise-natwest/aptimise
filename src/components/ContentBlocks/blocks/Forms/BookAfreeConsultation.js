@@ -36,6 +36,10 @@ const InputStyled = styled.select`
 
 const FormGrp = styled(FormGroup)`
   margin: 0px;
+
+  #AccountingPackage {
+    padding-left: 15px;
+  }
 `;
 
 const FormTitle = styled.h2`
