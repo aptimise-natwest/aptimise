@@ -131,22 +131,34 @@ const Item = styled.div`
     margin: 50px auto;
     display: table;
 
-    /* background-image: linear-gradient(
+    background-image: linear-gradient(
       ${props => (props.filled === "solution" ? "280deg" : "100deg")},
       ${props => props.tileColor} calc(50% - 1px),
       transparent 50%
-    ); */
+    );
 
-    background-image: linear-gradient(${props =>
+    @supports (-ms-ime-align:auto) {
+      background-image: linear-gradient(${props =>
+        props.filled === "solution" ? "280deg" : "100deg"}, ${props =>
+  props.tileColor} 0%,${props => props.tileColor} 0%,${props =>
+  props.tileColor} 51%,#ffffff 51%,#ffffff 51%);
+
+  background: linear-gradient(${props =>
+    props.filled === "solution" ? "280deg" : "100deg"}, ${props =>
+  props.tileColor} 0%,${props => props.tileColor} 0%,${props =>
+  props.tileColor} 51%,#ffffff 51%,#ffffff 51%);
+}
+
+    /* background-image: linear-gradient(${props =>
       props.filled === "solution" ? "280deg" : "100deg"}, ${props =>
   props.tileColor} 0%,${props => props.tileColor} 0%,${props =>
   props.tileColor} 51%,#ffffff 51%,#ffffff 51%);
  
   background: linear-gradient(${props =>
-      props.filled === "solution" ? "280deg" : "100deg"}, ${props =>
+    props.filled === "solution" ? "280deg" : "100deg"}, ${props =>
   props.tileColor} 0%,${props => props.tileColor} 0%,${props =>
   props.tileColor} 51%,#ffffff 51%,#ffffff 51%);
- 
+  */
 
     /* background: linear-gradient(280deg, #00adb9 0%,#00adb9 0%,#00adb9 calc(50% - -11px),#ffffff 51%,#ffffff 51%); */
 
