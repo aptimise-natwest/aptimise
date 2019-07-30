@@ -13,7 +13,7 @@ import ModalVideo from "components/shared/ModalVideo";
 import ModalVideoClose from "components/shared/ModalVideoClose";
 
 import landingBlockSVG from "images/backgrounds/landing-block.svg";
-import landingBlockVideo from "video/final-loop.mp4";
+import landingBlockVideo from "video/final-loop-muted.mp4";
 import landingBlockVideoPlaceholder from "video/final-loop-placeholder.jpg";
 import landingProductBlockSVG from "images/backgrounds/landing-product-block.svg";
 import landingTextMobileSVG from "images/backgrounds/landing-text-mobile.svg";
