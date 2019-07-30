@@ -63,7 +63,7 @@
   },
   {
     "id": "spacerBlockHome",
-    "type": "LinkBlock",
+    "type": "SpacerBlock",
     "links": null
   },
   {
