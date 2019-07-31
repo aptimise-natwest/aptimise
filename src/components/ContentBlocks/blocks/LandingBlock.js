@@ -188,7 +188,6 @@ const LandingText = styled(Text)`
   #fineprint {
     font-size: 0.7em;
     padding-top: 10px;
-    font-weight: bold;
   }
   @media ${media.md} {
     #fineprint {
