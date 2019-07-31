@@ -3,9 +3,9 @@
 <defs>
 <linearGradient id="paint0_linear" x1="1086.001" y1="-1900.866" x2="700" y2="1991" gradientUnits="userSpaceOnUse">
 
-<stop offset="0.49999" stop-color="#ffffff" stop-opacity="0"/>
+<stop offset="0.49999" stop-color="#d2cbe4" stop-opacity="1"/>
 
-<stop offset="20%" stop-color="#42145F" stop-opacity="0"/>
+<stop offset="20%" stop-color="#d2cbe4" stop-opacity="1"/>
 
 <stop offset="60%" stop-color="#42145F" opacity="0.5" />
 </linearGradient>

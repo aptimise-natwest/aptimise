@@ -13,7 +13,7 @@ import ModalVideo from "components/shared/ModalVideo";
 import ModalVideoClose from "components/shared/ModalVideoClose";
 
 import landingBlockSVG from "images/backgrounds/landing-block.svg";
-import landingBlockVideo from "video/final-loop.mp4";
+import landingBlockVideo from "video/final-loop-muted.mp4";
 import landingBlockVideoPlaceholder from "video/final-loop-placeholder.jpg";
 import landingProductBlockSVG from "images/backgrounds/landing-product-block.svg";
 import landingTextMobileSVG from "images/backgrounds/landing-text-mobile.svg";
@@ -292,12 +292,13 @@ const MobileImgSvgBottom = styled.img`
 `;
 
 const WatchNowButton = styled(Button)`
-  font-size: ${props => props.theme.font.size.xl};
+  font-size: ${props => props.theme.font.size.lgr};
   margin-bottom: 0.5rem;
   z-index: 1;
   width: 100%;
   padding: 5px 40px;
   background-color: ${props => props.theme.colors.turquoise};
+  padding: 5px 30px 2px 10px;
 
   &:hover {
     color: ${props => props.theme.colors.white};

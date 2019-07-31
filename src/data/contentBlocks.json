@@ -11,7 +11,7 @@
     "youtubeVideoID": "5sFoqY8ZcBo",
     "heroForm": null,
     "text": "Reduce your invoice processing time by up to 50% with the UK’s only end-to-end Accounts Payable solution",
-    "finePrint" : "<p id='fineprint'>Natwest business or commercial account required.<br/>A monthly fee may apply.<p/>"
+    "finePrint": "<p id='fineprint'>Natwest business or commercial account required.<br/>A monthly fee may apply.<p/>"
   },
   {
     "id": "textBlockHome",
@@ -51,15 +51,20 @@
     "type": "LinkBlock",
     "links": [
       {
-        "download": "true",
-        "link": "/pdfs/Aptimise-how-it-works.pdf",
-        "linkText": "Download “how it works” guide"
+        "link": "/sme/",
+        "linkText": "For Small Businesses"
       },
       {
-        "link": "/faqs/",
-        "linkText": "FAQs"
+        "bgColor": "purpleDark",
+        "link": "/accountants/",
+        "linkText": "For Accountants"
       }
     ]
+  },
+  {
+    "id": "spacerBlockHome",
+    "type": "SpacerBlock",
+    "links": null
   },
   {
     "id": "infoBlockFullWidthHome",
@@ -104,7 +109,7 @@
         "imageCopy": "LEAP",
         "name": "Raj Ahluwalia",
         "position": "UK Finance Director, LEAP Legal",
-        "textHTML": "<p>“By reducing our processing time by 50%, APtimise has allowed my team to shift from data entry to value-add.”</p>",
+        "textHTML": "<h4>“By reducing our processing time by 50%, APtimise has allowed my team to shift from data entry to value-add.”</h4>",
         "twitter": "",
         "linkedIn": "",
         "facebook": "",
@@ -114,7 +119,7 @@
         "imageCopy": "Spectrum Chemicals",
         "name": "Sarah Campbell",
         "position": "Office Manager, Spectrum Chemicals",
-        "textHTML": "<p>“The data capture amazes me. There's very little human input, so there's less chance of errors and typos. It's very clever technology.”</p>",
+        "textHTML": "<h4>“The data capture amazes me. There's very little human input, so there's less chance of errors and typos. It's very clever technology.”</h4>",
         "twitter": "",
         "linkedIn": "",
         "facebook": "",
@@ -342,7 +347,7 @@
     "youtubeVideoID": null,
     "heroForm": null,
     "text": "Designed for Small Businesses and Accountants, APtimise is the UK’s only end-to-end invoices and payments solution, removing the frustration of the traditional Accounts Payable process and making it faster, more accurate and secure.",
-    "finePrint" : null
+    "finePrint": null
   },
   {
     "id": "heroBlockSME",
@@ -356,7 +361,7 @@
     "youtubeVideoID": null,
     "heroForm": null,
     "text": "Remove all the paper from the process and focus on growing your business. The manual entry of data is inefficient, time-consuming and prone to errors.",
-    "finePrint" : null
+    "finePrint": null
   },
   {
     "id": "heroBlockAcc",
@@ -370,7 +375,7 @@
     "youtubeVideoID": null,
     "text": "Ever thought about offering Accounts Payable service to your customers? Our UK only end-to-end Accounts Payable solution could open up revenue opportunities for you and your business.",
     "heroForm": "bookAfreeConsultation",
-    "finePrint" : null
+    "finePrint": null
   },
   {
     "id": "productOverview",

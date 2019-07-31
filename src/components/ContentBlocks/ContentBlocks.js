@@ -11,6 +11,7 @@ import WhitePaperBlock from "./blocks/WhitePaperBlock";
 import FormBlock from "./blocks/FormBlock";
 
 import LinkBlock from "./blocks/LinkBlock";
+import SpacerBlock from "./blocks/SpacerBlock";
 import DeviceBlock from "./blocks/DeviceBlock";
 import CarouselBlock from "./blocks/CarouselBlock";
 import ImageTextBlock from "./blocks/ImageTextBlock";
@@ -47,7 +48,9 @@ const ContentBlocks = props => {
       let n = pageBlocks.indexOf(block.node.id);
       return [n, block];
     })
-    .sort()
+    .sort((a, b) => {
+      return a[0] - b[0];
+    })
     .map(j => {
       return j[1];
     });
@@ -58,7 +61,6 @@ const ContentBlocks = props => {
 
   if (contentBlocks !== null) {
     blocks = contentBlocks.map((block, i) => {
-      // console.log(block.node.type)
 
       switch (block.node.type) {
         case "LandingBlock":
@@ -81,6 +83,9 @@ const ContentBlocks = props => {
 
         case "LinkBlock":
           return <LinkBlock id={block.node.id} key={i} />;
+
+        case "SpacerBlock":
+          return <SpacerBlock id={block.node.id} key={i} />;
 
         case "GridBlock":
           return <GridBlock id={block.node.id} key={i} />;
