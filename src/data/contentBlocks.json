@@ -462,6 +462,50 @@
     ]
   },
   {
+    "id": "accChallengeSolution",
+    "type": "ChallengeSolutionBlock",
+    "title": null,
+    "desc": null,
+    "gridBlocks": [
+      {
+        "challenge": {
+          "title": "Lack of visibility",
+          "textHTML": "<p>Bookkeeping is often a log of what did happen, rather than what is happening right now. This lack of visibility across clients’ businesses prevents you from sharing full expertise, reducing errors or making proactive suggestions.</p>",
+          "tileColor": null
+        },
+        "solution": {
+          "title": "Increased transparency",
+          "textHTML": "<p>By offering AP services, you are more in tune with clients business and gain an improved visibility of their active payables. This will help you leverage your trusted advisor status.</p>",
+          "tileColor": "#00ADB9"
+        }
+      },
+      {
+        "challenge": {
+          "title": "Disrupted process",
+          "textHTML": "<p>Inability to provide an easy and secure service for making and scheduling payments due to security/privacy risks across multiple banking platforms.</p>",
+          "tileColor": "#FBBA20"
+        },
+        "solution": {
+          "title": "Forward thinking practice",
+          "textHTML": "<p>APtimise is the UK’s first end-to-end solution, allowing you to make payments on behalf of your clients. It stores invoices for up to 7 years, providing transparency that helps you collaborate with your clients more closely, and understand their business better.</p>",
+          "tileColor": null
+        }
+      },
+      {
+        "challenge": {
+          "title": "Time consuming",
+          "textHTML": "<p>Manual tasks (like invoice keying, coding & PO matching) are time-consuming and taking you away from value-added activities.</p>",
+          "tileColor": null
+        },
+        "solution": {
+          "title": "Open up service revenue streams",
+          "textHTML": "<p>Adding extra services to your remit can expand your customer portfolio and set you apart from other competition. </p>",
+          "tileColor": "#6F2C91"
+        }
+      }
+    ]
+  },
+  {
     "id": "caseStudyQoute",
     "type": "CaseStudyQoute",
     "referenceBlock": "carouselBlockHome",
