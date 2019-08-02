@@ -11,6 +11,8 @@
       "textBlockHome",
       "infoBlocksHome",
       "linkBlockHome",
+      "productIntegration",
+      "spacerBlockHome",
       "whitePaperBlockHome",
       "deviceBlockHome",
       "carouselBlockHome",
@@ -86,6 +88,36 @@
       "productFeatures",
       "productIntegration",
       "bookAfreeConsultation"
+    ]
+  },
+  {
+    "id": "forsmallbusiness",
+    "path": "/sme/",
+    "menuOrder": 3,
+    "title": "Small Business Accounts Payable Software",
+    "menuTitle": "Small Businesses",
+    "metaDescription": "APtimise accounts payable software for Small Businesses. Move on from time consuming and manual data entry. Fast, accurate, simple and secure. Find out more.",
+    "contentBlocks": [
+      "heroBlockSME",
+      "textBlockHome",
+      "infoBlocksHome",
+      "smeChallengeSolution",
+      "calculatorBlockHome",
+      "caseStudyQoute",
+      "bookAfreeConsultation"
+    ]
+  },
+  {
+    "id": "foraccountants",
+    "path": "/accountants/",
+    "menuOrder": 3,
+    "title": "Accounts Payable Software for Accountants",
+    "menuTitle": "Accountants",
+    "metaDescription": "Accounts Payable Software available for Accountants - Discover new revenue streams with this new end-to-end accounts payable solution. UK Based - Find Out More.",
+    "contentBlocks": [
+      "heroBlockAcc",
+      "accChallengeSolution",
+      "caseStudyQouteAccountants"
     ]
   },
   {

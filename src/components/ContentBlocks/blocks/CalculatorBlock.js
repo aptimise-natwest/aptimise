@@ -21,14 +21,26 @@ const CalculatorContainer = styled(ContainerMaxWidth)`
   padding-bottom: 1.5rem;
 
   @media ${media.md} {
-    padding-bottom: 12rem;
+    padding-bottom: 1.5rem;
   }
+`;
+
+const Container = styled.div`
+  background-color: #f9f9f9;
+  margin: 150px auto;
+  padding: 25px 0px; 
+
+
+  @media ${media.sm} {
+    padding: 50px;
+  }
+
 `;
 
 const CalculatorBgSvg = styled.img`
   display: none;
   @media ${media.md} {
-    display: block;
+    display: none;
     position: absolute;
     bottom: 0;
     left: 50%;
@@ -480,7 +492,7 @@ class Calculator extends Component {
     } = block.node;
 
     return (
-      <>
+      <Container>
         <CalculatorContainer>
           <CalculatorBgSvg src={greyAngleBg} alt="" />
 
@@ -562,7 +574,7 @@ class Calculator extends Component {
             </Col>
           </Row>
         </CalculatorContainer>
-      </>
+      </Container>
     );
   }
 }

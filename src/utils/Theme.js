@@ -27,6 +27,7 @@ const font = {
         sm: `${fontSizeBase * .75}rem`, // 12px
         md: `${fontSizeBase}rem`, // 16px
         lg: `${fontSizeBase * 1.25}rem`, // 20px
+        lgr: `${fontSizeBase * 1.3}rem`,
         xl: `${fontSizeBase * 1.5}rem` // 24px
     },
     lineHeight: {
