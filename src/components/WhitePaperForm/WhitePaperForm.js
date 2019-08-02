@@ -136,7 +136,7 @@ class WhitePaperForm extends Component {
     // console.log(`GDPR Phone : ${form.gdprPhone.value}`);
     // console.log(`GDPR Text : ${form.gdprText.value}`);
 
-    window.history.replaceState(null, null, "?thankyou & form=whitepaper");
+    window.history.replaceState(null, null, "?thankyou&form=whitepaper");
     form.submit();
   };
 
