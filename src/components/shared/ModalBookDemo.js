@@ -20,10 +20,16 @@ class ModalBookDemo extends Component {
 
   detectBookDemo() {
     // Globally detect book demo button click
-    document.addEventListener('click', (e) => {
-      if (e.target && e.target.nodeName === 'BUTTON' || e.target.nodeName === 'A') {
-        if (e.target.className !== 'undefined' && e.target.className.indexOf("trigger-bookdemo-modal") > -1) {
-          this.toggle()
+    document.addEventListener("click", e => {
+      if (
+        (e.target && e.target.nodeName === "BUTTON") ||
+        e.target.nodeName === "A"
+      ) {
+        if (
+          e.target.className !== "undefined" &&
+          e.target.className.indexOf("trigger-bookdemo-modal") > -1
+        ) {
+          this.toggle();
         }
       }
     });
@@ -60,7 +66,7 @@ class ModalBookDemo extends Component {
           <div
             class="calendly-inline-widget"
             data-url="https://calendly.com/aptimisesales/demo"
-            style={{ minWidth: "320px", height: "630px" }}
+            style={{ minWidth: "320px", height: "70vh" }}
           />
         </ModalBody>
       </ModalAngled>
