@@ -98,9 +98,13 @@ const RowVerticalAlign = styled(Row)`
 
   box-shadow: rgba(40, 41, 44, 0.12) 0px 1px 10px 1px;
 
-  padding: 50px;
+  padding: 20px;
 
   margin: 75px 0px;
+
+  @media ${media.sm} {
+    padding: 50px;
+  }
 `;
 
 const FullGrey = styled.div`

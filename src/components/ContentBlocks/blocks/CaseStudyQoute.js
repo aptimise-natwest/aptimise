@@ -208,11 +208,11 @@ const CaseItemQoute = styled(Text)`
     content: "“";
     position: absolute;
     font-size: 20em;
-    z-index: 999;
-    top: -0.75em;
+    z-index: 99;
+    top: -0.55em;
     left: -0.12em;
     transform: rotate(-10deg);
-    opacity: 0.1;
+    opacity: 0.05;
   }
 `;
 
@@ -234,6 +234,10 @@ const DesktopSvg = styled.img`
     transform: translateX(-50%);
     max-width: none;
   }
+`;
+
+const QouteRow = styled(Row)`
+  align-items: center;
 `;
 
 const AptimiseBox = styled.img`
@@ -406,26 +410,53 @@ class Blocks extends Component {
   }
 
   render() {
-    const CaseItem = ({ imageCopy, textHTML, position, links }) => (
-      <Row>
-        <Col sm={9}>
+    const CaseItem = ({
+      imageCopy,
+      textHTML,
+      position,
+      links,
+      youtubeVideoId
+    }) => (
+      <QouteRow>
+        <Col sm={links != null ? 9 : 6}>
           <CaseItemContainer>
             <CaseItemQoute dangerouslySetInnerHTML={{ __html: textHTML }} />
             <CaseItemQouteBy>{position}</CaseItemQouteBy>
-            <LinkButton
-              className="internalLink download"
-              as="a"
-              href={links[0].link}
-              download
-            >
-              Read full case study
-            </LinkButton>
+            {links != null ? (
+              <LinkButton
+                className="internalLink download"
+                as="a"
+                href={links[0].link}
+                download
+              >
+                Read full case study
+              </LinkButton>
+            ) : (
+              <></>
+            )}
           </CaseItemContainer>
         </Col>
-        <Col sm={3}>
-          <AptimiseBox src={aptimiseBoxes} alt="" />
+        <Col sm={links != null ? 3 : 6}>
+          {links != null ? (
+            <AptimiseBox src={aptimiseBoxes} alt="" />
+          ) : (
+            <div className="embed-responsive embed-responsive-16by9">
+              <iframe
+                width="560"
+                height="315"
+                className="embed-responsive-item"
+                src={
+                  "https://www.youtube.com/embed/" + youtubeVideoId + "?rel=0"
+                }
+                frameBorder="0"
+                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+                title="APtimise video"
+              />
+            </div>
+          )}
         </Col>
-      </Row>
+      </QouteRow>
     );
 
     const sliderCommonSettings = {
@@ -448,15 +479,24 @@ class Blocks extends Component {
               id={block.node.referenceBlock}
             >
               {caseItem =>
-                caseItem.map(({ imageCopy, textHTML, position, links }) => (
-                  <CaseItem
-                    imageCopy={imageCopy}
-                    textHTML={textHTML}
-                    position={position}
-                    links={links}
-                    key={shortid.generate()}
-                  />
-                ))
+                caseItem.map(
+                  ({
+                    imageCopy,
+                    textHTML,
+                    position,
+                    links,
+                    youtubeVideoId
+                  }) => (
+                    <CaseItem
+                      imageCopy={imageCopy}
+                      textHTML={textHTML}
+                      position={position}
+                      links={links}
+                      youtubeVideoId={youtubeVideoId}
+                      key={shortid.generate()}
+                    />
+                  )
+                )
               }
             </CaseStudyProvider>
           </ContainerMaxWidth>

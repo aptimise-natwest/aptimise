@@ -8,6 +8,7 @@ import XeroLogo from "components/shared/XeroLogo";
 import Button from "components/shared/Button";
 import ContainerMaxWidth from "components/shared/ContainerMaxWidth";
 import Text from "components/shared/Text";
+import HamMenu from "./Menu";
 
 const NavBar = styled.div`
   width: 100%;
@@ -106,29 +107,39 @@ const HeaderNavBar = props => {
     <NavBar>
       <NavBarContainer>
         <Row className="justify-content-between align-items-center">
-          <LogoWrap xs="auto">
-            <Link to="/">
-              <AptimiseLogo />
-            </Link>
+          <Col>
+            <HamMenu
+              id="main-menu"
+              menuItems={[
+                "home",
+                "product",
+                "forsmallbusiness",
+                "foraccountants",
+                "help",
+                "aboutus"
+              ]}
+            >
+              <LogoWrap xs="auto" key="logo_wrap">
+                <Link to="/">
+                  <AptimiseLogo />
+                </Link>
 
-            {typeof props.data !== "undefined" &&
-              props.data.pagesJson.id === "xero" && (
-                <XeroWrap>
-                  <XeroLogo width="70" />
-                </XeroWrap>
-              )}
-          </LogoWrap>
+                {typeof props.data !== "undefined" &&
+                  props.data.pagesJson.id === "xero" && (
+                    <XeroWrap>
+                      <XeroLogo width="70" />
+                    </XeroWrap>
+                  )}
+              </LogoWrap>
 
-          {typeof props.data !== "undefined" &&
-            props.data.pagesJson.id !== "xero" && (
-              <BreadCrumb>
-                <BreadCrumbs data={props.data.pagesJson} />
-              </BreadCrumb>
-            )}
-          <Col xs="auto">
-            <BookADemo as="button" className="trigger-bookdemo-modal">
-              Book a demo
-            </BookADemo>
+              <BookADemo
+                as="button"
+                className="trigger-bookdemo-modal"
+                key="bookdemo_button"
+              >
+                Book a demo
+              </BookADemo>
+            </HamMenu>
           </Col>
         </Row>
       </NavBarContainer>

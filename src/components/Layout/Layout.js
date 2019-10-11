@@ -1,5 +1,5 @@
-import React, { Component } from "react"
-import PropTypes from "prop-types"	
+import React, { Component } from "react";
+import PropTypes from "prop-types";
 import styled, { ThemeProvider } from "styled-components";
 import "scss/bootstrap.scss";
 import theme from "utils/Theme";
@@ -11,7 +11,7 @@ import Footer from "components/Footer/Footer";
 import ModalBookDemo from "components/shared/ModalBookDemo";
 import { media } from "utils/Media";
 const SiteWrap = styled.div`
-  padding-top: 95px;
+  padding-top: 90px;
 `;
 
 const MainWrap = styled.span`
@@ -21,7 +21,6 @@ const MainWrap = styled.span`
   }
   margin-top: 1rem !important;
   display: block;
-  
 `;
 
 class Layout extends Component {

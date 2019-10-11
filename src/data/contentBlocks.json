@@ -4,12 +4,14 @@
     "type": "LandingBlock",
     "imageDesktop": "../images/backgrounds/landing-home.jpg",
     "imageMobile": "../images/backgrounds/landing-home-mobile.jpg",
-    "title": "Revolutionise your<br/> Accounts Payable<br/> with APtimise",
+    "title": "Revolutionise your Accounts Payable with APtimise",
     "headerTitle": null,
     "pageType": null,
     "videoText": "Watch now",
     "youtubeVideoID": "5sFoqY8ZcBo",
-    "text": "Reduce your invoice processing time by up to 50% with the UK’s only end-to-end Accounts Payable solution <p id='fineprint'>Natwest business or commercial account required.<br/>A monthly fee may apply.<p/>"
+    "heroForm": null,
+    "text": "Reduce your invoice processing time by up to 50% with the UK’s only end-to-end Accounts Payable solution",
+    "finePrint": "<p id='fineprint'>Natwest business or commercial account required. A monthly fee may apply.<p/>"
   },
   {
     "id": "textBlockHome",
@@ -49,15 +51,20 @@
     "type": "LinkBlock",
     "links": [
       {
-        "download": "true",
-        "link": "/pdfs/Aptimise-how-it-works.pdf",
-        "linkText": "Download “how it works” guide"
+        "link": "/sme/",
+        "linkText": "For Small Businesses"
       },
       {
-        "link": "/faqs/",
-        "linkText": "FAQs"
+        "bgColor": "purpleDark",
+        "link": "/accountants/",
+        "linkText": "For Accountants"
       }
     ]
+  },
+  {
+    "id": "spacerBlockHome",
+    "type": "SpacerBlock",
+    "links": null
   },
   {
     "id": "infoBlockFullWidthHome",
@@ -82,7 +89,7 @@
     "id": "whitePaperBlockHome",
     "type": "WhitePaperBlock",
     "title": "Accounts Payable is automating: Download your FREE guide",
-    "textHTML": "<p>Automating Accounts Payable eliminates the need for repetitive, manual tasks, enabling tour team to focus on value adding activities that help your business grow.</p>",
+    "textHTML": "<p>Automating Accounts Payable eliminates the need for repetitive, manual tasks, enabling our team to focus on value adding activities that help your business grow.</p>",
     "buttonText": "Download a free guide",
     "image": "../images/whitepaper.jpg"
   },
@@ -102,7 +109,7 @@
         "imageCopy": "LEAP",
         "name": "Raj Ahluwalia",
         "position": "UK Finance Director, LEAP Legal",
-        "textHTML": "<p>“By reducing our processing time by 50%, APtimise has allowed my team to shift from data entry to value-add.”</p>",
+        "textHTML": "<h4>“By reducing our processing time by 50%, APtimise has allowed my team to shift from data entry to value-add.”</h4>",
         "twitter": "",
         "linkedIn": "",
         "facebook": "",
@@ -112,7 +119,7 @@
         "imageCopy": "Spectrum Chemicals",
         "name": "Sarah Campbell",
         "position": "Office Manager, Spectrum Chemicals",
-        "textHTML": "<p>“The data capture amazes me. There's very little human input, so there's less chance of errors and typos. It's very clever technology.”</p>",
+        "textHTML": "<h4>“The data capture amazes me. There's very little human input, so there's less chance of errors and typos. It's very clever technology.”</h4>",
         "twitter": "",
         "linkedIn": "",
         "facebook": "",
@@ -338,7 +345,37 @@
     "headerTitle": "PRODUCT OVERVIEW",
     "videoText": "Watch now",
     "youtubeVideoID": null,
-    "text": "Designed for Small Businesses and Accountants, APtimise is the UK’s only end-to-end invoices and payments solution, removing the frustration of the traditional Accounts Payable process and making it faster, more accurate and secure."
+    "heroForm": null,
+    "text": "Designed for Small Businesses and Accountants, APtimise is the UK’s only end-to-end invoices and payments solution, removing the frustration of the traditional Accounts Payable process and making it faster, more accurate and secure.",
+    "finePrint": "<p id='fineprint'>Natwest business or commercial account required. A monthly fee may apply.<p/>"
+  },
+  {
+    "id": "heroBlockSME",
+    "type": "LandingBlock",
+    "imageDesktop": null,
+    "imageMobile": null,
+    "pageType": "sme",
+    "title": "Accounts Payable for Small Businesses – change the number crunching culture",
+    "headerTitle": "APTIMISE ACCOUNTS PAYABLE FOR SMALL BUSINESSES",
+    "videoText": "Watch now",
+    "youtubeVideoID": null,
+    "heroForm": null,
+    "text": "Remove all the paper from the process and focus on growing your business. The manual entry of data is inefficient, time-consuming and prone to errors.",
+    "finePrint": "<p id='fineprint'>Natwest business or commercial account required. A monthly fee may apply.<p/>"
+  },
+  {
+    "id": "heroBlockAcc",
+    "type": "LandingBlock",
+    "imageDesktop": null,
+    "imageMobile": null,
+    "pageType": "acc",
+    "title": "Open up to the way you work with your clients",
+    "headerTitle": "APTIMISE ACCOUNTS PAYABLE FOR ACCOUNTANTS",
+    "videoText": "Watch now",
+    "youtubeVideoID": null,
+    "text": "Ever thought about offering Accounts Payable service to your customers? Our UK only end-to-end Accounts Payable solution could open up revenue opportunities for you and your business.",
+    "heroForm": "bookAfreeConsultation",
+    "finePrint": "<p id='fineprint'>Natwest business or commercial account required. A monthly fee may apply.<p/>"
   },
   {
     "id": "productOverview",
@@ -381,10 +418,104 @@
     ]
   },
   {
+    "id": "smeChallengeSolution",
+    "type": "ChallengeSolutionBlock",
+    "title": null,
+    "desc": null,
+    "gridBlocks": [
+      {
+        "challenge": {
+          "title": "Manual data entry",
+          "textHTML": "<p>Are you manually entering invoice data into a finance or ERP system? If so, you will well know that the process can be inefficient, time-consuming and prone to errors. It not only consumes a lot of valuable resources, it can also open the doors to mistakes. Also, any mismanagement of physical AP papers like invoices can lead to damage and loss.</p>",
+          "tileColor": null
+        },
+        "solution": {
+          "title": "Automation",
+          "textHTML": "<p>By using the UK’s only end to end accounts payable software, you regain control and unrivalled visibility at every stage of invoice processing – from invoice capture all the way through to payment execution.</p>",
+          "tileColor": "#00ADB9"
+        }
+      },
+      {
+        "challenge": {
+          "title": "Inefficient process",
+          "textHTML": "<p>Manual entry can result in late payments and unhappy suppliers. You are running a risk of your account being suspended or charged a significant interest fee. An inefficient manual process can put a lot of stress on the members of the accounts payable team –they have to be extra careful when entering data into the system. </p>",
+          "tileColor": "#FBBA20"
+        },
+        "solution": {
+          "title": "Happy suppliers and AP team",
+          "textHTML": "<p>By introducing an automated solution, you allow your team to focus on more strategic tasks, so important to future success of your business as well as the progression of their careers. It will also help with removing the amount of errors due to manual data entry. </p>",
+          "tileColor": null
+        }
+      },
+      {
+        "challenge": {
+          "title": "Storing papers and other physical documents",
+          "textHTML": "<p>Manually filing and storing papers and other physical documents can take up a lot of space and add ongoing storage costs. </p>",
+          "tileColor": null
+        },
+        "solution": {
+          "title": "Easy management of information through digital filing and storage",
+          "textHTML": "<p>Having everything organised for easy access and tracking will not only give you a peace of mind, but will ensure you’re always prepared for an audit.</p>",
+          "tileColor": "#6F2C91"
+        }
+      }
+    ]
+  },
+  {
+    "id": "accChallengeSolution",
+    "type": "ChallengeSolutionBlock",
+    "title": null,
+    "desc": null,
+    "gridBlocks": [
+      {
+        "challenge": {
+          "title": "Lack of visibility",
+          "textHTML": "<p>Bookkeeping is often a log of what did happen, rather than what is happening right now. This lack of visibility across clients’ businesses prevents you from sharing full expertise, reducing errors or making proactive suggestions.</p>",
+          "tileColor": null
+        },
+        "solution": {
+          "title": "Increased transparency",
+          "textHTML": "<p>By offering AP services, you are more in tune with clients business and gain an improved visibility of their active payables. This will help you leverage your trusted advisor status.</p>",
+          "tileColor": "#00ADB9"
+        }
+      },
+      {
+        "challenge": {
+          "title": "Disrupted process",
+          "textHTML": "<p>Inability to provide an easy and secure service for making and scheduling payments due to security/privacy risks across multiple banking platforms.</p>",
+          "tileColor": "#FBBA20"
+        },
+        "solution": {
+          "title": "Forward thinking practice",
+          "textHTML": "<p>APtimise is the UK’s first end-to-end solution, allowing you to make payments on behalf of your clients. It stores invoices for up to 7 years, providing transparency that helps you collaborate with your clients more closely, and understand their business better.</p>",
+          "tileColor": null
+        }
+      },
+      {
+        "challenge": {
+          "title": "Time consuming",
+          "textHTML": "<p>Manual tasks (like invoice keying, coding & PO matching) are time-consuming and taking you away from value-added activities.</p>",
+          "tileColor": null
+        },
+        "solution": {
+          "title": "Open up service revenue streams",
+          "textHTML": "<p>Adding extra services to your remit can expand your customer portfolio and set you apart from other competition. </p>",
+          "tileColor": "#6F2C91"
+        }
+      }
+    ]
+  },
+  {
     "id": "caseStudyQoute",
     "type": "CaseStudyQoute",
     "referenceBlock": "carouselBlockHome",
     "dataFilter": "{'imageCopy': 'Spectrum Chemicals'}"
+  },
+  {
+    "id": "caseStudyQouteAccountants",
+    "type": "CaseStudyQoute",
+    "referenceBlock": "carouselBlockHome",
+    "dataFilter": "{'imageCopy': 'LEAP'}"
   },
   {
     "id": "productFeatures",
@@ -398,7 +529,7 @@
         "icon": "../images/product-overviews/png/rocket.png",
         "displayIcon": false,
         "title": "Invoice Capture",
-        "textHTML": "<p>Technology to capture supplier information, invoice totals and line item details (descriptions, net amounts, VAT and ross amounts).</p>"
+        "textHTML": "<p>Technology to capture supplier information, invoice totals and line item details (descriptions, net amounts, VAT and gross amounts).</p>"
       },
       {
         "icon": "../images/product-overviews/png/rocket.png",
