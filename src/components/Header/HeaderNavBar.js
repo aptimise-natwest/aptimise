@@ -103,12 +103,15 @@ const BreadCrumbs = props => {
 };
 
 const HeaderNavBar = props => {
+  let { hideMenu } = props.data.pagesJson;
+
   return (
     <NavBar>
       <NavBarContainer>
         <Row className="justify-content-between align-items-center">
           <Col>
             <HamMenu
+              hideMenu={hideMenu}
               id="main-menu"
               menuItems={[
                 "home",

@@ -25,6 +25,8 @@ import shortid from "shortid";
 import CaseStudyProvider from "../../shared/provider/CaseStudyProvider";
 import greyAngleBg from "images/backgrounds/grey-angle-bg-flat.svg";
 import aptimiseBoxes from "images/product-overviews/png/aptimise-boxes.png";
+import XeroLogo from "images/logos/Xero_logo.svg";
+import LeapLogo from "images/logos/leap-logo.svg";
 
 const CaseStudyQoute = props => (
   <StaticQuery
@@ -36,6 +38,10 @@ const CaseStudyQoute = props => (
               id
               type
               referenceBlock
+              hideVideo
+              headerTitle
+              logos
+              layout
               dataFilter
               carouselBlocks {
                 imageCopy
@@ -184,6 +190,72 @@ const HexagonCarouselMobileItem = styled.div`
 `;
 
 const FluidContainer = styled.div`
+  /* background: linear-gradient(180deg,rgba(245, 248, 250, 0.1) 0%,#f5f8fa 100%); */
+
+  background: ${props =>
+    props.layout === "boxed"
+      ? "#f5f8fa"
+      : "linear-gradient(180deg,rgba(245, 248, 250, 0.1) 0%,#f5f8fa 100%)"};
+
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 90px;
+
+  padding-top: ${props => (props.layout === "boxed" ? "100px" : "0px")};
+
+  padding-bottom: ${props => (props.layout === "boxed" ? "100px" : "0px")};
+
+  .boxed {
+    box-shadow: 0px 0px 4px 2px rgba(232, 227, 236, 0.417647);
+    padding: 50px;
+    background-color: white;
+  }
+
+  .flatBg {
+    background-color: #f5f8fa;
+  }
+
+  .logos {
+    display: flex;
+  }
+  .logo {
+    /* height: 60px;
+    width: 60px; */
+
+    display: block;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    /* box-shadow: rgba(204, 125, 247, 0.18) 0px 1px 24px 1px; */
+    background: white;
+    border-radius: 100%;
+
+    background-repeat: no-repeat;
+    background-position: center center;
+
+    background-size: 55px 150px;
+    width: 70px;
+    height: 60px;
+    margin-top: 20px;
+    margin-left: 10px;
+  }
+
+  .xeroLogo {
+    background-image: url(${XeroLogo});
+  }
+
+  .leapLogo {
+    background-image: url(${LeapLogo});
+    background-size: 87px;
+    width: 94px;
+  }
+`;
+
+const FluidContainerLanding = styled.div`
   background: linear-gradient(
     180deg,
     rgba(245, 248, 250, 0.1) 0%,
@@ -196,6 +268,7 @@ const FluidContainer = styled.div`
   margin-left: auto;
   margin-top: 90px;
 `;
+
 const CaseItemContainer = styled.div``;
 
 const CaseItemQoute = styled(Text)`
@@ -216,10 +289,23 @@ const CaseItemQoute = styled(Text)`
   }
 `;
 
+const CaseLogo = styled(Text)`
+  p {
+    font-size: 1.8em;
+    line-height: 1.2;
+    font-weight: bold;
+  }
+`;
+
 const CaseItemQouteBy = styled.div`
   color: #1e1e1e;
   font-weight: 300;
   margin: 10px 0;
+`;
+
+const CaseItemHeader = styled.h3`
+  text-align: center;
+  margin-bottom: 50px;
 `;
 
 const DesktopSvg = styled.img`
@@ -415,11 +501,16 @@ class Blocks extends Component {
       textHTML,
       position,
       links,
-      youtubeVideoId
+      youtubeVideoId,
+      hideVideo,
+      headerTitle,
+      logos,
+      layout
     }) => (
-      <QouteRow>
-        <Col sm={links != null ? 9 : 6}>
+      <QouteRow className={layout != null ? layout : ""}>
+        <Col sm={hideVideo === true ? 12 : links != null ? 9 : 6}>
           <CaseItemContainer>
+            <CaseLogo dangerouslySetInnerHTML={{ __html: logos }}></CaseLogo>
             <CaseItemQoute dangerouslySetInnerHTML={{ __html: textHTML }} />
             <CaseItemQouteBy>{position}</CaseItemQouteBy>
             {links != null ? (
@@ -436,26 +527,30 @@ class Blocks extends Component {
             )}
           </CaseItemContainer>
         </Col>
-        <Col sm={links != null ? 3 : 6}>
-          {links != null ? (
-            <AptimiseBox src={aptimiseBoxes} alt="" />
-          ) : (
-            <div className="embed-responsive embed-responsive-16by9">
-              <iframe
-                width="560"
-                height="315"
-                className="embed-responsive-item"
-                src={
-                  "https://www.youtube.com/embed/" + youtubeVideoId + "?rel=0"
-                }
-                frameBorder="0"
-                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-                title="APtimise video"
-              />
-            </div>
-          )}
-        </Col>
+        {hideVideo != true ? (
+          <Col sm={links != null ? 3 : 6}>
+            {links != null ? (
+              <AptimiseBox src={aptimiseBoxes} alt="" />
+            ) : (
+              <div className="embed-responsive embed-responsive-16by9">
+                <iframe
+                  width="560"
+                  height="315"
+                  className="embed-responsive-item"
+                  src={
+                    "https://www.youtube.com/embed/" + youtubeVideoId + "?rel=0"
+                  }
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                  title="APtimise video"
+                />
+              </div>
+            )}
+          </Col>
+        ) : (
+          <></>
+        )}
       </QouteRow>
     );
 
@@ -471,12 +566,16 @@ class Blocks extends Component {
 
     return (
       <>
-        <FluidContainer>
+        <FluidContainer layout={block.node.layout}>
           <ContainerMaxWidth>
             <CaseStudyProvider
               data={this.props.data}
               filter={JSON.parse(dataFilter)}
               id={block.node.referenceBlock}
+              hideVideo={block.node.hideVideo}
+              headerTitle={block.node.headerTitle}
+              logos={block.node.logos}
+              layout={block.node.layout}
             >
               {caseItem =>
                 caseItem.map(
@@ -485,23 +584,43 @@ class Blocks extends Component {
                     textHTML,
                     position,
                     links,
-                    youtubeVideoId
+                    youtubeVideoId,
+                    hideVideo,
+                    headerTitle,
+                    logos,
+                    layout
                   }) => (
-                    <CaseItem
-                      imageCopy={imageCopy}
-                      textHTML={textHTML}
-                      position={position}
-                      links={links}
-                      youtubeVideoId={youtubeVideoId}
-                      key={shortid.generate()}
-                    />
+                    <>
+                      {headerTitle != null ? (
+                        <CaseItemHeader>{headerTitle}</CaseItemHeader>
+                      ) : (
+                        <></>
+                      )}
+
+                      <CaseItem
+                        imageCopy={imageCopy}
+                        textHTML={textHTML}
+                        position={position}
+                        links={links}
+                        youtubeVideoId={youtubeVideoId}
+                        key={shortid.generate()}
+                        hideVideo={hideVideo}
+                        headerTitle={headerTitle}
+                        logos={logos}
+                        layout={layout}
+                      />
+                    </>
                   )
                 )
               }
             </CaseStudyProvider>
           </ContainerMaxWidth>
         </FluidContainer>
-        <DesktopSvg src={greyAngleBg} alt="" />
+        {block.node.layout === null ? (
+          <DesktopSvg src={greyAngleBg} alt="" />
+        ) : (
+          <></>
+        )}
       </>
     );
   }

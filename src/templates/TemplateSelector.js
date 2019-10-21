@@ -1,34 +1,33 @@
-import React, { Component } from "react"
-import { graphql } from 'gatsby';
+import React, { Component } from "react";
+import { graphql } from "gatsby";
 import DefaultTemplate from "./DefaultTemplate";
 
 class TemplateSelector extends Component {
-    render() {
+  render() {
+    const data = this.props.data;
+    const template = data.template;
 
-        const data = this.props.data
-        const template = data.template
-
-        switch (template) {
-            // case "home-template":
-            //     return <HomeTemplate data={data} />
-            default:
-                return <DefaultTemplate data={data} />
-        }
-
+    switch (template) {
+      // case "home-template":
+      //     return <HomeTemplate data={data} />
+      default:
+        return <DefaultTemplate data={data} />;
     }
+  }
 }
 
-export default TemplateSelector
+export default TemplateSelector;
 
 export const query = graphql`
-query($id: String!) {
+  query($id: String!) {
     pagesJson(id: { eq: $id }) {
-        id
-        path
-        title
-        metaDescription
-        h1
-        contentBlocks
+      id
+      path
+      title
+      metaDescription
+      hideMenu
+      h1
+      contentBlocks
     }
-}
-`
+  }
+`;
