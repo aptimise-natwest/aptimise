@@ -154,5 +154,13 @@
     "title": "Accounts Payable Software UK",
     "metaDescription": "Accounts payable software for small businesses and accountants. Fast, simple, accurate and secure, try APtimise.  See how many hours a month you can save.",
     "contentBlocks": ["speakToYou", "caseStudyQouteLandingPage1"]
+  },
+  {
+    "id": "landing2",
+    "path": "/landing2",
+    "hideMenu": true,
+    "title": "Accounts Payable Software UK",
+    "metaDescription": "Accounts payable software for small businesses and accountants. Fast, simple, accurate and secure, try APtimise.  See how many hours a month you can save.",
+    "contentBlocks": ["speakToYouV2", "caseStudyQouteLandingPage1"]
   }
 ]
