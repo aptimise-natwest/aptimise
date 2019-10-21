@@ -103,7 +103,12 @@ const BreadCrumbs = props => {
 };
 
 const HeaderNavBar = props => {
-  let { hideMenu } = props.data.pagesJson;
+  console.log("props.data");
+  console.log(props.data);
+  console.log("----------");
+
+  let hideMenu =
+    props.data != undefined ? props.data.pagesJson.hideMenu : false;
 
   return (
     <NavBar>
