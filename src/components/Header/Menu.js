@@ -20,6 +20,12 @@ import {
 
 const NavBar = styled(Navbar)`
   padding: 0px;
+  /* display: ${props => (props.hideMenu === true ? "none" : "flex")}; */
+`;
+
+const Navitem = styled(NavItem)`
+  display: ${props =>
+    props.hideMenu === true ? "none !important" : "flex !important"};
 `;
 
 const Navbartoggler = styled(NavbarToggler)`
@@ -75,6 +81,7 @@ export default class HamMenu extends React.Component {
       isOpen: !this.state.isOpen
     });
   }
+
   render() {
     return (
       <div>
@@ -84,7 +91,7 @@ export default class HamMenu extends React.Component {
           </NavbarBrand>
           <Navbartoggler onClick={this.toggle} />
           <Collapse isOpen={this.state.isOpen} navbar>
-            <Menu {...this.props}>
+            <Menu {...this.props} hideMenu={this.props.hideMenu}>
               <ChildMenu filter="bookdemo_button" {...this.props} />
             </Menu>
           </Collapse>
@@ -138,14 +145,15 @@ const Menu = props => {
   };
 
   var menuLinks = multiFilter(block, filters);
-
+  console.log("props");
+  console.log(props.hideMenu);
   const links = menuLinks.map((link, i) => {
     let linkButton = (
-      <NavItem key={i}>
+      <Navitem key={i} hideMenu={props.hideMenu}>
         <NavLink href={link.node.path} key={i}>
-          <Text> {link.node.menuTitle}</Text>
+          <Text>{link.node.menuTitle}</Text>
         </NavLink>
-      </NavItem>
+      </Navitem>
     );
 
     return linkButton;

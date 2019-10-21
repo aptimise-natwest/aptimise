@@ -3,6 +3,7 @@
     "id": "home",
     "path": "/",
     "menuOrder": 1,
+    "hideMenu": false,
     "title": "Accounts Payable Software UK",
     "menuTitle": "Home",
     "metaDescription": "Accounts payable software for small businesses and accountants. Fast, simple, accurate and secure, try APtimise.  See how many hours a month you can save.",
@@ -43,6 +44,7 @@
     "id": "help",
     "path": "/faqs/",
     "menuOrder": 5,
+    "hideMenu": false,
     "title": "Frequently Asked Questions",
     "menuTitle": "FAQs",
     "metaDescription": "How to use APtimise accounts payable software.  Frequently asked questions and live chat so you can get the most from your APtimise experience.",
@@ -69,6 +71,7 @@
     "id": "aboutus",
     "path": "/about/",
     "menuOrder": 6,
+    "hideMenu": false,
     "title": "About Us",
     "menuTitle": "About Us",
     "metaDescription": "APtimise, brought to you by Natwest, is providing a new way to deal with accounts payable and saving businesses time, so they can focus on growing. Find out more.",
@@ -78,6 +81,7 @@
     "id": "product",
     "path": "/product/",
     "menuOrder": 2,
+    "hideMenu": false,
     "title": "Find out more about our AP Solution",
     "menuTitle": "Product",
     "metaDescription": "Come and see the end to end accounts payable solution which is transforming the way people are tackling their accounts payable needs.  Find out more.",
@@ -94,6 +98,7 @@
     "id": "forsmallbusiness",
     "path": "/sme/",
     "menuOrder": 3,
+    "hideMenu": false,
     "title": "Small Business Accounts Payable Software",
     "menuTitle": "Small Businesses",
     "metaDescription": "APtimise accounts payable software for Small Businesses. Move on from time consuming and manual data entry. Fast, accurate, simple and secure. Find out more.",
@@ -111,6 +116,7 @@
     "id": "foraccountants",
     "path": "/accountants/",
     "menuOrder": 3,
+    "hideMenu": false,
     "title": "Accounts Payable Software for Accountants",
     "menuTitle": "Accountants",
     "metaDescription": "Accounts Payable Software available for Accountants - Discover new revenue streams with this new end-to-end accounts payable solution. UK Based - Find Out More.",
@@ -140,5 +146,13 @@
     "title": "Thank You",
     "metaDescription": "APtimise, brought to you by Natwest, is providing a new way to deal with accounts payable and saving businesses time, so they can focus on growing. Find out more.",
     "contentBlocks": ["textThankYouBlock"]
+  },
+  {
+    "id": "landing1",
+    "path": "/landing1",
+    "hideMenu": true,
+    "title": "Accounts Payable Software UK",
+    "metaDescription": "Accounts payable software for small businesses and accountants. Fast, simple, accurate and secure, try APtimise.  See how many hours a month you can save.",
+    "contentBlocks": ["speakToYou", "caseStudyQouteLandingPage1"]
   }
 ]

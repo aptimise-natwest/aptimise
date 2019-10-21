@@ -19,6 +19,14 @@ import {
 import { media } from "utils/Media";
 import LinkBlock from "./LinkBlock";
 
+import Laptop from "images/product-overviews/svg/laptop.svg";
+import Invoice from "images/product-overviews/svg/invoice.svg";
+import Clock from "images/product-overviews/svg/clock.svg";
+import Box from "images/product-overviews/svg/safe.svg";
+import SageLogo from "images/logos/Sage_logo.svg";
+import XeroLogo from "images/logos/Xero_logo.svg";
+import QBOLogo from "images/logos/qbo-logo.svg";
+
 const FormBlock = props => (
   <StaticQuery
     query={graphql`
@@ -31,6 +39,7 @@ const FormBlock = props => (
               textHTML
               buttonText
               form
+              background
               thankYouTitle
               thankYouMessage
               links {
@@ -60,13 +69,94 @@ const FormHeaderSection = styled.div`
   @media ${media.md} {
     display: block;
   }
+
+  .smallPrint {
+    font-size: 0.75em;
+    width: auto;
+    margin-top: 20px;
+    margin-left: 20px;
+  }
+
+  .logo {
+    /* height: 60px;
+    width: 60px; */
+
+    display: block;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    /* box-shadow: rgba(204, 125, 247, 0.18) 0px 1px 24px 1px; */
+    background: white;
+    border-radius: 100%;
+
+    background-repeat: no-repeat;
+    background-position: center center;
+
+    background-size: 55px 150px;
+    width: 70px;
+    height: 60px;
+    margin-top: 20px;
+    margin-left: 20px;
+  }
+
+  .sageLogo {
+    background-image: url(${SageLogo});
+  }
+
+  .xeroLogo {
+    background-image: url(${XeroLogo});
+  }
+
+  .qboLogo {
+    background-size: 186px;
+    width: 140px;
+    background-image: url(${QBOLogo});
+  }
+
+  .logoGradient {
+    height: 60px;
+    width: 60px;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    box-shadow: rgba(204, 125, 247, 0.18) 0px 1px 24px 1px;
+    background: white;
+    margin: 0px auto;
+    border-radius: 100%;
+
+    background-repeat: no-repeat;
+    background-position: center center;
+  }
+
+  .laptop {
+    background-size: 40px;
+    background-image: url(${Laptop});
+  }
+
+  .invoice {
+    background-size: 20px;
+    background-image: url(${Invoice});
+  }
+
+  .clock {
+    background-size: 40px;
+    background-image: url(${Clock});
+  }
+
+  .box {
+    background-size: 40px;
+    background-image: url(${Box});
+  }
 `;
 
 const ContainerMW = styled(ContainerMaxWidth)``;
 
 const FluidContainer = styled.div`
   background-image: ${props =>
-    props.disableSideContent === true
+    props.disableSideContent === true || props.background !== null
       ? "none"
       : "linear-gradient(#f5f8fa, white)"};
   width: 100%;
@@ -166,6 +256,7 @@ const ThanksYou = props => {
     textHTML,
     buttonText,
     form,
+    background,
     thankYouTitle,
     thankYouMessage,
     links
@@ -295,6 +386,7 @@ class Form extends Component {
       textHTML,
       buttonText,
       form,
+      background,
       thankYouTitle,
       thankYouMessage
     } = block.node;
@@ -306,13 +398,16 @@ class Form extends Component {
     const componentsElements = components.map(Component => (
       <Component key="sfsfsdfsdre" />
     ));
-    // console.log("this.props");
-    // console.log(this.props);
+    console.log("this.props");
+    console.log(background);
     // console.log(this.props.disableSideContent);
     const ContainerSwitch = flag => {};
 
     return (
-      <FluidContainer disableSideContent={this.props.disableSideContent}>
+      <FluidContainer
+        disableSideContent={this.props.disableSideContent}
+        background={background}
+      >
         <ContainerMaxWidth className="py-3 py-lg-4">
           <RowVerticalAlign>
             <Col
