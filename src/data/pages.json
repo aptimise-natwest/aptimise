@@ -134,11 +134,20 @@
     "contentBlocks": ["textThankYouBlock"]
   },
   {
-    "id": "thankyoupricing",
-    "path": "/thankyou-pricing/",
+    "id": "accountspayableconsultationthankyou",
+    "path": "/accounts-payable-consultation-thank-you",
     "title": "Thank You",
+    "hideMenu": true,
     "metaDescription": "APtimise, brought to you by Natwest, is providing a new way to deal with accounts payable and saving businesses time, so they can focus on growing. Find out more.",
-    "contentBlocks": ["textThankYouBlock"]
+    "contentBlocks": ["textThankYouAccountsPayableConsultation"]
+  },
+  {
+    "id": "accountspayablewhitepaperthankyou",
+    "path": "/accounts-payable-whitepaper-thank-you",
+    "title": "Thank You",
+    "hideMenu": true,
+    "metaDescription": "APtimise, brought to you by Natwest, is providing a new way to deal with accounts payable and saving businesses time, so they can focus on growing. Find out more.",
+    "contentBlocks": ["textThankYouAccountsPayableWhitepaper"]
   },
   {
     "id": "thankyouconsultation",

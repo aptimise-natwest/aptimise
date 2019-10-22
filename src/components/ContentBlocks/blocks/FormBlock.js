@@ -19,6 +19,7 @@ import {
 import { media } from "utils/Media";
 import LinkBlock from "./LinkBlock";
 
+import FormAngleGrinder from "images/backgrounds/svg-lines.svg";
 import Laptop from "images/product-overviews/svg/laptop.svg";
 import Invoice from "images/product-overviews/svg/invoice.svg";
 import Clock from "images/product-overviews/svg/clock.svg";
@@ -169,6 +170,9 @@ const ContainerMW = styled(ContainerMaxWidth)``;
 const FluidContainer = styled.div`
   font-family: ${props => props.theme.font.family.base};
 
+
+
+
   font-family: ${props =>
     props.mainComponent === true
       ? props.theme.font.family.base
@@ -176,14 +180,14 @@ const FluidContainer = styled.div`
 
   ${props =>
     props.mainComponent === true
-      ? "p {color: #525f7f;letter-spacing: -0.03rem}"
+      ? "p {color: #525f7f;letter-spacing: -0.03rem} background-repeat: no-repeat;background-position: right -300px bottom;background-size: contain;"
       : ""};
 
   ${props => (props.mainComponent === true ? "top:-40px" : "")};
 
   background-image: ${props =>
     props.disableSideContent === true || props.background !== null
-      ? "none"
+      ? "url("+FormAngleGrinder+")"
       : "linear-gradient(#f5f8fa, white)"};
   width: 100%;
   padding-right: ${props =>
