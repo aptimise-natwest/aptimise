@@ -149,17 +149,17 @@
   },
   {
     "id": "landing1",
-    "path": "/landing1",
+    "path": "/accounts-payable-consultation",
     "hideMenu": true,
-    "title": "Accounts Payable Software UK",
+    "title": "Accounts Payable Consultation",
     "metaDescription": "Accounts payable software for small businesses and accountants. Fast, simple, accurate and secure, try APtimise.  See how many hours a month you can save.",
     "contentBlocks": ["speakToYou", "caseStudyQouteLandingPage1"]
   },
   {
     "id": "landing2",
-    "path": "/landing2",
+    "path": "/accounts-payable-whitepaper",
     "hideMenu": true,
-    "title": "Accounts Payable Software UK",
+    "title": "Whitepaper Download",
     "metaDescription": "Accounts payable software for small businesses and accountants. Fast, simple, accurate and secure, try APtimise.  See how many hours a month you can save.",
     "contentBlocks": ["speakToYouV2", "caseStudyQouteLandingPage1"]
   }
