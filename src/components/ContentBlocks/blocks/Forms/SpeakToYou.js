@@ -45,7 +45,9 @@ const FormTitle = styled.h2`
 
 const FormDesc = styled.p`
   text-align: center;
-  font-size: 1rem;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  margin-bottom: 0.1rem;
 `;
 
 class SpeakToYou extends Component {
@@ -250,34 +252,6 @@ class SpeakToYou extends Component {
             label="Phone number*"
             type="number"
             name="Phone"
-          />
-        </FormGrp>
-        <FormGrp>
-          <FloatingLabelInput
-            label="Company name*"
-            type="text"
-            name="Company"
-          />
-        </FormGrp>
-        <FormGrp>
-          <InputStyled name="AccountingPackage" id="AccountingPackage">
-            <option value="">Accounting package*</option>
-            <option value="Aqilla">Aqilla</option>
-            <option value="NetSuite">NetSuite</option>
-            <option value="QuickBooks Desktop">QuickBooks Desktop</option>
-            <option value="QuickBooks Online">QuickBooks Online</option>
-            <option value="Sage 200">Sage 200</option>
-            <option value="Sage 50 Cloud">Sage 50 Cloud</option>
-            <option value="Sage 50 Desktop">Sage 50 Desktop</option>
-            <option value="Xero">Xero</option>
-            <option value="Other">Other</option>
-          </InputStyled>
-        </FormGrp>
-        <FormGrp>
-          <FloatingLabelInput
-            label="Number of Invoices*"
-            type="text"
-            name="NumberofInvoices"
           />
         </FormGrp>
 

@@ -40,6 +40,8 @@ const FormBlock = props => (
               buttonText
               form
               background
+              align
+              mainComponent
               thankYouTitle
               thankYouMessage
               links {
@@ -155,6 +157,18 @@ const FormHeaderSection = styled.div`
 const ContainerMW = styled(ContainerMaxWidth)``;
 
 const FluidContainer = styled.div`
+  font-family: ${props => props.theme.font.family.base};
+
+  font-family: ${props =>
+    props.mainComponent === true
+      ? props.theme.font.family.base
+      : props.theme.font.family.light};
+
+  ${props =>
+    props.mainComponent === true
+      ? "p {color: #525f7f;letter-spacing: -0.03rem}"
+      : ""};
+
   background-image: ${props =>
     props.disableSideContent === true || props.background !== null
       ? "none"
@@ -228,7 +242,8 @@ const LinkItem = styled.a`
 
 const RowVerticalAlign = styled(Row)`
   display: flex;
-  align-items: center;
+  align-items: ${props => props.align};
+  text-align: left;
 `;
 
 const FullGrey = styled.div`
@@ -257,6 +272,8 @@ const ThanksYou = props => {
     buttonText,
     form,
     background,
+    align,
+    mainComponent,
     thankYouTitle,
     thankYouMessage,
     links
@@ -387,6 +404,8 @@ class Form extends Component {
       buttonText,
       form,
       background,
+      align,
+      mainComponent,
       thankYouTitle,
       thankYouMessage
     } = block.node;
@@ -399,7 +418,7 @@ class Form extends Component {
       <Component key="sfsfsdfsdre" />
     ));
     console.log("this.props");
-    console.log(background);
+    console.log(align);
     // console.log(this.props.disableSideContent);
     const ContainerSwitch = flag => {};
 
@@ -407,12 +426,13 @@ class Form extends Component {
       <FluidContainer
         disableSideContent={this.props.disableSideContent}
         background={background}
+        mainComponent={mainComponent}
       >
         <ContainerMaxWidth className="py-3 py-lg-4">
-          <RowVerticalAlign>
+          <RowVerticalAlign align={align}>
             <Col
               lg={{
-                size: this.props.disableSideContent === true ? "" : "6",
+                size: this.props.disableSideContent === true ? "" : "5",
                 order: 2
               }}
               xs={{
@@ -422,14 +442,14 @@ class Form extends Component {
               <ContentWrap>{componentsElements}</ContentWrap>
             </Col>
             <Col
-              lg={{ size: 6, order: 1 }}
+              lg={{ size: 7, order: 1 }}
               xs={{
                 order: 1
               }}
               className={this.props.disableSideContent === true ? "d-none" : ""}
             >
               <FormHeaderSection>
-                <h4>{title}</h4>
+                {mainComponent === true ? <h1>{title}</h1> : <h4>{title}</h4>}
                 <Text
                   dangerouslySetInnerHTML={{ __html: textHTML }}
                   className="py-2"
