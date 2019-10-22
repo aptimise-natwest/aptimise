@@ -38,6 +38,10 @@ const FormGrp = styled(FormGroup)`
   margin: 0px;
 `;
 
+const AlertPlaceHolder = styled(Alert)`
+  margin: 10px;
+`;
+
 const FormTitle = styled.h2`
   text-align: center;
   font-size: 1.7rem;
@@ -66,6 +70,7 @@ class SpeakToYou extends Component {
     email,
     mobile,
     company,
+    gdprLetter,
     gdprEmail,
     gdprPhone,
     gdprText
@@ -111,9 +116,7 @@ class SpeakToYou extends Component {
       lastname: form.LastName.value,
       email: form.Email.value,
       phone: form.Phone.value,
-      company: form.Company.value,
-      numberofinvoices: form.NumberofInvoices.value,
-      accountingpackage: form.AccountingPackage.value,
+      gdprLetter: form.gdprLetter.checked,
       gdprEmail: form.gdprEmail.checked,
       gdprPhone: form.gdprPhone.checked,
       gdprText: form.gdprText.checked
@@ -123,9 +126,7 @@ class SpeakToYou extends Component {
       data.lastname,
       data.email,
       data.phone,
-      data.company,
-      data.numberofinvoices,
-      data.accountingpackage,
+      data.gdprLetter,
       data.gdprEmail,
       data.gdprPhone,
       data.gdprText
@@ -133,12 +134,16 @@ class SpeakToYou extends Component {
     let validation = !(
       form.checkValidity() &&
       !(errors.length > 0) &&
-      form.AccountingPackage.value.length != 0
+      form.gdprPPDisplay.checked
     );
+
     this.setState({ errors: validation, messages: errors });
 
     if (validation) {
       return;
+    }
+    if (form.gdprLetter.value === "") {
+      form.gdprLetter.value = "false";
     }
     if (form.gdprEmail.value === "") {
       form.gdprEmail.value = "false";
@@ -159,15 +164,16 @@ class SpeakToYou extends Component {
     // });
     window.dataLayer.push({
       event: "FormSubmission",
-      formName: "Speak_To_You",
+      formName: "accounts-payable-consultation",
       formLocation:
         document.location.pathname === "/"
           ? "Home Page"
           : document.location.pathname.replace(new RegExp("/", "g"), ""),
       formStatus: "Submitted"
     });
-
-    //return false;
+    console.log(form.gdprEmail.value);
+    console.log(form.gdprPP.value);
+    return false;
 
     // console.log(`GDPR Email : ${form.gdprEmail.value}`);
     // console.log(`GDPR Phone : ${form.gdprPhone.value}`);
@@ -183,10 +189,6 @@ class SpeakToYou extends Component {
       elementCheckbox.name.split("Display")[0]
     );
     hiddenCheckbox[0].value = elementCheckbox.checked;
-    // console.log(hiddenCheckbox[0].value);
-    // console.log(
-    //   `Element : ${hiddenCheckbox[0].name} value : ${hiddenCheckbox[0].value}`
-    // );
   };
 
   componentDidMount() {
@@ -209,11 +211,11 @@ class SpeakToYou extends Component {
     return (
       <Form
         onSubmit={this.test}
-        action="http://go.pardot.com/l/598401/2019-06-18/2tk3dx"
+        action="http://go.pardot.com/l/598401/2019-10-16/32k6zq"
         method="post"
         id="speaktoyou"
       >
-        <Alert
+        <AlertPlaceHolder
           color="danger"
           isOpen={this.state.errors}
           id="form-alert-message"
@@ -224,7 +226,7 @@ class SpeakToYou extends Component {
                 return <ul>{r}</ul>;
               })
             : ""} */}
-        </Alert>
+        </AlertPlaceHolder>
 
         {/* <Alert color="success" isOpen={downloaded}>
           The whitepaper has been downloaded !
@@ -267,6 +269,32 @@ class SpeakToYou extends Component {
         >
           Submit
         </Button>
+        <AlertPlaceHolder
+          color="danger"
+          isOpen={this.state.errors}
+          id="form-alert-message"
+        >
+          Please complete all of the required fields.
+          {/* {this.state.errors
+            ? this.state.messages.map(r => {
+                return <ul>{r}</ul>;
+              })
+            : ""} */}
+        </AlertPlaceHolder>
+        <Gdpr>
+          <FormGroup check inline={true}>
+            <Label check>
+              <Input
+                type="checkbox"
+                name="gdprPPDisplay"
+                onClick={this.invertClick}
+              />{" "}
+              *I confirm that I have read and agree to the NatWest terms and
+              conditions and privacy policy
+              <Input type="hidden" name="gdprPP" id="gdprPP" />
+            </Label>
+          </FormGroup>
+        </Gdpr>
         <div />
         <br />
         <GdprText>
@@ -277,6 +305,17 @@ class SpeakToYou extends Component {
         </GdprText>
 
         <Gdpr>
+          <FormGroup check inline={true}>
+            <Label check>
+              <Input
+                type="checkbox"
+                name="gdprLetterDisplay"
+                onClick={this.invertClick}
+              />{" "}
+              Letter
+              <Input type="hidden" name="gdprLetter" id="gdprLetter" />
+            </Label>
+          </FormGroup>
           <FormGroup check inline={true}>
             <Label check>
               <Input
