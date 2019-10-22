@@ -12,7 +12,7 @@ const InputStyled = styled(Input)`
   position: relative;
   z-index: 1;
   border-radius: 0;
-  border-color: ${props => props.theme.colors.greyMedium};
+  border-color: #d8e2e7;
   height: 40px;
 `;
 
@@ -42,7 +42,7 @@ class FloatingLabelInput extends Component {
       top: !isFocused ? "1.30rem" : "6px",
       left: !isFocused ? "1rem" : "5px",
       fontSize: !isFocused ? props.theme.font.size.md : "0.65rem",
-      zIndex: "99",
+      zIndex: !isFocused ? "0" : "99",
       background: "white",
       padding: "2px",
       color: !isFocused

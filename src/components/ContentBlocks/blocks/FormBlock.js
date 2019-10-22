@@ -79,6 +79,18 @@ const FormHeaderSection = styled.div`
     margin-left: 20px;
   }
 
+  .icon-row {
+    display: flex;
+    margin: 10px 0;
+    min-height: 90px;
+  }
+
+  .icon-content {
+    h6 {
+      margin-bottom: 0;
+    }
+  }
+
   .logo {
     /* height: 60px;
     width: 60px; */
@@ -126,30 +138,28 @@ const FormHeaderSection = styled.div`
     justify-content: center;
     box-shadow: rgba(204, 125, 247, 0.18) 0px 1px 24px 1px;
     background: white;
-    margin: 0px auto;
+    margin: 0px 10px 0 0;
     border-radius: 100%;
 
     background-repeat: no-repeat;
     background-position: center center;
+    background-size: 30px;
   }
 
   .laptop {
-    background-size: 40px;
     background-image: url(${Laptop});
   }
 
   .invoice {
-    background-size: 20px;
+    background-size: 15px;
     background-image: url(${Invoice});
   }
 
   .clock {
-    background-size: 40px;
     background-image: url(${Clock});
   }
 
   .box {
-    background-size: 40px;
     background-image: url(${Box});
   }
 `;
@@ -168,6 +178,8 @@ const FluidContainer = styled.div`
     props.mainComponent === true
       ? "p {color: #525f7f;letter-spacing: -0.03rem}"
       : ""};
+
+  ${props => (props.mainComponent === true ? "top:-40px" : "")};
 
   background-image: ${props =>
     props.disableSideContent === true || props.background !== null

@@ -140,13 +140,17 @@ const HeaderNavBar = props => {
                   )}
               </LogoWrap>
 
-              <BookADemo
-                as="button"
-                className="trigger-bookdemo-modal"
-                key="bookdemo_button"
-              >
-                Book a demo
-              </BookADemo>
+              {hideMenu === true ? (
+                <></>
+              ) : (
+                <BookADemo
+                  as="button"
+                  className="trigger-bookdemo-modal"
+                  key="bookdemo_button"
+                >
+                  Book a demo
+                </BookADemo>
+              )}
             </HamMenu>
           </Col>
         </Row>
