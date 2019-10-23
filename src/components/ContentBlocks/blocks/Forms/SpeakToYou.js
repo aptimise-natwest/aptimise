@@ -215,19 +215,6 @@ class SpeakToYou extends Component {
         method="post"
         id="speaktoyou"
       >
-        <AlertPlaceHolder
-          color="danger"
-          isOpen={this.state.errors}
-          id="form-alert-message"
-        >
-          Please enter your details to get a free quote!
-          {/* {this.state.errors
-            ? this.state.messages.map(r => {
-                return <ul>{r}</ul>;
-              })
-            : ""} */}
-        </AlertPlaceHolder>
-
         {/* <Alert color="success" isOpen={downloaded}>
           The whitepaper has been downloaded !
         </Alert> */}
@@ -284,13 +271,15 @@ class SpeakToYou extends Component {
         <Gdpr>
           <FormGroup check inline={true}>
             <Label check>
-              <Input
-                type="checkbox"
-                name="gdprPPDisplay"
-                onClick={this.invertClick}
-              />{" "}
-              *I confirm that I have read and agree to the NatWest terms and
-              conditions and privacy policy
+              <FormDesc>
+                <Input
+                  type="checkbox"
+                  name="gdprPPDisplay"
+                  onClick={this.invertClick}
+                />
+                *I confirm that I have read and agree to the NatWest terms and
+                conditions and privacy policy
+              </FormDesc>
               <Input type="hidden" name="gdprPP" id="gdprPP" />
             </Label>
           </FormGroup>

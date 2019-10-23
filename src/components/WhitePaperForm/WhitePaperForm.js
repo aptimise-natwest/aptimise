@@ -17,6 +17,17 @@ const Gdpr = styled.span`
   }
 `;
 
+const AlertPlaceHolder = styled(Alert)`
+  margin: 10px;
+`;
+
+const FormDesc = styled.p`
+  text-align: center;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  margin-bottom: 0.1rem;
+`;
+
 const GdprText = styled.p`
   font-size: 0.75em;
   color: #787878;
@@ -39,6 +50,7 @@ class WhitePaperForm extends Component {
     email,
     mobile,
     company,
+    gdprLetter,
     gdprEmail,
     gdprPhone,
     gdprText
@@ -85,6 +97,7 @@ class WhitePaperForm extends Component {
       email: form.Email.value,
       mobile: form.Mobile.value,
       company: form.Company.value,
+      gdprLetter: form.gdprLetter.checked,
       gdprEmail: form.gdprEmail.checked,
       gdprPhone: form.gdprPhone.checked,
       gdprText: form.gdprText.checked
@@ -95,15 +108,29 @@ class WhitePaperForm extends Component {
       data.email,
       data.mobile,
       data.company,
+      data.gdprLetter,
       data.gdprEmail,
       data.gdprPhone,
       data.gdprText
     );
-    let validation = !(form.checkValidity() && !(errors.length > 0));
+    let validation = !(
+      form.checkValidity() &&
+      !(errors.length > 0) &&
+      form.gdprPPDisplay.checked
+    );
     this.setState({ errors: validation, messages: errors });
 
+    let link = document.getElementById("whitepaperformdownloadbutton");
+
     if (validation) {
+      link.removeAttribute("href");
       return;
+    }
+
+    link.setAttribute("href", "/pdfs/Aptimise-whitepaper.pdf");
+
+    if (form.gdprLetter.value === "") {
+      form.gdprLetter.value = "false";
     }
     if (form.gdprEmail.value === "") {
       form.gdprEmail.value = "false";
@@ -114,8 +141,7 @@ class WhitePaperForm extends Component {
     if (form.gdprText.value === "") {
       form.gdprText.value = "false";
     }
-    let link = document.getElementById("whitepaperformdownloadbutton");
-    link.setAttribute("href", "/pdfs/Aptimise-whitepaper.pdf");
+
     // window.ga("gtm4.send", {
     //   hitType: "event",
     //   eventCategory: "Form submission",
@@ -177,19 +203,6 @@ class WhitePaperForm extends Component {
         method="post"
         id="whitepaper"
       >
-        <Alert
-          color="danger"
-          isOpen={this.state.errors}
-          id="form-alert-message"
-        >
-          Please enter your details to download the whitepaper!
-          {/* {this.state.errors
-            ? this.state.messages.map(r => {
-                return <ul>{r}</ul>;
-              })
-            : ""} */}
-        </Alert>
-
         <Alert color="success" isOpen={downloaded}>
           The whitepaper has been downloaded !
         </Alert>
@@ -230,6 +243,34 @@ class WhitePaperForm extends Component {
         >
           Download whitepaper
         </Button>
+        <AlertPlaceHolder
+          color="danger"
+          isOpen={this.state.errors}
+          id="form-alert-message"
+        >
+          Please complete all of the required fields.
+          {/* {this.state.errors
+            ? this.state.messages.map(r => {
+                return <ul>{r}</ul>;
+              })
+            : ""} */}
+        </AlertPlaceHolder>
+        <Gdpr>
+          <FormGroup check inline={true}>
+            <Label check>
+              <FormDesc>
+                <Input
+                  type="checkbox"
+                  name="gdprPPDisplay"
+                  onClick={this.invertClick}
+                />
+                *I confirm that I have read and agree to the NatWest terms and
+                conditions and privacy policy
+              </FormDesc>
+              <Input type="hidden" name="gdprPP" id="gdprPP" />
+            </Label>
+          </FormGroup>
+        </Gdpr>
         <div />
         <br />
         <GdprText>
@@ -240,6 +281,17 @@ class WhitePaperForm extends Component {
         </GdprText>
 
         <Gdpr>
+          <FormGroup check inline={true}>
+            <Label check>
+              <Input
+                type="checkbox"
+                name="gdprLetterDisplay"
+                onClick={this.invertClick}
+              />{" "}
+              Letter
+              <Input type="hidden" name="gdprLetter" id="gdprLetter" />
+            </Label>
+          </FormGroup>
           <FormGroup check inline={true}>
             <Label check>
               <Input

@@ -202,7 +202,7 @@ const FluidContainer = styled.div`
   padding-left: 15px;
   margin-right: auto;
   margin-left: auto;
-  margin-top: 90px;
+  margin-top: 0px;
 
   padding-top: ${props => (props.layout === "boxed" ? "100px" : "0px")};
 

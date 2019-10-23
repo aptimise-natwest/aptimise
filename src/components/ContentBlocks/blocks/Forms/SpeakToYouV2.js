@@ -54,6 +54,32 @@ const FormDesc = styled.p`
   margin-bottom: 0.1rem;
 `;
 
+const CTA = styled.div`
+  width: 100%;
+  text-align: center;
+  padding-bottom: 30px;
+`;
+const CTA_DownloadWhitePaper = styled.div`
+  height: auto;
+  background: white;
+  border: 1px solid rgb(0, 173, 185);
+  border-radius: 33px;
+  position: relative;
+  display: inline-block;
+  .ctaText {
+    font-family: RN House Sans;
+    font-size: 12px;
+    line-height: 15px;
+    /* identical to box height */
+    text-align: center;
+    letter-spacing: 0.09em;
+    padding: 10px;
+    color: #ffffff;
+
+    padding: 5px 10px;
+    color: rgb(0, 173, 185);
+  }
+`;
 class SpeakToYouV2 extends Component {
   constructor(...args) {
     super(...args);
@@ -222,26 +248,20 @@ class SpeakToYouV2 extends Component {
         method="post"
         id="SpeakToYouV2"
       >
-        <AlertPlaceHolder
-          color="danger"
-          isOpen={this.state.errors}
-          id="form-alert-message"
-        >
-          Please enter your details to get a free quote!
-          {/* {this.state.errors
-            ? this.state.messages.map(r => {
-                return <ul>{r}</ul>;
-              })
-            : ""} */}
-        </AlertPlaceHolder>
-
         {/* <Alert color="success" isOpen={downloaded}>
           The whitepaper has been downloaded !
         </Alert> */}
-        <FormTitle>We’d love to speak to you</FormTitle>
+        <CTA>
+          <CTA_DownloadWhitePaper>
+            <div class="ctaText">DOWNLOAD WHITEPAPER</div>
+          </CTA_DownloadWhitePaper>
+        </CTA>
+        <FormTitle>
+          Rethink your Accounts Payable and grow your business.
+        </FormTitle>
         <FormDesc>
-          Fill in your details below and one of our friendly team members will
-          contact you to talk you through how much time and money you can save.
+          Get your team to work smarter and enjoy growing your business.
+          Download our whitepaper and let us show you how.
         </FormDesc>
         <FormGrp>
           <FloatingLabelInput
@@ -291,13 +311,15 @@ class SpeakToYouV2 extends Component {
         <Gdpr>
           <FormGroup check inline={true}>
             <Label check>
-              <Input
-                type="checkbox"
-                name="gdprPPDisplay"
-                onClick={this.invertClick}
-              />{" "}
-              *I confirm that I have read and agree to the NatWest terms and
-              conditions and privacy policy
+              <FormDesc>
+                <Input
+                  type="checkbox"
+                  name="gdprPPDisplay"
+                  onClick={this.invertClick}
+                />
+                *I confirm that I have read and agree to the NatWest terms and
+                conditions and privacy policy
+              </FormDesc>
               <Input type="hidden" name="gdprPP" id="gdprPP" />
             </Label>
           </FormGroup>
