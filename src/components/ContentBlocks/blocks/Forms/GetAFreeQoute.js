@@ -38,9 +38,20 @@ const FormGrp = styled(FormGroup)`
   margin: 0px;
 `;
 
+const AlertPlaceHolder = styled(Alert)`
+  margin: 10px;
+`;
+
 const FormTitle = styled.h2`
   text-align: center;
   font-size: 1.7rem;
+`;
+
+const FormDesc = styled.p`
+  text-align: center;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  margin-bottom: 0.1rem;
 `;
 
 class GetAFreeQoute extends Component {
@@ -59,6 +70,7 @@ class GetAFreeQoute extends Component {
     email,
     mobile,
     company,
+    gdprLetter,
     gdprEmail,
     gdprPhone,
     gdprText
@@ -107,6 +119,7 @@ class GetAFreeQoute extends Component {
       company: form.Company.value,
       numberofinvoices: form.NumberofInvoices.value,
       accountingpackage: form.AccountingPackage.value,
+      gdprLetter: form.gdprLetter.checked,
       gdprEmail: form.gdprEmail.checked,
       gdprPhone: form.gdprPhone.checked,
       gdprText: form.gdprText.checked
@@ -119,6 +132,7 @@ class GetAFreeQoute extends Component {
       data.company,
       data.numberofinvoices,
       data.accountingpackage,
+      data.gdprLetter,
       data.gdprEmail,
       data.gdprPhone,
       data.gdprText
@@ -126,12 +140,16 @@ class GetAFreeQoute extends Component {
     let validation = !(
       form.checkValidity() &&
       !(errors.length > 0) &&
+      form.gdprPPDisplay.checked &&
       form.AccountingPackage.value.length != 0
     );
     this.setState({ errors: validation, messages: errors });
 
     if (validation) {
       return;
+    }
+    if (form.gdprLetter.value === "") {
+      form.gdprLetter.value = "false";
     }
     if (form.gdprEmail.value === "") {
       form.gdprEmail.value = "false";
@@ -206,19 +224,6 @@ class GetAFreeQoute extends Component {
         method="post"
         id="getafreeqouted"
       >
-        <Alert
-          color="danger"
-          isOpen={this.state.errors}
-          id="form-alert-message"
-        >
-          Please enter your details to get a free quote!
-          {/* {this.state.errors
-            ? this.state.messages.map(r => {
-                return <ul>{r}</ul>;
-              })
-            : ""} */}
-        </Alert>
-
         {/* <Alert color="success" isOpen={downloaded}>
           The whitepaper has been downloaded !
         </Alert> */}
@@ -285,6 +290,34 @@ class GetAFreeQoute extends Component {
         >
           Submit
         </Button>
+        <AlertPlaceHolder
+          color="danger"
+          isOpen={this.state.errors}
+          id="form-alert-message"
+        >
+          Please complete all of the required fields.
+          {/* {this.state.errors
+            ? this.state.messages.map(r => {
+                return <ul>{r}</ul>;
+              })
+            : ""} */}
+        </AlertPlaceHolder>
+        <Gdpr>
+          <FormGroup check inline={true}>
+            <Label check>
+              <FormDesc>
+                <Input
+                  type="checkbox"
+                  name="gdprPPDisplay"
+                  onClick={this.invertClick}
+                />
+                *I confirm that I have read and agree to the NatWest terms and
+                conditions and privacy policy
+              </FormDesc>
+              <Input type="hidden" name="gdprPP" id="gdprPP" />
+            </Label>
+          </FormGroup>
+        </Gdpr>
         <div />
         <br />
         <GdprText>
@@ -295,6 +328,17 @@ class GetAFreeQoute extends Component {
         </GdprText>
 
         <Gdpr>
+        <FormGroup check inline={true}>
+            <Label check>
+              <Input
+                type="checkbox"
+                name="gdprLetterDisplay"
+                onClick={this.invertClick}
+              />{" "}
+              Letter
+              <Input type="hidden" name="gdprLetter" id="gdprLetter" />
+            </Label>
+          </FormGroup>
           <FormGroup check inline={true}>
             <Label check>
               <Input
