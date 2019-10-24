@@ -199,7 +199,7 @@ class WhitePaperForm extends Component {
     return (
       <Form
         onSubmit={this.test}
-        action="http://go.pardot.com/l/598401/2018-09-18/2hp89v"
+        action="http://go.pardot.com/l/598401/2019-10-24/32rhj2"
         method="post"
         id="whitepaper"
       >
