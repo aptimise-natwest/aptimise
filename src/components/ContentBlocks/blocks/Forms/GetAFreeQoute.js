@@ -328,7 +328,7 @@ class GetAFreeQoute extends Component {
         </GdprText>
 
         <Gdpr>
-        <FormGroup check inline={true}>
+          <FormGroup check inline={true}>
             <Label check>
               <Input
                 type="checkbox"

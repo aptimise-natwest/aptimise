@@ -1,7 +1,7 @@
-import React, { Component } from "react";
-import { Form, FormGroup, Alert, Label, Input } from "reactstrap";
 import Button from "components/shared/Button";
 import FloatingLabelInput from "components/shared/FloatingLabelInput";
+import React, { Component } from "react";
+import { Alert, Form, FormGroup, Input, Label } from "reactstrap";
 import styled from "styled-components";
 
 const Gdpr = styled.span`
@@ -171,9 +171,9 @@ class SpeakToYou extends Component {
           : document.location.pathname.replace(new RegExp("/", "g"), ""),
       formStatus: "Submitted"
     });
-    console.log(form.gdprEmail.value);
-    console.log(form.gdprPP.value);
-    return false;
+    // console.log(form.gdprEmail.value);
+    // console.log(form.gdprPP.value);
+    // return false;
 
     // console.log(`GDPR Email : ${form.gdprEmail.value}`);
     // console.log(`GDPR Phone : ${form.gdprPhone.value}`);
