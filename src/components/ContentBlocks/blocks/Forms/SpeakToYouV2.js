@@ -204,9 +204,9 @@ class SpeakToYouV2 extends Component {
           : document.location.pathname.replace(new RegExp("/", "g"), ""),
       formStatus: "Submitted"
     });
-    console.log(form.gdprEmail.value);
-    console.log(form.gdprPP.value);
-    return false;
+    // console.log(form.gdprEmail.value);
+    // console.log(form.gdprPP.value);
+    // return false;
 
     // console.log(`GDPR Email : ${form.gdprEmail.value}`);
     // console.log(`GDPR Phone : ${form.gdprPhone.value}`);
