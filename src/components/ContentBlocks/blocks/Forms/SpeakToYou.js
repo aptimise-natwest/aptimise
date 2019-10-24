@@ -3,6 +3,7 @@ import FloatingLabelInput from "components/shared/FloatingLabelInput";
 import React, { Component } from "react";
 import { Alert, Form, FormGroup, Input, Label } from "reactstrap";
 import styled from "styled-components";
+import PPTnCFormFieldCheckbox from "components/shared/form/Fields/PPTnCFormFieldCheckbox";
 
 const Gdpr = styled.span`
   font-size: 1.2em;
@@ -277,8 +278,7 @@ class SpeakToYou extends Component {
                   name="gdprPPDisplay"
                   onClick={this.invertClick}
                 />
-                *I confirm that I have read and agree to the NatWest terms and
-                conditions and privacy policy
+                <PPTnCFormFieldCheckbox />
               </FormDesc>
               <Input type="hidden" name="gdprPP" id="gdprPP" />
             </Label>

@@ -3,6 +3,9 @@ import { Form, FormGroup, Alert, Label, Input } from "reactstrap";
 import Button from "components/shared/Button";
 import FloatingLabelInput from "components/shared/FloatingLabelInput";
 import styled from "styled-components";
+// import PPTnCFormFieldCheckbox from "components/shared/form/Fields/PPTnCFormFieldCheckbox";
+
+import PPTnCFormFieldCheckbox from "components/shared/form/Fields/PPTnCFormFieldCheckbox";
 
 const Gdpr = styled.span`
   font-size: 1.2em;
@@ -14,6 +17,23 @@ const Gdpr = styled.span`
     margin-bottom: 0;
     font-size: 0.65em;
     color: #787878;
+  }
+`;
+
+const LinkItem = styled.a`
+  color: ${props => props.theme.colors.purpleDark};
+  transition: ${props => props.theme.transitionBase};
+
+  text-align: center;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  margin-bottom: 0.1rem;
+
+  &:first-child {
+    padding-left: 0;
+  }
+  */ &:hover {
+    color: ${props => props.theme.colors.grey};
   }
 `;
 
@@ -264,8 +284,26 @@ class WhitePaperForm extends Component {
                   name="gdprPPDisplay"
                   onClick={this.invertClick}
                 />
-                *I confirm that I have read and agree to the NatWest terms and
-                conditions and privacy policy
+                {/* <>
+                  *I confirm that I have read and agree to the NatWest{" "}
+                  <LinkItem
+                    href="/terms-conditions"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    {" "}
+                    terms and conditions
+                  </LinkItem>{" "}
+                  and{" "}
+                  <LinkItem
+                    href="/privacy-policy"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    privacy policy
+                  </LinkItem>
+                </> */}
+                <PPTnCFormFieldCheckbox></PPTnCFormFieldCheckbox>
               </FormDesc>
               <Input type="hidden" name="gdprPP" id="gdprPP" />
             </Label>
