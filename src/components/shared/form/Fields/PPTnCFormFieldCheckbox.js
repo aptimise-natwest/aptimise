@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+
 const LinkItem = styled.a`
   color: ${props => props.theme.colors.purpleDark};
   transition: ${props => props.theme.transitionBase};

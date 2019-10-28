@@ -48,6 +48,14 @@ const FormDesc = styled.p`
   margin-bottom: 0.1rem;
 `;
 
+const FormDescGDPR = styled.p`
+  text-align: left;
+  font-size: 0.9rem;
+  font-weight: 400;
+  line-height: 1.5;
+  margin-bottom: 0.1rem;
+`;
+
 const GdprText = styled.p`
   font-size: 0.75em;
   color: #787878;
@@ -278,7 +286,7 @@ class WhitePaperForm extends Component {
         <Gdpr>
           <FormGroup check inline={true}>
             <Label check>
-              <FormDesc>
+              <FormDescGDPR>
                 <Input
                   type="checkbox"
                   name="gdprPPDisplay"
@@ -304,7 +312,7 @@ class WhitePaperForm extends Component {
                   </LinkItem>
                 </> */}
                 <PPTnCFormFieldCheckbox></PPTnCFormFieldCheckbox>
-              </FormDesc>
+              </FormDescGDPR>
               <Input type="hidden" name="gdprPP" id="gdprPP" />
             </Label>
           </FormGroup>

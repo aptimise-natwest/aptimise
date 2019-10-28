@@ -64,13 +64,28 @@ const DownloadForm = styled.span`
   display: ${props => props.display};
 `;
 
+const IntroText = styled(Text)`
+  line-height: 1.7;
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+`;
+
 const FormHeaderSection = styled.div`
   /* display: none; */
   h4 {
     font-size: 2rem;
   }
+
+  h1 {
+    font-size: 2rem;
+  }
+
   @media ${media.md} {
     display: block;
+
+    h1 {
+      font-size: 2.5rem;
+    }
   }
 
   .smallPrint {
@@ -124,7 +139,8 @@ const FormHeaderSection = styled.div`
   }
 
   .qboLogo {
-    background-size: 186px;
+    border-radius: 0;
+    background-size: cover;
     width: 140px;
     background-image: url(${QBOLogo});
   }
@@ -165,13 +181,18 @@ const FormHeaderSection = styled.div`
   }
 `;
 
-const ContainerMW = styled(ContainerMaxWidth)``;
+const ContainerMW = styled(ContainerMaxWidth)`
+  padding-right: 15px;
+  padding-left: 15px;
+
+  @media ${media.md} {
+    padding-right: 2rem;
+    padding-left: 2rem;
+  }
+`;
 
 const FluidContainer = styled.div`
   font-family: ${props => props.theme.font.family.base};
-
-
-
 
   font-family: ${props =>
     props.mainComponent === true
@@ -187,8 +208,33 @@ const FluidContainer = styled.div`
 
   background-image: ${props =>
     props.disableSideContent === true || props.background !== null
-      ? "url("+FormAngleGrinder+")"
+      ? "none"
       : "linear-gradient(#f5f8fa, white)"};
+
+  @media ${media.lg} {
+    background-image: ${props =>
+      props.disableSideContent === true || props.background !== null
+        ? "url(" + FormAngleGrinder + ")"
+        : "linear-gradient(#f5f8fa, white)"};
+
+    ${props =>
+      props.disableSideContent === true || props.background !== null
+        ? "background-position: right -400px bottom;"
+        : ""}
+  }
+
+  @media ${media.xl} {
+    background-image: ${props =>
+      props.disableSideContent === true || props.background !== null
+        ? "url(" + FormAngleGrinder + ")"
+        : "linear-gradient(#f5f8fa, white)"};
+
+    ${props =>
+      props.disableSideContent === true || props.background !== null
+        ? "background-position: right -300px bottom;"
+        : ""}
+  }
+
   width: 100%;
   padding-right: ${props =>
     props.disableSideContent === true ? "0px" : "15px"};
@@ -207,6 +253,12 @@ const FluidContainer = styled.div`
       padding: ${props =>
         props.disableSideContent === true ? "0 0rem" : "4rem"};
     }
+  }
+
+  margin-top: 40px;
+
+  @media ${media.md} {
+    margin-top: 90px;
   }
 
   @media ${media.md} {
@@ -444,7 +496,7 @@ class Form extends Component {
         background={background}
         mainComponent={mainComponent}
       >
-        <ContainerMaxWidth className="py-3 py-lg-4">
+        <ContainerMW className="py-3 py-lg-4">
           <RowVerticalAlign align={align}>
             <Col
               lg={{
@@ -466,14 +518,14 @@ class Form extends Component {
             >
               <FormHeaderSection>
                 {mainComponent === true ? <h1>{title}</h1> : <h4>{title}</h4>}
-                <Text
+                <IntroText
                   dangerouslySetInnerHTML={{ __html: textHTML }}
                   className="py-2"
                 />
               </FormHeaderSection>
             </Col>
           </RowVerticalAlign>
-        </ContainerMaxWidth>
+        </ContainerMW>
         <ModalAngled
           isOpen={this.state.modal}
           toggle={this.toggle}

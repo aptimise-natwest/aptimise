@@ -210,7 +210,11 @@ const FluidContainer = styled.div`
 
   .boxed {
     box-shadow: 0px 0px 4px 2px rgba(232, 227, 236, 0.417647);
-    padding: 50px;
+    padding: 10px 20px 20px;
+
+    @media ${media.md} {
+      padding: 50px;
+    }
     background-color: white;
   }
 
@@ -277,15 +281,18 @@ const CaseItemQoute = styled(Text)`
     line-height: 1.2;
     font-weight: bold;
   }
-  &:before {
-    content: "“";
-    position: absolute;
-    font-size: 20em;
-    z-index: 99;
-    top: -0.55em;
-    left: -0.12em;
-    transform: rotate(-10deg);
-    opacity: 0.05;
+
+  @media ${media.md} {
+    &:before {
+      content: "“";
+      position: absolute;
+      font-size: 20em;
+      z-index: 99;
+      top: -0.55em;
+      left: -0.12em;
+      transform: rotate(-10deg);
+      opacity: 0.05;
+    }
   }
 `;
 

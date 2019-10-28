@@ -54,6 +54,14 @@ const FormDesc = styled.p`
   margin-bottom: 0.1rem;
 `;
 
+const FormDescGDPR = styled.p`
+  text-align: left;
+  font-size: 0.9rem;
+  font-weight:400;
+  line-height: 1.5;
+  margin-bottom: 0.1rem;
+`;
+
 const CTA = styled.div`
   width: 100%;
   text-align: center;
@@ -311,14 +319,14 @@ class SpeakToYouV2 extends Component {
         <Gdpr>
           <FormGroup check inline={true}>
             <Label check>
-              <FormDesc>
+              <FormDescGDPR>
                 <Input
                   type="checkbox"
                   name="gdprPPDisplay"
                   onClick={this.invertClick}
                 />
                 <PPTnCFormFieldCheckbox />
-              </FormDesc>
+              </FormDescGDPR>
               <Input type="hidden" name="gdprPP" id="gdprPP" />
             </Label>
           </FormGroup>
