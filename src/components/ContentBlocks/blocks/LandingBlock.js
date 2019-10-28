@@ -187,22 +187,24 @@ const LandingText = styled(Text)`
 
   #fineprint {
     font-size: 0.7em;
-    padding-top: 10px;
+    /* padding-top: 1rem; */
+    /* padding-top: 10px; */
   }
   @media ${media.md} {
     #fineprint {
       display: block;
-      text-align: right;
+      padding-top:2rem;
+      /* text-align: right;
       position: relative;
-      top: -34px;
+      top: -34px; */
     }
   }
 
   @media ${media.lg} {
     #fineprint {
       /* text-align: right; */
-      text-align: right;
-      position: unset;
+      /* text-align: right;
+      position: unset; */
     }
   }
 
@@ -217,7 +219,7 @@ const LandingText = styled(Text)`
 
 const LandingTextWrap = styled.div`
   position: relative;
-  padding: 1rem 0 2rem;
+  padding: 0.5rem 0 0rem;
 
   @media ${media.md} {
     padding: 0;

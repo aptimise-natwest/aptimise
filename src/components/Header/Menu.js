@@ -86,7 +86,7 @@ export default class HamMenu extends React.Component {
   render() {
     return (
       <div>
-        <NavBar light expand="md">
+        <NavBar light expand="xl">
           <NavbarBrand href="/">
             <ChildMenu filter="logo_wrap" {...this.props} />
           </NavbarBrand>
