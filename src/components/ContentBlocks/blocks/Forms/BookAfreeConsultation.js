@@ -15,6 +15,7 @@ const Gdpr = styled.span`
     margin-bottom: 0;
     font-size: 0.65em;
     color: #787878;
+    font-weight: 400;
   }
 `;
 

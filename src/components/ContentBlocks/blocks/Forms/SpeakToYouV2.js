@@ -13,6 +13,7 @@ const Gdpr = styled.span`
   .form-check-label {
     margin-bottom: 0;
     font-size: 0.65em;
+    font-weight: 400;
     color: #787878;
   }
 `;
@@ -57,7 +58,7 @@ const FormDesc = styled.p`
 const FormDescGDPR = styled.p`
   text-align: left;
   font-size: 0.9rem;
-  font-weight:400;
+  font-weight: 400;
   line-height: 1.5;
   margin-bottom: 0.1rem;
 `;
@@ -75,7 +76,6 @@ const CTA_DownloadWhitePaper = styled.div`
   position: relative;
   display: inline-block;
   .ctaText {
-    font-family: RN House Sans;
     font-size: 12px;
     line-height: 15px;
     /* identical to box height */

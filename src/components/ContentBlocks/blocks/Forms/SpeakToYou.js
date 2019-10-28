@@ -14,6 +14,7 @@ const Gdpr = styled.span`
   .form-check-label {
     margin-bottom: 0;
     font-size: 0.65em;
+    font-weight: 400;
     color: #787878;
   }
 `;

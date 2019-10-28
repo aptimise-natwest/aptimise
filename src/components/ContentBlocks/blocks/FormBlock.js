@@ -66,7 +66,9 @@ const DownloadForm = styled.span`
 
 const IntroText = styled(Text)`
   line-height: 1.7;
-  font-size: 1.2rem;
+  p {
+    font-size: 1.2rem;
+  }
   margin-bottom: 2rem;
 `;
 
@@ -104,6 +106,9 @@ const FormHeaderSection = styled.div`
   .icon-content {
     h6 {
       margin-bottom: 0;
+    }
+    p {
+      font-size: 1rem;
     }
   }
 
