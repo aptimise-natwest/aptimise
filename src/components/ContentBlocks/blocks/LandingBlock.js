@@ -287,7 +287,7 @@ const ProductImgSvgTop = styled.img`
   z-index: -8;
   opacity: 0.4;
   transform: rotate(-15deg);
-  display: block;
+  display: none;
 
   @media ${media.md} {
     display: none;
