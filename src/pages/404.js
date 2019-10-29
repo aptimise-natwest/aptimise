@@ -40,7 +40,7 @@ const NotFoundPage = () => (
       <h1>Page not found.</h1>
       <p>
         Sorry, we can’t seem to find the page you were looking for.
-        <br>
+        <br></br>
         <LinkButton to="/" className="internalLink">
           Back home
         </LinkButton>
