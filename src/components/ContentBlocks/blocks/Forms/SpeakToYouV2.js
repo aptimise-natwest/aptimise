@@ -332,7 +332,7 @@ class SpeakToYouV2 extends Component {
           </FormGroup>
         </Gdpr>
         <div />
-        <br />
+        <br>
         <GdprText>
           APtimise would like to keep you informed by phone, email and text
           message about other evolving innovative products, services and offers
