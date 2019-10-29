@@ -25,7 +25,7 @@ import {
 
 const FooterWrap = styled.footer`
   position: relative;
-  margin-top: 0px;
+  margin-top: 30px;
   color: ${props => props.theme.colors.white};
 
   a {

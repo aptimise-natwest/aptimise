@@ -202,11 +202,11 @@ const FluidContainer = styled.div`
   padding-left: 15px;
   margin-right: auto;
   margin-left: auto;
-  margin-top: 0px;
+  margin-top: 10px;
 
-  padding-top: ${props => (props.layout === "boxed" ? "100px" : "0px")};
+  padding-top: ${props => (props.layout === "boxed" ? "100px" : "50px")};
 
-  padding-bottom: ${props => (props.layout === "boxed" ? "100px" : "0px")};
+  padding-bottom: ${props => (props.layout === "boxed" ? "100px" : "50px")};
 
   .boxed {
     box-shadow: 0px 0px 4px 2px rgba(232, 227, 236, 0.417647);
