@@ -326,7 +326,7 @@ class GetAFreeQoute extends Component {
           </FormGroup>
         </Gdpr>
         <div />
-        <br>
+        <br></br>
         <GdprText>
           APtimise would like to keep you informed by phone, email and text
           message about other evolving innovative products, services and offers
