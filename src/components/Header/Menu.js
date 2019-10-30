@@ -90,9 +90,12 @@ export default class HamMenu extends React.Component {
           <NavbarBrand href="/">
             <ChildMenu filter="logo_wrap" {...this.props} />
           </NavbarBrand>
-          <Navbartoggler onClick={this.toggle} hidemenu={this.props.hideMenu} />
+          <Navbartoggler
+            onClick={this.toggle}
+            hidemenu={this.props.hideMenu.toString()}
+          />
           <Collapse isOpen={this.state.isOpen} navbar>
-            <Menu {...this.props} hidemenu={this.props.hideMenu}>
+            <Menu {...this.props} hidemenu={this.props.hideMenu.toString()}>
               <ChildMenu filter="bookdemo_button" {...this.props} />
             </Menu>
           </Collapse>
@@ -146,11 +149,11 @@ const Menu = props => {
   };
 
   var menuLinks = multiFilter(block, filters);
-  console.log("props");
-  console.log(props.hideMenu);
+  // console.log("props");
+  // console.log(props.hideMenu);
   const links = menuLinks.map((link, i) => {
     let linkButton = (
-      <Navitem key={i} hidemenu={props.hideMenu}>
+      <Navitem key={i} hidemenu={props.hideMenu.toString()}>
         <NavLink href={link.node.path} key={i}>
           <Text>{link.node.menuTitle}</Text>
         </NavLink>

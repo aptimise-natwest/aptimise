@@ -306,7 +306,7 @@ class BookAfreeConsultation extends Component {
             : ""} */}
         </AlertPlaceHolder>
         <Gdpr>
-          <FormGroup check inline={true}>
+          <FormGroup check inline>
             <Label check>
               <FormDescGDPR>
                 <Input
@@ -330,7 +330,7 @@ class BookAfreeConsultation extends Component {
         </GdprText>
 
         <Gdpr>
-          <FormGroup check inline={true}>
+          <FormGroup check inline>
             <Label check>
               <Input
                 type="checkbox"
@@ -341,7 +341,7 @@ class BookAfreeConsultation extends Component {
               <Input type="hidden" name="gdprLetter" id="gdprLetter" />
             </Label>
           </FormGroup>
-          <FormGroup check inline={true}>
+          <FormGroup check inline>
             <Label check>
               <Input
                 type="checkbox"
@@ -352,8 +352,8 @@ class BookAfreeConsultation extends Component {
               <Input type="hidden" name="gdprEmail" id="gdprEmail" />
             </Label>
           </FormGroup>
-          <FormGroup check inline={true}>
-            <Label check inline={true}>
+          <FormGroup check inline>
+            <Label check>
               <Input
                 type="checkbox"
                 name="gdprPhoneDisplay"
@@ -363,7 +363,7 @@ class BookAfreeConsultation extends Component {
               <Input type="hidden" name="gdprPhone" id="gdprPhone" />
             </Label>
           </FormGroup>
-          <FormGroup check inline={true}>
+          <FormGroup check inline>
             <Label check>
               <Input
                 type="checkbox"

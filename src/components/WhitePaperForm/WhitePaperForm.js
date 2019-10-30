@@ -285,7 +285,7 @@ class WhitePaperForm extends Component {
             : ""} */}
         </AlertPlaceHolder>
         <Gdpr>
-          <FormGroup check inline={true}>
+          <FormGroup check inline>
             <Label check>
               <FormDescGDPR>
                 <Input
@@ -328,7 +328,7 @@ class WhitePaperForm extends Component {
         </GdprText>
 
         <Gdpr>
-          <FormGroup check inline={true}>
+          <FormGroup check inline>
             <Label check>
               <Input
                 type="checkbox"
@@ -339,7 +339,7 @@ class WhitePaperForm extends Component {
               <Input type="hidden" name="gdprLetter" id="gdprLetter" />
             </Label>
           </FormGroup>
-          <FormGroup check inline={true}>
+          <FormGroup check inline>
             <Label check>
               <Input
                 type="checkbox"
@@ -350,8 +350,8 @@ class WhitePaperForm extends Component {
               <Input type="hidden" name="gdprEmail" id="gdprEmail" />
             </Label>
           </FormGroup>
-          <FormGroup check inline={true}>
-            <Label check inline={true}>
+          <FormGroup check inline>
+            <Label check inline>
               <Input
                 type="checkbox"
                 name="gdprPhoneDisplay"
@@ -361,7 +361,7 @@ class WhitePaperForm extends Component {
               <Input type="hidden" name="gdprPhone" id="gdprPhone" />
             </Label>
           </FormGroup>
-          <FormGroup check inline={true}>
+          <FormGroup check inline>
             <Label check>
               <Input
                 type="checkbox"

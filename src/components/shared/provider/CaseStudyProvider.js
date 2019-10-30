@@ -19,9 +19,9 @@ const CaseStudyProvider = props => {
   caseItem[0].logos = props.logos;
   caseItem[0].layout = props.layout;
 
-  console.log("caseItem");
-  console.log(caseItem);
-  console.log("caseItem");
+  // console.log("caseItem");
+  // console.log(caseItem);
+  // console.log("caseItem");
   return props.children(caseItem);
 };
 

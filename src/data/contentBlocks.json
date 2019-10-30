@@ -18,7 +18,7 @@
     "type": "TextBlock",
     "size": "xl",
     "weight": "regular",
-    "textHTML": "<center><h4>The UK’s only end-to-end AP solution</h4></br><p>Designed for small businesses, APtimise is the UK’s only end-to-end invoices and payments solution, removing the frustration of the traditional Accounts Payable process and making it faster, more accurate, simpler and secure.</p>"
+    "textHTML": "<center><h4>The UK’s only end-to-end AP solution</h4><br/><p>Designed for small businesses, APtimise is the UK’s only end-to-end invoices and payments solution, removing the frustration of the traditional Accounts Payable process and making it faster, more accurate, simpler and secure.</p>"
   },
   {
     "id": "infoBlocksHome",
@@ -709,8 +709,7 @@
     "size": "l",
     "weight": "regular",
     "textHTML": "<center><h4>Thank you for your enquiry,</h4><h5>We will be in touch shortly.</h5></center>"
-  }
-  ,
+  },
   {
     "id": "textThankYouAccountsPayableWhitepaper",
     "type": "SocialBlock",

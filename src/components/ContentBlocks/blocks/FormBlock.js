@@ -490,8 +490,8 @@ class Form extends Component {
     const componentsElements = components.map(Component => (
       <Component key="sfsfsdfsdre" />
     ));
-    console.log("this.props");
-    console.log(align);
+    // console.log("this.props");
+    // console.log(align);
     // console.log(this.props.disableSideContent);
     const ContainerSwitch = flag => {};
 
