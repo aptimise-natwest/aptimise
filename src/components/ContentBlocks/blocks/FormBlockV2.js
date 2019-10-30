@@ -450,7 +450,7 @@ class Form extends Component {
       block: block
     });
 
-    this.addComponent(block.node.form);
+    // this.addComponent(block.node.form);
   }
 
   addComponent = type => {
@@ -505,7 +505,7 @@ class Form extends Component {
 
     const { components } = this.state;
 
-    if (components.length === 0) return <div>Loading...</div>;
+    // if (components.length === 0) return <div>Loading...</div>;
 
     const componentsElements = components.map(Component => (
       <Component key="sfsfsdfsdre" />
