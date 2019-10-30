@@ -128,9 +128,7 @@ const HeaderNavBar = props => {
               ]}
             >
               <LogoWrap xs="auto" key="logo_wrap">
-                <Link to="/">
-                  <AptimiseLogo />
-                </Link>
+                <AptimiseLogo />
 
                 {typeof props.data !== "undefined" &&
                   props.data.pagesJson.id === "xero" && (

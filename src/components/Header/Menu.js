@@ -25,7 +25,7 @@ const NavBar = styled(Navbar)`
 
 const Navitem = styled(NavItem)`
   display: ${props =>
-    props.hideMenu === true ? "none !important" : "flex !important"};
+    props.hidemenu === true ? "none !important" : "flex !important"};
 `;
 
 const Navbartoggler = styled(NavbarToggler)`
@@ -34,7 +34,7 @@ const Navbartoggler = styled(NavbarToggler)`
     background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgb(66, 20, 95)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
   }
   display: ${props =>
-    props.hideMenu === true ? "none !important" : "flex !important"};
+    props.hidemenu === true ? "none !important" : "flex !important"};
 `;
 
 const UsefulLinks = styled(Nav)`
@@ -90,9 +90,9 @@ export default class HamMenu extends React.Component {
           <NavbarBrand href="/">
             <ChildMenu filter="logo_wrap" {...this.props} />
           </NavbarBrand>
-          <Navbartoggler onClick={this.toggle} hideMenu={this.props.hideMenu} />
+          <Navbartoggler onClick={this.toggle} hidemenu={this.props.hideMenu} />
           <Collapse isOpen={this.state.isOpen} navbar>
-            <Menu {...this.props} hideMenu={this.props.hideMenu}>
+            <Menu {...this.props} hidemenu={this.props.hideMenu}>
               <ChildMenu filter="bookdemo_button" {...this.props} />
             </Menu>
           </Collapse>
@@ -150,7 +150,7 @@ const Menu = props => {
   console.log(props.hideMenu);
   const links = menuLinks.map((link, i) => {
     let linkButton = (
-      <Navitem key={i} hideMenu={props.hideMenu}>
+      <Navitem key={i} hidemenu={props.hideMenu}>
         <NavLink href={link.node.path} key={i}>
           <Text>{link.node.menuTitle}</Text>
         </NavLink>
