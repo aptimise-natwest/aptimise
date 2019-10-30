@@ -159,8 +159,8 @@ class Blocks extends Component {
   };
 
   handleClickIcon = e => {
-    var keyFaq = e.currentTarget.getAttribute('data-faq');
-     this.setState(prevState => ({ [keyFaq]: !prevState[keyFaq] }));
+    var keyFaq = e.currentTarget.getAttribute("data-faq");
+    this.setState(prevState => ({ [keyFaq]: !prevState[keyFaq] }));
   };
 
   render() {
@@ -168,73 +168,67 @@ class Blocks extends Component {
 
     const faqBlocks = contentBlock.node.faqBlocks.map((block, i) => {
       return (
-        <VisibilitySensor
-          onChange={isVisible => this.playAnimation(isVisible, i)}
-          partialVisibility={true}
-          key={i}
-        >
-          <>
-            <FaqWrap>
-              <Col xs={3} md={2}>
-                <Animation
-                  block={block}
-                  type={block.animation}
-                  play={i === 0 ? true : this.state.animation[i]}
+        <>
+          <FaqWrap>
+            <Col xs={3} md={2}>
+              <Animation
+                block={block}
+                type={block.animation}
+                play={i === 0 ? true : this.state.animation[i]}
+              />
+            </Col>
+            <Col xs={9} md={10}>
+              <CollapseToggle id={`faqBlock${i}`} onClick={this.handleClick}>
+                {block.title}
+                <CollapseToggleIcon
+                  data-faq={`faqBlock${i}`}
+                  icon={faAngleDown}
+                  onClick={this.handleClickIcon}
                 />
-              </Col>
-              <Col xs={9} md={10}>
-                <CollapseToggle id={`faqBlock${i}`} onClick={this.handleClick}>
-                  {block.title}
-                  <CollapseToggleIcon
-                    data-faq={`faqBlock${i}`}
-                    icon={faAngleDown}
-                    onClick={this.handleClickIcon}
-                  />
-                </CollapseToggle>
-                <UncontrolledCollapse
-                  toggler={`#faqBlock${i}`}
-                  className={`${this.state.collapseState ? "show" : ""}`}
-                  isOpen={this.state[`faqBlock${i}`]}
-                >
-                  <Row>
-                    {block.faqBlockElements.map((element, j) => {
-                      return (
-                        <Col
-                          xs={12}
-                          lg={6}
-                          key={j}
-                          className="pb-5 pb-lg-4"
-                          id={`faqBlockElement${j}`}
-                        >
-                          <h5 className="pb-2">{element.title}</h5>
-                          <Text
-                            dangerouslySetInnerHTML={{
-                              __html: element.textHTML
-                            }}
-                          />
-                        </Col>
-                      );
-                    })}
-                  </Row>
-                </UncontrolledCollapse>
-              </Col>
-              {i + 1 < contentBlock.node.faqBlocks.length && (
-                <GradientSeparator>
-                  <img
-                    src={gradientSeparator}
-                    alt=""
-                    className="d-none d-md-block"
-                  />
-                  <img
-                    src={gradientSeparatorMobile}
-                    alt=""
-                    className="d-block d-md-none"
-                  />
-                </GradientSeparator>
-              )}
-            </FaqWrap>
-          </>
-        </VisibilitySensor>
+              </CollapseToggle>
+              <UncontrolledCollapse
+                toggler={`#faqBlock${i}`}
+                className={`${this.state.collapseState ? "show" : ""}`}
+                isOpen={this.state[`faqBlock${i}`]}
+              >
+                <Row>
+                  {block.faqBlockElements.map((element, j) => {
+                    return (
+                      <Col
+                        xs={12}
+                        lg={6}
+                        key={j}
+                        className="pb-5 pb-lg-4"
+                        id={`faqBlockElement${j}`}
+                      >
+                        <h5 className="pb-2">{element.title}</h5>
+                        <Text
+                          dangerouslySetInnerHTML={{
+                            __html: element.textHTML
+                          }}
+                        />
+                      </Col>
+                    );
+                  })}
+                </Row>
+              </UncontrolledCollapse>
+            </Col>
+            {i + 1 < contentBlock.node.faqBlocks.length && (
+              <GradientSeparator>
+                <img
+                  src={gradientSeparator}
+                  alt=""
+                  className="d-none d-md-block"
+                />
+                <img
+                  src={gradientSeparatorMobile}
+                  alt=""
+                  className="d-block d-md-none"
+                />
+              </GradientSeparator>
+            )}
+          </FaqWrap>
+        </>
       );
     });
 
