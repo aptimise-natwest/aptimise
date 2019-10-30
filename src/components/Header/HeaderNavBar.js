@@ -116,7 +116,7 @@ const HeaderNavBar = props => {
         <Row className="justify-content-between align-items-center">
           <Col>
             <HamMenu
-              hideMenu={hideMenu}
+              hidemenu={hideMenu}
               id="main-menu"
               menuItems={[
                 "home",
