@@ -12,6 +12,7 @@ import ModalBookDemo from "components/shared/ModalBookDemo";
 import { media } from "utils/Media";
 const SiteWrap = styled.div`
   padding-top: 90px;
+  height: 0px;
 `;
 
 const MainWrap = styled.span`
