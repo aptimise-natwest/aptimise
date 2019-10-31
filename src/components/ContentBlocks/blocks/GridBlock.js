@@ -68,6 +68,7 @@ const Icon = styled.div`
 const GridWrap = styled(Row)`
   padding-bottom: 0rem;
   text-align: center;
+  margin-bottom: 1rem;
 `;
 const GridSectionHeader = styled.div`
   padding-top: 5rem;

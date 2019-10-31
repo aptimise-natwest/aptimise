@@ -81,7 +81,7 @@ const BreadCrumbs = props => {
   let title = props.data.title;
   let jsonPath = path;
   let breadCrumb = jsonPath.split("/");
-  console.log(props.data);
+  // console.log(props.data);
   if (breadCrumb[1].length > 0) {
     return breadCrumb.map((p, index, array) => {
       if (index === array.length - 1) return true;
@@ -103,12 +103,20 @@ const BreadCrumbs = props => {
 };
 
 const HeaderNavBar = props => {
+  // console.log("props.data");
+  // console.log(props.data);
+  // console.log("----------");
+
+  let hideMenu =
+    props.data != undefined ? props.data.pagesJson.hideMenu : false;
+
   return (
     <NavBar>
       <NavBarContainer>
         <Row className="justify-content-between align-items-center">
           <Col>
             <HamMenu
+              hidemenu={hideMenu}
               id="main-menu"
               menuItems={[
                 "home",
@@ -120,9 +128,7 @@ const HeaderNavBar = props => {
               ]}
             >
               <LogoWrap xs="auto" key="logo_wrap">
-                <Link to="/">
-                  <AptimiseLogo />
-                </Link>
+                <AptimiseLogo />
 
                 {typeof props.data !== "undefined" &&
                   props.data.pagesJson.id === "xero" && (
@@ -132,13 +138,17 @@ const HeaderNavBar = props => {
                   )}
               </LogoWrap>
 
-              <BookADemo
-                as="button"
-                className="trigger-bookdemo-modal"
-                key="bookdemo_button"
-              >
-                Book a demo
-              </BookADemo>
+              {hideMenu === true ? (
+                <></>
+              ) : (
+                <BookADemo
+                  as="button"
+                  className="trigger-bookdemo-modal"
+                  key="bookdemo_button"
+                >
+                  Book a demo
+                </BookADemo>
+              )}
             </HamMenu>
           </Col>
         </Row>

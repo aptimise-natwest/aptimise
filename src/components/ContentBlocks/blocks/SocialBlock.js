@@ -13,6 +13,8 @@ import {
 import { media } from "utils/Media";
 import Button from "components/shared/Button";
 
+import ThankYouTick from "images/logos/thank-you-tick.png";
+
 const Content = styled.div`
   h4 {
     font-size: 2rem;
@@ -25,9 +27,7 @@ const Content = styled.div`
     line-height: 2.2em;
   }
 
-  padding-top:1em;
-
-  padding-bottom:1em;
+  padding-bottom: 1em;
 `;
 
 const Container = styled(ContainerMaxWidth)`
@@ -62,6 +62,15 @@ const LinkItem = styled.a`
   &:hover {
     color: ${props => props.theme.colors.purple};
   }
+`;
+
+const ThankYouTickIcon = styled.div`
+  background-image: url(${ThankYouTick});
+  background-repeat: no-repeat;
+  background-position: top center;
+  display: block;
+  height: 30px;
+  background-size: 30px;
 `;
 
 const ThankYouContainer = styled.span`
@@ -102,6 +111,7 @@ const SocialBlock = props => {
   return (
     <Container className="py-3 py-lg-4">
       <ThankYouContainer>
+        <ThankYouTickIcon></ThankYouTickIcon>
         <Content
           dangerouslySetInnerHTML={{ __html: textHTML }}
           size={size}

@@ -8,7 +8,7 @@ import InfoBlocks from "./blocks/InfoBlocks";
 import InfoBlockFullWidth from "./blocks/InfoBlockFullWidth";
 import CalculatorBlock from "./blocks/CalculatorBlock";
 import WhitePaperBlock from "./blocks/WhitePaperBlock";
-import FormBlock from "./blocks/FormBlock";
+import FormBlock from "./blocks/FormBlockV2";
 
 import LinkBlock from "./blocks/LinkBlock";
 import SpacerBlock from "./blocks/SpacerBlock";
@@ -61,7 +61,6 @@ const ContentBlocks = props => {
 
   if (contentBlocks !== null) {
     blocks = contentBlocks.map((block, i) => {
-
       switch (block.node.type) {
         case "LandingBlock":
           return <LandingBlock id={block.node.id} key={i} />;

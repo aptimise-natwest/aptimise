@@ -1,10 +1,8 @@
-import React, { Component } from "react";
-import { Form, FormGroup, Alert, Label, Input } from "reactstrap";
 import Button from "components/shared/Button";
 import FloatingLabelInput from "components/shared/FloatingLabelInput";
+import React, { Component } from "react";
+import { Alert, Form, FormGroup, Input, Label } from "reactstrap";
 import styled from "styled-components";
-// import PPTnCFormFieldCheckbox from "components/shared/form/Fields/PPTnCFormFieldCheckbox";
-
 import PPTnCFormFieldCheckbox from "components/shared/form/Fields/PPTnCFormFieldCheckbox";
 
 const Gdpr = styled.span`
@@ -21,25 +19,34 @@ const Gdpr = styled.span`
   }
 `;
 
-const LinkItem = styled.a`
-  color: ${props => props.theme.colors.purpleDark};
-  transition: ${props => props.theme.transitionBase};
+const GdprText = styled.p`
+  font-size: 0.75em;
+  color: #787878;
+  margin-bottom: 0;
+`;
 
-  text-align: center;
-  font-size: 0.9rem;
-  line-height: 1.5;
-  margin-bottom: 0.1rem;
+const InputStyled = styled.select`
+  background-color: transparent;
+  position: relative;
+  z-index: 1;
+  border-radius: 0;
+  border-color: ${props => props.theme.colors.greyMedium};
+  height: 40px;
+  width: 100%;
+  margin-top: 1rem;
+`;
 
-  &:first-child {
-    padding-left: 0;
-  }
-  */ &:hover {
-    color: ${props => props.theme.colors.grey};
-  }
+const FormGrp = styled(FormGroup)`
+  margin: 0px;
 `;
 
 const AlertPlaceHolder = styled(Alert)`
   margin: 10px;
+`;
+
+const FormTitle = styled.h2`
+  text-align: center;
+  font-size: 1.7rem;
 `;
 
 const FormDesc = styled.p`
@@ -57,13 +64,7 @@ const FormDescGDPR = styled.p`
   margin-bottom: 0.1rem;
 `;
 
-const GdprText = styled.p`
-  font-size: 0.75em;
-  color: #787878;
-  margin-bottom: 0;
-`;
-
-class WhitePaperForm extends Component {
+class SpeakToYou extends Component {
   constructor(...args) {
     super(...args);
     this.state = { errors: false };
@@ -118,14 +119,13 @@ class WhitePaperForm extends Component {
   onSubmit = e => {
     let form = e.currentTarget;
 
-    form = document.getElementById("whitepaper");
+    form = document.getElementById("speaktoyou");
 
     const data = {
       firstname: form.FirstName.value,
       lastname: form.LastName.value,
       email: form.Email.value,
-      mobile: form.Mobile.value,
-      company: form.Company.value,
+      phone: form.Phone.value,
       gdprLetter: form.gdprLetter.checked,
       gdprEmail: form.gdprEmail.checked,
       gdprPhone: form.gdprPhone.checked,
@@ -135,8 +135,7 @@ class WhitePaperForm extends Component {
       data.firstname,
       data.lastname,
       data.email,
-      data.mobile,
-      data.company,
+      data.phone,
       data.gdprLetter,
       data.gdprEmail,
       data.gdprPhone,
@@ -147,17 +146,12 @@ class WhitePaperForm extends Component {
       !(errors.length > 0) &&
       form.gdprPPDisplay.checked
     );
+
     this.setState({ errors: validation, messages: errors });
 
-    let link = document.getElementById("whitepaperformdownloadbutton");
-
     if (validation) {
-      link.removeAttribute("href");
       return;
     }
-
-    link.setAttribute("href", "/pdfs/Aptimise-whitepaper.pdf");
-
     if (form.gdprLetter.value === "") {
       form.gdprLetter.value = "false";
     }
@@ -170,7 +164,8 @@ class WhitePaperForm extends Component {
     if (form.gdprText.value === "") {
       form.gdprText.value = "false";
     }
-
+    //  let link = document.getElementById("GetAFreeQoutedSubmit");
+    //  link.setAttribute("href", "/pdfs/Aptimise-whitepaper.pdf");
     // window.ga("gtm4.send", {
     //   hitType: "event",
     //   eventCategory: "Form submission",
@@ -178,20 +173,22 @@ class WhitePaperForm extends Component {
     //   eventLabel: "http://go.pardot.com/l/598401/2018-09-18/2hp89v"
     // });
     window.dataLayer.push({
-      event: "whitepaperFormSubmitted",
-      formName: "Download Whitepaper",
+      event: "FormSubmission",
+      formName: "accounts-payable-consultation",
       formLocation:
         document.location.pathname === "/"
           ? "Home Page"
           : document.location.pathname.replace(new RegExp("/", "g"), ""),
-      formStatus: "Successful"
+      formStatus: "Submitted"
     });
+    // console.log(form.gdprEmail.value);
+    // console.log(form.gdprPP.value);
+    // return false;
 
     // console.log(`GDPR Email : ${form.gdprEmail.value}`);
     // console.log(`GDPR Phone : ${form.gdprPhone.value}`);
     // console.log(`GDPR Text : ${form.gdprText.value}`);
-
-    window.history.replaceState(null, null, "?thankyou&form=whitepaper");
+    window.history.replaceState(null, null, "?thankyou&form=speaktoyou");
     form.submit();
   };
 
@@ -202,10 +199,6 @@ class WhitePaperForm extends Component {
       elementCheckbox.name.split("Display")[0]
     );
     hiddenCheckbox[0].value = elementCheckbox.checked;
-    // console.log(hiddenCheckbox[0].value);
-    // console.log(
-    //   `Element : ${hiddenCheckbox[0].name} value : ${hiddenCheckbox[0].value}`
-    // );
   };
 
   componentDidMount() {
@@ -228,40 +221,41 @@ class WhitePaperForm extends Component {
     return (
       <Form
         onSubmit={this.test}
-        action="http://go.pardot.com/l/598401/2019-10-24/32rhj2"
+        action="http://go.pardot.com/l/598401/2019-10-16/32k6zq"
         method="post"
-        id="whitepaper"
+        id="speaktoyou"
       >
-        <Alert color="success" isOpen={downloaded}>
+        {/* <Alert color="success" isOpen={downloaded}>
           The whitepaper has been downloaded !
-        </Alert>
-
-        <FormGroup>
+        </Alert> */}
+        <FormTitle>We’d love to speak to you</FormTitle>
+        <FormDesc>
+          Fill in your details below and one of our friendly team members will
+          contact you to talk you through how much time and money you can save.
+        </FormDesc>
+        <FormGrp>
           <FloatingLabelInput
             label="First name*"
             type="text"
             name="FirstName"
           />
-        </FormGroup>
-        <FormGroup>
+        </FormGrp>
+        <FormGrp>
           <FloatingLabelInput label="Last name*" type="text" name="LastName" />
-        </FormGroup>
-        <FormGroup>
+        </FormGrp>
+        <FormGrp>
           <FloatingLabelInput label="Email*" type="email" name="Email" />
-        </FormGroup>
-        <FormGroup>
-          <FloatingLabelInput label="Mobile*" type="number" name="Mobile" />
-        </FormGroup>
-        <FormGroup>
+        </FormGrp>
+        <FormGrp>
           <FloatingLabelInput
-            label="Company name*"
-            type="text"
-            name="Company"
+            label="Phone number*"
+            type="number"
+            name="Phone"
           />
-        </FormGroup>
+        </FormGrp>
 
         <Button
-          id="whitepaperformdownloadbutton"
+          id="SpeakToYouSubmit"
           className="mt-3"
           purple
           block
@@ -270,7 +264,7 @@ class WhitePaperForm extends Component {
           download
           onClick={this.onSubmit}
         >
-          Download whitepaper
+          Submit
         </Button>
         <AlertPlaceHolder
           color="danger"
@@ -293,26 +287,7 @@ class WhitePaperForm extends Component {
                   name="gdprPPDisplay"
                   onClick={this.invertClick}
                 />
-                {/* <>
-                  *I confirm that I have read and agree to the NatWest{" "}
-                  <LinkItem
-                    href="/terms-conditions"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    {" "}
-                    terms and conditions
-                  </LinkItem>{" "}
-                  and{" "}
-                  <LinkItem
-                    href="/privacy-policy"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    privacy policy
-                  </LinkItem>
-                </> */}
-                <PPTnCFormFieldCheckbox></PPTnCFormFieldCheckbox>
+                <PPTnCFormFieldCheckbox />
               </FormDescGDPR>
               <Input type="hidden" name="gdprPP" id="gdprPP" />
             </Label>
@@ -378,4 +353,4 @@ class WhitePaperForm extends Component {
   }
 }
 
-export default WhitePaperForm;
+export default SpeakToYou;

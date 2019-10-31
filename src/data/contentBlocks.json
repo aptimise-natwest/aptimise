@@ -18,7 +18,7 @@
     "type": "TextBlock",
     "size": "xl",
     "weight": "regular",
-    "textHTML": "<center><h4>The UK’s only end-to-end AP solution</h4></br><p>Designed for small businesses, APtimise is the UK’s only end-to-end invoices and payments solution, removing the frustration of the traditional Accounts Payable process and making it faster, more accurate, simpler and secure.</p>"
+    "textHTML": "<center><h4>The UK’s only end-to-end AP solution</h4><br/><p>Designed for small businesses, APtimise is the UK’s only end-to-end invoices and payments solution, removing the frustration of the traditional Accounts Payable process and making it faster, more accurate, simpler and secure.</p>"
   },
   {
     "id": "infoBlocksHome",
@@ -508,12 +508,30 @@
   {
     "id": "caseStudyQoute",
     "type": "CaseStudyQoute",
+    "headerTitle": null,
+    "hideVideo": null,
+    "logos": null,
+    "layout": null,
     "referenceBlock": "carouselBlockHome",
     "dataFilter": "{'imageCopy': 'Spectrum Chemicals'}"
   },
   {
+    "id": "caseStudyQouteLandingPage1",
+    "type": "CaseStudyQoute",
+    "headerTitle": "The best value  Account Payable  solution for small businesses",
+    "hideVideo": true,
+    "logos": "<div class='logos'><div class='logo leapLogo'></div> <div class='logo xeroLogo'></div></div>",
+    "layout": "boxed",
+    "referenceBlock": "carouselBlockHome",
+    "dataFilter": "{'imageCopy': 'LEAP'}"
+  },
+  {
     "id": "caseStudyQouteAccountants",
     "type": "CaseStudyQoute",
+    "headerTitle": null,
+    "hideVideo": null,
+    "logos": null,
+    "layout": null,
     "referenceBlock": "carouselBlockHome",
     "dataFilter": "{'imageCopy': 'LEAP'}"
   },
@@ -602,9 +620,52 @@
     "id": "getAFreeQoute",
     "type": "FormBlock",
     "title": "APtimise is designed to scale with your business",
+    "mainComponent": false,
     "textHTML": "<p>Our fees are based on the volume of supplier invoices you and your team process per month. Our web-based solution helps you streamline your accounts payable process, allowing you to save time, reduce errors and improve visibility of your cash flow.</p>",
     "buttonText": null,
     "form": "GetAFreeQoute",
+    "background": null,
+    "align": "center",
+    "thankYouTitle": "<h2>Thank you for requesting a free quote!</h2>",
+    "thankYouMessage": "<p>We are looking forward to learning more about your business and how APtimise can help simplify your Accounts Payable process.</p><p>In the meantime, download our ‘How it works’ guide to find out more.</p>",
+    "links": [
+      {
+        "download": "true",
+        "link": "/pdfs/Aptimise-how-it-works.pdf",
+        "linkText": "Download “How it works” guide"
+      }
+    ]
+  },
+  {
+    "id": "speakToYou",
+    "type": "FormBlock",
+    "title": "Spend less time processing invoices",
+    "mainComponent": true,
+    "textHTML": "<p>Reduce your Accounts Payable process by up to 50%, become more efficient, prevent invoice fraud, reduce errors and focus on growing your business.<div class='icon-row'><div><div class='logoGradient laptop'></div></div><div class='icon-content'><h6>Reduce your workload</h6><p>Businesses waste hours keying invoices line by line and matching invoices to purchases orders - APtimise fully automates this.</div></div><div class='icon-row'><div><div class='logoGradient box'></div></div><div class='icon-content'><h6>Protect your business</h6><p>In 2017 47% of SMEs received a fraudulent invoice - APtimise helps protect businesses by recognising and highlighting these.</div></div><div class='icon-row'><div><div class='logoGradient invoice'></div></div><div class='icon-content'><h6>No more double entry</h6><p>Forget rekeying payments in to your banking platform - APtimise executes payments seamlessly.</div></div><div class='icon-row'><div><div class='logoGradient clock'></div></div><div class='icon-content'><h6>Quick and easy to setup</h6><p>Get up and running with our quick and easy 60 minute set-up. We integrate with Xero, Sage 50 & 200 and QuickBooks.</div></div><div class='icon-row'><div class='logo sageLogo'></div><div class='logo xeroLogo'></div><div class='logo qboLogo'></div></div><div class='icon-row'><div class='smallPrint'>A NatWest business. NatWest business or commercial account required. A monthly fee applies.</div></div>",
+    "buttonText": null,
+    "form": "SpeakToYou",
+    "background": "white",
+    "align": "end",
+    "thankYouTitle": "<h2>Thank you for requesting a free quote!</h2>",
+    "thankYouMessage": "<p>We are looking forward to learning more about your business and how APtimise can help simplify your Accounts Payable process.</p><p>In the meantime, download our ‘How it works’ guide to find out more.</p>",
+    "links": [
+      {
+        "download": "true",
+        "link": "/pdfs/Aptimise-how-it-works.pdf",
+        "linkText": "Download “How it works” guide"
+      }
+    ]
+  },
+  {
+    "id": "speakToYouV2",
+    "type": "FormBlock",
+    "title": "Spend less time processing invoices",
+    "mainComponent": true,
+    "textHTML": "<p>Reduce time spent on Accounts Payable by up to 50%. APtimise helps you become more efficient, prevent invoice fraud, and ultimately grow your business.<div class='icon-row'><div><div class='logoGradient laptop'></div></div><div class='icon-content'><h6>Cost savings</h6><p>Automation saves time and time is money.</div></div><div class='icon-row'><div><div class='logoGradient box'></div></div><div class='icon-content'><h6>Increased efficiency</h6><p>Replace manual processes with a faster, easier and more enjoyable way of handling invoices.</div></div><div class='icon-row'><div><div class='logoGradient invoice'></div></div><div class='icon-content'><h6>More organised invoicing</h6><p>Preparing for audits? Upgrading your shoe boxed invoices to digital files should help with that.</div></div><div class='icon-row'><div><div class='logoGradient clock'></div></div><div class='icon-content'><h6>Maximised short-term cash flow</h6><p>Whether a clerk or an FD - have full control of your invoice processing and cash flow with full end-to-end visibility.</div></div>",
+    "buttonText": null,
+    "form": "SpeakToYouV2",
+    "background": "white",
+    "align": "end",
     "thankYouTitle": "<h2>Thank you for requesting a free quote!</h2>",
     "thankYouMessage": "<p>We are looking forward to learning more about your business and how APtimise can help simplify your Accounts Payable process.</p><p>In the meantime, download our ‘How it works’ guide to find out more.</p>",
     "links": [
@@ -619,9 +680,12 @@
     "id": "bookAfreeConsultation",
     "type": "FormBlock",
     "title": "Speak with an expert",
+    "mainComponent": false,
     "textHTML": "<p>Accounts Payable Automation replaces manual, paper-based processes and spreadsheets, and removes time-consuming and costly tasks, allowing you to focus on growing your business.</p><p>Get in touch with one of our Accounts Payable experts to discuss your pain points associated with traditional AP processes and see how quickly these can be automated from submission of the invoices, right through to the payment stage.</p>",
     "buttonText": null,
     "form": "BookAfreeConsultation",
+    "background": null,
+    "align": "center",
     "thankYouTitle": "<h2>Thank you! <p>Your FREE consultation is booked!</p></h2>",
     "thankYouMessage": "<p>We are looking forward to learning more about your business and how APtimise can help simplify your Accounts Payable process.</p> <p>In the meantime, download our ‘How it works’ guide to find out more.</p>",
     "links": [
@@ -638,5 +702,19 @@
     "size": "l",
     "weight": "regular",
     "textHTML": "<center><h4>Thank you!</h4><h5>If you want to know more about the specific benefits of AP automation for your business, schedule a personalised AP consultation today.</h5></center>"
+  },
+  {
+    "id": "textThankYouAccountsPayableConsultation",
+    "type": "SocialBlock",
+    "size": "l",
+    "weight": "regular",
+    "textHTML": "<center><h4>Thank you for your enquiry,</h4><h5>We will be in touch shortly.</h5></center>"
+  },
+  {
+    "id": "textThankYouAccountsPayableWhitepaper",
+    "type": "SocialBlock",
+    "size": "l",
+    "weight": "regular",
+    "textHTML": "<center><h4>Thank you for your enquiry,</h4><h5>your download will start shortly. If your download doesn’t start, please click here.</h5></center>"
   }
 ]

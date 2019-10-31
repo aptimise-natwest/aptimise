@@ -3,6 +3,7 @@ import { Form, FormGroup, Alert, Label, Input } from "reactstrap";
 import Button from "components/shared/Button";
 import FloatingLabelInput from "components/shared/FloatingLabelInput";
 import styled from "styled-components";
+import  PPTnCFormFieldCheckbox  from "components/shared/form/Fields/PPTnCFormFieldCheckbox";
 
 const Gdpr = styled.span`
   font-size: 1.2em;
@@ -14,6 +15,7 @@ const Gdpr = styled.span`
     margin-bottom: 0;
     font-size: 0.65em;
     color: #787878;
+    font-weight: 400;
   }
 `;
 
@@ -38,11 +40,28 @@ const FormGrp = styled(FormGroup)`
   margin: 0px;
 `;
 
+const AlertPlaceHolder = styled(Alert)`
+  margin: 10px;
+`;
+
 const FormTitle = styled.h2`
   text-align: center;
   font-size: 1.7rem;
 `;
 
+const FormDesc = styled.p`
+  text-align: center;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  margin-bottom: 0.1rem;
+`;
+const FormDescGDPR = styled.p`
+  text-align: left;
+  font-size: 0.9rem;
+  font-weight: 400;
+  line-height: 1.5;
+  margin-bottom: 0.1rem;
+`;
 class GetAFreeQoute extends Component {
   constructor(...args) {
     super(...args);
@@ -59,6 +78,7 @@ class GetAFreeQoute extends Component {
     email,
     mobile,
     company,
+    gdprLetter,
     gdprEmail,
     gdprPhone,
     gdprText
@@ -107,6 +127,7 @@ class GetAFreeQoute extends Component {
       company: form.Company.value,
       numberofinvoices: form.NumberofInvoices.value,
       accountingpackage: form.AccountingPackage.value,
+      gdprLetter: form.gdprLetter.checked,
       gdprEmail: form.gdprEmail.checked,
       gdprPhone: form.gdprPhone.checked,
       gdprText: form.gdprText.checked
@@ -119,6 +140,7 @@ class GetAFreeQoute extends Component {
       data.company,
       data.numberofinvoices,
       data.accountingpackage,
+      data.gdprLetter,
       data.gdprEmail,
       data.gdprPhone,
       data.gdprText
@@ -126,12 +148,16 @@ class GetAFreeQoute extends Component {
     let validation = !(
       form.checkValidity() &&
       !(errors.length > 0) &&
+      form.gdprPPDisplay.checked &&
       form.AccountingPackage.value.length != 0
     );
     this.setState({ errors: validation, messages: errors });
 
     if (validation) {
       return;
+    }
+    if (form.gdprLetter.value === "") {
+      form.gdprLetter.value = "false";
     }
     if (form.gdprEmail.value === "") {
       form.gdprEmail.value = "false";
@@ -202,23 +228,10 @@ class GetAFreeQoute extends Component {
     return (
       <Form
         onSubmit={this.test}
-        action="http://go.pardot.com/l/598401/2019-06-18/2tk3dx"
+        action="http://go.pardot.com/l/598401/2019-10-24/32rhhz"
         method="post"
         id="getafreeqouted"
       >
-        <Alert
-          color="danger"
-          isOpen={this.state.errors}
-          id="form-alert-message"
-        >
-          Please enter your details to get a free quote!
-          {/* {this.state.errors
-            ? this.state.messages.map(r => {
-                return <ul>{r}</ul>;
-              })
-            : ""} */}
-        </Alert>
-
         {/* <Alert color="success" isOpen={downloaded}>
           The whitepaper has been downloaded !
         </Alert> */}
@@ -285,8 +298,35 @@ class GetAFreeQoute extends Component {
         >
           Submit
         </Button>
+        <AlertPlaceHolder
+          color="danger"
+          isOpen={this.state.errors}
+          id="form-alert-message"
+        >
+          Please complete all of the required fields.
+          {/* {this.state.errors
+            ? this.state.messages.map(r => {
+                return <ul>{r}</ul>;
+              })
+            : ""} */}
+        </AlertPlaceHolder>
+        <Gdpr>
+          <FormGroup check inline>
+            <Label check>
+              <FormDescGDPR>
+                <Input
+                  type="checkbox"
+                  name="gdprPPDisplay"
+                  onClick={this.invertClick}
+                />
+                <PPTnCFormFieldCheckbox />
+              </FormDescGDPR>
+              <Input type="hidden" name="gdprPP" id="gdprPP" />
+            </Label>
+          </FormGroup>
+        </Gdpr>
         <div />
-        <br />
+        <br></br>
         <GdprText>
           APtimise would like to keep you informed by phone, email and text
           message about other evolving innovative products, services and offers
@@ -295,7 +335,18 @@ class GetAFreeQoute extends Component {
         </GdprText>
 
         <Gdpr>
-          <FormGroup check inline={true}>
+          <FormGroup check inline>
+            <Label check>
+              <Input
+                type="checkbox"
+                name="gdprLetterDisplay"
+                onClick={this.invertClick}
+              />{" "}
+              Letter
+              <Input type="hidden" name="gdprLetter" id="gdprLetter" />
+            </Label>
+          </FormGroup>
+          <FormGroup check inline>
             <Label check>
               <Input
                 type="checkbox"
@@ -306,8 +357,8 @@ class GetAFreeQoute extends Component {
               <Input type="hidden" name="gdprEmail" id="gdprEmail" />
             </Label>
           </FormGroup>
-          <FormGroup check inline={true}>
-            <Label check inline={true}>
+          <FormGroup check inline>
+            <Label check inline>
               <Input
                 type="checkbox"
                 name="gdprPhoneDisplay"
@@ -317,7 +368,7 @@ class GetAFreeQoute extends Component {
               <Input type="hidden" name="gdprPhone" id="gdprPhone" />
             </Label>
           </FormGroup>
-          <FormGroup check inline={true}>
+          <FormGroup check inline>
             <Label check>
               <Input
                 type="checkbox"

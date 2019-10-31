@@ -117,7 +117,20 @@ const DesktopHero = styled.div`
 
   @media ${media.md} {
     display: block;
-    height: ${media.md.replace("(min-width:", "").replace(")", "")};
+
+    height: ${props =>
+      props.pageType === "product" || props.pageType === "sme"
+        ? "400px"
+        : "1000px"};
+  }
+
+  @media ${media.lg} {
+    display: block;
+
+    height: ${props =>
+      props.pageType === "product" || props.pageType === "sme"
+        ? media.md.replace("(min-width:", "").replace(")", "")
+        : "1000px"};
   }
 `;
 
@@ -187,22 +200,24 @@ const LandingText = styled(Text)`
 
   #fineprint {
     font-size: 0.7em;
-    padding-top: 10px;
+    /* padding-top: 1rem; */
+    /* padding-top: 10px; */
   }
   @media ${media.md} {
     #fineprint {
       display: block;
-      text-align: right;
+      padding-top: 2rem;
+      /* text-align: right;
       position: relative;
-      top: -34px;
+      top: -34px; */
     }
   }
 
   @media ${media.lg} {
     #fineprint {
       /* text-align: right; */
-      text-align: right;
-      position: unset;
+      /* text-align: right;
+      position: unset; */
     }
   }
 
@@ -217,7 +232,7 @@ const LandingText = styled(Text)`
 
 const LandingTextWrap = styled.div`
   position: relative;
-  padding: 1rem 0 2rem;
+  padding: 0.5rem 0 0rem;
 
   @media ${media.md} {
     padding: 0;
@@ -265,7 +280,7 @@ const MobileImgSvgTop = styled.img`
 
 const ProductImgSvgTop = styled.img`
   position: absolute;
-  top: -3em;
+  top: 1em;
   left: 2em;
   width: 100%;
   max-width: ${props => (props.pageType === "product" ? "500px" : "400px")};
@@ -275,6 +290,14 @@ const ProductImgSvgTop = styled.img`
   display: none;
 
   @media ${media.md} {
+    display: none;
+  }
+
+  @media ${media.lg} {
+    display: block;
+  }
+
+  @media ${media.xl} {
     display: block;
   }
 `;
@@ -480,14 +503,15 @@ class Landing extends Component {
             </>
           ) : (
             <>
-              <DesktopHero />
-              <DesktopSvg src={landingProductBlockSVG} alt="" />
+              <DesktopHero pageType={pageType}>
+                <DesktopSvg src={landingProductBlockSVG} alt="" />
+              </DesktopHero>
             </>
           )}
 
           <LandingContent type={imageDesktop === null ? "product" : "landing"}>
             <Row>
-              <Col md={imageDesktop === null ? 7 : 8}>
+              <Col lg={imageDesktop === null ? 7 : 8}>
                 {imageDesktop === null ? (
                   <HeaderTitle
                     className="subTitle"
@@ -526,7 +550,7 @@ class Landing extends Component {
               </Col>
 
               {imageDesktop === null ? (
-                <Col md={5}>
+                <Col lg={5}>
                   {pageType === "acc" ? (
                     <FormProvider data={this.props.data} id={heroForm}>
                       {form => (

@@ -20,6 +20,12 @@ import {
 
 const NavBar = styled(Navbar)`
   padding: 0px;
+  /* display: ${props => (props.hideMenu === true ? "none" : "flex")}; */
+`;
+
+const Navitem = styled(NavItem)`
+  display: ${props =>
+    props.hidemenu === "true" ? "none !important" : "flex !important"};
 `;
 
 const Navbartoggler = styled(NavbarToggler)`
@@ -27,6 +33,8 @@ const Navbartoggler = styled(NavbarToggler)`
   .navbar-toggler-icon {
     background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgb(66, 20, 95)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
   }
+  display: ${props =>
+    props.hidemenu === "true" ? "none !important" : "flex !important"};
 `;
 
 const UsefulLinks = styled(Nav)`
@@ -78,13 +86,27 @@ export default class HamMenu extends React.Component {
   render() {
     return (
       <div>
-        <NavBar light expand="md">
+        <NavBar light expand="xl">
           <NavbarBrand href="/">
             <ChildMenu filter="logo_wrap" {...this.props} />
           </NavbarBrand>
-          <Navbartoggler onClick={this.toggle} />
+          <Navbartoggler
+            onClick={this.toggle}
+            hidemenu={
+              this.props.hidemenu !== null
+                ? this.props.hidemenu.toString()
+                : "false"
+            }
+          />
           <Collapse isOpen={this.state.isOpen} navbar>
-            <Menu {...this.props}>
+            <Menu
+              {...this.props}
+              hidemenu={
+                this.props.hidemenu !== null
+                  ? this.props.hidemenu.toString()
+                  : "false"
+              }
+            >
               <ChildMenu filter="bookdemo_button" {...this.props} />
             </Menu>
           </Collapse>
@@ -138,14 +160,15 @@ const Menu = props => {
   };
 
   var menuLinks = multiFilter(block, filters);
-
+  // console.log("props");
+  // console.log(props.hideMenu);
   const links = menuLinks.map((link, i) => {
     let linkButton = (
-      <NavItem key={i}>
+      <Navitem key={i} hidemenu={props.hidemenu.toString()}>
         <NavLink href={link.node.path} key={i}>
-          <Text> {link.node.menuTitle}</Text>
+          <Text>{link.node.menuTitle}</Text>
         </NavLink>
-      </NavItem>
+      </Navitem>
     );
 
     return linkButton;

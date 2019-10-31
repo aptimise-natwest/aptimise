@@ -25,9 +25,9 @@ import {
 
 const FooterWrap = styled.footer`
   position: relative;
-  margin-top: calc(100px + 4rem);
+  margin-top: 30px;
   color: ${props => props.theme.colors.white};
-
+  z-index: -100000;
   a {
     color: ${props => props.theme.colors.white};
   }
@@ -40,22 +40,23 @@ const FooterWrap = styled.footer`
 const FooterContent = styled.div`
   position: relative;
   padding: 4rem 2rem 2rem 2rem;
-  background-image: url(${footerBg});
+  /* background-image: url(${footerBg}); */
+  background-color:#42145F;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: top center;
   min-height: 400px;
 
   @media ${media.md} {
-    padding-top: 6rem;
+    padding-top: 4rem;
   }
 
   @media ${media.lg} {
-    padding-top: 8rem;
+    padding-top: 4rem;
   }
 
   @media ${media.xl} {
-    padding-top: 12rem;
+    padding-top: 4rem;
     min-height: 500px;
   }
 `;
@@ -233,7 +234,7 @@ class Footer extends Component {
                     WeWork building 8, Devonshire Square, London, EC2M 4PL
                   </Text>
                   <UsefulLinks>
-                  <li>
+                    <li>
                       <Link to="/about/">
                         <Text size="md" color="white">
                           About us
@@ -303,7 +304,7 @@ class Footer extends Component {
                         style={{ maxWidth: "56px" }}
                       />
                     </CompanyLinkItem>
-                    <CompanyLinkItem style={{display:'none'}}>
+                    <CompanyLinkItem style={{ display: "none" }}>
                       <img
                         src={netsuiteLogo}
                         alt="Netsuite"

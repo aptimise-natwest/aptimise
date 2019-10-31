@@ -4,6 +4,11 @@ import { StaticQuery, graphql } from "gatsby";
 import Img from "gatsby-image";
 import { Container, Row, Col, ModalBody } from "reactstrap";
 import WhitePaperForm from "components/WhitePaperForm/WhitePaperForm";
+import BookAfreeConsultation from "components/ContentBlocks/blocks/Forms/BookAfreeConsultation";
+import GetAFreeQoute from "components/ContentBlocks/blocks/Forms/GetAFreeQoute";
+import SpeakToYou from "components/ContentBlocks/blocks/Forms/SpeakToYou";
+import SpeakToYouV2 from "components/ContentBlocks/blocks/Forms/SpeakToYouV2";
+
 import ContainerMaxWidth from "components/shared/ContainerMaxWidth";
 import Text from "components/shared/Text";
 import Button from "components/shared/Button";
@@ -28,7 +33,7 @@ import SageLogo from "images/logos/Sage_logo.svg";
 import XeroLogo from "images/logos/Xero_logo.svg";
 import QBOLogo from "images/logos/qbo-logo.svg";
 
-const FormBlock = props => (
+const FormBlockV2 = props => (
   <StaticQuery
     query={graphql`
       query {
@@ -445,7 +450,7 @@ class Form extends Component {
       block: block
     });
 
-    this.addComponent(block.node.form);
+    // this.addComponent(block.node.form);
   }
 
   addComponent = type => {
@@ -483,9 +488,24 @@ class Form extends Component {
       thankYouMessage
     } = block.node;
 
+    function FormSwitcher(type) {
+      switch (type) {
+        case "GetAFreeQoute":
+          return <GetAFreeQoute></GetAFreeQoute>;
+        case "BookAfreeConsultation":
+          return <BookAfreeConsultation></BookAfreeConsultation>;
+        case "SpeakToYou":
+          return <SpeakToYou></SpeakToYou>;
+        case "SpeakToYouV2":
+          return <SpeakToYouV2></SpeakToYouV2>;
+        default:
+          return <></>;
+      }
+    }
+
     const { components } = this.state;
 
-    if (components.length === 0) return <div>Loading...</div>;
+    // if (components.length === 0) return <div>Loading...</div>;
 
     const componentsElements = components.map(Component => (
       <Component key="sfsfsdfsdre" />
@@ -512,7 +532,7 @@ class Form extends Component {
                 order: 2
               }}
             >
-              <ContentWrap>{componentsElements}</ContentWrap>
+              <ContentWrap>{FormSwitcher(block.node.form)}</ContentWrap>
             </Col>
             <Col
               lg={{ size: 7, order: 1 }}
@@ -556,8 +576,8 @@ class Form extends Component {
   }
 }
 
-FormBlock.propTypes = {
+FormBlockV2.propTypes = {
   id: PropTypes.node.isRequired
 };
 
-export default FormBlock;
+export default FormBlockV2;
