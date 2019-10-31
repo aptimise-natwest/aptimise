@@ -194,7 +194,7 @@ class Footer extends Component {
           <FooterTopBg ref={footerTopBg => (this.footerTopBg = footerTopBg)} />
           <FooterContent ref={footerWrap => (this.footerWrap = footerWrap)}>
             <Container>
-              <Link to="/">
+              <Link href="/">
                 <AptimiseLogo width="200" white />
               </Link>
               <Text color="white" className="pt-4">

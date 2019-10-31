@@ -70,6 +70,12 @@ module.exports = {
       }
     },
     {
+      resolve: `gatsby-plugin-compile-es6-packages`,
+      options: {
+        modules: [`@babel/polyfill`]
+      }
+    },
+    {
       resolve: `gatsby-plugin-google-tagmanager`,
       options: {
         id: "GTM-WDZR447", // "GTM-5Z9DS9R", Prod
