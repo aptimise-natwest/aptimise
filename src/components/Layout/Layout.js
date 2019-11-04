@@ -9,6 +9,7 @@ import SEO from "utils/Seo";
 import Header from "components/Header/Header";
 import Footer from "components/Footer/Footer";
 import ModalBookDemo from "components/shared/ModalBookDemo";
+import Helmet from "react-helmet";
 import { media } from "utils/Media";
 const SiteWrap = styled.div`
   padding-top: 90px;
@@ -27,15 +28,23 @@ const MainWrap = styled.span`
 class Layout extends Component {
   render() {
     let SEOMarkup;
+    let robotMetaMarup;
     if (this.props.dynamicPage) {
       const { title, metaDescription } = this.props.data.pagesJson;
+
       SEOMarkup = <SEO title={title} description={metaDescription} />;
     }
+    let hideMenu =
+      this.props.data != undefined ? this.props.data.pagesJson.hideMenu : false;
+
+    robotMetaMarup =
+      hideMenu === true ? <meta name="robots" content="noindex" /> : "";
 
     return (
       <ThemeProvider theme={theme}>
         <SiteWrap>
           {SEOMarkup}
+          <Helmet>{robotMetaMarup}</Helmet>
           <GlobalStyles />
           <Header data={this.props.data} />
           <MainWrap>

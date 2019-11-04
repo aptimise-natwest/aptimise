@@ -699,6 +699,8 @@
   {
     "id": "textThankYouBlock",
     "type": "SocialBlock",
+    "hideButton": true,
+    "hideSocial": true,
     "size": "l",
     "weight": "regular",
     "textHTML": "<center><h4>Thank you!</h4><h5>If you want to know more about the specific benefits of AP automation for your business, schedule a personalised AP consultation today.</h5></center>"
@@ -706,6 +708,8 @@
   {
     "id": "textThankYouAccountsPayableConsultation",
     "type": "SocialBlock",
+    "hideButton": true,
+    "hideSocial": true,
     "size": "l",
     "weight": "regular",
     "textHTML": "<center><h4>Thank you for your enquiry,</h4><h5>We will be in touch shortly.</h5></center>"
@@ -713,8 +717,10 @@
   {
     "id": "textThankYouAccountsPayableWhitepaper",
     "type": "SocialBlock",
+    "hideButton": true,
+    "hideSocial": true,
     "size": "l",
     "weight": "regular",
-    "textHTML": "<center><h4>Thank you for your enquiry,</h4><h5>your download will start shortly. If your download doesn’t start, please click here.</h5></center>"
+    "textHTML": "<center><h4>Thank you for your enquiry,</h4><h5>Your download will start shortly.</h5></center>"
   }
 ]

@@ -95,6 +95,8 @@ const SocialBlock = props => {
             size
             weight
             textHTML
+            hideButton
+            hideSocial
           }
         }
       }
@@ -117,38 +119,45 @@ const SocialBlock = props => {
           size={size}
           weight={weight}
         />
+        {block.hideButton === true ? (
+          <Button
+            as="button"
+            className="trigger-bookdemo-modal"
+            onClick={props.toggleModal}
+          >
+            Schedule now
+          </Button>
+        ) : (
+          ""
+        )}
 
-        <Button
-          as="button"
-          className="trigger-bookdemo-modal"
-          onClick={props.toggleModal}
-        >
-          Schedule now
-        </Button>
-
-        <LinkWrap>
-          <LinkItem
-            href="https://twitter.com/NatWestBusiness"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <FontAwesomeIcon icon={faTwitter} color="#42145F" />
-          </LinkItem>
-          <LinkItem
-            href="https://www.linkedin.com/company/natwest-business"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <FontAwesomeIcon icon={faLinkedin} color="#42145F" />
-          </LinkItem>
-          <LinkItem
-            href="https://www.facebook.com/NatWestBusiness"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <FontAwesomeIcon icon={faFacebookF} color="#42145F" />
-          </LinkItem>
-        </LinkWrap>
+        {block.hideSocial === true ? (
+          <LinkWrap>
+            <LinkItem
+              href="https://twitter.com/NatWestBusiness"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <FontAwesomeIcon icon={faTwitter} color="#42145F" />
+            </LinkItem>
+            <LinkItem
+              href="https://www.linkedin.com/company/natwest-business"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <FontAwesomeIcon icon={faLinkedin} color="#42145F" />
+            </LinkItem>
+            <LinkItem
+              href="https://www.facebook.com/NatWestBusiness"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <FontAwesomeIcon icon={faFacebookF} color="#42145F" />
+            </LinkItem>
+          </LinkWrap>
+        ) : (
+          ""
+        )}
       </ThankYouContainer>
     </Container>
   );
