@@ -241,7 +241,7 @@ const FluidContainer = styled.div`
     background-repeat: no-repeat;
     background-position: center center;
 
-    background-size: 55px 150px;
+    background-size: contain;
     width: 70px;
     height: 60px;
     margin-top: 20px;
